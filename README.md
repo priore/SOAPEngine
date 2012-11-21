@@ -1,4 +1,4 @@
-**SOAPEngine (trial) **
+**SOAPEngine**
 ================
 
 This generic SOAP client allows you to access web services using a your iOS app.
@@ -20,31 +20,31 @@ With this Framework you can create iPhone and iPad Apps that supports SOAP Clien
 
 Below a simple example on Objective-C :
 
-#import <SOAPEngine/SOAPEngine.h>
+	#import <SOAPEngine/SOAPEngine.h>
 
-SOAPEngine *soap = [[SOAPEngine alloc] init];
+	SOAPEngine *soap = [[SOAPEngine alloc] init];
 
-soap.userAgent = @"SOAPEngine";
+	soap.userAgent = @"SOAPEngine";
 
-soap.delegate = self; // use SOAPEngineDelegate
+	soap.delegate = self; // use SOAPEngineDelegate
 
-[soap setValue:@"my-value1" forKey:@"Param1"];
+	[soap setValue:@"my-value1" forKey:@"Param1"];
 
-[soap setIntegerValue:1234 forKey:@"Param2"];
+	[soap setIntegerValue:1234 forKey:@"Param2"];
 
-[soap requestURL:@"http://www.my-web.com/my-service.asmx" soapAction:@"http://www.my-web.com/My-Method-name"];
+	[soap requestURL:@"http://www.my-web.com/my-service.asmx" soapAction:@"http://www.my-web.com/My-Method-name"];
  
-#pragma mark - SOAPEngine delegates
+	#pragma mark - SOAPEngine delegates
 
-- (void)soapEngine:(SOAPEngine *)soapEngine didFinishLoading:(NSString *)stringXML {
+	- (void)soapEngine:(SOAPEngine *)soapEngine didFinishLoading:(NSString *)stringXML {
 
-        NSDictionary *result = [soapEngine dictionaryValue];
+	        NSDictionary *result = [soapEngine dictionaryValue];
         
-        // read data from a dataset table
+        	// read data from a dataset table
         
-        NSArray *list = [result valueForKeyPath:@"NewDataSet.Table"];
+        	NSArray *list = [result valueForKeyPath:@"NewDataSet.Table"];
         
-}
+	}
 
 
 **[GET IT NOW!](http://www.prioregroup.com/iphone/soapengine.aspx)**
