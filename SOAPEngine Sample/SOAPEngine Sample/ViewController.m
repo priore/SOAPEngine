@@ -20,6 +20,11 @@
     soap.userAgent = @"SOAPEngine";
     soap.delegate = self;
     
+    // autenthication
+    soap.authorizationMethod = SOAP_AUTH_BASIC;
+    soap.username = @"my-username";
+    soap.password = @"my-password";
+    
     // simple parameters
     [soap setValue:@"Genesis" forKey:@"BookTitle"];
     [soap setIntegerValue:1 forKey:@"chapter"];
@@ -64,6 +69,16 @@
     // form more response codes
 
     return YES;
+}
+
+- (NSMutableURLRequest*)soapEngine:(SOAPEngine *)soapEngine didBeforeSendingURLRequest:(NSMutableURLRequest *)request {
+    
+    NSLog(@"%@", [request allHTTPHeaderFields]);
+
+    NSString *xml = [[NSString alloc] initWithData:[request HTTPBody] encoding:NSUTF8StringEncoding];
+    NSLog(@"%@", xml);
+    
+    return request;
 }
 
 #pragma mark - Table view data source
