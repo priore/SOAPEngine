@@ -20,6 +20,9 @@
     soap.userAgent = @"SOAPEngine";
     soap.delegate = self;
     
+    // extra envelope tag attributes
+    soap.envelope = @"xmlns:tmp=\"http://temp.org\"";
+    
     // autenthication
     soap.authorizationMethod = SOAP_AUTH_BASIC;
     soap.username = @"my-username";

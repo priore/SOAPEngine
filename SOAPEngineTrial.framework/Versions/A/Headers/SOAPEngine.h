@@ -39,6 +39,7 @@ typedef enum
 @property (nonatomic, retain) NSString *username;
 @property (nonatomic, retain) NSString *password;
 @property (nonatomic, retain) NSString *header;
+@property (nonatomic, retain) NSString *envelope;
 @property (nonatomic, assign) SOAPVersion version;
 @property (nonatomic, assign) SOAPAuthorization authorizationMethod;
 @property (nonatomic, assign) id<SOAPEngineDelegate> delegate;
