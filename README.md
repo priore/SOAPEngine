@@ -24,6 +24,7 @@ With this Framework you can create iPhone and iPad Apps that supports SOAP Clien
 ## Requirements
 * iOS 4.x, 5.x and last iOS6.
 * XCode 4.1 or later
+* Security.framework
 * Foundation.framework
 * UIKit.framework
 * libxml2.dylib

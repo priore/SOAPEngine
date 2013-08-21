@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F2EF75517C4B1C800004528 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2EF75417C4B1C800004528 /* Security.framework */; };
 		9F3DF9A2165C045500A07453 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3DF9A1165C045500A07453 /* UIKit.framework */; };
 		9F3DF9A4165C045500A07453 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3DF9A3165C045500A07453 /* Foundation.framework */; };
 		9F3DF9A6165C045500A07453 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3DF9A5165C045500A07453 /* CoreGraphics.framework */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F2EF75417C4B1C800004528 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9F3DF99D165C045500A07453 /* SOAPEngine Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SOAPEngine Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3DF9A1165C045500A07453 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9F3DF9A3165C045500A07453 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F2EF75517C4B1C800004528 /* Security.framework in Frameworks */,
 				9F3DF9A2165C045500A07453 /* UIKit.framework in Frameworks */,
 				9F3DF9A4165C045500A07453 /* Foundation.framework in Frameworks */,
 				9F3DF9A6165C045500A07453 /* CoreGraphics.framework in Frameworks */,
@@ -75,6 +78,7 @@
 		9F3DF9A0165C045500A07453 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9F2EF75417C4B1C800004528 /* Security.framework */,
 				9F545E301789A7DE008202D3 /* SOAPEngineTrial.framework */,
 				9F3DF9A1165C045500A07453 /* UIKit.framework */,
 				9F3DF9A3165C045500A07453 /* Foundation.framework */,
