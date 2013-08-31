@@ -3,15 +3,22 @@
 //
 //  Created by Danilo Priore on 21/11/12.
 //  Copyright (c) 2012 Centro Studi Informatica di Danilo Priore. All rights reserved.
+//
 //  http://www.prioregroup.com
 //  https://github.com/priore
 //  https://twitter.com/DaniloPriore
 //
-// 08-20-2013 Version 1.2 (RC1)
+// 08-29-2013 Version 1.2 (RC2)
 //
 // Features:
 //
-// 1. added the verification methods for trusted certificate authorization.
+// 1. added the verification methods for certificate authorization.
+// 2. update WS-Security with encrypted password (digest).
+// 3. bug-fix for parameters with nil values.
+// 4. bug-fix for inherited classes.
+// 5. bug-fix when hostname could not be found.
+//
+// NOTE: required Security.framework
 //
 // 08-17-2013 Version 1.1.1
 //
@@ -37,8 +44,9 @@ typedef enum
 typedef enum
 {
     SOAP_AUTH_NONE,
-    SOAP_AUTH_BASIC,
-    SOAP_AUTH_WSSECURITY,
+    SOAP_AUTH_BASIC,        // located in header request (base64)
+    SOAP_AUTH_BASICAUTH,    // valid only for SOAP 1.1
+    SOAP_AUTH_WSSECURITY,   // digest password
     SOAP_AUTH_CUSTOM
 } SOAPAuthorization;
 
