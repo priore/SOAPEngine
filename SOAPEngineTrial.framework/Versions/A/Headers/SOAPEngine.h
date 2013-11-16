@@ -8,6 +8,13 @@
 //  https://github.com/priore
 //  https://twitter.com/DaniloPriore
 //
+// 11-08-2013 Version 1.2 (RC3)
+//
+// Features:
+//
+// 1. implementing block programming
+// 2. fix log message for IList elements
+//
 // 08-29-2013 Version 1.2 (RC2)
 //
 // Features:
@@ -34,6 +41,9 @@
 // 2. adding basic and wss authorization.
 
 #import <Foundation/Foundation.h>
+
+typedef void(^SOAPEngineCompleteBlock)(int statusCode, NSString *stringXML);
+typedef void(^SOAPEngineFailBlock)(NSError *error);
 
 typedef enum
 {
@@ -124,6 +134,25 @@ typedef enum
 - (void)requestURL:(id)asmxURL soapAction:(NSString*)soapAction;
 - (void)requestURL:(id)asmxURL soapAction:(NSString*)soapAction value:(id)value;
 - (void)requestURL:(id)asmxURL soapAction:(NSString*)soapAction value:(id)value forKey:(NSString*)key;
+
+// webservice request with block
+- (void)requestURL:(id)asmxURL
+        soapAction:(NSString *)soapAction
+          complete:(SOAPEngineCompleteBlock)complete
+     failWithError:(SOAPEngineFailBlock)fail;
+
+- (void)requestURL:(id)asmxURL
+        soapAction:(NSString *)soapAction
+             value:(id)value
+          complete:(SOAPEngineCompleteBlock)complete
+     failWithError:(SOAPEngineFailBlock)fail;
+
+- (void)requestURL:(id)asmxURL
+        soapAction:(NSString *)soapAction
+             value:(id)value
+            forKey:(NSString*)key
+          complete:(SOAPEngineCompleteBlock)complete
+     failWithError:(SOAPEngineFailBlock)fail;
 
 @end
 
