@@ -5,6 +5,10 @@ This generic SOAP client allows you to access web services using a your iOS app.
 
 With this Framework you can create iPhone and iPad Apps that supports SOAP Client Protocol. This framework able executes methods at remote web services with SOAP standard protocol.
 
+## Updates Nov, 08, 2013 (RC3)
+* Implementing block programming
+* Fix log message for IList (C#) elements
+
 ## Updates Ago, 29, 2013 (RC2)
 * Added the verification methods for certificate authorization.
 * Update WS-Security with encrypted password (digest).
@@ -29,7 +33,7 @@ With this Framework you can create iPhone and iPad Apps that supports SOAP Clien
 * An example is included in source code.
 
 ## Requirements
-* iOS 4.x, 5.x and last iOS6.
+* iOS 4.x, 5.x, 6.x and last iOS7.
 * XCode 4.1 or later
 * Security.framework
 * Foundation.framework
