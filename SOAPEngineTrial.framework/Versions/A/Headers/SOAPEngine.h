@@ -2,18 +2,25 @@
 //  SOAPEngine.h
 //
 //  Created by Danilo Priore on 21/11/12.
-//  Copyright (c) 2012 Centro Studi Informatica di Danilo Priore. All rights reserved.
+//  Copyright (c) 2012-2013 Centro Studi Informatica di Danilo Priore. All rights reserved.
 //
 //  http://www.prioregroup.com
 //  https://github.com/priore
 //  https://twitter.com/DaniloPriore
 //
+// 12-02-2013 Version 1.3 (RC1)
+//
+// Features:
+//
+// 1. added local notifications.
+// 2. fix last path slash for namespace actions.
+//
 // 11-08-2013 Version 1.2 (RC3)
 //
 // Features:
 //
-// 1. implementing block programming
-// 2. fix log message for IList elements
+// 1. implementing block programming.
+// 2. fix log message for IList elements.
 //
 // 08-29-2013 Version 1.2 (RC2)
 //
@@ -42,6 +49,18 @@
 
 #import <Foundation/Foundation.h>
 
+// Local Notification names
+extern const NSString *SOAPEngineDidFinishLoadingNotification;
+extern const NSString *SOAPEngineDidFailWithErrorNotification;
+extern const NSString *SOAPEngineDidReceiveResponseCodeNotification;
+extern const NSString *SOAPEngineDidBeforeSendingURLRequestNotification;
+
+// UserInfo dictionary keys for Local Noficiations
+extern const NSString *SOAPEngineStatusCodeKey;
+extern const NSString *SOAPEngineXMLResponseKey;
+extern const NSString *SOAPEngineURLRequestKey;
+extern const NSString *SOAPEngineErrorKey;
+
 typedef void(^SOAPEngineCompleteBlock)(int statusCode, NSString *stringXML);
 typedef void(^SOAPEngineFailBlock)(NSError *error);
 
@@ -67,6 +86,9 @@ typedef enum
 // adds the quotes in the SOAPAction header
 // eg. SOAPAction = http://temp.org become SOAPAction = "http://temp.org".
 @property (nonatomic, assign) BOOL actionQuotes;
+
+// add last path slash for action namespace
+@property (nonatomic, assign) BOOL actionNamespaceSlash;
 
 // return the last status code of connection
 // http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html.
