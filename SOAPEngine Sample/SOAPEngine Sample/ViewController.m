@@ -16,6 +16,8 @@
     
     [super viewDidLoad];
     
+    list = nil;
+    
     soap = [[SOAPEngine alloc] init];
     soap.userAgent = @"SOAPEngine";
     soap.delegate = self;
@@ -56,7 +58,7 @@
 - (void)soapEngine:(SOAPEngine *)soapEngine didFinishLoading:(NSString *)stringXML {
     
     NSDictionary *result = [soapEngine dictionaryValue];
-    list = [result valueForKeyPath:@"NewDataSet.Table"];
+    list = [[NSMutableArray alloc] initWithArray:[result valueForKeyPath:@"NewDataSet.Table"]];
     [self.tableView reloadData];
 }
 
