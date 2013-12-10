@@ -5,6 +5,15 @@ This generic SOAP client allows you to access web services using a your iOS app.
 
 With this Framework you can create iPhone and iPad Apps that supports SOAP Client Protocol. This framework able executes methods at remote web services with SOAP standard protocol.
 
+## Update Dic, 10, 2013 (v.1.3.2)
+* Extended with two new properties to replace the prefix of the user objects.
+* Decode Unicode characters in readable strings (\Uxxxx).
+* Fix for results in array values.
+
+## Update Dic 04, 2013 (v.1.3.1)
+* Thread Safety
+* Support nil/null values replaced with xsi:nil="true"
+
 ## Update Dic, 02, 2013 (v.1.3RC1)
 * Added local notifications.
 * Fix last path slash for namespace actions.

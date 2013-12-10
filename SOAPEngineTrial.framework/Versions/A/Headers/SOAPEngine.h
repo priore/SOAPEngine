@@ -8,6 +8,21 @@
 //  https://github.com/priore
 //  https://twitter.com/DaniloPriore
 //
+// 12-10-2013 Versione 1.3.2
+//
+// Features:
+//
+// 1. Extended with two new properties to replace the prefix of the user objects.
+// 2. Decode Unicode characters in readable strings (\Uxxxx).
+// 3. Fix for results in array values.
+//
+// 12-04-2013 Versione 1.3.1
+//
+// Features:
+//
+// 1. Thread Safety
+// 2. Support nil/null values replaced with xsi:nil="true"
+//
 // 12-02-2013 Version 1.3 (RC1)
 //
 // Features:
@@ -101,6 +116,15 @@ typedef enum
 // http://unicode.org/reports/tr35/tr35-6.html#Date_Format_Patterns
 @property (nonatomic, retain) NSString *dateFormat;
 
+// sets to indicate that the nil values ​​are replaced with xsi:nil="true"
+@property (nonatomic, assign) BOOL replaceNillable;
+
+// sets the prefix of the user object you want to replace
+@property (nonatomic, retain) NSString *prefixObjectName;
+
+// sets the value of replacing for the prefix of the user object
+@property (nonatomic, retain) NSString *replacePrefixObjectName;
+
 // sets the type of permission you want to use (none, wss, basic or custom).
 @property (nonatomic, assign) SOAPAuthorization authorizationMethod;
 
@@ -129,6 +153,8 @@ typedef enum
 // sets the receiver of the delegates 
 @property (nonatomic, assign) id<SOAPEngineDelegate> delegate;
 
++ (SOAPEngine *)sharedInstance;
+
 // returns the value for a webservice that returns a single value
 - (int)integerValue;
 - (float)floatValue;
@@ -141,6 +167,7 @@ typedef enum
 - (id)valueForKey:(NSString*)key;
 - (NSArray*)arrayValue;
 - (id)valuesToObject:(id)object;
+- (BOOL)isNull;
 
 // add a parameter to post
 - (void)setValue:(id)value;
