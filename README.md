@@ -5,40 +5,6 @@ This generic SOAP client allows you to access web services using a your iOS app.
 
 With this Framework you can create iPhone and iPad Apps that supports SOAP Client Protocol. This framework able executes methods at remote web services with SOAP standard protocol.
 
-## Update Dic, 10, 2013 (v.1.3.2)
-* Extended with two new properties to replace the prefix of the user objects.
-* Decode Unicode characters in readable strings (\Uxxxx).
-* Fix for results in array values.
-
-## Update Dic 04, 2013 (v.1.3.1)
-* Thread Safety
-* Support nil/null values replaced with xsi:nil="true"
-
-## Update Dic, 02, 2013 (v.1.3RC1)
-* Added local notifications.
-* Fix last path slash for namespace actions.
-
-## Updates Nov, 08, 2013 (RC3)
-* Implementing block programming
-* Fix log message for IList (C#) elements
-
-## Updates Ago, 29, 2013 (RC2)
-* Added the verification methods for certificate authorization.
-* Update WS-Security with encrypted password (digest).
-* Bug-fix for parameters with nil values.
-* Bug-fix for inherited classes.
-* Bug-fix when hostname could not be found.
-
-## Updates Ago, 20, 2013 (RC1)
-* Added the verification methods for trusted certificate authorization.
-
-## Updates Ago, 17, 2013
-* Property named envelope, allow the define extra attributes for Envelope tag.
-
-## Updates Jun, 25, 2013
-* Ability to define a basic or WSS authentication.
-* Property named actionQuotes, allow the quotes in the soapAction header.
-
 ## Features
 * Support both 2001 (v1.1) and 2003 (v1.2) XML schema.
 * Support array, array of structs and dictionary.
@@ -83,3 +49,53 @@ Below a simple example on Objective-C :
 
 
 **[GET IT NOW!](http://www.prioregroup.com/iphone/soapengine.aspx)**
+
+##Change-log
+
+- Jan, 09, 2014 (v.1.4.0)
+* support for NSSet types.
+* support for other more primitive types (short, long).
+* fixes releases object in ARC projects.
+
+- Dic, 22, 2013 (v.1.3.4)
+* fixes for HTML special characters.
+* fixes for Unicode characters.
+* fixes for blocks inside blocks.
+
+- Dic, 18, 2013 (v.1.3.3)
+* fixes dictionary error in a double sequential call.
+
+- Dic, 10, 2013 (v.1.3.2)
+* Extended with two new properties to replace the prefix of the user objects.
+* Decode Unicode characters in readable strings (\Uxxxx).
+* fixes for results in array values.
+
+- Dic 04, 2013 (v.1.3.1)
+* Thread Safety
+* Support nil/null values replaced with xsi:nil="true"
+
+- Dic, 02, 2013 (v.1.3.0)
+* Added local notifications.
+* fixes last path slash for namespace actions.
+
+- Nov, 08, 2013 (v.1.2.1)
+* Implementing block programming
+* fixes log message for IList (C#) elements
+
+- Ago, 29, 2013 (v.1.2.1)
+* Added the verification methods for certificate authorization.
+* Update WS-Security with encrypted password (digest).
+* fixes for parameters with nil values.
+* fixes for inherited classes.
+* fixes when hostname could not be found.
+
+- Ago, 20, 2013 (v.1.2.0)
+* Added the verification methods for trusted certificate authorization.
+
+- Ago, 17, 2013 (v.1.1.1)
+* Property named envelope, allow the define extra attributes for Envelope tag.
+
+- Jun, 25, 2013 (v.1.1.0)
+* Ability to define a basic or WSS authentication.
+* Property named actionQuotes, allow the quotes in the soapAction header.
+

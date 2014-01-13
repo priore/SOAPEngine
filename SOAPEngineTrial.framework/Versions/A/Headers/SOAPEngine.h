@@ -2,63 +2,60 @@
 //  SOAPEngine.h
 //
 //  Created by Danilo Priore on 21/11/12.
-//  Copyright (c) 2012-2013 Centro Studi Informatica di Danilo Priore. All rights reserved.
+//  Copyright (c) 2012-2014 Centro Studi Informatica di Danilo Priore. All rights reserved.
 //
 //  http://www.prioregroup.com
 //  https://github.com/priore
 //  https://twitter.com/DaniloPriore
 //
-// 12-10-2013 Versione 1.3.2
+// Change-log
 //
-// Features:
+// 01-09-2014 v.1.4.0
+// 1. support for NSSet types.
+// 2. support for other more primitive types (short, long).
+// 2. fixes releases object in ARC projects.
 //
+// 12-22-2013 v.1.3.4
+// 1. fixes for HTML special characters.
+// 2. fixes for Unicode characters.
+// 3. fixes for blocks inside blocks.
+// 
+// 12-18-2013 v.1.3.3
+// 1. fixes dictionary error in a double sequential call.
+//
+// 12-10-2013 v.1.3.2
 // 1. Extended with two new properties to replace the prefix of the user objects.
 // 2. Decode Unicode characters in readable strings (\Uxxxx).
-// 3. Fix for results in array values.
+// 3. fixes for results in array values.
 //
-// 12-04-2013 Versione 1.3.1
-//
-// Features:
-//
+// 12-04-2013 v.1.3.1
 // 1. Thread Safety
 // 2. Support nil/null values replaced with xsi:nil="true"
 //
-// 12-02-2013 Version 1.3 (RC1)
-//
-// Features:
-//
+// 12-02-2013 v.1.3
 // 1. added local notifications.
-// 2. fix last path slash for namespace actions.
+// 2. fixes last path slash for namespace actions.
 //
-// 11-08-2013 Version 1.2 (RC3)
-//
-// Features:
-//
+// 11-08-2013 v.1.2.2
 // 1. implementing block programming.
-// 2. fix log message for IList elements.
+// 2. fixes log message for IList elements.
 //
-// 08-29-2013 Version 1.2 (RC2)
-//
-// Features:
-//
+// 08-29-2013 v.1.2.1
 // 1. added the verification methods for certificate authorization.
 // 2. update WS-Security with encrypted password (digest).
-// 3. bug-fix for parameters with nil values.
-// 4. bug-fix for inherited classes.
-// 5. bug-fix when hostname could not be found.
+// 3. fixes for parameters with nil values.
+// 4. fixes for inherited classes.
+// 5. fixes when hostname could not be found.
 //
 // NOTE: required Security.framework
 //
-// 08-17-2013 Version 1.1.1
+// 08-20-2014 v.1.2.0
+// 1. Added the verification methods for trusted certificate authorization.
 //
-// Features:
-//
+// 08-17-2013 v.1.1.1
 // 1. added a property to allow the define extra attributes for Envelope tag.
 //
-// 06-25-2013 Version 1.1
-//
-// Features:
-//
+// 06-25-2013 v.1.1.0
 // 1. added a property that enables the quotes in the property SOAPAction.
 // 2. adding basic and wss authorization.
 
@@ -76,8 +73,8 @@ extern const NSString *SOAPEngineXMLResponseKey;
 extern const NSString *SOAPEngineURLRequestKey;
 extern const NSString *SOAPEngineErrorKey;
 
-typedef void(^SOAPEngineCompleteBlock)(int statusCode, NSString *stringXML);
-typedef void(^SOAPEngineFailBlock)(NSError *error);
+typedef __block void(^SOAPEngineCompleteBlock)(int statusCode, NSString *stringXML);
+typedef __block void(^SOAPEngineFailBlock)(NSError *error);
 
 typedef enum
 {
@@ -175,6 +172,7 @@ typedef enum
 - (void)setIntegerValue:(int)value forKey:(NSString*)key;
 - (void)setDoubleValue:(double)value forKey:(NSString*)key;
 - (void)setFloatValue:(float)value forKey:(NSString*)key;
+- (void)setLongValue:(long)value forKey:(NSString*)key;
 
 // clear all parameters
 - (void)clearValues;
