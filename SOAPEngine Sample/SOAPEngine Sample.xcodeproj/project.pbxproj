@@ -15,10 +15,10 @@
 		9F3DF9B2165C045500A07453 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DF9B1165C045500A07453 /* AppDelegate.m */; };
 		9F3DF9D5165C04F200A07453 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DF9D3165C04F200A07453 /* ViewController.m */; };
 		9F3DF9D6165C04F200A07453 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F3DF9D4165C04F200A07453 /* ViewController.xib */; };
-		9F545E311789A7DE008202D3 /* SOAPEngineTrial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F545E301789A7DE008202D3 /* SOAPEngineTrial.framework */; };
-		9F89EDE917D2240F00791CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F89EDE817D2240F00791CF7 /* Security.framework */; };
+		9F89EDE717D2237200791CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F89EDE617D2237200791CF7 /* Security.framework */; };
 		9FC69C64165C42BD00302808 /* MyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC69C63165C42BD00302808 /* MyObject.m */; };
 		9FC69CEE165C527D00302808 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FC69CED165C527D00302808 /* Icon.png */; };
+		9FFDE7E918C51B22002F912B /* SOAPEngineTrial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FFDE7E818C51B22002F912B /* SOAPEngineTrial.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,11 +35,11 @@
 		9F3DF9D2165C04F200A07453 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		9F3DF9D3165C04F200A07453 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9F3DF9D4165C04F200A07453 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
-		9F545E301789A7DE008202D3 /* SOAPEngineTrial.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SOAPEngineTrial.framework; path = ../SOAPEngineTrial.framework; sourceTree = "<group>"; };
-		9F89EDE817D2240F00791CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9F89EDE617D2237200791CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9FC69C62165C42BD00302808 /* MyObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyObject.h; sourceTree = "<group>"; };
 		9FC69C63165C42BD00302808 /* MyObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyObject.m; sourceTree = "<group>"; };
 		9FC69CED165C527D00302808 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
+		9FFDE7E818C51B22002F912B /* SOAPEngineTrial.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SOAPEngineTrial.framework; path = ../SOAPEngineTrial.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,11 +47,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F89EDE917D2240F00791CF7 /* Security.framework in Frameworks */,
+				9FFDE7E918C51B22002F912B /* SOAPEngineTrial.framework in Frameworks */,
+				9F89EDE717D2237200791CF7 /* Security.framework in Frameworks */,
 				9F3DF9A2165C045500A07453 /* UIKit.framework in Frameworks */,
 				9F3DF9A4165C045500A07453 /* Foundation.framework in Frameworks */,
 				9F3DF9A6165C045500A07453 /* CoreGraphics.framework in Frameworks */,
-				9F545E311789A7DE008202D3 /* SOAPEngineTrial.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,8 +78,8 @@
 		9F3DF9A0165C045500A07453 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9F89EDE817D2240F00791CF7 /* Security.framework */,
-				9F545E301789A7DE008202D3 /* SOAPEngineTrial.framework */,
+				9FFDE7E818C51B22002F912B /* SOAPEngineTrial.framework */,
+				9F89EDE617D2237200791CF7 /* Security.framework */,
 				9F3DF9A1165C045500A07453 /* UIKit.framework */,
 				9F3DF9A3165C045500A07453 /* Foundation.framework */,
 				9F3DF9A5165C045500A07453 /* CoreGraphics.framework */,
@@ -202,6 +202,7 @@
 		9F3DF9BF165C045500A07453 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -216,7 +217,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-lxml2";
@@ -227,6 +228,7 @@
 		9F3DF9C0165C045500A07453 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -237,7 +239,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-lxml2";
 				SDKROOT = iphoneos;
@@ -250,7 +252,8 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/..\"",
+					"\\\"$(SRCROOT)/..\\\"",
+					"/Users/danilo/Desktop/SOAPEngine_bin/trial/SOAPEngine\\ Trial",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SOAPEngine Sample/SOAPEngine Sample-Prefix.pch";
@@ -265,7 +268,8 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/..\"",
+					"\\\"$(SRCROOT)/..\\\"",
+					"/Users/danilo/Desktop/SOAPEngine_bin/trial/SOAPEngine\\ Trial",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SOAPEngine Sample/SOAPEngine Sample-Prefix.pch";

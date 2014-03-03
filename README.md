@@ -19,6 +19,9 @@ With this Framework you can create iPhone and iPad Apps that supports SOAP Clien
 * UIKit.framework
 * libxml2.dylib
 
+## Limitations
+* support only ASMX services.
+
 Below a simple example on Objective-C :
 
 	#import <SOAPEngine/SOAPEngine.h>
@@ -51,6 +54,14 @@ Below a simple example on Objective-C :
 **[GET IT NOW!](http://www.prioregroup.com/iphone/soapengine.aspx)**
 
 ##Change-log
+
+- Feb, 13, 2014 (v.1.5.1)
+* fixes for premature release of connections in nested blocks.
+
+- Jan, 29, 2014 (v.1.5.0)
+* added a new method named "cancel" to able cancel all delegates, blocks or notifications.
+* fixes for fault codes in client SOAP response.
+* added version compiled for arm64 (64-bit, only in purchased version).
 
 - Jan, 09, 2014 (v.1.4.0)
 * support for NSSet types.
