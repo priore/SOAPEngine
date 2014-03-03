@@ -10,6 +10,14 @@
 //
 // Change-log
 //
+// 02-13-2014 v.1.5.1
+// 1. fixes for premature release of connections in nested blocks.
+//
+// 01-29-2014 v.1.5.0
+// 1. added a new method named "cancel" to able cancel all delegates, blocks or notifications.
+// 2. fixes for fault codes in client SOAP response.
+// 3. added version compiled for arm64 (64-bit, only in purchased version).
+//
 // 01-09-2014 v.1.4.0
 // 1. support for NSSet types.
 // 2. support for other more primitive types (short, long).
@@ -73,7 +81,7 @@ extern const NSString *SOAPEngineXMLResponseKey;
 extern const NSString *SOAPEngineURLRequestKey;
 extern const NSString *SOAPEngineErrorKey;
 
-typedef __block void(^SOAPEngineCompleteBlock)(int statusCode, NSString *stringXML);
+typedef __block void(^SOAPEngineCompleteBlock)(NSInteger statusCode, NSString *stringXML);
 typedef __block void(^SOAPEngineFailBlock)(NSError *error);
 
 typedef enum
@@ -104,7 +112,7 @@ typedef enum
 
 // return the last status code of connection
 // http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html.
-@property (nonatomic, assign) int statusCode;
+@property (nonatomic, assign) NSInteger statusCode;
 
 //sets a custom name for the user-agent (default is "SOAPEngine").
 @property (nonatomic, retain) NSString *userAgent;
@@ -153,7 +161,7 @@ typedef enum
 + (SOAPEngine *)sharedInstance;
 
 // returns the value for a webservice that returns a single value
-- (int)integerValue;
+- (NSInteger)integerValue;
 - (float)floatValue;
 - (double)doubleValue;
 - (NSString*)stringValue;
@@ -169,7 +177,7 @@ typedef enum
 // add a parameter to post
 - (void)setValue:(id)value;
 - (void)setValue:(id)value forKey:(NSString *)key; // can also be used with user-defined objects
-- (void)setIntegerValue:(int)value forKey:(NSString*)key;
+- (void)setIntegerValue:(NSInteger)value forKey:(NSString*)key;
 - (void)setDoubleValue:(double)value forKey:(NSString*)key;
 - (void)setFloatValue:(float)value forKey:(NSString*)key;
 - (void)setLongValue:(long)value forKey:(NSString*)key;
@@ -201,6 +209,9 @@ typedef enum
           complete:(SOAPEngineCompleteBlock)complete
      failWithError:(SOAPEngineFailBlock)fail;
 
+// cancel all delegates, blocks or notifications
+- (void)cancel;
+
 @end
 
 @protocol SOAPEngineDelegate <NSObject>
@@ -209,7 +220,7 @@ typedef enum
 
 - (void)soapEngine:(SOAPEngine*)soapEngine didFinishLoading:(NSString*)stringXML;
 - (void)soapEngine:(SOAPEngine *)soapEngine didFailWithError:(NSError*)error;
-- (BOOL)soapEngine:(SOAPEngine *)soapEngine didReceiveResponseCode:(int)statusCode;
+- (BOOL)soapEngine:(SOAPEngine *)soapEngine didReceiveResponseCode:(NSInteger)statusCode;
 - (NSMutableURLRequest*)soapEngine:(SOAPEngine *)soapEngine didBeforeSendingURLRequest:(NSMutableURLRequest*)request;
 
 @end
