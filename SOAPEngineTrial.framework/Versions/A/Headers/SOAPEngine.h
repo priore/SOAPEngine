@@ -10,6 +10,9 @@
 //
 // Change-log
 //
+// 04-12-2014 v.1.6
+// 1. support for WFC services (svc) with basicHttpBinding
+//
 // 02-13-2014 v.1.5.1
 // 1. fixes for premature release of connections in nested blocks.
 //
@@ -87,7 +90,9 @@ typedef __block void(^SOAPEngineFailBlock)(NSError *error);
 typedef enum
 {
     VERSION_1_1,
-    VERSION_1_2
+    VERSION_1_2,
+    // below only for basicHttpBinding wcf services
+    VERSION_WCF_1_1,
 } SOAPVersion;
 
 typedef enum
