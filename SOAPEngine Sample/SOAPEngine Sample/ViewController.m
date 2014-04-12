@@ -25,6 +25,10 @@ static UILabel *label;
     soap.actionNamespaceSlash = YES;
     soap.delegate = self;
     
+    // WFC basicHttpBinding
+    //soap.actionNamespaceSlash = NO;
+    //soap.version = VERSION_WCF_1_1;
+
     // extra envelope definitions
     //soap.envelope = @"xmlns:tmp=\"http://tempuri.org/\"";
     
@@ -44,10 +48,14 @@ static UILabel *label;
     */
 
     // SOAP service (asmx)
-    [soap setValue:@"Genesis" forKey:@"BookTitle"];
+    [soap setValue:@"Genesis" forKey:@"BookName"];
     [soap setIntegerValue:1 forKey:@"chapter"];
     [soap requestURL:@"http://www.prioregroup.com/services/americanbible.asmx"
           soapAction:@"http://www.prioregroup.com/GetVerses"];
+    
+    // SOAP WFC service (svc)
+    //[soap requestURL:@"http://www.prioregorup.com/services/AmericanBible.svc"
+    //      soapAction:@"http://www.prioregroup.com/IAmericanBible/GetVerses"];
     
 }
 
