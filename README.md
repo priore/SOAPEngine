@@ -13,7 +13,7 @@ With this Framework you can create iPhone and iPad Apps that supports SOAP Clien
 * An example is included in source code.
 
 ## Requirements
-* iOS 4.3, 5.x, 6.x and last iOS7.
+* iOS 5.x, 6.x and last iOS7.
 * XCode 4.6 or later
 * Security.framework
 * Foundation.framework
@@ -56,7 +56,11 @@ Below a simple example on Objective-C :
 
 ##Change-log
 
-- Apr, 12, 2014 (v.1.6)
+- Jun, 20, 2014 (v.1.7.0)
+* added the support for sending of UIImage and UIImageView objects.
+* added the conversion of special characters in a compatible html format.
+
+- Apr, 12, 2014 (v.1.6.0)
 * support for WFC services (svc) with basicHttpBinding.
 
 - Feb, 13, 2014 (v.1.5.1)
