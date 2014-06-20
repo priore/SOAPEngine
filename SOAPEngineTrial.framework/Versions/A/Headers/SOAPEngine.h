@@ -10,8 +10,12 @@
 //
 // Change-log
 //
-// 04-12-2014 v.1.6
-// 1. support for WFC services (svc) with basicHttpBinding
+// 06-20-2014 v.1.7.0
+// 1. added the support for sending of UIImage and UIImageView objects.
+// 2. added the conversion of special characters in a compatible html format.
+//
+// 04-12-2014 v.1.6.0
+// 1. support for WFC services (svc) with basicHttpBinding.
 //
 // 02-13-2014 v.1.5.1
 // 1. fixes for premature release of connections in nested blocks.
@@ -160,6 +164,9 @@ typedef enum
 // that require authorization using a client certificate (p12).
 @property (nonatomic, retain) NSString *clientCerficateName;
 
+// enables the conversion of special characters in a compatible html format (eg &amp;) 
+@property (nonatomic, assign) BOOL escapingHTML;
+
 // sets the receiver of the delegates 
 @property (nonatomic, assign) id<SOAPEngineDelegate> delegate;
 
@@ -186,6 +193,7 @@ typedef enum
 - (void)setDoubleValue:(double)value forKey:(NSString*)key;
 - (void)setFloatValue:(float)value forKey:(NSString*)key;
 - (void)setLongValue:(long)value forKey:(NSString*)key;
+- (void)setImage:(UIImage*)image forKey:(NSString*)key;
 
 // clear all parameters
 - (void)clearValues;
