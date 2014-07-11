@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="C#" CodeBehind="AmericanBible.asmx.cs" Class="Priore.Bible.AmericanBible" %>
