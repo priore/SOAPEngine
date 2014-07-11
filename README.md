@@ -10,7 +10,7 @@ With this Framework you can create iPhone and iPad Apps that supports SOAP Clien
 * Support array, array of structs and dictionary.
 * Support user-defined object. Capable of serializing complex data types and array of complex data types, even multi-level embedded structs.
 * Supports ASMX Services and now also the WCF Services.
-* An example is included in source code.
+* An example of service and how to use it is included in source code.
 
 ## Requirements
 * iOS 5.x, 6.x and last iOS7.
@@ -55,6 +55,9 @@ Below a simple example on Objective-C :
 **[GET IT NOW!](http://www.prioregroup.com/iphone/soapengine.aspx)**
 
 ##Change-log
+
+- Jul, 11, 2014 (same v.1.7.0)
+* added a example of VS.NET WebService in C#.
 
 - Jun, 20, 2014 (v.1.7.0)
 * added the support for sending of UIImage and UIImageView objects.
