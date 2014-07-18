@@ -1,12 +1,12 @@
 **SOAPEngine**
 ================
 
-This generic SOAP client allows you to access web services using a your iOS app.
+This generic `SOAP` client allows you to access web services using a your `iOS` app.
 
 With this Framework you can create iPhone and iPad Apps that supports SOAP Client Protocol. This framework able executes methods at remote web services with SOAP standard protocol.
 
 ## Features
-* Support both 2001 (v1.1) and 2003 (v1.2) XML schema.
+* Support both 2001 (v1.1) and 2003 (v1.2) `XML` schema.
 * Support array, array of structs and dictionary.
 * Support user-defined object. Capable of serializing complex data types and array of complex data types, even multi-level embedded structs.
 * Supports `ASMX` Services and now also the `WCF` Services.
@@ -21,7 +21,7 @@ With this Framework you can create iPhone and iPad Apps that supports SOAP Clien
 * libxml2.dylib
 
 ## Limitations
-* supports only WCF Services in `basic bindings`.
+* for WCF services, only supports basic http bindings (`<basicHttpBinding>`).
 
 How to use with delegates :
 
@@ -32,11 +32,12 @@ How to use with delegates :
 	soap.userAgent = @"SOAPEngine";
 	soap.delegate = self; // use SOAPEngineDelegate
 
+	// each single value
 	[soap setValue:@"my-value1" forKey:@"Param1"];
 	[soap setIntegerValue:1234 forKey:@"Param2"];
 	[soap requestURL:@"http://www.my-web.com/my-service.asmx" soapAction:@"http://www.my-web.com/My-Method-name"];
  
-	#pragma mark - SOAPEngine delegates
+	#pragma mark - SOAPEngine Delegates
 
 	- (void)soapEngine:(SOAPEngine *)soapEngine didFinishLoading:(NSString *)stringXML {
 
@@ -54,15 +55,46 @@ or with block programming :
 	// TODO: your user object
 	MyClass myObject = [[MyClass alloc] init];
 	
-	[[SOAPEngine sharedInstance] requestURL:@"http://www.my-web.com/my-service.svc"
-								 soapAction:@"http://www.my-web.com/my-interface/my-method"
-								 value:myObject
-								 complete:^(NSInteger statusCode, NSString *stringXML) {
-								 	NSLog(@"%@", stringXML);
-								 } failWithError:^(NSError *error) {
-								 	NSLog(@"%@", error);
-								 }];
+	SOAPEngine *soap = [[SOAPEngine alloc] init];
+	soap.userAgent = @"SOAPEngine";
+	[soap requestURL:@"http://www.my-web.com/my-service.svc"
+		  soapAction:@"http://www.my-web.com/my-interface/my-method"
+			   value:myObject
+			complete:^(NSInteger statusCode, NSString *stringXML) {
+		    	NSDictionary *result = [soap dictionaryValue];
+				NSLog(@"%@", result);
+			} failWithError:^(NSError *error) {
+				NSLog(@"%@", error);
+			}];
 ```	
+
+or with notifications :
+
+``` objective-c
+	#import <SOAPEngine/SOAPEngine.h>
+
+	// TODO: your user object
+	MyClass myObject = [[MyClass alloc] init];
+	
+	SOAPEngine *soap = [[SOAPEngine alloc] init];
+	soap.userAgent = @"SOAPEngine";
+	
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+    									     selector:@selector(soapEngineDidFinishLoading:) 
+    									         name:SOAPEngineDidFinishLoadingNotification 
+    									       object:nil];
+	
+	
+	#pragma mark - SOAPEngine Notifications
+	
+	- (void)soapEngineDidFinishLoading:(NSNotification*)notification
+	{
+    	SOAPEngine *engine = notification.object; // SOAPEngine object
+    	NSDictionary *result = [engine dictionaryValue];
+    	NSLog(@"%@", result);
+	}
+```	
+
 
 **[GET IT NOW!](http://www.prioregroup.com/iphone/soapengine.aspx)**
 
