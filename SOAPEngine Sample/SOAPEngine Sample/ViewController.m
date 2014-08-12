@@ -25,6 +25,14 @@ static UILabel *label;
     soap.actionNamespaceSlash = YES;
     soap.delegate = self;
     
+    // license for com.prioregroup.soapengine-sample bundle
+    // *** not required on ios-simulator ***
+    soap.licenseKey = @"eJJDzkPK9Xx+p5cOH7w0Q+AvPdgK1fzWWuUpMaYCq3r1mwf36Ocw6dn0+CLjRaOiSjfXaFQBWMi+TxCpxVF/FA==";
+    
+    // data encryption
+    //soap.encryptionType = SOAP_ENCRYPT_AES256;
+    //soap.encryptionPassword = "my-password";
+
     // WFC basicHttpBinding
     //soap.actionNamespaceSlash = NO;
     //soap.version = VERSION_WCF_1_1;
@@ -54,8 +62,8 @@ static UILabel *label;
           soapAction:@"http://www.prioregroup.com/GetVerses"];
     
     // SOAP WFC service (svc)
-    //[soap requestURL:@"http://www.prioregorup.com/services/AmericanBible.svc"
-    //      soapAction:@"http://www.prioregroup.com/IAmericanBible/GetVerses"];
+    //[soap requestURL:@"http://your-domain/services/AmericanBible.svc"
+    //      soapAction:@"http://your-domain/IAmericanBible/GetVerses"];
     
 }
 
@@ -104,12 +112,21 @@ static UILabel *label;
 
 - (NSMutableURLRequest*)soapEngine:(SOAPEngine *)soapEngine didBeforeSendingURLRequest:(NSMutableURLRequest *)request {
     
+    // use this delegate for personalize the header of the request
+    // eg: [request setValue:@"my-value" forHTTPHeaderField:@"my-header-field"];
+    
     NSLog(@"%@", [request allHTTPHeaderFields]);
 
     NSString *xml = [[NSString alloc] initWithData:[request HTTPBody] encoding:NSUTF8StringEncoding];
     NSLog(@"%@", xml);
     
     return request;
+}
+
+- (NSString *)soapEngine:(SOAPEngine *)soapEngine didBeforeParsingResponseString:(NSString *)stringXML
+{
+    // use this delegate for change the xml response before parsing it.
+    return stringXML;
 }
 
 #pragma mark - Table view data source
