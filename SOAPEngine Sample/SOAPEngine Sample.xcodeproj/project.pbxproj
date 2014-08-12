@@ -18,7 +18,6 @@
 		9F89EDE717D2237200791CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F89EDE617D2237200791CF7 /* Security.framework */; };
 		9FC69C64165C42BD00302808 /* MyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC69C63165C42BD00302808 /* MyObject.m */; };
 		9FC69CEE165C527D00302808 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FC69CED165C527D00302808 /* Icon.png */; };
-		9FFDE7E918C51B22002F912B /* SOAPEngineTrial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FFDE7E818C51B22002F912B /* SOAPEngineTrial.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +38,6 @@
 		9FC69C62165C42BD00302808 /* MyObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyObject.h; sourceTree = "<group>"; };
 		9FC69C63165C42BD00302808 /* MyObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyObject.m; sourceTree = "<group>"; };
 		9FC69CED165C527D00302808 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
-		9FFDE7E818C51B22002F912B /* SOAPEngineTrial.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SOAPEngineTrial.framework; path = ../SOAPEngineTrial.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +45,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FFDE7E918C51B22002F912B /* SOAPEngineTrial.framework in Frameworks */,
 				9F89EDE717D2237200791CF7 /* Security.framework in Frameworks */,
 				9F3DF9A2165C045500A07453 /* UIKit.framework in Frameworks */,
 				9F3DF9A4165C045500A07453 /* Foundation.framework in Frameworks */,
@@ -78,7 +75,6 @@
 		9F3DF9A0165C045500A07453 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9FFDE7E818C51B22002F912B /* SOAPEngineTrial.framework */,
 				9F89EDE617D2237200791CF7 /* Security.framework */,
 				9F3DF9A1165C045500A07453 /* UIKit.framework */,
 				9F3DF9A3165C045500A07453 /* Foundation.framework */,

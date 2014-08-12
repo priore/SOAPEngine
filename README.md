@@ -28,6 +28,7 @@ How to use with delegates :
 ``` objective-c
 	#import <SOAPEngine/SOAPEngine.h>
 
+	// standard soap service (.asmx)
 	SOAPEngine *soap = [[SOAPEngine alloc] init];
 	soap.userAgent = @"SOAPEngine";
 	soap.delegate = self; // use SOAPEngineDelegate
@@ -57,6 +58,8 @@ or with block programming :
 	
 	SOAPEngine *soap = [[SOAPEngine alloc] init];
 	soap.userAgent = @"SOAPEngine";
+	soap.version = VERSION_WCF_1_1; // WCF service (.svc)
+	
 	[soap requestURL:@"http://www.my-web.com/my-service.svc"
 		  soapAction:@"http://www.my-web.com/my-interface/my-method"
 			   value:myObject
@@ -78,12 +81,16 @@ or with notifications :
 	
 	SOAPEngine *soap = [[SOAPEngine alloc] init];
 	soap.userAgent = @"SOAPEngine";
-	
+	soap.version = VERSION_WCF_1_1; // WCF service (.svc)
+		
     [[NSNotificationCenter defaultCenter] addObserver:self 
     									     selector:@selector(soapEngineDidFinishLoading:) 
     									         name:SOAPEngineDidFinishLoadingNotification 
     									       object:nil];
 	
+	[soap requestURL:@"http://www.my-web.com/my-service.svc" 
+		  soapAction:@"http://www.my-web.com/my-interface/my-method"
+		  	   value:myObject];
 	
 	#pragma mark - SOAPEngine Notifications
 	
@@ -95,6 +102,36 @@ or with notifications :
 	}
 ```	
 
+settings for soap authentication :
+
+``` objective-c
+	#import <SOAPEngine/SOAPEngine.h>
+
+	SOAPEngine *soap = [[SOAPEngine alloc] init];
+	soap.userAgent = @"SOAPEngine";
+	
+	// authorization
+	soap.authorizationMethod = SOAP_AUTH_BASIC; // basic auth
+	soap.username = @"my-username";
+	soap.password = @"my-password";
+	
+	// TODO: your code here...
+	
+```	
+
+encryption/decryption data :
+
+``` objective-c
+	#import <SOAPEngine/SOAPEngine.h>
+
+	SOAPEngine *soap = [[SOAPEngine alloc] init];
+	soap.userAgent = @"SOAPEngine";
+	soap.encryptionType = SOAP_ENCRYPT_AES256;
+	soap.encryptionPassword = @"my-password";
+
+	// TODO: your code here...
+	
+```	
 
 **[GET IT NOW!](http://www.prioregroup.com/iphone/soapengine.aspx)**
 
@@ -106,6 +143,17 @@ or with notifications :
 - http://it.linkedin.com/in/priore/
 
 ##Change-log
+
+- Ago, 12, 2014 (v.1.8.0)
+* added dictionary response on delegate, notification and completion block.
+* added delegate and notification before parsing response data.
+* added encryption/decryption content data with AES256+BASE64.
+* added a C# class for encryption/decryption compatible with SOAPEngine.
+* fixes BASE64 conversion for NSData and UIImage/UIImageView objects.
+* automatic setting of the property named actionNamespaceSlash in the case of a failure of the first request.
+* automatic setting of the property named actionQuotes in the case where the soapAction path contains unsupported characters.
+* default to YES for the property named escapingHTML.
+* requires a license code, as required by the new **[EULA](https://github.com/priore/SOAPEngine/blob/master/General%20License%20iOS.pdf).
 
 - Jul, 11, 2014 (same v.1.7.0)
 * added a example of VS.NET WebService in C#.
