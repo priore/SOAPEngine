@@ -1,0 +1,81 @@
+1.8.1 Ago, 27, 2014
+- added a supported version for Mac OS X.
+
+1.8.0 Ago, 12, 2014
+- added dictionary response on delegate, notification and completion block.
+- added delegate and notification before parsing response data.
+- added encryption/decryption content data with AES256+BASE64.
+- added a C# class for encryption/decryption compatible with SOAPEngine.
+- fixes BASE64 conversion for NSData and UIImage/UIImageView objects.
+- automatic setting of the property named actionNamespaceSlash in the case of a failure of the first request.
+- automatic setting of the property named actionQuotes in the case where the soapAction path contains unsupported characters.
+- default to YES for the property named escapingHTML.
+- requires a license code, as required by the new EULA.
+
+1.7.0 Jul, 11, 2014
+- added a example of VS.NET WebService in C#.
+- added the support for sending of UIImage and UIImageView objects.
+- added the conversion of special characters in a compatible html format.
+
+1.6.0 Apr, 12, 2014
+- support for WFC services (svc) with basicHttpBinding.
+
+1.5.1 Feb, 13, 2014
+- fixes for premature release of connections in nested blocks.
+
+1.5.0 Jan, 29, 2014
+- added a new method named "cancel" to able cancel all delegates, blocks or notifications.
+- fixes for fault codes in client SOAP response.
+- added version compiled for arm64 (64-bit, only in purchased version).
+
+1.4.0 Jan, 09, 2014
+- support for NSSet types.
+- support for other more primitive types (short, long).
+- fixes releases object in ARC projects.
+
+1.3.4 Dic, 22, 2013
+- fixes for HTML special characters.
+- fixes for Unicode characters.
+- fixes for blocks inside blocks.
+
+1.3.3 Dic, 18, 2013
+- fixes dictionary error in a double sequential call.
+
+1.3.2 Dic, 10, 2013
+- Extended with two new properties to replace the prefix of the user objects.
+- Decode Unicode characters in readable strings (\Uxxxx).
+- fixes for results in array values.
+
+1.3.1 Dic 04, 2013
+- Thread Safety
+- Support nil/null values replaced with xsi:nil="true"
+
+1.3.0 Dic, 02, 2013
+- Added local notifications.
+- fixes last path slash for namespace actions.
+
+1.2.2 Nov, 08, 2013
+- Implementing block programming
+- fixes log message for IList (C#) elements
+
+1.2.1 Ago, 29, 2013
+- Added the verification methods for certificate authorization.
+- Update WS-Security with encrypted password (digest).
+- fixes for parameters with nil values.
+- fixes for inherited classes.
+- fixes when hostname could not be found.
+
+1.2.0 Ago, 20, 2013
+- Added the verification methods for trusted certificate authorization.
+
+1.1.1 Ago, 17, 2013
+- Property named envelope, allow the define extra attributes for Envelope tag.
+
+1.1.0 Jun, 25, 2013
+- Ability to define a basic or WSS authentication.
+- Property named actionQuotes, allow the quotes in the soapAction header.
+
+1.0.0 Nov, 18, 2012
+- First release.
+
+

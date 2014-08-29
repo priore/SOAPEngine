@@ -9,19 +9,31 @@ With this Framework you can create iPhone and iPad Apps that supports SOAP Clien
 * Support both 2001 (v1.1) and 2003 (v1.2) `XML` schema.
 * Support array, array of structs and dictionary.
 * Support user-defined object. Capable of serializing complex data types and array of complex data types, even multi-level embedded structs.
-* Supports `ASMX` Services and now also the `WCF` Services.
+* Supports `ASMX` Services and now also the `WCF` Services (`svc`).
 * An example of service and how to use it is included in source code.
 
-## Requirements
-* iOS 5.x, 6.x and last iOS7.
-* XCode 4.6 or later
+## Requirements for iOS
+* iOS 5.x, and later
+* `XCode` 5.0 or later
 * Security.framework
 * Foundation.framework
 * UIKit.framework
 * libxml2.dylib
 
+## Requirements for Mac OS X
+* OS X 10.9 and later
+* `XCode` 5.0 or later
+* Security.framework
+* Foundation.framework
+* AppKit.framework
+* Cocoa.framework
+* libxml2.dylib
+
 ## Limitations
-* for WCF services, only supports basic http bindings (`<basicHttpBinding>`).
+* for `WCF` services, only supports basic http bindings (`<basicHttpBinding>`).
+* in `Mac OS X` unsupported image objects (instead you can use the `NSData`).
+
+
 
 How to use with delegates :
 
@@ -141,82 +153,3 @@ encryption/decryption data :
 - https://www.facebook.com/prioregroup
 - http://www.prioregroup.com/
 - http://it.linkedin.com/in/priore/
-
-##Change-log
-
-- Ago, 12, 2014 (v.1.8.0)
-* added dictionary response on delegate, notification and completion block.
-* added delegate and notification before parsing response data.
-* added encryption/decryption content data with AES256+BASE64.
-* added a C# class for encryption/decryption compatible with SOAPEngine.
-* fixes BASE64 conversion for NSData and UIImage/UIImageView objects.
-* automatic setting of the property named actionNamespaceSlash in the case of a failure of the first request.
-* automatic setting of the property named actionQuotes in the case where the soapAction path contains unsupported characters.
-* default to YES for the property named escapingHTML.
-* requires a license code, as required by the new **[EULA](https://github.com/priore/SOAPEngine/blob/master/General%20License%20iOS.pdf).
-
-- Jul, 11, 2014 (same v.1.7.0)
-* added a example of VS.NET WebService in C#.
-
-- Jun, 20, 2014 (v.1.7.0)
-* added the support for sending of UIImage and UIImageView objects.
-* added the conversion of special characters in a compatible html format.
-
-- Apr, 12, 2014 (v.1.6.0)
-* support for WFC services (svc) with basicHttpBinding.
-
-- Feb, 13, 2014 (v.1.5.1)
-* fixes for premature release of connections in nested blocks.
-
-- Jan, 29, 2014 (v.1.5.0)
-* added a new method named "cancel" to able cancel all delegates, blocks or notifications.
-* fixes for fault codes in client SOAP response.
-* added version compiled for arm64 (64-bit, only in purchased version).
-
-- Jan, 09, 2014 (v.1.4.0)
-* support for NSSet types.
-* support for other more primitive types (short, long).
-* fixes releases object in ARC projects.
-
-- Dic, 22, 2013 (v.1.3.4)
-* fixes for HTML special characters.
-* fixes for Unicode characters.
-* fixes for blocks inside blocks.
-
-- Dic, 18, 2013 (v.1.3.3)
-* fixes dictionary error in a double sequential call.
-
-- Dic, 10, 2013 (v.1.3.2)
-* Extended with two new properties to replace the prefix of the user objects.
-* Decode Unicode characters in readable strings (\Uxxxx).
-* fixes for results in array values.
-
-- Dic 04, 2013 (v.1.3.1)
-* Thread Safety
-* Support nil/null values replaced with xsi:nil="true"
-
-- Dic, 02, 2013 (v.1.3.0)
-* Added local notifications.
-* fixes last path slash for namespace actions.
-
-- Nov, 08, 2013 (v.1.2.1)
-* Implementing block programming
-* fixes log message for IList (C#) elements
-
-- Ago, 29, 2013 (v.1.2.1)
-* Added the verification methods for certificate authorization.
-* Update WS-Security with encrypted password (digest).
-* fixes for parameters with nil values.
-* fixes for inherited classes.
-* fixes when hostname could not be found.
-
-- Ago, 20, 2013 (v.1.2.0)
-* Added the verification methods for trusted certificate authorization.
-
-- Ago, 17, 2013 (v.1.1.1)
-* Property named envelope, allow the define extra attributes for Envelope tag.
-
-- Jun, 25, 2013 (v.1.1.0)
-* Ability to define a basic or WSS authentication.
-* Property named actionQuotes, allow the quotes in the soapAction header.
-

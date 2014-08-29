@@ -81,12 +81,12 @@ static UILabel *label;
     list = [[NSMutableArray alloc] initWithArray:[result valueForKey:@"BibleBookChapterVerse"]];
     
     if (list.count > 0) {
-        [self.tableView reloadData];
-        
         label = [[UILabel alloc] initWithFrame:(CGRect){0, 0, 320, 50}];
         label.backgroundColor = [UIColor yellowColor];
         [self.view addSubview:label];
         [label setText:[[list firstObject] valueForKey:@"BookTitle"]];
+
+        [self.tableView reloadData];
     } else {
         
         NSLog(@"%@", stringXML);

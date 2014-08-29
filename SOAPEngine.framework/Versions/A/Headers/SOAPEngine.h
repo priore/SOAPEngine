@@ -10,6 +10,9 @@
 //
 // Change-log
 //
+// 08-27-2014 v.1.8.1
+// 1. added a supported version for Mac OS X.
+//
 // 08-12-2014 v.1.8.0
 // 1. added dictionary response on delegate, notification and completion block.
 // 2. added delegate and notification before parsing response data.
@@ -57,7 +60,7 @@
 // 1. Thread Safety
 // 2. Support nil/null values replaced with xsi:nil="true"
 //
-// 12-02-2013 v.1.3
+// 12-02-2013 v.1.3.0
 // 1. added local notifications.
 // 2. fixes last path slash for namespace actions.
 //
@@ -85,7 +88,10 @@
 // 2. adding basic and wss authorization.
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+
+#if TARGET_OS_IPHONE
+    #import <UIKit/UIKit.h>
+#endif
 
 // Local Notification names
 extern const NSString *SOAPEngineDidFinishLoadingNotification;
@@ -221,7 +227,10 @@ typedef enum
 - (void)setDoubleValue:(double)value forKey:(NSString*)key;
 - (void)setFloatValue:(float)value forKey:(NSString*)key;
 - (void)setLongValue:(long)value forKey:(NSString*)key;
-- (void)setImage:(UIImage*)image forKey:(NSString*)key;
+
+#if TARGET_OS_IPHONE
+- (void)setImage:(UIImage*)image forKey:(NSString*)key; // only for iOS
+#endif
 
 // clear all parameters
 - (void)clearValues;

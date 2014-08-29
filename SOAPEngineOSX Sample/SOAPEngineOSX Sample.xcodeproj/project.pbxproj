@@ -1,0 +1,330 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9F55990719AE5F3C00683289 /* SOAPEngineOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F55990619AE5F3C00683289 /* SOAPEngineOSX.framework */; };
+		9F55990819AE634A00683289 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FBA3D2A19ADE30C008A7CF5 /* MainMenu.xib */; };
+		9FBA3D1619ADE30C008A7CF5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBA3D1519ADE30C008A7CF5 /* Cocoa.framework */; };
+		9FBA3D2019ADE30C008A7CF5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9FBA3D1E19ADE30C008A7CF5 /* InfoPlist.strings */; };
+		9FBA3D2219ADE30C008A7CF5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3D2119ADE30C008A7CF5 /* main.m */; };
+		9FBA3D2919ADE30C008A7CF5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3D2819ADE30C008A7CF5 /* AppDelegate.m */; };
+		9FBA3D4C19ADE39B008A7CF5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBA3D4B19ADE39B008A7CF5 /* Security.framework */; };
+		9FBA3D4D19ADE3A9008A7CF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBA3D1A19ADE30C008A7CF5 /* Foundation.framework */; };
+		9FBA3D5319ADE721008A7CF5 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3D5119ADE721008A7CF5 /* MasterViewController.m */; };
+		9FBA3D5419ADE721008A7CF5 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FBA3D5219ADE721008A7CF5 /* MasterViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9F55990619AE5F3C00683289 /* SOAPEngineOSX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SOAPEngineOSX.framework; path = ../SOAPEngineOSX.framework; sourceTree = "<group>"; };
+		9FBA3D1219ADE30C008A7CF5 /* SOAPEngineOSX Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SOAPEngineOSX Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FBA3D1519ADE30C008A7CF5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		9FBA3D1819ADE30C008A7CF5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		9FBA3D1919ADE30C008A7CF5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9FBA3D1A19ADE30C008A7CF5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9FBA3D1D19ADE30C008A7CF5 /* SOAPEngineOSX Sample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SOAPEngineOSX Sample-Info.plist"; sourceTree = "<group>"; };
+		9FBA3D1F19ADE30C008A7CF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9FBA3D2119ADE30C008A7CF5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9FBA3D2319ADE30C008A7CF5 /* SOAPEngineOSX Sample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SOAPEngineOSX Sample-Prefix.pch"; sourceTree = "<group>"; };
+		9FBA3D2719ADE30C008A7CF5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9FBA3D2819ADE30C008A7CF5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9FBA3D2B19ADE30C008A7CF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		9FBA3D4B19ADE39B008A7CF5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9FBA3D5019ADE721008A7CF5 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		9FBA3D5119ADE721008A7CF5 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		9FBA3D5219ADE721008A7CF5 /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9FBA3D0F19ADE30C008A7CF5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F55990719AE5F3C00683289 /* SOAPEngineOSX.framework in Frameworks */,
+				9FBA3D1619ADE30C008A7CF5 /* Cocoa.framework in Frameworks */,
+				9FBA3D4D19ADE3A9008A7CF5 /* Foundation.framework in Frameworks */,
+				9FBA3D4C19ADE39B008A7CF5 /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9FBA3D0919ADE30C008A7CF5 = {
+			isa = PBXGroup;
+			children = (
+				9FBA3D1B19ADE30C008A7CF5 /* SOAPEngineOSX Sample */,
+				9FBA3D1419ADE30C008A7CF5 /* Frameworks */,
+				9FBA3D1319ADE30C008A7CF5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9FBA3D1319ADE30C008A7CF5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9FBA3D1219ADE30C008A7CF5 /* SOAPEngineOSX Sample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9FBA3D1419ADE30C008A7CF5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9F55990619AE5F3C00683289 /* SOAPEngineOSX.framework */,
+				9FBA3D4B19ADE39B008A7CF5 /* Security.framework */,
+				9FBA3D1519ADE30C008A7CF5 /* Cocoa.framework */,
+				9FBA3D1719ADE30C008A7CF5 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9FBA3D1719ADE30C008A7CF5 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9FBA3D1819ADE30C008A7CF5 /* AppKit.framework */,
+				9FBA3D1919ADE30C008A7CF5 /* CoreData.framework */,
+				9FBA3D1A19ADE30C008A7CF5 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		9FBA3D1B19ADE30C008A7CF5 /* SOAPEngineOSX Sample */ = {
+			isa = PBXGroup;
+			children = (
+				9FBA3D2719ADE30C008A7CF5 /* AppDelegate.h */,
+				9FBA3D2819ADE30C008A7CF5 /* AppDelegate.m */,
+				9FBA3D5019ADE721008A7CF5 /* MasterViewController.h */,
+				9FBA3D5119ADE721008A7CF5 /* MasterViewController.m */,
+				9FBA3D5219ADE721008A7CF5 /* MasterViewController.xib */,
+				9FBA3D2A19ADE30C008A7CF5 /* MainMenu.xib */,
+				9FBA3D1C19ADE30C008A7CF5 /* Supporting Files */,
+			);
+			path = "SOAPEngineOSX Sample";
+			sourceTree = "<group>";
+		};
+		9FBA3D1C19ADE30C008A7CF5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9FBA3D1D19ADE30C008A7CF5 /* SOAPEngineOSX Sample-Info.plist */,
+				9FBA3D1E19ADE30C008A7CF5 /* InfoPlist.strings */,
+				9FBA3D2119ADE30C008A7CF5 /* main.m */,
+				9FBA3D2319ADE30C008A7CF5 /* SOAPEngineOSX Sample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9FBA3D1119ADE30C008A7CF5 /* SOAPEngineOSX Sample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FBA3D4319ADE30C008A7CF5 /* Build configuration list for PBXNativeTarget "SOAPEngineOSX Sample" */;
+			buildPhases = (
+				9FBA3D0E19ADE30C008A7CF5 /* Sources */,
+				9FBA3D0F19ADE30C008A7CF5 /* Frameworks */,
+				9FBA3D1019ADE30C008A7CF5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SOAPEngineOSX Sample";
+			productName = "SOAPEngineOSX Sample";
+			productReference = 9FBA3D1219ADE30C008A7CF5 /* SOAPEngineOSX Sample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9FBA3D0A19ADE30C008A7CF5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Danilo Priore";
+			};
+			buildConfigurationList = 9FBA3D0D19ADE30C008A7CF5 /* Build configuration list for PBXProject "SOAPEngineOSX Sample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9FBA3D0919ADE30C008A7CF5;
+			productRefGroup = 9FBA3D1319ADE30C008A7CF5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9FBA3D1119ADE30C008A7CF5 /* SOAPEngineOSX Sample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9FBA3D1019ADE30C008A7CF5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FBA3D2019ADE30C008A7CF5 /* InfoPlist.strings in Resources */,
+				9F55990819AE634A00683289 /* MainMenu.xib in Resources */,
+				9FBA3D5419ADE721008A7CF5 /* MasterViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9FBA3D0E19ADE30C008A7CF5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FBA3D2919ADE30C008A7CF5 /* AppDelegate.m in Sources */,
+				9FBA3D5319ADE721008A7CF5 /* MasterViewController.m in Sources */,
+				9FBA3D2219ADE30C008A7CF5 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9FBA3D1E19ADE30C008A7CF5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9FBA3D1F19ADE30C008A7CF5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9FBA3D2A19ADE30C008A7CF5 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9FBA3D2B19ADE30C008A7CF5 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9FBA3D4119ADE30C008A7CF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		9FBA3D4219ADE30C008A7CF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		9FBA3D4419ADE30C008A7CF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SRCROOT)/..\"",
+					/Users/danilo/Desktop/SOAPEngine_bin/release/SOAPEngine,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SOAPEngineOSX Sample/SOAPEngineOSX Sample-Prefix.pch";
+				INFOPLIST_FILE = "SOAPEngineOSX Sample/SOAPEngineOSX Sample-Info.plist";
+				OTHER_LDFLAGS = "-lxml2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9FBA3D4519ADE30C008A7CF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SRCROOT)/..\"",
+					/Users/danilo/Desktop/SOAPEngine_bin/release/SOAPEngine,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SOAPEngineOSX Sample/SOAPEngineOSX Sample-Prefix.pch";
+				INFOPLIST_FILE = "SOAPEngineOSX Sample/SOAPEngineOSX Sample-Info.plist";
+				OTHER_LDFLAGS = "-lxml2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9FBA3D0D19ADE30C008A7CF5 /* Build configuration list for PBXProject "SOAPEngineOSX Sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FBA3D4119ADE30C008A7CF5 /* Debug */,
+				9FBA3D4219ADE30C008A7CF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9FBA3D4319ADE30C008A7CF5 /* Build configuration list for PBXNativeTarget "SOAPEngineOSX Sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FBA3D4419ADE30C008A7CF5 /* Debug */,
+				9FBA3D4519ADE30C008A7CF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9FBA3D0A19ADE30C008A7CF5 /* Project object */;
+}

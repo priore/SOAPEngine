@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <SOAPEngineTrial/SOAPEngine.h>
+#import <SOAPEngine/SOAPEngine.h>
 
 @interface ViewController : UITableViewController <SOAPEngineDelegate>
 {
