@@ -10,6 +10,11 @@
 //
 // Change-log
 //
+// 11-04-2014 v.1.9.0
+// 1. added encryption/decryption content data with 3DES+BASE64.
+// 2. parse the response xml that contains one other embedded xml.
+// 3. fixes memory leaks.
+//
 // 08-27-2014 v.1.8.1
 // 1. added a supported version for Mac OS X.
 //
@@ -130,7 +135,8 @@ typedef enum
 typedef enum
 {
     SOAP_ENCRYPT_NONE,
-    SOAP_ENCRYPT_AES256
+    SOAP_ENCRYPT_AES256,
+    SOAP_ENCRYPT_3DES
 } SOAPEnryption;
 
 @protocol SOAPEngineDelegate;
@@ -199,6 +205,7 @@ typedef enum
 @property (nonatomic, strong) NSString *encryptionPassword;
 
 // license key for full-version (no limitations).
+// buy a license from http://www.prioregroup.com/iphone/soapengine.aspx
 @property (nonatomic, strong) NSString *licenseKey;
 
 // sets the receiver of the delegates 

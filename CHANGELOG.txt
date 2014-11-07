@@ -1,3 +1,8 @@
+1.9.0 Nov, 4, 2014
+- added encryption/decryption content data with 3DES+BASE64.
+- parse the response xml that contains one other embedded xml.
+- fixes memory leaks.
+ 
 1.8.1 Ago, 27, 2014
 - added a supported version for Mac OS X.
 
