@@ -10,6 +10,9 @@
 //
 // Change-log
 //
+// 11-10-2014 v.1.9.1
+// 1. fixes xml parsing error.
+//
 // 11-04-2014 v.1.9.0
 // 1. added encryption/decryption content data with 3DES+BASE64.
 // 2. parse the response xml that contains one other embedded xml.
