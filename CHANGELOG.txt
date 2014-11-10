@@ -1,3 +1,6 @@
+1.9.1 Nov, 10, 2014
+- fixes xml parsing error.
+
 1.9.0 Nov, 4, 2014
 - added encryption/decryption content data with 3DES+BASE64.
 - parse the response xml that contains one other embedded xml.
