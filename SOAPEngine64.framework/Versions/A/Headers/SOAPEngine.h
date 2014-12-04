@@ -10,6 +10,9 @@
 //
 // Change-log
 //
+// 12-03-2014 v.1.10.0
+// 1. added property to enable retrieval of the contents of the SOAP header in the server response.
+//
 // 11-10-2014 v.1.9.1
 // 1. fixes xml parsing error.
 //
@@ -178,6 +181,9 @@ typedef enum
 
 // sets a custom content for the custom authorization method (xml format).
 @property (nonatomic, retain) NSString *header;
+
+// enables retrieval of the contents of the SOAP header in the server response.
+@property (nonatomic, assign) BOOL responseHeader;
 
 // sets username and password for selected authorization method
 // or for server authorization or for client certifcate password.

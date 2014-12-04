@@ -1,3 +1,6 @@
+1.10.0 Dic, 3, 2014
+- added property to enable retrieval of the contents of the SOAP header in the server response.
+
 1.9.1 Nov, 10, 2014
 - fixes xml parsing error.
 
