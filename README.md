@@ -9,7 +9,7 @@ With this Framework you can create iPhone, iPad and Mac OS X apps that supports 
 * Support both 2001 (v1.1) and 2003 (v1.2) `XML` schema.
 * Support array, array of structs and dictionary.
 * Support user-defined object. Capable of serializing complex data types and array of complex data types, even multi-level embedded structs.
-* Supports `ASMX` Services and now also the `WCF` Services (`svc`).
+* Supports `ASMX` Services, `WCF` Services (`svc`) and now also the `WSDL` definitions.
 * Encrypt/Decrypt data without SSL security.
 * An example of service and how to use it is included in source code.
 
@@ -49,7 +49,7 @@ with delegates :
 	// each single value
 	[soap setValue:@"my-value1" forKey:@"Param1"];
 	[soap setIntegerValue:1234 forKey:@"Param2"];
-	// service url without ?WSDL, and search the soapAction in the WSDL
+	// service url without ?WSDL, and you can search the soapAction in the WSDL
 	[soap requestURL:@"http://www.my-web.com/my-service.asmx" soapAction:@"http://www.my-web.com/My-Method-name"];
  
 	#pragma mark - SOAPEngine Delegates
@@ -74,7 +74,7 @@ with block programming :
 	soap.userAgent = @"SOAPEngine";
 	soap.version = VERSION_WCF_1_1; // WCF service (.svc)
 	
-	// service url without ?WSDL, and search the soapAction in the WSDL
+	// service url without ?WSDL, and you can search the soapAction in the WSDL
 	[soap requestURL:@"http://www.my-web.com/my-service.svc"
 		  soapAction:@"http://www.my-web.com/my-interface/my-method"
 			   value:myObject
@@ -82,6 +82,31 @@ with block programming :
 		    	NSDictionary *result = [soap dictionaryValue];
 				NSLog(@"%@", result);
 			} failWithError:^(NSError *error) {
+				NSLog(@"%@", error);
+			}];
+```	
+
+directly from WSDL :
+
+``` objective-c
+	#import <SOAPEngine/SOAPEngine.h>
+	
+	// TODO: your user object
+	MyClass myObject = [[MyClass alloc] init];
+	
+	SOAPEngine *soap = [[SOAPEngine alloc] init];
+	soap.userAgent = @"SOAPEngine";
+	
+	// service url with WSDL, and operation (method name) without tempuri
+	[soap requestWSDL:@"http://www.my-web.com/my-service.amsx?wsdl"
+		    operation:@"my-method-name"
+			    value:myObject
+			completeWithDictionary:^(NSInteger statusCode, NSDictionary *dict) {
+
+              NSLog(@"Result: %@", dict);
+
+			} failWithError:^(NSError *error) {
+
 				NSLog(@"%@", error);
 			}];
 ```	
@@ -103,7 +128,7 @@ with notifications :
     									         name:SOAPEngineDidFinishLoadingNotification 
     									       object:nil];
 	
-	// service url without ?WSDL, and search the soapAction in the WSDL
+	// service url without ?WSDL, and you can search the soapAction in the WSDL
 	[soap requestURL:@"http://www.my-web.com/my-service.svc" 
 		  soapAction:@"http://www.my-web.com/my-interface/my-method"
 		  	   value:myObject];
@@ -187,6 +212,39 @@ WebServiceX example :
     
               NSLog(@"%@", error);
           }];
+          	
+```	
+
+PAYPAL example :
+
+``` objective-c
+	SOAPEngine *soap = [[SOAPEngine alloc] init];
+
+    // PAYPAL associates a set of API credentials with a specific PayPal account
+    // you can generate credentials from this https://developer.paypal.com/docs/classic/api/apiCredentials/
+    // and convert to a p12 from terminal use :
+    // openssl pkcs12 -export -in cert_key_pem.txt -inkey cert_key_pem.txt -out paypal_cert.p12
+    soap.authorizationMethod = SOAP_AUTH_PAYPAL;
+    soap.username = @"support_api1.your-username";
+    soap.password = @"your-api-password";
+    soap.clientCerficateName = @"paypal_cert.p12";
+    soap.clientCertificatePassword = @"certificate-password";
+    soap.responseHeader = YES;
+    // use paypal for urn:ebay:api:PayPalAPI namespace
+    [soap setValue:@"0" forKey:@"paypal:ReturnAllCurrencies"];
+    // use paypal1 for urn:ebay:apis:eBLBaseComponents namespace
+    [soap setValue:@"119.0" forKey:@"paypal1:Version"]; // ns:Version in WSDL file
+    // certificate : https://api.paypal.com/2.0/ sandbox https://api.sandbox.paypal.com/2.0/
+    // signature : https://api-3t.paypal.com/2.0/ sandbox https://api-3t.sandbox.paypal.com/2.0/
+    [soap requestURL:@"https://api.paypal.com/2.0/"
+          soapAction:@"GetBalance" completeWithDictionary:^(NSInteger statusCode, NSDictionary *dict) {
+          
+        NSLog(@"Result: %@", dict);
+        
+    } failWithError:^(NSError *error) {
+    
+        NSLog(@"%@", error);
+    }];
           	
 ```	
 

@@ -1,5 +1,16 @@
+1.11.0 Dic, 22, 2014
+- added new methods to able to call service with WSDL.
+- added a new authorization type for the PAYPAL SOAP API.
+- added two new properties to manage authorization to PAYPAL SOAP API.
+- added a new property for set the password for client certificate.
+- added a new property for set the timeout for all requests.
+- added accepted types (text/xml) in the header of the request.
+- fixes for authentication method with client certificate.
+- minor fixes for recovery of faultcodes data.
+- minor fixes for retrieve namespace of the soapAction.
+
 1.10.0 Dic, 3, 2014
-- added property to enable retrieval of the contents of the SOAP header in the server response.
+- added a properties to enable retrieval of the contents of the SOAP header in the server response.
 
 1.9.1 Nov, 10, 2014
 - fixes xml parsing error.

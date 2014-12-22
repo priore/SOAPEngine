@@ -10,6 +10,17 @@
 //
 // Change-log
 //
+// 12-22-2014 v.1.11.0
+// 1. added new methods to able to call service with WSDL.
+// 2. added a new authorization type for the PAYPAL SOAP API.
+// 3. added two new properties to manage authorization to PAYPAL SOAP API.
+// 4. added a new property for set the password for client certificate.
+// 5. added a new property for set the timeout for all requests.
+// 6. added accepted types (text/xml) in the header of the request.
+// 7. fixes for authentication method with client certificate.
+// 8. minor fixes for recovery of faultcodes data.
+// 9. minor fixes for retrieve namespace of the soapAction.
+//
 // 12-03-2014 v.1.10.0
 // 1. added property to enable retrieval of the contents of the SOAP header in the server response.
 //
@@ -135,7 +146,8 @@ typedef enum
     SOAP_AUTH_BASIC,        // located in header request (base64)
     SOAP_AUTH_BASICAUTH,    // valid only for SOAP 1.1
     SOAP_AUTH_WSSECURITY,   // digest password
-    SOAP_AUTH_CUSTOM        // sets header property for custom auth
+    SOAP_AUTH_CUSTOM,       // sets header property for custom auth
+    SOAP_AUTH_PAYPAL        // for PayPal SOAP API
 } SOAPAuthorization;
 
 typedef enum
@@ -185,10 +197,18 @@ typedef enum
 // enables retrieval of the contents of the SOAP header in the server response.
 @property (nonatomic, assign) BOOL responseHeader;
 
+// sets the time out for all requests.
+@property (nonatomic, assign) NSTimeInterval requestTimeout;
+
 // sets username and password for selected authorization method
 // or for server authorization or for client certifcate password.
 @property (nonatomic, retain) NSString *username;
 @property (nonatomic, retain) NSString *password;
+@property (nonatomic, retain) NSString *email;      // for PAYPAL auth
+@property (nonatomic, retain) NSString *signature;  // for PAYPAL auth
+// when calling PayPal APIs, you must authenticate each request using a set of API credentials
+// PayPal associates a set of API credentials with a specific PayPal account
+// you can generate credentials from this https://developer.paypal.com/docs/classic/api/apiCredentials/
 
 // sets the custom attributes for Envelope tag, eg.
 // for extra namespace definitions (xmlns:tmp="http://temp.org").
@@ -201,8 +221,11 @@ typedef enum
 @property (nonatomic, assign) BOOL selfSigned;
 
 // sets the name of the local certificate to be used for servers
-// that require authorization using a client certificate (p12).
+// that require authorization using a client certificate (p12)
+// to convert a PAYPAL certificate to a p12 use the command shown below :
+// openssl pkcs12 -export -in cert_key_pem.txt -inkey cert_key_pem.txt -out paypal_cert.p12
 @property (nonatomic, retain) NSString *clientCerficateName;
+@property (nonatomic, retain) NSString *clientCertificatePassword;
 
 // enables the conversion of special characters in a compatible html format (eg &amp;) 
 @property (nonatomic, assign) BOOL escapingHTML;
@@ -292,6 +315,27 @@ completeWithDictionary:(SOAPEngineCompleteBlockWithDictionary)complete
             forKey:(NSString*)key
 completeWithDictionary:(SOAPEngineCompleteBlockWithDictionary)complete
      failWithError:(SOAPEngineFailBlock)fail;
+
+// request with wsdl
+- (void)requestWSDL:(id)wsdlURL operation:(NSString*)operation;
+
+- (void)requestWSDL:(id)wsdlURL
+          operation:(NSString *)operation
+completeWithDictionary:(SOAPEngineCompleteBlockWithDictionary)complete
+      failWithError:(SOAPEngineFailBlock)fail;
+
+- (void)requestWSDL:(id)wsdlURL
+          operation:(NSString *)operation
+              value:(id)value
+completeWithDictionary:(SOAPEngineCompleteBlockWithDictionary)complete
+      failWithError:(SOAPEngineFailBlock)fail;
+
+- (void)requestWSDL:(id)wsdlURL
+          operation:(NSString *)operation
+              value:(id)value
+             forKey:(NSString*)key
+completeWithDictionary:(SOAPEngineCompleteBlockWithDictionary)complete
+      failWithError:(SOAPEngineFailBlock)fail;
 
 // cancel all delegates, blocks or notifications
 - (void)cancel;
