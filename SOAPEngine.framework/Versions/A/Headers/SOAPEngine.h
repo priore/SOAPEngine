@@ -10,6 +10,11 @@
 //
 // Change-log
 //
+// 01-14-2014 v.1.11.1
+// 1. added feature when the xml contains internally a JSON analyze this last.
+// 2. fixes for license key when contains invalid characters.
+// 3. fixes WS-Security UTC datetime.
+//
 // 12-22-2014 v.1.11.0
 // 1. added new methods to able to call service with WSDL.
 // 2. added a new authorization type for the PAYPAL SOAP API.
