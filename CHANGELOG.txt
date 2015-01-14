@@ -1,3 +1,8 @@
+1.11.1 Gen, 14, 2015
+- added feature when the xml contains internally a JSON analyze this last.
+- fixes for license key when contains invalid characters.
+- fixes WS-Security UTC datetime.
+
 1.11.0 Dic, 22, 2014
 - added new methods to able to call service with WSDL.
 - added a new authorization type for the PAYPAL SOAP API.
