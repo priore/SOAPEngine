@@ -10,7 +10,10 @@
 //
 // Change-log
 //
-// 01-14-2014 v.1.11.1
+// 01-17-2015 v.1.11.2
+// 1. fixes of the digest encoding for ws-security.
+//
+// 01-14-2015 v.1.11.1
 // 1. added feature when the xml contains internally a JSON analyze this last.
 // 2. fixes for license key when contains invalid characters.
 // 3. fixes WS-Security UTC datetime.
