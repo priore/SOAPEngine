@@ -1,3 +1,6 @@
+1.11.2 Gen, 17, 2015
+- fixes of the digest encoding for ws-security.
+
 1.11.1 Gen, 14, 2015
 - added feature when the xml contains internally a JSON analyze this last.
 - fixes for license key when contains invalid characters.
