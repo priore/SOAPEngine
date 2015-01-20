@@ -10,6 +10,9 @@
 //
 // Change-log
 //
+// 01-20-2015 v.1.11.3
+// 1. fixes header content-type for SOAP v.1.2
+//
 // 01-17-2015 v.1.11.2
 // 1. fixes of the digest encoding for ws-security.
 //
