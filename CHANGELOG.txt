@@ -1,7 +1,10 @@
-1.11.2 Gen, 17, 2015
+1.11.3 Jan, 20, 2015
+- fixes header content-type for SOAP v.1.2.
+
+1.11.2 Jan, 17, 2015
 - fixes of the digest encoding for ws-security.
 
-1.11.1 Gen, 14, 2015
+1.11.1 Jan, 14, 2015
 - added feature when the xml contains internally a JSON analyze this last.
 - fixes for license key when contains invalid characters.
 - fixes WS-Security UTC datetime.
