@@ -10,6 +10,9 @@
 //
 // Change-log
 //
+// 01-22-2015 v.1.12.0
+// 1. added new properties that returns the current request URL, the current SOAP Action and method name.
+//
 // 01-20-2015 v.1.11.3
 // 1. fixes header content-type for SOAP v.1.2
 //
@@ -171,6 +174,15 @@ typedef enum
 @protocol SOAPEngineDelegate;
 
 @interface SOAPEngine : NSObject
+
+// return the current request URL
+@property (nonatomic, retain, readonly) NSURL *requestURL;
+
+// return the current SOAP Action
+@property (nonatomic, retain, readonly) NSString *soapAction;
+
+// return the current method name
+@property (nonatomic, retain, readonly) NSString *methodName;
 
 // adds the quotes in the SOAPAction header
 // eg. SOAPAction = http://temp.org become SOAPAction = "http://temp.org".
