@@ -1,3 +1,6 @@
+1.12.0 Jan, 22, 2015
+- added new properties that returns the current request URL, the current SOAP Action and method name.
+
 1.11.3 Jan, 20, 2015
 - fixes header content-type for SOAP v.1.2.
 
