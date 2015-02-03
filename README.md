@@ -248,6 +248,18 @@ PAYPAL example :
           	
 ```	
 
+## Optimizations
+When using the method named requestWSDL three steps are performed : 
+
+1. retrieve the WSDL with a http request.
+2. processing to identify the soapAction.
+3. another http request to the service method.
+
+is possible optimize this : 
+
+1. retrieving manually the SOAPAction directly from WSDL (once with your favorite browser).
+2. use the method named requestURL instead of requestWSDL.
+
 ## Install in your apps
 
 1. add -lxml2 in Build Settings --> Other Linker Flags.
