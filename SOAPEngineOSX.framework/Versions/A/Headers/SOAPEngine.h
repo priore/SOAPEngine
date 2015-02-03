@@ -8,121 +8,10 @@
 //  https://github.com/priore
 //  https://twitter.com/DaniloPriore
 //
-// Change-log
+// Version      : 1.13.0
+// Changelog    : https://github.com/priore/SOAPEngine/blob/master/CHANGELOG.txt
+// Updates      : https://github.com/priore/SOAPEngine
 //
-// 01-22-2015 v.1.12.0
-// 1. added new properties that returns the current request URL, the current SOAP Action and method name.
-//
-// 01-20-2015 v.1.11.3
-// 1. fixes header content-type for SOAP v.1.2
-//
-// 01-17-2015 v.1.11.2
-// 1. fixes of the digest encoding for ws-security.
-//
-// 01-14-2015 v.1.11.1
-// 1. added feature when the xml contains internally a JSON analyze this last.
-// 2. fixes for license key when contains invalid characters.
-// 3. fixes WS-Security UTC datetime.
-//
-// 12-22-2014 v.1.11.0
-// 1. added new methods to able to call service with WSDL.
-// 2. added a new authorization type for the PAYPAL SOAP API.
-// 3. added two new properties to manage authorization to PAYPAL SOAP API.
-// 4. added a new property for set the password for client certificate.
-// 5. added a new property for set the timeout for all requests.
-// 6. added accepted types (text/xml) in the header of the request.
-// 7. fixes for authentication method with client certificate.
-// 8. minor fixes for recovery of faultcodes data.
-// 9. minor fixes for retrieve namespace of the soapAction.
-//
-// 12-03-2014 v.1.10.0
-// 1. added property to enable retrieval of the contents of the SOAP header in the server response.
-//
-// 11-10-2014 v.1.9.1
-// 1. fixes xml parsing error.
-//
-// 11-04-2014 v.1.9.0
-// 1. added encryption/decryption content data with 3DES+BASE64.
-// 2. parse the response xml that contains one other embedded xml.
-// 3. fixes memory leaks.
-//
-// 08-27-2014 v.1.8.1
-// 1. added a supported version for Mac OS X.
-//
-// 08-12-2014 v.1.8.0
-// 1. added dictionary response on delegate, notification and completion block.
-// 2. added delegate and notification before parsing response data.
-// 3. added encryption/decryption content data with AES256+BASE64.
-// 4. fixes BASE64 conversion for NSData and UIImage/UIImageView objects.
-// 5. automatic setting of the property named actionNamespaceSlash in the case of a failure of the first request.
-// 6. automatic setting of the property named actionQuotes in the case where the soapAction path contains unsupported characters.
-// 7. default to YES for the property named escapingHTML.
-// 8. requires a license code, as required by the new EULA.
-//
-// 06-20-2014 v.1.7.0
-// 1. added the support for sending of UIImage and UIImageView objects.
-// 2. added the conversion of special characters in a compatible html format.
-//
-// 04-12-2014 v.1.6.0
-// 1. support for WFC services (svc) with basicHttpBinding.
-//
-// 02-13-2014 v.1.5.1
-// 1. fixes for premature release of connections in nested blocks.
-//
-// 01-29-2014 v.1.5.0
-// 1. added a new method named "cancel" to able cancel all delegates, blocks or notifications.
-// 2. fixes for fault codes in client SOAP response.
-// 3. added version compiled for arm64 (64-bit, only in purchased version).
-//
-// 01-09-2014 v.1.4.0
-// 1. support for NSSet types.
-// 2. support for other more primitive types (short, long).
-// 2. fixes releases object in ARC projects.
-//
-// 12-22-2013 v.1.3.4
-// 1. fixes for HTML special characters.
-// 2. fixes for Unicode characters.
-// 3. fixes for blocks inside blocks.
-// 
-// 12-18-2013 v.1.3.3
-// 1. fixes dictionary error in a double sequential call.
-//
-// 12-10-2013 v.1.3.2
-// 1. Extended with two new properties to replace the prefix of the user objects.
-// 2. Decode Unicode characters in readable strings (\Uxxxx).
-// 3. fixes for results in array values.
-//
-// 12-04-2013 v.1.3.1
-// 1. Thread Safety
-// 2. Support nil/null values replaced with xsi:nil="true"
-//
-// 12-02-2013 v.1.3.0
-// 1. added local notifications.
-// 2. fixes last path slash for namespace actions.
-//
-// 11-08-2013 v.1.2.2
-// 1. implementing block programming.
-// 2. fixes log message for IList elements.
-//
-// 08-29-2013 v.1.2.1
-// 1. added the verification methods for certificate authorization.
-// 2. update WS-Security with encrypted password (digest).
-// 3. fixes for parameters with nil values.
-// 4. fixes for inherited classes.
-// 5. fixes when hostname could not be found.
-//
-// NOTE: required Security.framework
-//
-// 08-20-2014 v.1.2.0
-// 1. Added the verification methods for trusted certificate authorization.
-//
-// 08-17-2013 v.1.1.1
-// 1. added a property to allow the define extra attributes for Envelope tag.
-//
-// 06-25-2013 v.1.1.0
-// 1. added a property that enables the quotes in the property SOAPAction.
-// 2. adding basic and wss authorization.
-
 #import <Foundation/Foundation.h>
 
 #if TARGET_OS_IPHONE
@@ -359,6 +248,11 @@ completeWithDictionary:(SOAPEngineCompleteBlockWithDictionary)complete
              forKey:(NSString*)key
 completeWithDictionary:(SOAPEngineCompleteBlockWithDictionary)complete
       failWithError:(SOAPEngineFailBlock)fail;
+
+// sets logins
+- (void)login:(NSString*)username password:(NSString*)password;
+- (void)login:(NSString*)username password:(NSString*)password authorization:(SOAPAuthorization)authorization;
+- (void)login:(NSString*)username password:(NSString*)password email:(NSString*)email signature:(NSString*)signature; // PAYPAL
 
 // cancel all delegates, blocks or notifications
 - (void)cancel;
