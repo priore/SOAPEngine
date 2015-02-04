@@ -50,7 +50,8 @@ with delegates :
 	[soap setValue:@"my-value1" forKey:@"Param1"];
 	[soap setIntegerValue:1234 forKey:@"Param2"];
 	// service url without ?WSDL, and you can search the soapAction in the WSDL
-	[soap requestURL:@"http://www.my-web.com/my-service.asmx" soapAction:@"http://www.my-web.com/My-Method-name"];
+	[soap requestURL:@"http://www.my-web.com/my-service.asmx" 
+		  soapAction:@"http://www.my-web.com/My-Method-name"];
  
 	#pragma mark - SOAPEngine Delegates
 
@@ -123,10 +124,11 @@ with notifications :
 	soap.userAgent = @"SOAPEngine";
 	soap.version = VERSION_WCF_1_1; // WCF service (.svc)
 		
-    [[NSNotificationCenter defaultCenter] addObserver:self 
-    									     selector:@selector(soapEngineDidFinishLoading:) 
-    									         name:SOAPEngineDidFinishLoadingNotification 
-    									       object:nil];
+    [[NSNotificationCenter defaultCenter] 
+    			addObserver:self 
+    			   selector:@selector(soapEngineDidFinishLoading:) 
+    				   name:SOAPEngineDidFinishLoadingNotification 
+    				 object:nil];
 	
 	// service url without ?WSDL, and you can search the soapAction in the WSDL
 	[soap requestURL:@"http://www.my-web.com/my-service.svc" 
@@ -141,8 +143,32 @@ with notifications :
     	NSDictionary *result = [engine dictionaryValue];
     	NSLog(@"%@", result);
 	}
-```	
+```
 
+Swift language :
+
+``` objective-c
+        var soap = SOAPEngine()
+        soap.userAgent = "SOAPEngine"
+        soap.actionNamespaceSlash = true
+        soap.version = VERSION_1_1
+        soap.responseHeader = true // use only for non standard MS-SOAP service
+        
+        soap.setValue("param-value", forKey: "param-name")
+        soap.requestURL("http://www.my-web.com/my-service.asmx",
+            soapAction: "http://www.my-web.com/My-Method-name",
+            completeWithDictionary: { (statusCode : Int, 
+            					 dict : [NSObject : AnyObject]!) -> Void in
+                
+                var result:Dictionary = dict as Dictionary
+                NSLog("%@", result)
+                
+            }) { (error : NSError!) -> Void in
+                
+                NSLog("%@", error)
+        }
+```
+	
 settings for soap authentication :
 
 ``` objective-c
