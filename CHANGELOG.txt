@@ -1,3 +1,6 @@
+1.13.1 Feb, 05, 2015
+- fixes when the response of the method no contains data and ends with />
+
 1.13.0 Feb, 02, 2015
 - added new method to quickly set the login methods.
 - added a Swift sample.
