@@ -58,7 +58,6 @@
     // SOAP WFC service (svc)
     //[soap requestURL:@"http://www.prioregroup.com/services/AmericanBible.svc"
     //      soapAction:@"http://www.prioregroup.com/IAmericanBible/GetVerses"];
-    
 }
 
 #pragma mark - SOAPEngine Delegate
@@ -117,6 +116,11 @@
     NSLog(@"%@", xml);
     
     return request;
+}
+
+- (void)soapEngine:(SOAPEngine *)soapEngine didReceiveDataSize:(NSUInteger)current total:(NSUInteger)total
+{
+    NSLog(@"Received %lu bytes of %lu bytes", (unsigned long)current, (unsigned long)total);
 }
 
 #pragma mark - TableView Delegate and DataSource

@@ -129,6 +129,11 @@ static UILabel *label;
     return stringXML;
 }
 
+- (void)soapEngine:(SOAPEngine *)soapEngine didReceiveDataSize:(NSUInteger)current total:(NSUInteger)total
+{
+    NSLog(@"Received %i bytes of %i bytes", current, total);
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

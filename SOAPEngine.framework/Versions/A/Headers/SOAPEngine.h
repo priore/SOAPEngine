@@ -24,6 +24,7 @@ extern const NSString *SOAPEngineDidFailWithErrorNotification;
 extern const NSString *SOAPEngineDidReceiveResponseCodeNotification;
 extern const NSString *SOAPEngineDidBeforeSendingURLRequestNotification;
 extern const NSString *SOAPEngineDidBeforeParsingResponseStringNotification;
+extern const NSString *SOAPEngineDidReceiveDataSizeNotification;
 
 // UserInfo dictionary keys for Local Noficiations
 extern const NSString *SOAPEngineStatusCodeKey;
@@ -31,10 +32,13 @@ extern const NSString *SOAPEngineXMLResponseKey;
 extern const NSString *SOAPEngineXMLDictionaryKey;
 extern const NSString *SOAPEngineURLRequestKey;
 extern const NSString *SOAPEngineErrorKey;
+extern const NSString *SOAPEngineDataSizeKey;
+extern const NSString *SOAPEngineTotalDataSizeKey;
 
 typedef __block void(^SOAPEngineCompleteBlock)(NSInteger statusCode, NSString *stringXML);
 typedef __block void(^SOAPEngineCompleteBlockWithDictionary)(NSInteger statusCode, NSDictionary *dict);
 typedef __block void(^SOAPEngineFailBlock)(NSError *error);
+typedef __block void(^SOAPEngineReceiveDataSizeBlock)(NSUInteger current, NSUInteger total);
 
 typedef enum
 {
@@ -46,11 +50,11 @@ typedef enum
 typedef enum
 {
     SOAP_AUTH_NONE,
-    SOAP_AUTH_BASIC,        // located in header request (base64)
-    SOAP_AUTH_BASICAUTH,    // valid only for SOAP 1.1
-    SOAP_AUTH_WSSECURITY,   // digest password
-    SOAP_AUTH_CUSTOM,       // sets header property for custom auth
-    SOAP_AUTH_PAYPAL        // for PayPal SOAP API
+    SOAP_AUTH_BASIC,            // located in header request (base64)
+    SOAP_AUTH_BASICAUTH,        // valid only for SOAP 1.1
+    SOAP_AUTH_WSSECURITY,       // digest password
+    SOAP_AUTH_CUSTOM,           // sets header property for custom auth
+    SOAP_AUTH_PAYPAL            // for PayPal SOAP API
 } SOAPAuthorization;
 
 typedef enum
@@ -81,7 +85,7 @@ typedef enum
 @property (nonatomic, assign) BOOL actionNamespaceSlash;
 
 // return the last status code of connection
-// http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html.
+// http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
 @property (nonatomic, assign) NSInteger statusCode;
 
 //sets a custom name for the user-agent (default is "SOAPEngine").
@@ -212,6 +216,15 @@ typedef enum
 
 - (void)requestURL:(id)asmxURL
         soapAction:(NSString *)soapAction
+             value:(id)value
+            forKey:(NSString*)key
+          complete:(SOAPEngineCompleteBlock)complete
+     failWithError:(SOAPEngineFailBlock)fail
+  receivedDataSize:(SOAPEngineReceiveDataSizeBlock)receive;
+
+// webservice request with block and dictionary
+- (void)requestURL:(id)asmxURL
+        soapAction:(NSString *)soapAction
 completeWithDictionary:(SOAPEngineCompleteBlockWithDictionary)complete
      failWithError:(SOAPEngineFailBlock)fail;
 
@@ -227,6 +240,14 @@ completeWithDictionary:(SOAPEngineCompleteBlockWithDictionary)complete
             forKey:(NSString*)key
 completeWithDictionary:(SOAPEngineCompleteBlockWithDictionary)complete
      failWithError:(SOAPEngineFailBlock)fail;
+
+- (void)requestURL:(id)asmxURL
+        soapAction:(NSString *)soapAction
+             value:(id)value
+            forKey:(NSString*)key
+completeWithDictionary:(SOAPEngineCompleteBlockWithDictionary)complete
+     failWithError:(SOAPEngineFailBlock)fail
+  receivedDataSize:(SOAPEngineReceiveDataSizeBlock)receive;
 
 // request with wsdl
 - (void)requestWSDL:(id)wsdlURL operation:(NSString*)operation;
@@ -265,9 +286,10 @@ completeWithDictionary:(SOAPEngineCompleteBlockWithDictionary)complete
 
 - (void)soapEngine:(SOAPEngine*)soapEngine didFinishLoading:(NSString*)stringXML;
 - (void)soapEngine:(SOAPEngine*)soapEngine didFinishLoading:(NSString*)stringXML dictionary:(NSDictionary*)dict;
-- (void)soapEngine:(SOAPEngine *)soapEngine didFailWithError:(NSError*)error;
-- (BOOL)soapEngine:(SOAPEngine *)soapEngine didReceiveResponseCode:(NSInteger)statusCode;
-- (NSMutableURLRequest*)soapEngine:(SOAPEngine *)soapEngine didBeforeSendingURLRequest:(NSMutableURLRequest*)request;
+- (void)soapEngine:(SOAPEngine*)soapEngine didFailWithError:(NSError*)error;
+- (void)soapEngine:(SOAPEngine*)soapEngine didReceiveDataSize:(NSUInteger)current total:(NSUInteger)total;
+- (BOOL)soapEngine:(SOAPEngine*)soapEngine didReceiveResponseCode:(NSInteger)statusCode;
+- (NSMutableURLRequest*)soapEngine:(SOAPEngine*)soapEngine didBeforeSendingURLRequest:(NSMutableURLRequest*)request;
 - (NSString*)soapEngine:(SOAPEngine*)soapEngine didBeforeParsingResponseString:(NSString*)stringXML;
 
 @end
