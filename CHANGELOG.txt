@@ -1,3 +1,5 @@
+1.14.0 Feb, 20, 2015
+- added new delegate, and notification for progress of the response. 
 1.13.1 Feb, 05, 2015
 - fixes when the response of the method no contains data and ends with />
 
