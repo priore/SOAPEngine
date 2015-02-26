@@ -113,6 +113,7 @@
     NSLog(@"%@", [request allHTTPHeaderFields]);
     
     NSString *xml = [[NSString alloc] initWithData:[request HTTPBody] encoding:NSUTF8StringEncoding];
+    
     NSLog(@"%@", xml);
     
     return request;
@@ -121,6 +122,11 @@
 - (void)soapEngine:(SOAPEngine *)soapEngine didReceiveDataSize:(NSUInteger)current total:(NSUInteger)total
 {
     NSLog(@"Received %lu bytes of %lu bytes", (unsigned long)current, (unsigned long)total);
+}
+
+- (void)soapEngine:(SOAPEngine *)soapEngine didSendDataSize:(NSUInteger)current total:(NSUInteger)total
+{
+    NSLog(@"Sended %lu bytes of %lu bytes", (unsigned long)current, (unsigned long)total);
 }
 
 #pragma mark - TableView Delegate and DataSource
