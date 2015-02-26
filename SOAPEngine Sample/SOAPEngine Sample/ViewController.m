@@ -134,6 +134,11 @@ static UILabel *label;
     NSLog(@"Received %i bytes of %i bytes", current, total);
 }
 
+- (void)soapEngine:(SOAPEngine *)soapEngine didSendDataSize:(NSUInteger)current total:(NSUInteger)total
+{
+    NSLog(@"Sended %i bytes of %i bytes", current, total);
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

@@ -2,13 +2,13 @@
 //  SOAPEngine.h
 //
 //  Created by Danilo Priore on 21/11/12.
-//  Copyright (c) 2012-2014 Centro Studi Informatica di Danilo Priore. All rights reserved.
+//  Copyright (c) 2012-2015 Centro Studi Informatica di Danilo Priore. All rights reserved.
 //
 //  http://www.prioregroup.com
 //  https://github.com/priore
 //  https://twitter.com/DaniloPriore
 //
-// Version      : 1.13.1
+// Version      : 1.15.0
 // Changelog    : https://github.com/priore/SOAPEngine/blob/master/CHANGELOG.txt
 // Updates      : https://github.com/priore/SOAPEngine
 //
@@ -25,20 +25,23 @@ extern const NSString *SOAPEngineDidReceiveResponseCodeNotification;
 extern const NSString *SOAPEngineDidBeforeSendingURLRequestNotification;
 extern const NSString *SOAPEngineDidBeforeParsingResponseStringNotification;
 extern const NSString *SOAPEngineDidReceiveDataSizeNotification;
+extern const NSString *SOAPEngineDidSendDataSizeNotification;
 
 // UserInfo dictionary keys for Local Noficiations
-extern const NSString *SOAPEngineStatusCodeKey;
-extern const NSString *SOAPEngineXMLResponseKey;
-extern const NSString *SOAPEngineXMLDictionaryKey;
-extern const NSString *SOAPEngineURLRequestKey;
-extern const NSString *SOAPEngineErrorKey;
-extern const NSString *SOAPEngineDataSizeKey;
-extern const NSString *SOAPEngineTotalDataSizeKey;
+extern const NSString *SOAPEngineStatusCodeKey;     // response status code
+extern const NSString *SOAPEngineXMLResponseKey;    // response xml
+extern const NSString *SOAPEngineXMLDictionaryKey;  // response dictionary
+extern const NSString *SOAPEngineURLRequestKey;     // http request
+extern const NSString *SOAPEngineURLResponseKey;    // http response
+extern const NSString *SOAPEngineErrorKey;          // errors
+extern const NSString *SOAPEngineDataSizeKey;       // send/receive data size
+extern const NSString *SOAPEngineTotalDataSizeKey;  // send/receive total data size
 
-typedef __block void(^SOAPEngineCompleteBlock)(NSInteger statusCode, NSString *stringXML);
+typedef __block void(^SOAPEngineCompleteBlock)(NSInteger statusCode, NSString *stringXML) DEPRECATED_ATTRIBUTE;
 typedef __block void(^SOAPEngineCompleteBlockWithDictionary)(NSInteger statusCode, NSDictionary *dict);
 typedef __block void(^SOAPEngineFailBlock)(NSError *error);
 typedef __block void(^SOAPEngineReceiveDataSizeBlock)(NSUInteger current, NSUInteger total);
+typedef __block void(^SOAPEngineSendDataSizeBlock)(NSUInteger current, NSUInteger total);
 
 typedef enum
 {
@@ -76,6 +79,9 @@ typedef enum
 
 // return the current method name
 @property (nonatomic, retain, readonly) NSString *methodName;
+
+// return the current response
+@property (nonatomic, retain, readonly) NSURLResponse *response;
 
 // adds the quotes in the SOAPAction header
 // eg. SOAPAction = http://temp.org become SOAPAction = "http://temp.org".
@@ -184,35 +190,40 @@ typedef enum
 - (void)setLongValue:(long)value forKey:(NSString*)key;
 
 #if TARGET_OS_IPHONE
-- (void)setImage:(UIImage*)image forKey:(NSString*)key; // only for iOS
+- (void)setImage:(UIImage*)image forKey:(NSString*)key __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_4_3);
 #endif
 
 // clear all parameters
 - (void)clearValues;
 
-// webservice request
+// webservice request (async)
 - (void)requestURL:(id)asmxURL soapAction:(NSString*)soapAction;
 - (void)requestURL:(id)asmxURL soapAction:(NSString*)soapAction value:(id)value;
 - (void)requestURL:(id)asmxURL soapAction:(NSString*)soapAction value:(id)value forKey:(NSString*)key;
+
+// webservice request (sync)
+- (NSDictionary*)syncRequestURL:(id)asmxURL soapAction:(NSString*)soapAction error:(NSError**)error;
+- (NSDictionary*)syncRequestURL:(id)asmxURL soapAction:(NSString*)soapAction value:(id)value error:(NSError**)error;
+- (NSDictionary*)syncRequestURL:(id)asmxURL soapAction:(NSString*)soapAction value:(id)value forKey:(NSString*)key error:(NSError**)error;
 
 // webservice request with block
 - (void)requestURL:(id)asmxURL
         soapAction:(NSString *)soapAction
           complete:(SOAPEngineCompleteBlock)complete
-     failWithError:(SOAPEngineFailBlock)fail;
+     failWithError:(SOAPEngineFailBlock)fail DEPRECATED_ATTRIBUTE;
 
 - (void)requestURL:(id)asmxURL
         soapAction:(NSString *)soapAction
              value:(id)value
           complete:(SOAPEngineCompleteBlock)complete
-     failWithError:(SOAPEngineFailBlock)fail;
+     failWithError:(SOAPEngineFailBlock)fail DEPRECATED_ATTRIBUTE;
 
 - (void)requestURL:(id)asmxURL
         soapAction:(NSString *)soapAction
              value:(id)value
             forKey:(NSString*)key
           complete:(SOAPEngineCompleteBlock)complete
-     failWithError:(SOAPEngineFailBlock)fail;
+     failWithError:(SOAPEngineFailBlock)fail DEPRECATED_ATTRIBUTE;
 
 - (void)requestURL:(id)asmxURL
         soapAction:(NSString *)soapAction
@@ -220,7 +231,16 @@ typedef enum
             forKey:(NSString*)key
           complete:(SOAPEngineCompleteBlock)complete
      failWithError:(SOAPEngineFailBlock)fail
-  receivedDataSize:(SOAPEngineReceiveDataSizeBlock)receive;
+  receivedDataSize:(SOAPEngineReceiveDataSizeBlock)receive DEPRECATED_ATTRIBUTE;
+
+- (void)requestURL:(id)asmxURL
+        soapAction:(NSString *)soapAction
+             value:(id)value
+            forKey:(NSString*)key
+          complete:(SOAPEngineCompleteBlock)complete
+     failWithError:(SOAPEngineFailBlock)fail
+  receivedDataSize:(SOAPEngineReceiveDataSizeBlock)receive
+    sendedDataSize:(SOAPEngineSendDataSizeBlock)sended DEPRECATED_ATTRIBUTE;
 
 // webservice request with block and dictionary
 - (void)requestURL:(id)asmxURL
@@ -248,6 +268,15 @@ completeWithDictionary:(SOAPEngineCompleteBlockWithDictionary)complete
 completeWithDictionary:(SOAPEngineCompleteBlockWithDictionary)complete
      failWithError:(SOAPEngineFailBlock)fail
   receivedDataSize:(SOAPEngineReceiveDataSizeBlock)receive;
+
+- (void)requestURL:(id)asmxURL
+        soapAction:(NSString *)soapAction
+             value:(id)value
+            forKey:(NSString*)key
+completeWithDictionary:(SOAPEngineCompleteBlockWithDictionary)complete
+     failWithError:(SOAPEngineFailBlock)fail
+  receivedDataSize:(SOAPEngineReceiveDataSizeBlock)receive
+    sendedDataSize:(SOAPEngineSendDataSizeBlock)sended;
 
 // request with wsdl
 - (void)requestWSDL:(id)wsdlURL operation:(NSString*)operation;
@@ -284,10 +313,11 @@ completeWithDictionary:(SOAPEngineCompleteBlockWithDictionary)complete
 
 @optional
 
-- (void)soapEngine:(SOAPEngine*)soapEngine didFinishLoading:(NSString*)stringXML;
+- (void)soapEngine:(SOAPEngine*)soapEngine didFinishLoading:(NSString*)stringXML DEPRECATED_ATTRIBUTE;
 - (void)soapEngine:(SOAPEngine*)soapEngine didFinishLoading:(NSString*)stringXML dictionary:(NSDictionary*)dict;
 - (void)soapEngine:(SOAPEngine*)soapEngine didFailWithError:(NSError*)error;
 - (void)soapEngine:(SOAPEngine*)soapEngine didReceiveDataSize:(NSUInteger)current total:(NSUInteger)total;
+- (void)soapEngine:(SOAPEngine*)soapEngine didSendDataSize:(NSUInteger)current total:(NSUInteger)total;
 - (BOOL)soapEngine:(SOAPEngine*)soapEngine didReceiveResponseCode:(NSInteger)statusCode;
 - (NSMutableURLRequest*)soapEngine:(SOAPEngine*)soapEngine didBeforeSendingURLRequest:(NSMutableURLRequest*)request;
 - (NSString*)soapEngine:(SOAPEngine*)soapEngine didBeforeParsingResponseString:(NSString*)stringXML;

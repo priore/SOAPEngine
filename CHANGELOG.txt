@@ -1,5 +1,18 @@
+1.15.0 Feb, 26, 2015
+- added new delegate, and notification for progress of the request.
+- added a new property to enable retrieval http response object.
+- added the response object on didReceiveResponseCode notification.
+- added synchronous request methods.
+- added deprecated attribute for few methods.
+- fixes for encoding special chars in the parameters.
+- removed the 32-bit-only version of the framework from the SDK distribution.
+	(note: the 64-bit framework version is compatible up to, and including, iOS 5.1.1,
+	if your project used the 32-bit version of the framework, SOAPEngine.framework, 
+	update the project to use the 64-bit version, SOAPEngine64.framework).
+
 1.14.0 Feb, 20, 2015
-- added new delegate, and notification for progress of the response. 
+- added new delegate, and notification for progress of the response.
+
 1.13.1 Feb, 05, 2015
 - fixes when the response of the method no contains data and ends with />
 
