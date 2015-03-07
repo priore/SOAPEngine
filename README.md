@@ -87,7 +87,7 @@ with block programming :
 			}];
 ```	
 
-directly from WSDL :
+directly from WSDL (not recommended is slow) :
 
 ``` objective-c
 	#import <SOAPEngine/SOAPEngine.h>
@@ -145,9 +145,22 @@ with notifications :
 	}
 ```
 
-Swift language :
+Synchronous request :
 
 ``` objective-c
+	#import <SOAPEngine/SOAPEngine.h>
+	
+	NSError *error = nil;
+    SOAPEngine *soap = [[SOAPEngine alloc] init];
+    soap.responseHeader = YES; // use only for non standard MS-SOAP service like PHP
+    NSDictionary *dict = [soap syncRequestURL:@"http://www.my-web.com/my-service.amsx" 
+    						soapAction:@"http://tempuri.org/my-method" error:&error];
+    NSLog(@"error: %@, result: %@", error, dict)
+```
+
+Swift language :
+
+``` swift
         var soap = SOAPEngine()
         soap.userAgent = "SOAPEngine"
         soap.actionNamespaceSlash = true
