@@ -8,7 +8,7 @@
 //  https://github.com/priore
 //  https://twitter.com/DaniloPriore
 //
-// Version      : 1.15.0
+// Version      : 1.16.0
 // Changelog    : https://github.com/priore/SOAPEngine/blob/master/CHANGELOG.txt
 // Updates      : https://github.com/priore/SOAPEngine
 //
@@ -103,6 +103,9 @@ typedef enum
 
 // sets to indicate that the nil values ​​are replaced with xsi:nil="true"
 @property (nonatomic, assign) BOOL replaceNillable;
+
+// sets the default tag name, default is "input", when using setValue without key value
+@property (nonatomic, retain) NSString *defaultTagName;
 
 // sets the prefix of the user object you want to replace
 @property (nonatomic, retain) NSString *prefixObjectName;
