@@ -1,5 +1,6 @@
 1.16.0 Mar, 15, 2015
 - added a new property to change the default tag name when using setValue without key value.
+- fixes for NSNull value parameters.
 
 1.15.0 Feb, 26, 2015
 - added new delegate, and notification for progress of the request.

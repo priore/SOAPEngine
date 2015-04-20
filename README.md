@@ -10,7 +10,8 @@ With this Framework you can create iPhone, iPad and Mac OS X apps that supports 
 * Support array, array of structs and dictionary.
 * Support user-defined object. Capable of serializing complex data types and array of complex data types, even multi-level embedded structs.
 * Supports `ASMX` Services, `WCF` Services (`svc`) and now also the `WSDL` definitions.
-* Encrypt/Decrypt data without SSL security.
+* Supports Basic Authentication, `WS-Security`, Client side Certificate and custom security header.
+* `AES256` or `3DES` Encrypt/Decrypt data without SSL security.
 * An example of service and how to use it is included in source code.
 
 ## Requirements for iOS
@@ -287,14 +288,63 @@ PAYPAL example :
           	
 ```	
 
+Upload file :
+
+``` objective-c
+	SOAPEngine *soap = [[SOAPEngine alloc] init];
+
+	// read local file
+    NSData *data = [NSData dataWithContentsOfFile:@"my_video.mp4"];
+
+	// send file data
+    [soap setValue:data forKey:@"video"];
+    [soap requestURL:@"http://www.my-web.com/my-service.asmx"
+          soapAction:@"http://www.my-web.com/UploadFile"
+          completeWithDictionary:^(NSInteger statusCode, NSDictionary *dict) {
+              
+              NSLog(@"Result: %@", dict);
+              
+          } failWithError:^(NSError *error) {
+    
+              NSLog(@"%@", error);
+          }];
+          	
+```	
+
+Download file :
+
+``` objective-c
+	SOAPEngine *soap = [[SOAPEngine alloc] init];
+
+	// send filename to remote webservice
+    [soap setValue:"my_video.mp4" forKey:@"filename"];
+    [soap requestURL:@"http://www.my-web.com/my-service.asmx"
+          soapAction:@"http://www.my-web.com/DownloadFile"
+          completeWithDictionary:^(NSInteger statusCode, NSDictionary *dict) {
+            
+            // local writable directory
+			NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+			NSString *filePath = [[paths firstObject] stringByAppendingPathComponent:@"my_video.mp4"];
+
+			// the service returns file data in the tag named video
+			NSData *data = dict[@"video"];
+		    [data writeToFile:@"my_video.mp4" atomically:YES];
+              
+          } failWithError:^(NSError *error) {
+    
+              NSLog(@"%@", error);
+          }];
+          	
+```	
+
 ## Optimizations
 When using the method named requestWSDL three steps are performed : 
 
-1. retrieve the WSDL with a http request.
+1. retrieve the WSDL with an http request.
 2. processing to identify the soapAction.
-3. another http request to the service method.
+3. calls the method with an http request.
 
-is possible optimize this : 
+this is not optimized, very slow, instead you can use the optimization below : 
 
 1. retrieving manually the SOAPAction directly from WSDL (once with your favorite browser).
 2. use the method named requestURL instead of requestWSDL.
@@ -307,7 +357,7 @@ is possible optimize this :
 2. add /usr/include/libxml2 in Build Settings --> Header Search Paths.
 ![Header Search Paths](/screen/headersearchpaths.png)
 
-3. add SOAPEngine.framework (for 32-bit apps) or SOAPEngine64.framework (for 64-bit apps) or SOAPEngineOSX.framework (for Mac OS X apps).
+3. SOAPEngine64.framework (for iOS apps) or SOAPEngineOSX.framework (for Mac OS X apps).
 4. add Security.framework.
 5. add AppKit.framework (only for Mac OS X apps, not required for iOS apps).
 ![Frameworks](/screen/frameworks.png)
