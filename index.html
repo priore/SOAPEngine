@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>SOAPEngine by priore</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>SOAPEngine</h1>
+        <h2>This generic SOAP client allows you to access web services using a your iOS and Mac OS X app.</h2>
+        <a href="https://github.com/priore/SOAPEngine" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="soapengine" class="anchor" href="#soapengine" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>SOAPEngine</strong>
+</h1>
+
+<p>This generic <code>SOAP</code> client allows you to access web services using a your <code>iOS</code> app and <code>Mac OS X</code> app.</p>
+
+<p>With this Framework you can create iPhone, iPad and Mac OS X apps that supports SOAP Client Protocol. This framework able executes methods at remote web services with SOAP standard protocol.</p>
+
+<h2>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h2>
+
+<ul>
+<li>Support both 2001 (v1.1) and 2003 (v1.2) <code>XML</code> schema.</li>
+<li>Support array, array of structs and dictionary.</li>
+<li>Support user-defined object. Capable of serializing complex data types and array of complex data types, even multi-level embedded structs.</li>
+<li>Supports <code>ASMX</code> Services, <code>WCF</code> Services (<code>svc</code>) and now also the <code>WSDL</code> definitions.</li>
+<li>Supports Basic Authentication, <code>WS-Security</code>, Client side Certificate and custom security header.</li>
+<li>
+<code>AES256</code> or <code>3DES</code> Encrypt/Decrypt data without SSL security.</li>
+<li>An example of service and how to use it is included in source code.</li>
+</ul>
+
+<h2>
+<a id="requirements-for-ios" class="anchor" href="#requirements-for-ios" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements for iOS</h2>
+
+<ul>
+<li>iOS 5.1.1, and later</li>
+<li>
+<code>XCode</code> 5.0 or later</li>
+<li>Security.framework</li>
+<li>Foundation.framework</li>
+<li>UIKit.framework</li>
+<li>libxml2.dylib</li>
+</ul>
+
+<h2>
+<a id="requirements-for-mac-os-x" class="anchor" href="#requirements-for-mac-os-x" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements for Mac OS X</h2>
+
+<ul>
+<li>OS X 10.9 and later</li>
+<li>
+<code>XCode</code> 5.0 or later</li>
+<li>Security.framework</li>
+<li>Foundation.framework</li>
+<li>AppKit.framework</li>
+<li>Cocoa.framework</li>
+<li>libxml2.dylib</li>
+</ul>
+
+<h2>
+<a id="limitations" class="anchor" href="#limitations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Limitations</h2>
+
+<ul>
+<li>for <code>WCF</code> services, only supports basic http bindings (<code>&lt;basicHttpBinding&gt;</code>).</li>
+<li>in <code>Mac OS X</code> unsupported image objects (instead you can use the <code>NSData</code>).</li>
+</ul>
+
+<h2>
+<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use</h2>
+
+<p>with delegates :</p>
+
+<div class="highlight highlight-objective-c"><pre>    #<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">&lt;</span>SOAPEngine/SOAPEngine.h<span class="pl-pds">&gt;</span></span>
+
+    <span class="pl-c">// standard soap service (.asmx)</span>
+    SOAPEngine *soap = [[SOAPEngine <span class="pl-c1">alloc</span>] <span class="pl-c1">init</span>];
+    soap.userAgent = <span class="pl-s"><span class="pl-pds">@"</span>SOAPEngine<span class="pl-pds">"</span></span>;
+    soap.delegate = self; <span class="pl-c">// use SOAPEngineDelegate</span>
+
+    <span class="pl-c">// each single value</span>
+    [soap <span class="pl-c1">setValue:</span><span class="pl-s"><span class="pl-pds">@"</span>my-value1<span class="pl-pds">"</span></span> <span class="pl-c1">forKey:</span><span class="pl-s"><span class="pl-pds">@"</span>Param1<span class="pl-pds">"</span></span>];
+    [soap <span class="pl-c1">setIntegerValue:</span><span class="pl-c1">1234</span> <span class="pl-c1">forKey:</span><span class="pl-s"><span class="pl-pds">@"</span>Param2<span class="pl-pds">"</span></span>];
+    <span class="pl-c">// service url without ?WSDL, and you can search the soapAction in the WSDL</span>
+    [soap <span class="pl-c1">requestURL:</span><span class="pl-s"><span class="pl-pds">@"</span>http://www.my-web.com/my-service.asmx<span class="pl-pds">"</span></span> 
+          <span class="pl-c1">soapAction:</span><span class="pl-s"><span class="pl-pds">@"</span>http://www.my-web.com/My-Method-name<span class="pl-pds">"</span></span>];
+
+    #<span class="pl-k">pragma mark</span> - SOAPEngine Delegates
+
+    - (<span class="pl-k">void</span>)soapEngine:(SOAPEngine *)soapEngine didFinishLoading:(<span class="pl-c1">NSString</span> *)stringXML {
+
+            <span class="pl-c1">NSDictionary</span> *result = [soapEngine <span class="pl-c1">dictionaryValue</span>];
+            <span class="pl-c">// read data from a dataset table</span>
+            <span class="pl-c1">NSArray</span> *list = [result <span class="pl-c1">valueForKeyPath:</span><span class="pl-s"><span class="pl-pds">@"</span>NewDataSet.Table<span class="pl-pds">"</span></span>];
+    }</pre></div>
+
+<p>with block programming :</p>
+
+<div class="highlight highlight-objective-c"><pre>    #<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">&lt;</span>SOAPEngine/SOAPEngine.h<span class="pl-pds">&gt;</span></span>
+
+    <span class="pl-c">// TODO: your user object</span>
+    MyClass myObject = [[MyClass <span class="pl-c1">alloc</span>] <span class="pl-c1">init</span>];
+
+    SOAPEngine *soap = [[SOAPEngine <span class="pl-c1">alloc</span>] <span class="pl-c1">init</span>];
+    soap.userAgent = <span class="pl-s"><span class="pl-pds">@"</span>SOAPEngine<span class="pl-pds">"</span></span>;
+    soap.version = VERSION_WCF_1_1; <span class="pl-c">// WCF service (.svc)</span>
+
+    <span class="pl-c">// service url without ?WSDL, and you can search the soapAction in the WSDL</span>
+    [soap <span class="pl-c1">requestURL:</span><span class="pl-s"><span class="pl-pds">@"</span>http://www.my-web.com/my-service.svc<span class="pl-pds">"</span></span>
+          <span class="pl-c1">soapAction:</span><span class="pl-s"><span class="pl-pds">@"</span>http://www.my-web.com/my-interface/my-method<span class="pl-pds">"</span></span>
+               <span class="pl-c1">value:</span>myObject
+            <span class="pl-c1">complete:</span>^(<span class="pl-k">NSInteger</span> statusCode, <span class="pl-c1">NSString</span> *stringXML) {
+                <span class="pl-c1">NSDictionary</span> *result = [soap <span class="pl-c1">dictionaryValue</span>];
+                <span class="pl-c1">NSLog</span>(<span class="pl-s"><span class="pl-pds">@"</span><span class="pl-c1">%@</span><span class="pl-pds">"</span></span>, result);
+            } <span class="pl-c1">failWithError:</span>^(<span class="pl-c1">NSError</span> *error) {
+                <span class="pl-c1">NSLog</span>(<span class="pl-s"><span class="pl-pds">@"</span><span class="pl-c1">%@</span><span class="pl-pds">"</span></span>, error);
+            }];</pre></div>
+
+<p>directly from WSDL (not recommended is slow) :</p>
+
+<div class="highlight highlight-objective-c"><pre>    #<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">&lt;</span>SOAPEngine/SOAPEngine.h<span class="pl-pds">&gt;</span></span>
+
+    <span class="pl-c">// TODO: your user object</span>
+    MyClass myObject = [[MyClass <span class="pl-c1">alloc</span>] <span class="pl-c1">init</span>];
+
+    SOAPEngine *soap = [[SOAPEngine <span class="pl-c1">alloc</span>] <span class="pl-c1">init</span>];
+    soap.userAgent = <span class="pl-s"><span class="pl-pds">@"</span>SOAPEngine<span class="pl-pds">"</span></span>;
+
+    <span class="pl-c">// service url with WSDL, and operation (method name) without tempuri</span>
+    [soap <span class="pl-c1">requestWSDL:</span><span class="pl-s"><span class="pl-pds">@"</span>http://www.my-web.com/my-service.amsx?wsdl<span class="pl-pds">"</span></span>
+            <span class="pl-c1">operation:</span><span class="pl-s"><span class="pl-pds">@"</span>my-method-name<span class="pl-pds">"</span></span>
+                <span class="pl-c1">value:</span>myObject
+            <span class="pl-c1">completeWithDictionary:</span>^(<span class="pl-k">NSInteger</span> statusCode, <span class="pl-c1">NSDictionary</span> *dict) {
+
+              <span class="pl-c1">NSLog</span>(<span class="pl-s"><span class="pl-pds">@"</span>Result: <span class="pl-c1">%@</span><span class="pl-pds">"</span></span>, dict);
+
+            } <span class="pl-c1">failWithError:</span>^(<span class="pl-c1">NSError</span> *error) {
+
+                <span class="pl-c1">NSLog</span>(<span class="pl-s"><span class="pl-pds">@"</span><span class="pl-c1">%@</span><span class="pl-pds">"</span></span>, error);
+            }];</pre></div>
+
+<p>with notifications :</p>
+
+<div class="highlight highlight-objective-c"><pre>    #<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">&lt;</span>SOAPEngine/SOAPEngine.h<span class="pl-pds">&gt;</span></span>
+
+    <span class="pl-c">// TODO: your user object</span>
+    MyClass myObject = [[MyClass <span class="pl-c1">alloc</span>] <span class="pl-c1">init</span>];
+
+    SOAPEngine *soap = [[SOAPEngine <span class="pl-c1">alloc</span>] <span class="pl-c1">init</span>];
+    soap.userAgent = <span class="pl-s"><span class="pl-pds">@"</span>SOAPEngine<span class="pl-pds">"</span></span>;
+    soap.version = VERSION_WCF_1_1; <span class="pl-c">// WCF service (.svc)</span>
+
+    [[<span class="pl-c1">NSNotificationCenter</span> <span class="pl-c1">defaultCenter</span>] 
+                addObserver:<span class="pl-v">self</span> 
+                   selector:<span class="pl-k">@selector</span>(<span class="pl-c1">soapEngineDidFinishLoading:</span>) 
+                       name:SOAPEngineDidFinishLoadingNotification 
+                     object:<span class="pl-c1">nil</span>];
+
+    <span class="pl-c">// service url without ?WSDL, and you can search the soapAction in the WSDL</span>
+    [soap <span class="pl-c1">requestURL:</span><span class="pl-s"><span class="pl-pds">@"</span>http://www.my-web.com/my-service.svc<span class="pl-pds">"</span></span> 
+          <span class="pl-c1">soapAction:</span><span class="pl-s"><span class="pl-pds">@"</span>http://www.my-web.com/my-interface/my-method<span class="pl-pds">"</span></span>
+               <span class="pl-c1">value:</span>myObject];
+
+    #<span class="pl-k">pragma mark</span> - SOAPEngine Notifications
+
+    - (<span class="pl-k">void</span>)soapEngineDidFinishLoading:(<span class="pl-c1">NSNotification</span>*)notification
+    {
+        SOAPEngine *engine = notification.<span class="pl-smi">object</span>; <span class="pl-c">// SOAPEngine object</span>
+        <span class="pl-c1">NSDictionary</span> *result = [engine <span class="pl-c1">dictionaryValue</span>];
+        <span class="pl-c1">NSLog</span>(<span class="pl-s"><span class="pl-pds">@"</span><span class="pl-c1">%@</span><span class="pl-pds">"</span></span>, result);
+    }</pre></div>
+
+<p>Synchronous request :</p>
+
+<div class="highlight highlight-objective-c"><pre>    #<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">&lt;</span>SOAPEngine/SOAPEngine.h<span class="pl-pds">&gt;</span></span>
+
+    <span class="pl-c1">NSError</span> *error = <span class="pl-c1">nil</span>;
+    SOAPEngine *soap = [[SOAPEngine <span class="pl-c1">alloc</span>] <span class="pl-c1">init</span>];
+    soap.responseHeader = <span class="pl-c1">YES</span>; <span class="pl-c">// use only for non standard MS-SOAP service like PHP</span>
+    <span class="pl-c1">NSDictionary</span> *dict = [soap <span class="pl-c1">syncRequestURL:</span><span class="pl-s"><span class="pl-pds">@"</span>http://www.my-web.com/my-service.amsx<span class="pl-pds">"</span></span> 
+                            <span class="pl-c1">soapAction:</span><span class="pl-s"><span class="pl-pds">@"</span>http://tempuri.org/my-method<span class="pl-pds">"</span></span> <span class="pl-c1">error:</span>&amp;error];
+    <span class="pl-c1">NSLog</span>(<span class="pl-s"><span class="pl-pds">@"</span>error: <span class="pl-c1">%@</span>, result: <span class="pl-c1">%@</span><span class="pl-pds">"</span></span>, error, dict)</pre></div>
+
+<p>Swift language :</p>
+
+<div class="highlight highlight-swift"><pre>        <span class="pl-k">var</span> soap <span class="pl-k">=</span> SOAPEngine()
+        soap<span class="pl-k">.</span>userAgent <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>SOAPEngine<span class="pl-pds">"</span></span>
+        soap<span class="pl-k">.</span>actionNamespaceSlash <span class="pl-k">=</span> <span class="pl-c1">true</span>
+        soap<span class="pl-k">.</span>version <span class="pl-k">=</span> VERSION_1_1
+        soap<span class="pl-k">.</span>responseHeader <span class="pl-k">=</span> <span class="pl-c1">true</span> <span class="pl-c">// use only for non standard MS-SOAP service</span>
+
+        soap<span class="pl-k">.</span>setValue(<span class="pl-s"><span class="pl-pds">"</span>param-value<span class="pl-pds">"</span></span>, forKey: <span class="pl-s"><span class="pl-pds">"</span>param-name<span class="pl-pds">"</span></span>)
+        soap<span class="pl-k">.</span>requestURL(<span class="pl-s"><span class="pl-pds">"</span>http://www.my-web.com/my-service.asmx<span class="pl-pds">"</span></span>,
+            soapAction: <span class="pl-s"><span class="pl-pds">"</span>http://www.my-web.com/My-Method-name<span class="pl-pds">"</span></span>,
+            completeWithDictionary: { (statusCode <span class="pl-k">:</span> <span class="pl-c1">Int</span>, 
+                                 dict <span class="pl-k">:</span> [NSObject <span class="pl-k">:</span> AnyObject]<span class="pl-k">!</span>) <span class="pl-k">-&gt;</span> Void <span class="pl-k">in</span>
+
+                <span class="pl-k">var</span> result:<span class="pl-c1">Dictionary</span> <span class="pl-k">=</span> dict <span class="pl-k">as</span> <span class="pl-c1">Dictionary</span>
+                NSLog(<span class="pl-s"><span class="pl-pds">"</span>%@<span class="pl-pds">"</span></span>, result)
+
+            }) { (error <span class="pl-k">:</span> NSError<span class="pl-k">!</span>) <span class="pl-k">-&gt;</span> Void <span class="pl-k">in</span>
+
+                NSLog(<span class="pl-s"><span class="pl-pds">"</span>%@<span class="pl-pds">"</span></span>, error)
+        }</pre></div>
+
+<p>settings for soap authentication :</p>
+
+<div class="highlight highlight-objective-c"><pre>    #<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">&lt;</span>SOAPEngine/SOAPEngine.h<span class="pl-pds">&gt;</span></span>
+
+    SOAPEngine *soap = [[SOAPEngine <span class="pl-c1">alloc</span>] <span class="pl-c1">init</span>];
+    soap.userAgent = <span class="pl-s"><span class="pl-pds">@"</span>SOAPEngine<span class="pl-pds">"</span></span>;
+
+    <span class="pl-c">// authorization</span>
+    soap.authorizationMethod = SOAP_AUTH_BASIC; <span class="pl-c">// basic auth</span>
+    soap.username = <span class="pl-s"><span class="pl-pds">@"</span>my-username<span class="pl-pds">"</span></span>;
+    soap.password = <span class="pl-s"><span class="pl-pds">@"</span>my-password<span class="pl-pds">"</span></span>;
+
+    <span class="pl-c">// TODO: your code here...</span>
+</pre></div>
+
+<p>encryption/decryption data without SSL/HTTPS :</p>
+
+<div class="highlight highlight-objective-c"><pre>    #<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">&lt;</span>SOAPEngine/SOAPEngine.h<span class="pl-pds">&gt;</span></span>
+
+    SOAPEngine *soap = [[SOAPEngine <span class="pl-c1">alloc</span>] <span class="pl-c1">init</span>];
+    soap.userAgent = <span class="pl-s"><span class="pl-pds">@"</span>SOAPEngine<span class="pl-pds">"</span></span>;
+    soap.encryptionType = SOAP_ENCRYPT_AES256; <span class="pl-c">// or SOAP_ENCRYPT_3DES</span>
+    soap.encryptionPassword = <span class="pl-s"><span class="pl-pds">@"</span>my-password<span class="pl-pds">"</span></span>;
+
+    <span class="pl-c">// TODO: your code here...</span>
+</pre></div>
+
+<p>W3Schools example :</p>
+
+<div class="highlight highlight-objective-c"><pre>    SOAPEngine *soap = [[SOAPEngine <span class="pl-c1">alloc</span>] <span class="pl-c1">init</span>];
+    soap.actionNamespaceSlash = <span class="pl-c1">YES</span>;
+
+    <span class="pl-c">// w3schools Celsius to Fahrenheit</span>
+    [soap <span class="pl-c1">setValue:</span><span class="pl-s"><span class="pl-pds">@"</span>30<span class="pl-pds">"</span></span> <span class="pl-c1">forKey:</span><span class="pl-s"><span class="pl-pds">@"</span>Celsius<span class="pl-pds">"</span></span>];
+    [soap <span class="pl-c1">requestURL:</span><span class="pl-s"><span class="pl-pds">@"</span>http://www.w3schools.com/webservices/tempconvert.asmx<span class="pl-pds">"</span></span>  
+        <span class="pl-c1">soapAction:</span><span class="pl-s"><span class="pl-pds">@"</span>http://www.w3schools.com/webservices/CelsiusToFahrenheit<span class="pl-pds">"</span></span> 
+        <span class="pl-c1">complete:</span>^(<span class="pl-k">NSInteger</span> statusCode, <span class="pl-c1">NSString</span> *stringXML) {
+
+        <span class="pl-c1">NSLog</span>(<span class="pl-s"><span class="pl-pds">@"</span>Result: <span class="pl-c1">%f</span><span class="pl-pds">"</span></span>, [soap <span class="pl-c1">floatValue</span>]);
+
+    } <span class="pl-c1">failWithError:</span>^(<span class="pl-c1">NSError</span> *error) {
+
+        <span class="pl-c1">NSLog</span>(<span class="pl-s"><span class="pl-pds">@"</span><span class="pl-c1">%@</span><span class="pl-pds">"</span></span>, error);
+    }];
+</pre></div>
+
+<p>WebServiceX example :</p>
+
+<div class="highlight highlight-objective-c"><pre>    SOAPEngine *soap = [[SOAPEngine <span class="pl-c1">alloc</span>] <span class="pl-c1">init</span>];
+    soap.actionNamespaceSlash = <span class="pl-c1">NO</span>;
+
+    [soap <span class="pl-c1">setValue:</span><span class="pl-s"><span class="pl-pds">@"</span>Roma<span class="pl-pds">"</span></span> <span class="pl-c1">forKey:</span><span class="pl-s"><span class="pl-pds">@"</span>CityName<span class="pl-pds">"</span></span>];
+    [soap <span class="pl-c1">setValue:</span><span class="pl-s"><span class="pl-pds">@"</span>Italy<span class="pl-pds">"</span></span> <span class="pl-c1">forKey:</span><span class="pl-s"><span class="pl-pds">@"</span>CountryName<span class="pl-pds">"</span></span>];
+    [soap <span class="pl-c1">requestURL:</span><span class="pl-s"><span class="pl-pds">@"</span>http://www.webservicex.com/globalweather.asmx<span class="pl-pds">"</span></span>
+          <span class="pl-c1">soapAction:</span><span class="pl-s"><span class="pl-pds">@"</span>http://www.webserviceX.NET/GetWeather<span class="pl-pds">"</span></span>
+          <span class="pl-c1">completeWithDictionary:</span>^(<span class="pl-k">NSInteger</span> statusCode, <span class="pl-c1">NSDictionary</span> *dict) {
+
+              <span class="pl-c1">NSLog</span>(<span class="pl-s"><span class="pl-pds">@"</span>Result: <span class="pl-c1">%@</span><span class="pl-pds">"</span></span>, dict);
+
+          } <span class="pl-c1">failWithError:</span>^(<span class="pl-c1">NSError</span> *error) {
+
+              <span class="pl-c1">NSLog</span>(<span class="pl-s"><span class="pl-pds">@"</span><span class="pl-c1">%@</span><span class="pl-pds">"</span></span>, error);
+          }];
+</pre></div>
+
+<p>PAYPAL example :</p>
+
+<div class="highlight highlight-objective-c"><pre>    SOAPEngine *soap = [[SOAPEngine <span class="pl-c1">alloc</span>] <span class="pl-c1">init</span>];
+
+    <span class="pl-c">// PAYPAL associates a set of API credentials with a specific PayPal account</span>
+    <span class="pl-c">// you can generate credentials from this https://developer.paypal.com/docs/classic/api/apiCredentials/</span>
+    <span class="pl-c">// and convert to a p12 from terminal use :</span>
+    <span class="pl-c">// openssl pkcs12 -export -in cert_key_pem.txt -inkey cert_key_pem.txt -out paypal_cert.p12</span>
+    soap.authorizationMethod = SOAP_AUTH_PAYPAL;
+    soap.username = <span class="pl-s"><span class="pl-pds">@"</span>support_api1.your-username<span class="pl-pds">"</span></span>;
+    soap.password = <span class="pl-s"><span class="pl-pds">@"</span>your-api-password<span class="pl-pds">"</span></span>;
+    soap.clientCerficateName = <span class="pl-s"><span class="pl-pds">@"</span>paypal_cert.p12<span class="pl-pds">"</span></span>;
+    soap.clientCertificatePassword = <span class="pl-s"><span class="pl-pds">@"</span>certificate-password<span class="pl-pds">"</span></span>;
+    soap.responseHeader = <span class="pl-c1">YES</span>;
+    <span class="pl-c">// use paypal for urn:ebay:api:PayPalAPI namespace</span>
+    [soap <span class="pl-c1">setValue:</span><span class="pl-s"><span class="pl-pds">@"</span>0<span class="pl-pds">"</span></span> <span class="pl-c1">forKey:</span><span class="pl-s"><span class="pl-pds">@"</span>paypal:ReturnAllCurrencies<span class="pl-pds">"</span></span>];
+    <span class="pl-c">// use paypal1 for urn:ebay:apis:eBLBaseComponents namespace</span>
+    [soap <span class="pl-c1">setValue:</span><span class="pl-s"><span class="pl-pds">@"</span>119.0<span class="pl-pds">"</span></span> <span class="pl-c1">forKey:</span><span class="pl-s"><span class="pl-pds">@"</span>paypal1:Version<span class="pl-pds">"</span></span>]; <span class="pl-c">// ns:Version in WSDL file</span>
+    <span class="pl-c">// certificate : https://api.paypal.com/2.0/ sandbox https://api.sandbox.paypal.com/2.0/</span>
+    <span class="pl-c">// signature : https://api-3t.paypal.com/2.0/ sandbox https://api-3t.sandbox.paypal.com/2.0/</span>
+    [soap <span class="pl-c1">requestURL:</span><span class="pl-s"><span class="pl-pds">@"</span>https://api.paypal.com/2.0/<span class="pl-pds">"</span></span>
+          <span class="pl-c1">soapAction:</span><span class="pl-s"><span class="pl-pds">@"</span>GetBalance<span class="pl-pds">"</span></span> <span class="pl-c1">completeWithDictionary:</span>^(<span class="pl-k">NSInteger</span> statusCode, <span class="pl-c1">NSDictionary</span> *dict) {
+
+        <span class="pl-c1">NSLog</span>(<span class="pl-s"><span class="pl-pds">@"</span>Result: <span class="pl-c1">%@</span><span class="pl-pds">"</span></span>, dict);
+
+    } <span class="pl-c1">failWithError:</span>^(<span class="pl-c1">NSError</span> *error) {
+
+        <span class="pl-c1">NSLog</span>(<span class="pl-s"><span class="pl-pds">@"</span><span class="pl-c1">%@</span><span class="pl-pds">"</span></span>, error);
+    }];
+</pre></div>
+
+<p>Upload file :</p>
+
+<div class="highlight highlight-objective-c"><pre>    SOAPEngine *soap = [[SOAPEngine <span class="pl-c1">alloc</span>] <span class="pl-c1">init</span>];
+
+    <span class="pl-c">// read local file</span>
+    <span class="pl-c1">NSData</span> *data = [<span class="pl-c1">NSData</span> <span class="pl-c1">dataWithContentsOfFile:</span><span class="pl-s"><span class="pl-pds">@"</span>my_video.mp4<span class="pl-pds">"</span></span>];
+
+    <span class="pl-c">// send file data</span>
+    [soap <span class="pl-c1">setValue:</span>data <span class="pl-c1">forKey:</span><span class="pl-s"><span class="pl-pds">@"</span>video<span class="pl-pds">"</span></span>];
+    [soap <span class="pl-c1">requestURL:</span><span class="pl-s"><span class="pl-pds">@"</span>http://www.my-web.com/my-service.asmx<span class="pl-pds">"</span></span>
+          <span class="pl-c1">soapAction:</span><span class="pl-s"><span class="pl-pds">@"</span>http://www.my-web.com/UploadFile<span class="pl-pds">"</span></span>
+          <span class="pl-c1">completeWithDictionary:</span>^(<span class="pl-k">NSInteger</span> statusCode, <span class="pl-c1">NSDictionary</span> *dict) {
+
+              <span class="pl-c1">NSLog</span>(<span class="pl-s"><span class="pl-pds">@"</span>Result: <span class="pl-c1">%@</span><span class="pl-pds">"</span></span>, dict);
+
+          } <span class="pl-c1">failWithError:</span>^(<span class="pl-c1">NSError</span> *error) {
+
+              <span class="pl-c1">NSLog</span>(<span class="pl-s"><span class="pl-pds">@"</span><span class="pl-c1">%@</span><span class="pl-pds">"</span></span>, error);
+          }];
+</pre></div>
+
+<p>Download file :</p>
+
+<div class="highlight highlight-objective-c"><pre>    SOAPEngine *soap = [[SOAPEngine <span class="pl-c1">alloc</span>] <span class="pl-c1">init</span>];
+
+    <span class="pl-c">// send filename to remote webservice</span>
+    [soap <span class="pl-c1">setValue:</span><span class="pl-s"><span class="pl-pds">"</span>my_video.mp4<span class="pl-pds">"</span></span> <span class="pl-c1">forKey:</span><span class="pl-s"><span class="pl-pds">@"</span>filename<span class="pl-pds">"</span></span>];
+    [soap <span class="pl-c1">requestURL:</span><span class="pl-s"><span class="pl-pds">@"</span>http://www.my-web.com/my-service.asmx<span class="pl-pds">"</span></span>
+          <span class="pl-c1">soapAction:</span><span class="pl-s"><span class="pl-pds">@"</span>http://www.my-web.com/DownloadFile<span class="pl-pds">"</span></span>
+          <span class="pl-c1">completeWithDictionary:</span>^(<span class="pl-k">NSInteger</span> statusCode, <span class="pl-c1">NSDictionary</span> *dict) {
+
+            <span class="pl-c">// local writable directory</span>
+            <span class="pl-c1">NSArray</span> *paths = <span class="pl-c1">NSSearchPathForDirectoriesInDomains</span>(NSDocumentDirectory, NSUserDomainMask, <span class="pl-c1">YES</span>);
+            <span class="pl-c1">NSString</span> *filePath = [[paths <span class="pl-c1">firstObject</span>] <span class="pl-c1">stringByAppendingPathComponent:</span><span class="pl-s"><span class="pl-pds">@"</span>my_video.mp4<span class="pl-pds">"</span></span>];
+
+            <span class="pl-c">// the service returns file data in the tag named video</span>
+            <span class="pl-c1">NSData</span> *data = dict[<span class="pl-s"><span class="pl-pds">@"</span>video<span class="pl-pds">"</span></span>];
+            [data <span class="pl-c1">writeToFile:</span><span class="pl-s"><span class="pl-pds">@"</span>my_video.mp4<span class="pl-pds">"</span></span> <span class="pl-c1">atomically:</span><span class="pl-c1">YES</span>];
+
+          } <span class="pl-c1">failWithError:</span>^(<span class="pl-c1">NSError</span> *error) {
+
+              <span class="pl-c1">NSLog</span>(<span class="pl-s"><span class="pl-pds">@"</span><span class="pl-c1">%@</span><span class="pl-pds">"</span></span>, error);
+          }];
+</pre></div>
+
+<h2>
+<a id="optimizations" class="anchor" href="#optimizations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Optimizations</h2>
+
+<p>When using the method named requestWSDL three steps are performed : </p>
+
+<ol>
+<li>retrieve the WSDL with an http request.</li>
+<li>processing to identify the soapAction.</li>
+<li>calls the method with an http request.</li>
+</ol>
+
+<p>this is not optimized, very slow, instead you can use the optimization below : </p>
+
+<ol>
+<li>retrieving manually the SOAPAction directly from WSDL (once with your favorite browser).</li>
+<li>use the method named requestURL instead of requestWSDL.</li>
+</ol>
+
+<h2>
+<a id="install-in-your-apps" class="anchor" href="#install-in-your-apps" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install in your apps</h2>
+
+<ol>
+<li><p>add -lxml2 in Build Settings --&gt; Other Linker Flags.
+<img src="https://raw.githubusercontent.com/priore/SOAPEngine/master/screen/otherlinkerflags.png" alt="Other Linker Flags"></p></li>
+<li><p>add /usr/include/libxml2 in Build Settings --&gt; Header Search Paths.
+<img src="https://raw.githubusercontent.com/priore/SOAPEngine/master/screen/headersearchpaths.png" alt="Header Search Paths"></p></li>
+<li><p>SOAPEngine64.framework (for iOS apps) or SOAPEngineOSX.framework (for Mac OS X apps).</p></li>
+<li>add Security.framework.</li>
+<li><p>add AppKit.framework (only for Mac OS X apps, not required for iOS apps).
+<img src="https://raw.githubusercontent.com/priore/SOAPEngine/master/screen/frameworks.png" alt="Frameworks"></p></li>
+<li><p>in your class, use #import  (both iOS or Mac OS X apps).
+<img src="https://raw.githubusercontent.com/priore/SOAPEngine/master/screen/codeimport.png" alt="import"></p></li>
+</ol>
+
+<p><strong><a href="http://www.prioregroup.com/iphone/soapengine.aspx">GET IT NOW!</a></strong></p>
+
+<h2>
+<a id="contacts" class="anchor" href="#contacts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contacts</h2>
+
+<ul>
+<li><a href="https://twitter.com/DaniloPriore">https://twitter.com/DaniloPriore</a></li>
+<li><a href="https://www.facebook.com/prioregroup">https://www.facebook.com/prioregroup</a></li>
+<li><a href="http://www.prioregroup.com/">http://www.prioregroup.com/</a></li>
+<li><a href="http://it.linkedin.com/in/priore/">http://it.linkedin.com/in/priore/</a></li>
+</ul>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/priore/SOAPEngine/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/priore/SOAPEngine/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/priore/SOAPEngine"></a> is maintained by <a href="https://github.com/priore">priore</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
