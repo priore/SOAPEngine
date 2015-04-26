@@ -122,6 +122,12 @@ typedef enum
 // enables retrieval of the contents of the SOAP header in the server response.
 @property (nonatomic, assign) BOOL responseHeader;
 
+// enables retrieval the attributes of the tags in the SOAP response.
+@property (nonatomic, assign) BOOL retrievesAttributes;
+
+// enables the attribute xsi:type="xsd:..." in the requests.
+@property (nonatomic, assign) BOOL xsdDataTypes;
+
 // sets the time out for all requests.
 @property (nonatomic, assign) NSTimeInterval requestTimeout;
 
@@ -192,7 +198,7 @@ typedef enum
 - (void)setFloatValue:(float)value forKey:(NSString*)key;
 - (void)setLongValue:(long)value forKey:(NSString*)key;
 
-#if TARGET_OS_IPHONE
+#if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
 - (void)setImage:(UIImage*)image forKey:(NSString*)key __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_4_3);
 #endif
 

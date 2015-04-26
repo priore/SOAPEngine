@@ -1,3 +1,12 @@
+1.18.0 Apr, 26, 2015
+- added a new property named xsdDataTypes to able add the attribute xsi:type="xsd:..." in the requests.
+- fixes for base64 data.
+
+1.17.0 Apr, 22, 2015
+- added a new property named retrievesAttributes to able retrieve the attributes of tags.
+- fixes for retrieve binary data types.
+- fixes for base64 data.
+ 
 1.16.0 Mar, 15, 2015
 - added a new property to change the default tag name when using setValue without key value.
 - fixes for NSNull value parameters.
