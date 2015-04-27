@@ -1,3 +1,6 @@
+1.18.1 Apr, 27, 2015
+- fixes for retrieve attributes of tags.
+
 1.18.0 Apr, 26, 2015
 - added a new property named xsdDataTypes to able add the attribute xsi:type="xsd:..." in the requests.
 - fixes for base64 data.
