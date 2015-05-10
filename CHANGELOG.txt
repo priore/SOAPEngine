@@ -1,3 +1,6 @@
+1.18.2 May, 10, 2015
+- fixes podspec
+
 1.18.1 Apr, 27, 2015
 - fixes for retrieve attributes of tags.
 
