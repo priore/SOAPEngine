@@ -200,6 +200,24 @@ settings for soap authentication :
 	
 ```	
 
+settings for Social OAuth 2.0 token :
+
+``` objective-c
+	#import <SOAPEngine/SOAPEngine.h>
+	#import <Accounts/Accounts.h>
+
+	SOAPEngine *soap = [[SOAPEngine alloc] init];
+	soap.userAgent = @"SOAPEngine";
+	
+	// token authorization
+	soap.authorizationMethod = SOAP_AUTH_SOCIAL;
+	soap.apiKey = @"1234567890"; // your apikey https://dev.twitter.com/
+	soap.socialName = ACAccountTypeIdentifierTwitter;
+	
+	// TODO: your code here...
+	
+```	
+
 encryption/decryption data without SSL/HTTPS :
 
 ``` objective-c
@@ -359,10 +377,11 @@ this is not optimized, very slow, instead you can use the optimization below :
 
 3. SOAPEngine64.framework (for iOS apps) or SOAPEngineOSX.framework (for Mac OS X apps).
 4. add Security.framework.
-5. add AppKit.framework (only for Mac OS X apps, not required for iOS apps).
+5. add Accounts.framework.
+6. add AppKit.framework (only for Mac OS X apps, not required for iOS apps).
 ![Frameworks](/screen/frameworks.png)
 
-6. in your class, use #import <SOAPEngine/SOAPEngine.h> (both iOS or Mac OS X apps).
+7. in your class import <SOAPEngine64/SOAPEngine.h> or <SOAPEngineOSX/SOAPEngine.h>.
 ![import](/screen/codeimport.png)
 
 **[GET IT NOW!](http://www.prioregroup.com/iphone/soapengine.aspx)**

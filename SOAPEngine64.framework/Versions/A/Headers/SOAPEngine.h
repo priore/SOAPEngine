@@ -57,7 +57,9 @@ typedef enum
     SOAP_AUTH_BASICAUTH,        // valid only for SOAP 1.1
     SOAP_AUTH_WSSECURITY,       // digest password
     SOAP_AUTH_CUSTOM,           // sets header property for custom auth
-    SOAP_AUTH_PAYPAL            // for PayPal SOAP API
+    SOAP_AUTH_PAYPAL,           // for PayPal SOAP API
+    SOAP_AUTH_TOKEN,            // with OAuth token
+    SOAP_AUTH_SOCIAL            // for social account
 } SOAPAuthorization;
 
 typedef enum
@@ -140,6 +142,11 @@ typedef enum
 // when calling PayPal APIs, you must authenticate each request using a set of API credentials
 // PayPal associates a set of API credentials with a specific PayPal account
 // you can generate credentials from this https://developer.paypal.com/docs/classic/api/apiCredentials/
+
+// extended values for social logins
+@property (nonatomic, retain) NSString *apiKey;
+@property (nonatomic, retain) NSString *socialName;
+@property (nonatomic, retain) NSString *token;
 
 // sets the custom attributes for Envelope tag, eg.
 // for extra namespace definitions (xmlns:tmp="http://temp.org").
@@ -309,9 +316,18 @@ completeWithDictionary:(SOAPEngineCompleteBlockWithDictionary)complete
       failWithError:(SOAPEngineFailBlock)fail;
 
 // sets logins
-- (void)login:(NSString*)username password:(NSString*)password;
-- (void)login:(NSString*)username password:(NSString*)password authorization:(SOAPAuthorization)authorization;
-- (void)login:(NSString*)username password:(NSString*)password email:(NSString*)email signature:(NSString*)signature; // PAYPAL
+- (void)login:(NSString*)username
+     password:(NSString*)password;
+
+- (void)login:(NSString*)username
+     password:(NSString*)password
+authorization:(SOAPAuthorization)authorization;
+
+// for PAYPAL login
+- (void)login:(NSString*)username
+     password:(NSString*)password
+        email:(NSString*)email
+    signature:(NSString*)signature;
 
 // cancel all delegates, blocks or notifications
 - (void)cancel;
