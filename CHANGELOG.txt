@@ -1,3 +1,8 @@
+1.19.0
+- added security token in the Authorization header field.
+- added recovery token authorization with the current social login settings.
+- fixes double slash on namespace of the method.
+
 1.18.2 May, 10, 2015
 - fixes podspec
 

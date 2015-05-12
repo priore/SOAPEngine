@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'SOAPEngine'
-  s.version = '1.18.2'
+  s.version = '1.19.0'
   s.summary = 'This generic SOAP client allows you to access web services using a your iOS and Mac OS X app.'
   s.license = { :type => 'Shareware', :file => 'LICENSE.txt' }
   s.authors = { 'Danilo Priore' => 'support@prioregroup.com' }
@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.libraries = 'xml2'
   s.source = { git: 'https://github.com/priore/SOAPEngine.git', :tag => "v#{s.version}" }
   s.xcconfig = { 'HEADER_SEARCH_PATHS' => "${PODS_ROOT}/#{s.name}/**" }
-  s.framework = 'Security'
+  s.frameworks = 'Security', 'Accounts'
   
   s.ios.platform             = '5.1.1'
   s.ios.preserve_paths       = 'SOAPEngine64.framework'
