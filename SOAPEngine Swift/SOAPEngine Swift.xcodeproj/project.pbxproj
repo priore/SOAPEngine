@@ -14,6 +14,7 @@
 		9FBFDADC1A80CE6B0024E73C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FBFDADA1A80CE6B0024E73C /* LaunchScreen.xib */; };
 		9FBFDAF41A80CF510024E73C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBFDAF31A80CF510024E73C /* Security.framework */; };
 		9FBFDAF91A80D5010024E73C /* SOAPEngine64.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBFDAF81A80D5010024E73C /* SOAPEngine64.framework */; };
+		9FC73A211B04FF450029DC82 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC73A201B04FF450029DC82 /* Accounts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		9FBFDAF31A80CF510024E73C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9FBFDAF71A80D1990024E73C /* SOAPEngine-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SOAPEngine-Bridging-Header.h"; sourceTree = "<group>"; };
 		9FBFDAF81A80D5010024E73C /* SOAPEngine64.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SOAPEngine64.framework; path = ../SOAPEngine64.framework; sourceTree = "<group>"; };
+		9FC73A201B04FF450029DC82 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FC73A211B04FF450029DC82 /* Accounts.framework in Frameworks */,
 				9FBFDAF41A80CF510024E73C /* Security.framework in Frameworks */,
 				9FBFDAF91A80D5010024E73C /* SOAPEngine64.framework in Frameworks */,
 			);
@@ -84,6 +87,7 @@
 		9FBFDAF51A80CF660024E73C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9FC73A201B04FF450029DC82 /* Accounts.framework */,
 				9FBFDAF81A80D5010024E73C /* SOAPEngine64.framework */,
 				9FBFDAF31A80CF510024E73C /* Security.framework */,
 			);

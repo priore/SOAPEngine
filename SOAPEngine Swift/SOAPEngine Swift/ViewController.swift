@@ -31,7 +31,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             completeWithDictionary: { (statusCode : Int, dict : [NSObject : AnyObject]!) -> Void in
                 
                 var book:Dictionary = dict as Dictionary
-                var verses:NSArray = book["BibleBookChapterVerse"] as NSArray
+                var verses:NSArray = book["BibleBookChapterVerse"] as! NSArray
                 self.verses = verses
                 self.table.reloadData()
                 
@@ -53,11 +53,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cell")
         }
         
-        var chapter_verse:NSDictionary = self.verses[indexPath.row] as NSDictionary
+        var chapter_verse:NSDictionary = self.verses[indexPath.row] as! NSDictionary
 
-        var chapter:String = chapter_verse["Chapter"] as String
-        var verse:String = chapter_verse["Verse"] as String
-        var text:String = chapter_verse["Text"] as String
+        var chapter:String = chapter_verse["Chapter"] as! String
+        var verse:String = chapter_verse["Verse"] as! String
+        var text:String = chapter_verse["Text"] as! String
         
         cell!.textLabel?.text = String(format: "Chapter %@ Verse %@", chapter, verse)
         cell!.detailTextLabel?.text = text

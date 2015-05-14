@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F2D29C819B7299A0074DD96 /* SOAPEngine64.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2D29C719B7299A0074DD96 /* SOAPEngine64.framework */; };
+		9F0804C11B04FCC8006524DF /* SOAPEngine64.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0804C01B04FCC8006524DF /* SOAPEngine64.framework */; };
 		9F3DF9A2165C045500A07453 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3DF9A1165C045500A07453 /* UIKit.framework */; };
 		9F3DF9A4165C045500A07453 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3DF9A3165C045500A07453 /* Foundation.framework */; };
 		9F3DF9A6165C045500A07453 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3DF9A5165C045500A07453 /* CoreGraphics.framework */; };
@@ -19,10 +19,11 @@
 		9F89EDE517D222FE00791CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F89EDE417D222FE00791CF7 /* Security.framework */; };
 		9FC69C64165C42BD00302808 /* MyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC69C63165C42BD00302808 /* MyObject.m */; };
 		9FC69CF7165C535500302808 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FC69CF6165C535500302808 /* Icon.png */; };
+		9FC73A1D1B04FE790029DC82 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC73A1C1B04FE790029DC82 /* Accounts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9F2D29C719B7299A0074DD96 /* SOAPEngine64.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SOAPEngine64.framework; path = ../SOAPEngine64.framework; sourceTree = "<group>"; };
+		9F0804C01B04FCC8006524DF /* SOAPEngine64.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SOAPEngine64.framework; path = ../SOAPEngine64.framework; sourceTree = "<group>"; };
 		9F3DF99D165C045500A07453 /* SOAPEngine Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SOAPEngine Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3DF9A1165C045500A07453 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9F3DF9A3165C045500A07453 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -40,6 +41,7 @@
 		9FC69C62165C42BD00302808 /* MyObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyObject.h; sourceTree = "<group>"; };
 		9FC69C63165C42BD00302808 /* MyObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyObject.m; sourceTree = "<group>"; };
 		9FC69CF6165C535500302808 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
+		9FC73A1C1B04FE790029DC82 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F2D29C819B7299A0074DD96 /* SOAPEngine64.framework in Frameworks */,
+				9FC73A1D1B04FE790029DC82 /* Accounts.framework in Frameworks */,
+				9F0804C11B04FCC8006524DF /* SOAPEngine64.framework in Frameworks */,
 				9F89EDE517D222FE00791CF7 /* Security.framework in Frameworks */,
 				9F3DF9A2165C045500A07453 /* UIKit.framework in Frameworks */,
 				9F3DF9A4165C045500A07453 /* Foundation.framework in Frameworks */,
@@ -78,7 +81,8 @@
 		9F3DF9A0165C045500A07453 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9F2D29C719B7299A0074DD96 /* SOAPEngine64.framework */,
+				9FC73A1C1B04FE790029DC82 /* Accounts.framework */,
+				9F0804C01B04FCC8006524DF /* SOAPEngine64.framework */,
 				9F89EDE417D222FE00791CF7 /* Security.framework */,
 				9F3DF9A1165C045500A07453 /* UIKit.framework */,
 				9F3DF9A3165C045500A07453 /* Foundation.framework */,
@@ -252,12 +256,11 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/..\"",
-					/Users/danilo/Desktop/SOAPEngine_bin/release/SOAPEngine,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SOAPEngine Sample/SOAPEngine Sample-Prefix.pch";
 				INFOPLIST_FILE = "SOAPEngine Sample/SOAPEngine Sample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -270,12 +273,11 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/..\"",
-					/Users/danilo/Desktop/SOAPEngine_bin/release/SOAPEngine,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SOAPEngine Sample/SOAPEngine Sample-Prefix.pch";
 				INFOPLIST_FILE = "SOAPEngine Sample/SOAPEngine Sample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

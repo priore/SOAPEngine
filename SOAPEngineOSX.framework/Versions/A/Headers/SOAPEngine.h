@@ -8,7 +8,7 @@
 //  https://github.com/priore
 //  https://twitter.com/DaniloPriore
 //
-// Version      : 1.16.0
+// Version      : 1.20.0
 // Changelog    : https://github.com/priore/SOAPEngine/blob/master/CHANGELOG.txt
 // Updates      : https://github.com/priore/SOAPEngine
 //
@@ -200,6 +200,7 @@ typedef enum
 // add a parameter to post
 - (void)setValue:(id)value;
 - (void)setValue:(id)value forKey:(NSString *)key; // can also be used with user-defined objects
+- (void)setValue:(id)value forKey:(NSString *)key subKeyName:(NSString*)subKeyName;
 - (void)setIntegerValue:(NSInteger)value forKey:(NSString*)key;
 - (void)setDoubleValue:(double)value forKey:(NSString*)key;
 - (void)setFloatValue:(float)value forKey:(NSString*)key;
