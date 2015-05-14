@@ -1,7 +1,11 @@
-1.19.0
+1.20.0, May 14, 2015
+- extended method setValue to allow to define a custom tag for the elements of an array.
+
+1.19.0, May 13, 2015
 - added security token in the Authorization header field.
 - added recovery token authorization with the current social login settings.
 - fixes double slash on namespace of the method.
+- now requires the addition also of Account.framework in your projects.
 
 1.18.2 May, 10, 2015
 - fixes podspec

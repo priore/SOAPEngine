@@ -18,25 +18,14 @@ static UILabel *label;
     
     [super viewDidLoad];
     
-    list = nil;
+    list = [NSMutableArray new];
     
     soap = [[SOAPEngine alloc] init];
     soap.userAgent = @"SOAPEngine";
-    soap.actionNamespaceSlash = YES;
-    soap.delegate = self;
-    
-    // license for com.prioregroup.soapengine-sample bundle
-    // *** not required on ios-simulator ***
     soap.licenseKey = @"eJJDzkPK9Xx+p5cOH7w0Q+AvPdgK1fzWWuUpMaYCq3r1mwf36Ocw6dn0+CLjRaOiSjfXaFQBWMi+TxCpxVF/FA==";
+    soap.delegate = self;
+    soap.actionNamespaceSlash = YES;
     
-    // data encryption
-    //soap.encryptionType = SOAP_ENCRYPT_AES256;
-    //soap.encryptionPassword = "my-password";
-
-    // WFC basicHttpBinding
-    //soap.actionNamespaceSlash = NO;
-    //soap.version = VERSION_WCF_1_1;
-
     // extra envelope definitions
     //soap.envelope = @"xmlns:tmp=\"http://tempuri.org/\"";
     
@@ -45,26 +34,41 @@ static UILabel *label;
     //soap.username = @"my-username";
     //soap.password = @"my-password";
     
+    // social token authentication
+    //soap.authorizationMethod = SOAP_AUTH_SOCIAL;
+    //soap.apiKey = @"1234567890";
+    //soap.socialName = ACAccountTypeIdentifierTwitter;
+    
+    // encryption/decryption
+    //soap.encryptionType = SOAP_ENCRYPT_AES256;
+    //soap.encryptionPassword = @"my-password";
+    
     // parameters with user-defined objects
     /*
-    MyObject *myObject = [[MyObject alloc] init];
-    myObject.name = @"Dan";
-    myObject.reminder = [[MyRemider alloc] init];
-    myObject.reminder.date = [NSDate date];
-    myObject.reminder.description = @"support email: support@prioregroup.com";
-    [soap setValue:myObject forKey:nil]; // forKey must be nil value
-    */
-
+     MyObject *myObject = [[MyObject alloc] init];
+     myObject.name = @"Dan";
+     myObject.reminder = [[MyRemider alloc] init];
+     myObject.reminder.date = [NSDate date];
+     myObject.reminder.description = @"support email: support@prioregroup.com";
+     [soap setValue:myObject forKey:nil]; // forKey must be nil value
+     */
+    
     // SOAP service (asmx)
     [soap setValue:@"Genesis" forKey:@"BookName"];
     [soap setIntegerValue:1 forKey:@"chapter"];
     [soap requestURL:@"http://www.prioregroup.com/services/americanbible.asmx"
           soapAction:@"http://www.prioregroup.com/GetVerses"];
     
-    // SOAP WFC service (svc)
-    //[soap requestURL:@"http://your-domain/services/AmericanBible.svc"
-    //      soapAction:@"http://your-domain/IAmericanBible/GetVerses"];
+    // synchronous
+    //NSDictionary *dict = [soap syncRequestURL:@"http://www.prioregroup.com/services/americanbible.asmx"
+    //                               soapAction:@"http://www.prioregroup.com/GetVerses"
+    //                                    error:nil];
+    //[self soapEngine:soap didFinishLoading:nil dictionary:dict];
     
+    // SOAP WFC service (svc) basicHttpBinding
+    //soap.version = VERSION_WCF_1_1;
+    //[soap requestURL:@"http://www.prioregroup.com/services/AmericanBible.svc"
+    //      soapAction:@"http://www.prioregroup.com/IAmericanBible/GetVerses"];
 }
 
 #pragma mark - SOPAEngine delegates

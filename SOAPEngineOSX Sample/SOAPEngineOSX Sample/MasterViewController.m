@@ -9,6 +9,7 @@
 #define tagVerseText    2
 
 #import "MasterViewController.h"
+#import <Accounts/Accounts.h>
 
 @implementation MasterViewController
 
@@ -24,9 +25,6 @@
     soap.delegate = self;
     soap.actionNamespaceSlash = YES;
     
-    // WFC basicHttpBinding
-    //soap.version = VERSION_WCF_1_1;
-    
     // extra envelope definitions
     //soap.envelope = @"xmlns:tmp=\"http://tempuri.org/\"";
     
@@ -34,6 +32,11 @@
     //soap.authorizationMethod = SOAP_AUTH_BASIC;
     //soap.username = @"my-username";
     //soap.password = @"my-password";
+    
+    // social token authentication
+    //soap.authorizationMethod = SOAP_AUTH_SOCIAL;
+    //soap.apiKey = @"1234567890";
+    //soap.socialName = ACAccountTypeIdentifierTwitter;
     
     // encryption/decryption
     //soap.encryptionType = SOAP_ENCRYPT_AES256;
@@ -55,7 +58,14 @@
     [soap requestURL:@"http://www.prioregroup.com/services/americanbible.asmx"
           soapAction:@"http://www.prioregroup.com/GetVerses"];
     
-    // SOAP WFC service (svc)
+    // synchronous
+    //NSDictionary *dict = [soap syncRequestURL:@"http://www.prioregroup.com/services/americanbible.asmx"
+    //                               soapAction:@"http://www.prioregroup.com/GetVerses"
+    //                                    error:nil];
+    //[self soapEngine:soap didFinishLoading:nil dictionary:dict];
+    
+    // SOAP WFC service (svc) basicHttpBinding
+    //soap.version = VERSION_WCF_1_1;
     //[soap requestURL:@"http://www.prioregroup.com/services/AmericanBible.svc"
     //      soapAction:@"http://www.prioregroup.com/IAmericanBible/GetVerses"];
 }

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F55990719AE5F3C00683289 /* SOAPEngineOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F55990619AE5F3C00683289 /* SOAPEngineOSX.framework */; };
+		9F0804BF1B04FCBF006524DF /* SOAPEngineOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0804BE1B04FCBF006524DF /* SOAPEngineOSX.framework */; };
 		9F55990819AE634A00683289 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FBA3D2A19ADE30C008A7CF5 /* MainMenu.xib */; };
 		9FBA3D1619ADE30C008A7CF5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBA3D1519ADE30C008A7CF5 /* Cocoa.framework */; };
 		9FBA3D2019ADE30C008A7CF5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9FBA3D1E19ADE30C008A7CF5 /* InfoPlist.strings */; };
@@ -17,10 +17,11 @@
 		9FBA3D4D19ADE3A9008A7CF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBA3D1A19ADE30C008A7CF5 /* Foundation.framework */; };
 		9FBA3D5319ADE721008A7CF5 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3D5119ADE721008A7CF5 /* MasterViewController.m */; };
 		9FBA3D5419ADE721008A7CF5 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FBA3D5219ADE721008A7CF5 /* MasterViewController.xib */; };
+		9FC73A1F1B04FE890029DC82 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC73A1E1B04FE890029DC82 /* Accounts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9F55990619AE5F3C00683289 /* SOAPEngineOSX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SOAPEngineOSX.framework; path = ../SOAPEngineOSX.framework; sourceTree = "<group>"; };
+		9F0804BE1B04FCBF006524DF /* SOAPEngineOSX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SOAPEngineOSX.framework; path = ../SOAPEngineOSX.framework; sourceTree = "<group>"; };
 		9FBA3D1219ADE30C008A7CF5 /* SOAPEngineOSX Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SOAPEngineOSX Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FBA3D1519ADE30C008A7CF5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		9FBA3D1819ADE30C008A7CF5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -37,6 +38,7 @@
 		9FBA3D5019ADE721008A7CF5 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		9FBA3D5119ADE721008A7CF5 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		9FBA3D5219ADE721008A7CF5 /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterViewController.xib; sourceTree = "<group>"; };
+		9FC73A1E1B04FE890029DC82 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,9 +46,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F55990719AE5F3C00683289 /* SOAPEngineOSX.framework in Frameworks */,
+				9FC73A1F1B04FE890029DC82 /* Accounts.framework in Frameworks */,
 				9FBA3D1619ADE30C008A7CF5 /* Cocoa.framework in Frameworks */,
 				9FBA3D4D19ADE3A9008A7CF5 /* Foundation.framework in Frameworks */,
+				9F0804BF1B04FCBF006524DF /* SOAPEngineOSX.framework in Frameworks */,
 				9FBA3D4C19ADE39B008A7CF5 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,7 +77,8 @@
 		9FBA3D1419ADE30C008A7CF5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9F55990619AE5F3C00683289 /* SOAPEngineOSX.framework */,
+				9FC73A1E1B04FE890029DC82 /* Accounts.framework */,
+				9F0804BE1B04FCBF006524DF /* SOAPEngineOSX.framework */,
 				9FBA3D4B19ADE39B008A7CF5 /* Security.framework */,
 				9FBA3D1519ADE30C008A7CF5 /* Cocoa.framework */,
 				9FBA3D1719ADE30C008A7CF5 /* Other Frameworks */,
@@ -273,10 +277,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SRCROOT)/..\"",
-					/Users/danilo/Desktop/SOAPEngine_bin/release/SOAPEngine,
-				);
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/..\"";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SOAPEngineOSX Sample/SOAPEngineOSX Sample-Prefix.pch";
 				INFOPLIST_FILE = "SOAPEngineOSX Sample/SOAPEngineOSX Sample-Info.plist";
@@ -290,10 +291,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SRCROOT)/..\"",
-					/Users/danilo/Desktop/SOAPEngine_bin/release/SOAPEngine,
-				);
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/..\"";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SOAPEngineOSX Sample/SOAPEngineOSX Sample-Prefix.pch";
 				INFOPLIST_FILE = "SOAPEngineOSX Sample/SOAPEngineOSX Sample-Info.plist";

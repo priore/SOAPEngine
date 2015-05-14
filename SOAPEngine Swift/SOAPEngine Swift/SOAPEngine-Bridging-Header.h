@@ -6,4 +6,4 @@
 //  Copyright (c) 2015 Danilo Priore. All rights reserved.
 //
 
-#import <SOAPEngine/SOAPEngine.h>
+#import <SOAPEngine64/SOAPEngine.h>
