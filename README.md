@@ -7,10 +7,11 @@ With this Framework you can create iPhone, iPad and Mac OS X apps that supports 
 
 ## Features
 * Support both 2001 (v1.1) and 2003 (v1.2) `XML` schema.
-* Support array, array of structs and dictionary.
-* Support user-defined object. Capable of serializing complex data types and array of complex data types, even multi-level embedded structs.
+* Support array, array of structs, dictionary and sets.
+* Support for user-defined object with serialization of complex data types and array of complex data types, even embedded multilevel structures.
 * Supports `ASMX` Services, `WCF` Services (`svc`) and now also the `WSDL` definitions.
 * Supports Basic Authentication, `WS-Security`, Client side Certificate and custom security header.
+* Supports iOS Social Account to send OAuth 2.0 token on the request.
 * `AES256` or `3DES` Encrypt/Decrypt data without SSL security.
 * An example of service and how to use it is included in source code.
 
@@ -18,6 +19,7 @@ With this Framework you can create iPhone, iPad and Mac OS X apps that supports 
 * iOS 5.1.1, and later
 * `XCode` 5.0 or later
 * Security.framework
+* Accounts.framework
 * Foundation.framework
 * UIKit.framework
 * libxml2.dylib
@@ -26,6 +28,7 @@ With this Framework you can create iPhone, iPad and Mac OS X apps that supports 
 * OS X 10.9 and later
 * `XCode` 5.0 or later
 * Security.framework
+* Accounts.framework
 * Foundation.framework
 * AppKit.framework
 * Cocoa.framework
