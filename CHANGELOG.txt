@@ -1,3 +1,6 @@
+1.20.1, May 18, 2015
+- fixes encoding type for response data.
+
 1.20.0, May 14, 2015
 - extended method setValue to allow to define a custom tag for the elements of an array.
 
