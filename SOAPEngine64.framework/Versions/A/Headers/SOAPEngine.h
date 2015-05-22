@@ -8,7 +8,7 @@
 //  https://github.com/priore
 //  https://twitter.com/DaniloPriore
 //
-// Version      : 1.20.1
+// Version      : 1.20.2
 // Changelog    : https://github.com/priore/SOAPEngine/blob/master/CHANGELOG.txt
 // Updates      : https://github.com/priore/SOAPEngine
 //

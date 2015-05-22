@@ -10,7 +10,7 @@ With this Framework you can create iPhone, iPad and Mac OS X apps that supports 
 * Support array, array of structs, dictionary and sets.
 * Support for user-defined object with serialization of complex data types and array of complex data types, even embedded multilevel structures.
 * Supports `ASMX` Services, `WCF` Services (`svc`) and now also the `WSDL` definitions.
-* Supports Basic Authentication, `WS-Security`, Client side Certificate and custom security header.
+* Supports Basic, Digest and NTLM Authentication, `WS-Security`, Client side Certificate and custom security header.
 * Supports iOS Social Account to send OAuth 2.0 token on the request.
 * `AES256` or `3DES` Encrypt/Decrypt data without SSL security.
 * An example of service and how to use it is included in source code.
@@ -386,6 +386,8 @@ this is not optimized, very slow, instead you can use the optimization below :
 
 7. in your class import <SOAPEngine64/SOAPEngine.h> or <SOAPEngineOSX/SOAPEngine.h>.
 ![import](/screen/codeimport.png)
+
+8. and don't forget to add your app, that use our framework, in the list of [CocoaControls](https://www.cocoacontrols.com/controls/soapengine), thanks!
 
 **[GET IT NOW!](http://www.prioregroup.com/iphone/soapengine.aspx)**
 
