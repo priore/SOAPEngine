@@ -1,32 +1,32 @@
 **SOAPEngine**
 ================
 
-This generic `SOAP` client allows you to access web services using a your `iOS` app and `Mac OS X` app.
+This generic [SOAP](http://www.wikipedia.org/wiki/SOAP) client allows you to access web services using a your [iOS](http://www.wikipedia.org/wiki/IOS) app and [Mac OS X](http://www.wikipedia.org/wiki/OS_X) app.
 
-With this Framework you can create iPhone, iPad and Mac OS X apps that supports SOAP Client Protocol. This framework able executes methods at remote web services with SOAP standard protocol.
+With this Framework you can create [iPhone](http://www.wikipedia.org/wiki/IPhone), [iPad](http://www.wikipedia.org/wiki/IPad) and [Mac OS X](http://www.wikipedia.org/wiki/OS_X) apps that supports [SOAP](http://www.wikipedia.org/wiki/SOAP) Client Protocol. This framework able executes methods at remote web services with [SOAP](http://www.wikipedia.org/wiki/SOAP) standard protocol.
 
 ## Features
-* Support both 2001 (v1.1) and 2003 (v1.2) `XML` schema.
+* Support both 2001 (v1.1) and 2003 (v1.2) [XML](http://www.wikipedia.org/wiki/XML) schema.
 * Support array, array of structs, dictionary and sets.
 * Support for user-defined object with serialization of complex data types and array of complex data types, even embedded multilevel structures.
-* Supports `ASMX` Services, `WCF` Services (`svc`) and now also the `WSDL` definitions.
-* Supports Basic, Digest and NTLM Authentication, `WS-Security`, Client side Certificate and custom security header.
-* Supports iOS Social Account to send OAuth 2.0 token on the request.
-* `AES256` or `3DES` Encrypt/Decrypt data without SSL security.
+* Supports [ASMX](http://www.wikipedia.org/wiki/ASP.NET#Other_files) Services, [WCF](http://www.wikipedia.org/wiki/Windows_Communication_Foundation) Services ([SVC](http://www.wikipedia.org/wiki/ASP.NET#Other_files)) and now also the [WSDL](http://www.wikipedia.org/wiki/Web_Services_Description_Language) definitions.
+* Supports [Basic](http://www.wikipedia.org/wiki/Basic_access_authentication), [Digest](http://www.wikipedia.org/wiki/Digest_access_authentication) and [NTLM](http://www.wikipedia.org/wiki/Integrated_Windows_Authentication) Authentication, [WS-Security](http://www.wikipedia.org/wiki/WS-Security), Client side Certificate and custom security header.
+* Supports [iOS](http://www.wikipedia.org/wiki/IOS) Social Account to send [OAuth2.0](http://www.wikipedia.org/wiki/OAuth) token on the request.
+* [AES256](http://www.wikipedia.org/wiki/Advanced_Encryption_Standard) or [3DES](http://www.wikipedia.org/wiki/Triple_DES) Encrypt/Decrypt data without [SSL](http://www.wikipedia.org/w/index.php?title=Transport_Layer_Security) security.
 * An example of service and how to use it is included in source code.
 
-## Requirements for iOS
-* iOS 5.1.1, and later
-* `XCode` 5.0 or later
+## Requirements for [iOS](http://www.wikipedia.org/wiki/IOS)
+* [iOS](http://www.wikipedia.org/wiki/IOS) 5.1.1, and later
+* [XCode](http://www.wikipedia.org/wiki/Xcode) 5.0 or later
 * Security.framework
 * Accounts.framework
 * Foundation.framework
 * UIKit.framework
 * libxml2.dylib
 
-## Requirements for Mac OS X
-* OS X 10.9 and later
-* `XCode` 5.0 or later
+## Requirements for [Mac OS X](http://www.wikipedia.org/wiki/OS_X)
+* [OS X](http://www.wikipedia.org/wiki/OS_X) 10.9 and later
+* [XCode](http://www.wikipedia.org/wiki/Xcode) 5.0 or later
 * Security.framework
 * Accounts.framework
 * Foundation.framework
@@ -35,12 +35,12 @@ With this Framework you can create iPhone, iPad and Mac OS X apps that supports 
 * libxml2.dylib
 
 ## Limitations
-* for `WCF` services, only supports basic http bindings (`<basicHttpBinding>`).
-* in `Mac OS X` unsupported image objects (instead you can use the `NSData`).
+* for [WCF](http://www.wikipedia.org/wiki/Windows_Communication_Foundation) services, only supports basic http bindings [<basicHttpBinding>](https://msdn.microsoft.com/library/ms731361.aspx).
+* in [Mac OS X](http://www.wikipedia.org/wiki/OS_X) unsupported image objects, instead you can use the [NSData](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSData_Class/index.html).
 
 ## How to use
 
-with delegates :
+with [Delegates](https://developer.apple.com/library/ios/documentation/General/Conceptual/CocoaEncyclopedia/DelegatesandDataSources/DelegatesandDataSources.html) :
 
 ``` objective-c
 	#import <SOAPEngine/SOAPEngine.h>
@@ -67,7 +67,7 @@ with delegates :
 	}
 ```
 
-with block programming :
+with [Block programming](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/Blocks/Articles/00_Introduction.html) :
 
 ``` objective-c
 	#import <SOAPEngine/SOAPEngine.h>
@@ -91,7 +91,7 @@ with block programming :
 			}];
 ```	
 
-directly from WSDL (not recommended is slow) :
+directly from [WSDL](http://www.wikipedia.org/wiki/Web_Services_Description_Language) (not recommended is slow) :
 
 ``` objective-c
 	#import <SOAPEngine/SOAPEngine.h>
@@ -116,7 +116,7 @@ directly from WSDL (not recommended is slow) :
 			}];
 ```	
 
-with notifications :
+with [Notifications](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSNotificationCenter_Class/index.html) :
 
 ``` objective-c
 	#import <SOAPEngine/SOAPEngine.h>
@@ -162,7 +162,7 @@ Synchronous request :
     NSLog(@"error: %@, result: %@", error, dict)
 ```
 
-Swift language :
+[SWIFT](http://www.wikipedia.org/wiki/Swift_(programming_language) language :
 
 ``` swift
         var soap = SOAPEngine()
@@ -203,7 +203,7 @@ settings for soap authentication :
 	
 ```	
 
-settings for Social OAuth 2.0 token :
+settings for Social [OAuth2.0](http://www.wikipedia.org/wiki/OAuth) token :
 
 ``` objective-c
 	#import <SOAPEngine/SOAPEngine.h>
@@ -234,7 +234,7 @@ encryption/decryption data without SSL/HTTPS :
 	// TODO: your code here...
 	
 ```	
-W3Schools example :
+[W3Schools](http://www.w3schools.com) example :
 
 ``` objective-c
 	SOAPEngine *soap = [[SOAPEngine alloc] init];
@@ -255,7 +255,7 @@ W3Schools example :
 	
 ```	
 
-WebServiceX example :
+[WebServiceX](http://www.webservicex.net) example :
 
 ``` objective-c
 	SOAPEngine *soap = [[SOAPEngine alloc] init];
@@ -276,7 +276,47 @@ WebServiceX example :
           	
 ```	
 
-PAYPAL example :
+[BarCode](http://www.wikipedia.org/wiki/Barcode) with [WebServiceX](http://www.webservicex.net) example :
+
+``` objective-c
+	 SOAPEngine *soap = [[SOAPEngine alloc] init];
+     soap.actionNamespaceSlash = NO;
+
+     NSDictionary *barCodeParam = @{
+     	@"Height" : @(100),
+     	@"Width" : @(150),
+     	@"Angle" : @(0),
+     	@"Ratio" : @(5),
+     	@"Module" : @(0),
+     	@"Left" : @(0),
+     	@"Top" : @(0),
+     	@"CheckSum" : @"true",
+     	@"FontName" : @"Arial",
+     	@"FontSize" : @(20),
+     	@"BarColor" : @"black",
+     	@"BGColor" : @"white",
+     	@"barcodeOption" : @"None",
+     	@"barcodeType" : @"CodeEAN13",
+     	@"checkSumMethod" : @"None",
+     	@"showTextPosition" : @"BottomCenter",
+     	@"BarCodeImageFormat" : @"PNG" };
+     [soap setValue:barCodeParam forKey:@"BarCodeParam"];
+     [soap setValue:@"9783161484100" forKey:@"BarCodeText"];
+     [soap requestURL:@"http://www.webservicex.net/genericbarcode.asmx"
+     soapAction:@"http://www.webservicex.net/GenerateBarCode"
+        completeWithDictionary:^(NSInteger statusCode, NSDictionary *dict) {
+     
+         NSString *imgBase64 = [soap stringValue];
+         NSData *base64 = [[NSData alloc] initWithBase64Encoding:imgBase64];
+         UIImage *barCodeImage = [[UIImage alloc] initWithData:base64];
+     
+     } failWithError:^(NSError *error) {
+         NSLog(@"Error: %@", error);
+     }];
+     
+```	
+
+[PAYPAL](http://www.paypal.com) example :
 
 ``` objective-c
 	SOAPEngine *soap = [[SOAPEngine alloc] init];
@@ -397,3 +437,4 @@ this is not optimized, very slow, instead you can use the optimization below :
 - https://www.facebook.com/prioregroup
 - http://www.prioregroup.com/
 - http://it.linkedin.com/in/priore/
+
