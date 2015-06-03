@@ -1,3 +1,9 @@
+1.21.0, Jun 2, 2015
+- parsing soapAction when contains ‘#’.
+- fixes when the xml contains internally JSON.
+- extended method setValue with tag attribute definitions.
+- support for enterprise licenses, one license for multiple apps.
+
 1.20.2, May 22, 2015
 - fixes for basic, digest and NTLM authentication.
 
@@ -11,7 +17,7 @@
 - added security token in the Authorization header field.
 - added recovery token authorization with the current social login settings.
 - fixes double slash on namespace of the method.
-- now requires the addition also of Account.framework in your projects.
+- requires the Account.framework.
 
 1.18.2 May, 10, 2015
 - fixes podspec

@@ -8,7 +8,7 @@
 //  https://github.com/priore
 //  https://twitter.com/DaniloPriore
 //
-// Version      : 1.20.2
+// Version      : 1.21.0
 // Changelog    : https://github.com/priore/SOAPEngine/blob/master/CHANGELOG.txt
 // Updates      : https://github.com/priore/SOAPEngine
 //
@@ -198,16 +198,21 @@ typedef enum
 - (BOOL)isNull;
 
 // add a parameter to post
-- (void)setValue:(id)value;
-- (void)setValue:(id)value forKey:(NSString *)key; // can also be used with user-defined objects
-- (void)setValue:(id)value forKey:(NSString *)key subKeyName:(NSString*)subKeyName;
 - (void)setIntegerValue:(NSInteger)value forKey:(NSString*)key;
 - (void)setDoubleValue:(double)value forKey:(NSString*)key;
 - (void)setFloatValue:(float)value forKey:(NSString*)key;
 - (void)setLongValue:(long)value forKey:(NSString*)key;
 
+// add a parameter to post, can also be used with user-defined objects
+- (void)setValue:(id)value;
+- (void)setValue:(id)value forKey:(NSString *)key;
+- (void)setValue:(id)value forKey:(NSString *)key attributes:(NSDictionary*)attributes;
+- (void)setValue:(id)value forKey:(NSString *)key subKeyName:(NSString*)subKeyName;
+- (void)setValue:(id)value forKey:(NSString *)key subKeyName:(NSString*)subKeyName attributes:(NSDictionary*)attrbitues;
+
 #if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
 - (void)setImage:(UIImage*)image forKey:(NSString*)key __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_4_3);
+- (void)setImage:(UIImage*)image forKey:(NSString*)key attributes:(NSDictionary*)attributes __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_4_3);
 #endif
 
 // clear all parameters
