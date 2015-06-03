@@ -162,7 +162,7 @@ Synchronous request :
     NSLog(@"error: %@, result: %@", error, dict)
 ```
 
-[SWIFT](http://www.wikipedia.org/wiki/Swift_(programming_language) language :
+[Swift](http://www.wikipedia.org/wiki/Swift_programming_language) language :
 
 ``` swift
         var soap = SOAPEngine()
