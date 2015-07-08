@@ -35,7 +35,7 @@ With this Framework you can create [iPhone](http://www.wikipedia.org/wiki/IPhone
 * libxml2.dylib
 
 ## Limitations
-* for [WCF](http://www.wikipedia.org/wiki/Windows_Communication_Foundation) services, only supports basic http bindings [<basicHttpBinding>](https://msdn.microsoft.com/library/ms731361.aspx).
+* for [WCF](http://www.wikipedia.org/wiki/Windows_Communication_Foundation) services, only supports basic http bindings ([basicHttpBinding](https://msdn.microsoft.com/library/ms731361.aspx)).
 * in [Mac OS X](http://www.wikipedia.org/wiki/OS_X) unsupported image objects, instead you can use the [NSData](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSData_Class/index.html).
 
 ## How to use
@@ -316,7 +316,7 @@ encryption/decryption data without SSL/HTTPS :
      
 ```	
 
-[PAYPAL](http://www.paypal.com) example :
+[PAYPAL](http://www.paypal.com) example with certificate :
 
 ``` objective-c
 	SOAPEngine *soap = [[SOAPEngine alloc] init];
@@ -429,12 +429,9 @@ this is not optimized, very slow, instead you can use the optimization below :
 
 8. and don't forget to add your app, that use our framework, in the list of [CocoaControls](https://www.cocoacontrols.com/controls/soapengine), thanks!
 
-**[GET IT NOW!](http://www.prioregroup.com/iphone/soapengine.aspx)**
+[![TRIAL LICENSE](/screen/freetrial.png)](https://github.com/priore/SOAPEngine/archive/master.zip)    [![BUY SINGLE LICENSE](/screen/1299.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G3RXTN3YD7VRG)    [![BUY ENTERPRISE LICENSE](/screen/7799.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6YH9LJRNXPTHE)
 
 ##Contacts
 
-- https://twitter.com/DaniloPriore
-- https://www.facebook.com/prioregroup
-- http://www.prioregroup.com/
-- http://it.linkedin.com/in/priore/
+[![TWITTER](/screen/twitter.png)](https://twitter.com/DaniloPriore)    [![FACEBOOK](/screen/facebook.png)](https://www.facebook.com/prioregroup)    [![LINKED-IN](/screen/linked-in.png)](http://it.linkedin.com/in/priore/)    [![PRIOREGROUP](/screen/prioregrp.gif)](http://www.prioregroup.com/)
 
