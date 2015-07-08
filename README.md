@@ -429,9 +429,11 @@ this is not optimized, very slow, instead you can use the optimization below :
 
 8. and don't forget to add your app, that use our framework, in the list of [CocoaControls](https://www.cocoacontrols.com/controls/soapengine), thanks!
 
-[![TRIAL LICENSE](/screen/freetrial.png)](https://github.com/priore/SOAPEngine/archive/master.zip)
-[![BUY SINGLE LICENSE](/screen/1299.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G3RXTN3YD7VRG)  ([single license](General%20License%20iOS.pdf))
-[![BUY ENTERPRISE LICENSE](/screen/7799.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6YH9LJRNXPTHE)  ([enterprise license](General%20License%20iOS.pdf))
+## Licenses
+
+Trial | Single | Enterprise
+------------- | -------------
+[![TRIAL LICENSE](/screen/freetrial.png)](https://github.com/priore/SOAPEngine/archive/master.zip)  | [![BUY SINGLE LICENSE](/screen/1299.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G3RXTN3YD7VRG) | [![BUY ENTERPRISE LICENSE](/screen/7799.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6YH9LJRNXPTHE)
 
 ##Contacts
 
