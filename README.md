@@ -432,7 +432,7 @@ this is not optimized, very slow, instead you can use the optimization below :
 ## Licenses
 
 Trial | Single | Enterprise
-------------- | -------------
+------------- | ------------- | -------------
 [![TRIAL LICENSE](/screen/freetrial.png)](https://github.com/priore/SOAPEngine/archive/master.zip)  | [![BUY SINGLE LICENSE](/screen/1299.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G3RXTN3YD7VRG) | [![BUY ENTERPRISE LICENSE](/screen/7799.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6YH9LJRNXPTHE)
 
 ##Contacts
