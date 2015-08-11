@@ -8,10 +8,12 @@
 //  https://github.com/priore
 //  https://twitter.com/DaniloPriore
 //
-// Version      : 1.21.0
+// Version      : 1.21.1
 // Changelog    : https://github.com/priore/SOAPEngine/blob/master/CHANGELOG.txt
 // Updates      : https://github.com/priore/SOAPEngine
 //
+#define SOAPEngineFrameworkVersion @"1.21.1"
+
 #import <Foundation/Foundation.h>
 
 #if TARGET_OS_IPHONE
