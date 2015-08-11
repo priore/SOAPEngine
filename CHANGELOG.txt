@@ -1,3 +1,8 @@
+1.21.1, Aug 11, 2015
+- fix for xml injection.
+- fix for “Incorrect NSStringEncoding value detected” message.
+- auto detect wsdl call when using requestURL instead of requestWSDL.
+
 1.21.0, Jun 2, 2015
 - parsing soapAction when contains ‘#’.
 - fixes when the xml contains internally JSON.
