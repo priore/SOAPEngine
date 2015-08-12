@@ -12,15 +12,16 @@ Pod::Spec.new do |s|
   s.frameworks = 'Security', 'Accounts'
   
   s.ios.platform             = '5.1.1'
+  s.ios.deployment_target    = '5.1.1'
   s.ios.preserve_paths       = 'SOAPEngine64.framework'
   s.ios.public_header_files  = 'SOAPEngine64.framework/Versions/A/Headers/*.h'
   s.ios.vendored_frameworks  = 'SOAPEngine64.framework'
   s.ios.xcconfig 			 = { 'HEADER_SEARCH_PATHS' => '/usr/include/libxml2' }
   
   s.osx.platform			 = '10.9'
+  s.osx.deployment_target    = '10.9'
   s.osx.preserve_paths       = 'SOAPEngineOSX.framework'
   s.osx.public_header_files  = 'SOAPEngineOSX.framework/Versions/A/Headers/*.h'
   s.osx.vendored_frameworks  = 'SOAPEngineOSX.framework'
   s.osx.framework			 = 'AppKit'
 end
-
