@@ -38,6 +38,18 @@ With this Framework you can create [iPhone](http://www.wikipedia.org/wiki/IPhone
 * for [WCF](http://www.wikipedia.org/wiki/Windows_Communication_Foundation) services, only supports basic http bindings ([basicHttpBinding](https://msdn.microsoft.com/library/ms731361.aspx)).
 * in [Mac OS X](http://www.wikipedia.org/wiki/OS_X) unsupported image objects, instead you can use the [NSData](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSData_Class/index.html).
 
+## Security for Xcode 7.x
+The new Xcode 7 requires an additional setting for the apps, if this setting does not exist you will see a log message like this:
+`App Transport Security has blocked a cleartext HTTP (http://) resource load since it is insecure. Temporary exceptions can be configured via your app's Info.plist file.`
+To resolve this, add few keys in info.plist, the steps are:
+
+1. Open info.plist file of your project
+2. Add a Key called [NSAppTransportSecurity](http://stackoverflow.com/a/32631185/4069848) as a Dictionary.
+3. Add a Subkey called [NSAllowsArbitraryLoads](http://stackoverflow.com/a/32631185/4069848) as Boolean and set its value to YES as like following image.
+![NSAppTransportSecurity](/screen/NSAppTransportSecurity.png)
+
+ref link: http://stackoverflow.com/a/32631185/4069848
+
 ## How to use
 
 with [Delegates](https://developer.apple.com/library/ios/documentation/General/Conceptual/CocoaEncyclopedia/DelegatesandDataSources/DelegatesandDataSources.html) :
@@ -431,7 +443,7 @@ this is not optimized, very slow, instead you can use the optimization below :
 
 ## Licenses
 
-Trial | Single | Enterprise
+Trial (only simulator) | Single App | Enterprise (multi App)
 ------------- | ------------- | -------------
 [![TRIAL LICENSE](/screen/freetrial.png)](https://github.com/priore/SOAPEngine/archive/master.zip)  | [![BUY SINGLE LICENSE](/screen/1299.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G3RXTN3YD7VRG) | [![BUY ENTERPRISE LICENSE](/screen/7799.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6YH9LJRNXPTHE)
 
