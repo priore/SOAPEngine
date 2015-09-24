@@ -1,3 +1,8 @@
+1.22.0, Sep 23, 2015
+- added support for text password on WS-Security.
+- fixes for soap message with inside another XML message.
+- increased the minimum SDK version to iOS 7.1 and Xcode version to 5.1.1.
+
 1.21.2, Aug 29, 2015
 - fixed wrong compilation of framework.
 

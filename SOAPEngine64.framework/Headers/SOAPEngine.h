@@ -8,16 +8,26 @@
 //  https://github.com/priore
 //  https://twitter.com/DaniloPriore
 //
-// Version      : 1.21.2
+//  email support: support@prioregroup.com
+//
+// Version      : 1.22
 // Changelog    : https://github.com/priore/SOAPEngine/blob/master/CHANGELOG.txt
 // Updates      : https://github.com/priore/SOAPEngine
 //
-#define SOAPEngineFrameworkVersion @"1.21.1"
+#define SOAPEngineFrameworkVersion @"1.22" DEPRECATED_ATTRIBUTE
 
 #import <Foundation/Foundation.h>
 
 #if TARGET_OS_IPHONE
     #import <UIKit/UIKit.h>
+#endif
+
+#if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
+    FOUNDATION_EXPORT double SOAPEngine64VersionNumber;
+    FOUNDATION_EXPORT const unsigned char SOAPEngine64VersionString[];
+#else
+    FOUNDATION_EXPORT double SOAPEngineOSXVersionNumber;
+    FOUNDATION_EXPORT const unsigned char SOAPEngineOSXVersionString[];
 #endif
 
 // Local Notification names
@@ -57,7 +67,8 @@ typedef enum
     SOAP_AUTH_NONE,
     SOAP_AUTH_BASIC,            // located in header request (base64)
     SOAP_AUTH_BASICAUTH,        // valid only for SOAP 1.1
-    SOAP_AUTH_WSSECURITY,       // digest password
+    SOAP_AUTH_WSSECURITY,       // WSS with digest password
+    SOAP_AUTH_WSSECURITY_TEXT,  // WSS with text password
     SOAP_AUTH_CUSTOM,           // sets header property for custom auth
     SOAP_AUTH_PAYPAL,           // for PayPal SOAP API
     SOAP_AUTH_TOKEN,            // with OAuth token
