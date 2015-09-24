@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.ios.platform             = '7.1'
   s.ios.deployment_target    = '7.1'
   s.ios.preserve_paths       = 'SOAPEngine64.framework'
-  s.ios.public_header_files  = 'SOAPEngine64.framework/Versions/A/Headers/*.h'
+  s.ios.public_header_files  = 'SOAPEngine64.framework/Headers/*.h'
   s.ios.vendored_frameworks  = 'SOAPEngine64.framework'
   s.ios.xcconfig 			 = { 'HEADER_SEARCH_PATHS' => '/usr/include/libxml2' }
   
