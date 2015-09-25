@@ -6,14 +6,14 @@
 	<dict>
 		<key>Resources/Info.plist</key>
 		<data>
-		mS3FVFjqxqehrpUkVePRN7/4DeE=
+		ZcXu62WLdMeedyd5CixavbE5VOw=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
 		<key>Headers/SOAPEngine.h</key>
 		<data>
-		ir7+9t41emwD3qJH9uqPHOISIUo=
+		4dJe5uSaKA5rTSIByRhESgQY5GI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -21,7 +21,7 @@
 		</data>
 		<key>Resources/Info.plist</key>
 		<data>
-		mS3FVFjqxqehrpUkVePRN7/4DeE=
+		ZcXu62WLdMeedyd5CixavbE5VOw=
 		</data>
 	</dict>
 	<key>rules</key>
