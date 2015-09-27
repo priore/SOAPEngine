@@ -1,7 +1,7 @@
 1.22.1, Sep 25, 2015
 - added method that return a single boolean value (like integerValue etc.)
 - fixes for the default tag names for an array parameter.
-- fixes for duplicate declaration when a project already use XPathQuery.
+- fixes for duplicate symbols when a project already use XPathQuery.
 - fixes when a WSDL definition not contain location attribute or soapAction attribute.
 
 1.22.0, Sep 23, 2015

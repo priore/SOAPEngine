@@ -20,6 +20,7 @@
 		9FC69C64165C42BD00302808 /* MyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC69C63165C42BD00302808 /* MyObject.m */; };
 		9FC69CF7165C535500302808 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FC69CF6165C535500302808 /* Icon.png */; };
 		9FC73A1D1B04FE790029DC82 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC73A1C1B04FE790029DC82 /* Accounts.framework */; };
+		9FCC46CD1BB78141009C7B86 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FCC46CC1BB78141009C7B86 /* Default-568h@2x.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		9FC69C63165C42BD00302808 /* MyObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyObject.m; sourceTree = "<group>"; };
 		9FC69CF6165C535500302808 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
 		9FC73A1C1B04FE790029DC82 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		9FCC46CC1BB78141009C7B86 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		9F3DF992165C045500A07453 = {
 			isa = PBXGroup;
 			children = (
+				9FCC46CC1BB78141009C7B86 /* Default-568h@2x.png */,
 				9F3DF9A7165C045500A07453 /* SOAPEngine Sample */,
 				9F3DF9A0165C045500A07453 /* Frameworks */,
 				9F3DF99E165C045500A07453 /* Products */,
@@ -144,7 +147,7 @@
 		9F3DF994165C045500A07453 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Prioregorup.com;
 			};
 			buildConfigurationList = 9F3DF997165C045500A07453 /* Build configuration list for PBXProject "SOAPEngine Sample" */;
@@ -170,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F3DF9AC165C045500A07453 /* InfoPlist.strings in Resources */,
+				9FCC46CD1BB78141009C7B86 /* Default-568h@2x.png in Resources */,
 				9F3DF9D6165C04F200A07453 /* ViewController.xib in Resources */,
 				9FC69CF7165C535500302808 /* Icon.png in Resources */,
 			);
@@ -211,6 +215,7 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -261,6 +266,7 @@
 				GCC_PREFIX_HEADER = "SOAPEngine Sample/SOAPEngine Sample-Prefix.pch";
 				INFOPLIST_FILE = "SOAPEngine Sample/SOAPEngine Sample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prioregroup.soapengine-sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -278,6 +284,7 @@
 				GCC_PREFIX_HEADER = "SOAPEngine Sample/SOAPEngine Sample-Prefix.pch";
 				INFOPLIST_FILE = "SOAPEngine Sample/SOAPEngine Sample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prioregroup.soapengine-sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
