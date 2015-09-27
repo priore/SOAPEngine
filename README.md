@@ -369,6 +369,28 @@ settings for Social [**OAuth2.0**](http://www.wikipedia.org/wiki/OAuth) token :
           	
 ```	
 
+[**Magento 2**](http://devdocs.magento.com) login example :
+
+``` objective-c
+	SOAPEngine *soap = [[SOAPEngine alloc] init];
+    soap.selfSigned = YES; // only for invalid https certificates
+    soap.responseHeader = YES;
+    soap.actionNamespaceSlash = NO;
+    soap.envelope = @"xmlns:urn=\"urn:Magento\"";
+    [soap setValue:@"your-username" forKey:@"username"];
+    [soap setValue:@"your-apykey" forKey:@"apiKey"];
+    [soap requestURL:@"https://your-magentohost/api/v2_soap/"
+          soapAction:@"urn:Mage_Api_Model_Server_V2_HandlerAction#login"
+completeWithDictionary:^(NSInteger statusCode, NSDictionary *dict)
+	{
+        NSLog(@"Login return: %@", [soap stringValue]);
+        
+    } failWithError:^(NSError *error) {
+        
+        NSLog(@"%@", error);
+    }];
+```	
+
 [**Upload file**]() :
 
 ``` objective-c
