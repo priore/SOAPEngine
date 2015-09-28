@@ -135,12 +135,12 @@ static UILabel *label;
 
 - (void)soapEngine:(SOAPEngine *)soapEngine didReceiveDataSize:(NSUInteger)current total:(NSUInteger)total
 {
-    NSLog(@"Received %i bytes of %i bytes", current, total);
+    NSLog(@"Received %lu bytes of %lu bytes", (unsigned long)current, (unsigned long)total);
 }
 
 - (void)soapEngine:(SOAPEngine *)soapEngine didSendDataSize:(NSUInteger)current total:(NSUInteger)total
 {
-    NSLog(@"Sended %i bytes of %i bytes", current, total);
+    NSLog(@"Sended %lu bytes of %lu bytes", (unsigned long)current, (unsigned long)total);
 }
 
 #pragma mark - Table view data source
