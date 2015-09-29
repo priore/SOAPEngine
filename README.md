@@ -254,6 +254,28 @@ settings for Social [**OAuth2.0**](http://www.wikipedia.org/wiki/OAuth) token :
 	// TODO: your code here...
 	
 ```	
+
+[**Attributes**](http://www.w3schools.com/xml/xml_attributes.asp) :
+
+``` objective-c
+    // chapter attributes
+    NSDictionary *attrChapter = @{@"versesOrder": @"asc"};
+    NSDictionary *chapter = @{@"value": @"1", @"attributes": attrChapter};
+    // book attributes
+    NSDictionary *attrBook = @{@"rack": @"2"};
+    NSDictionary *book = @{@"name": @"Genesis", @"chapter": chapter};
+    [soap setValue:book forKey:@"Book" attributes:attrBook];
+```
+
+creates an XML message as below:
+
+``` xml
+    <Book rack="2">
+    	<name>Genesis</name>
+	    <chapter versesOrder="asc">1</chapter>
+    </Book>
+```
+
 [**W3Schools**](http://www.w3schools.com) example :
 
 ``` objective-c
