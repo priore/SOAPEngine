@@ -1,8 +1,14 @@
+1.23.0, Sep 29, 2015
+- supports attributes for child tag.
+- fixes for soap message with inside another XML base format.
+- optimization performance.
+
 1.22.1, Sep 25, 2015
 - added method that return a single boolean value (like integerValue etc.)
 - fixes for the default tag names for an array parameter.
 - fixes for duplicate symbols when a project already use XPathQuery.
 - fixes when a WSDL definition not contain location attribute or soapAction attribute.
+- bitcode enabled for iOS9.
 
 1.22.0, Sep 23, 2015
 - added support for text password on WS-Security.
