@@ -1,3 +1,9 @@
+1.24, Oct 1, 2015
+- added new method that return a formatted dictionary for a sub-child with attributes.
+- added new property to define attributes for the soap action tag.
+- replaced the statement "retain" of the properties in the statement "strong".
+- fixes during retrieval of the class name when you pass a user-object.
+
 1.23.0, Sep 29, 2015
 - supports attributes for child tag.
 - fixes for soap message with inside another XML base format.
@@ -8,7 +14,6 @@
 - fixes for the default tag names for an array parameter.
 - fixes for duplicate symbols when a project already use XPathQuery.
 - fixes when a WSDL definition not contain location attribute or soapAction attribute.
-- bitcode enabled for iOS9.
 
 1.22.0, Sep 23, 2015
 - added support for text password on WS-Security.

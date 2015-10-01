@@ -10,11 +10,11 @@
 //
 //  email support: support@prioregroup.com
 //
-// Version      : 1.23
+// Version      : 1.24
 // Changelog    : https://github.com/priore/SOAPEngine/blob/master/CHANGELOG.txt
 // Updates      : https://github.com/priore/SOAPEngine
 //
-#define SOAPEngineFrameworkVersion @"1.23" DEPRECATED_ATTRIBUTE
+#define SOAPEngineFrameworkVersion @"1.24" DEPRECATED_ATTRIBUTE
 
 #import <Foundation/Foundation.h>
 
@@ -87,52 +87,57 @@ typedef enum
 @interface SOAPEngine : NSObject
 
 // return the current request URL
-@property (nonatomic, retain, readonly) NSURL *requestURL;
+@property (nonatomic, strong, readonly) NSURL *requestURL;
 
 // return the current SOAP Action
-@property (nonatomic, retain, readonly) NSString *soapAction;
+@property (nonatomic, strong, readonly) NSString *soapAction;
 
 // return the current method name
-@property (nonatomic, retain, readonly) NSString *methodName;
+@property (nonatomic, strong, readonly) NSString *methodName;
 
 // return the current response
-@property (nonatomic, retain, readonly) NSURLResponse *response;
+@property (nonatomic, strong, readonly) NSURLResponse *response;
 
 // adds the quotes in the SOAPAction header
 // eg. SOAPAction = http://temp.org become SOAPAction = "http://temp.org".
 @property (nonatomic, assign) BOOL actionQuotes;
 
 // add last path slash for action namespace
+// eg. xmlns="http://temp.org" become xmlns="http://temp.org/"
 @property (nonatomic, assign) BOOL actionNamespaceSlash;
+
+// add attributes on SOAP Action TAG
+// eg. <soapAction attr="value">...</soapAction>
+@property (nonatomic, strong) NSDictionary *actionAttributes;
 
 // return the last status code of connection
 // http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
 @property (nonatomic, assign) NSInteger statusCode;
 
 //sets a custom name for the user-agent (default is "SOAPEngine").
-@property (nonatomic, retain) NSString *userAgent;
+@property (nonatomic, strong) NSString *userAgent;
 
 // sets a custom date format for dates (default yyyy-mm-dd)
 // http://unicode.org/reports/tr35/tr35-6.html#Date_Format_Patterns
-@property (nonatomic, retain) NSString *dateFormat;
+@property (nonatomic, strong) NSString *dateFormat;
 
 // sets to indicate that the nil values ​​are replaced with xsi:nil="true"
 @property (nonatomic, assign) BOOL replaceNillable;
 
 // sets the default tag name, default is "input", when using setValue without key value or for array items
-@property (nonatomic, retain) NSString *defaultTagName;
+@property (nonatomic, strong) NSString *defaultTagName;
 
 // sets the prefix of the user object you want to replace
-@property (nonatomic, retain) NSString *prefixObjectName;
+@property (nonatomic, strong) NSString *prefixObjectName;
 
 // sets the value of replacing for the prefix of the user object
-@property (nonatomic, retain) NSString *replacePrefixObjectName;
+@property (nonatomic, strong) NSString *replacePrefixObjectName;
 
 // sets the type of permission you want to use (none, wss, basic or custom).
 @property (nonatomic, assign) SOAPAuthorization authorizationMethod;
 
 // sets a custom content for the custom authorization method (xml format).
-@property (nonatomic, retain) NSString *header;
+@property (nonatomic, strong) NSString *header;
 
 // enables retrieval of the contents of the SOAP header in the server response.
 @property (nonatomic, assign) BOOL responseHeader;
@@ -148,22 +153,22 @@ typedef enum
 
 // sets username and password for selected authorization method
 // or for server authorization or for client certifcate password.
-@property (nonatomic, retain) NSString *username;
-@property (nonatomic, retain) NSString *password;
-@property (nonatomic, retain) NSString *email;      // for PAYPAL auth
-@property (nonatomic, retain) NSString *signature;  // for PAYPAL auth
+@property (nonatomic, strong) NSString *username;
+@property (nonatomic, strong) NSString *password;
+@property (nonatomic, strong) NSString *email;      // for PAYPAL auth
+@property (nonatomic, strong) NSString *signature;  // for PAYPAL auth
 // when calling PayPal APIs, you must authenticate each request using a set of API credentials
 // PayPal associates a set of API credentials with a specific PayPal account
 // you can generate credentials from this https://developer.paypal.com/docs/classic/api/apiCredentials/
 
 // extended values for social logins
-@property (nonatomic, retain) NSString *apiKey;
-@property (nonatomic, retain) NSString *socialName;
-@property (nonatomic, retain) NSString *token;
+@property (nonatomic, strong) NSString *apiKey;
+@property (nonatomic, strong) NSString *socialName;
+@property (nonatomic, strong) NSString *token;
 
 // sets the custom attributes for Envelope tag, eg.
-// for extra namespace definitions (xmlns:tmp="http://temp.org").
-@property (nonatomic, retain) NSString *envelope;
+// for extra namespace definitions eg. xmlns:tmp="http://temp.org".
+@property (nonatomic, strong) NSString *envelope;
 
 // sets the SOAP version you want to use (v.1.1 or v.1.2).
 @property (nonatomic, assign) SOAPVersion version;
@@ -175,8 +180,8 @@ typedef enum
 // that require authorization using a client certificate (p12)
 // to convert a PAYPAL certificate to a p12 use the command shown below :
 // openssl pkcs12 -export -in cert_key_pem.txt -inkey cert_key_pem.txt -out paypal_cert.p12
-@property (nonatomic, retain) NSString *clientCerficateName;
-@property (nonatomic, retain) NSString *clientCertificatePassword;
+@property (nonatomic, strong) NSString *clientCerficateName;
+@property (nonatomic, strong) NSString *clientCertificatePassword;
 
 // enables the conversion of special characters in a compatible html format (eg &amp;) 
 @property (nonatomic, assign) BOOL escapingHTML;
@@ -228,6 +233,11 @@ typedef enum
 - (void)setImage:(UIImage*)image forKey:(NSString*)key __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_4_3);
 - (void)setImage:(UIImage*)image forKey:(NSString*)key attributes:(NSDictionary*)attributes __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_4_3);
 #endif
+
+// return a formatted dictionary for a sub-child with attributes
+// eg. ["key": ["value": key-value, "attributes": ["attr": attr-value]]]
+// this generates an XML like this: <key attr="attr-value">key-value</key>
+- (NSDictionary*)dictionaryForKey:(NSString*)key value:(id)value attributes:(NSDictionary*)attributes;
 
 // clear all parameters
 - (void)clearValues;
@@ -314,7 +324,8 @@ completeWithDictionary:(SOAPEngineCompleteBlockWithDictionary)complete
   receivedDataSize:(SOAPEngineReceiveDataSizeBlock)receive
     sendedDataSize:(SOAPEngineSendDataSizeBlock)sended;
 
-// request with wsdl
+// request with WSDL
+// note: better use requestURL, read this https://github.com/priore/SOAPEngine#optimizations
 - (void)requestWSDL:(id)wsdlURL operation:(NSString*)operation;
 
 - (void)requestWSDL:(id)wsdlURL
