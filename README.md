@@ -255,24 +255,23 @@ settings for Social [**OAuth2.0**](http://www.wikipedia.org/wiki/OAuth) token :
 	
 ```	
 
-[**Attributes**](http://www.w3schools.com/xml/xml_attributes.asp) :
+Params with [**Attributes**](http://www.w3schools.com/xml/xml_attributes.asp) :
 
 ``` objective-c
-    // chapter attributes
-    NSDictionary *attrChapter = @{@"versesOrder": @"asc"};
-    NSDictionary *chapter = @{@"value": @"1", @"attributes": attrChapter};
+    // book
+    NSMutableDictionary *book = [NSMutableDictionary dictionaryWithObject:@"Genesis" forKey:@"name"];
+    // chapter
+    NSDictionary *attr = @{@"order": @"asc"};
+    NSDictionary *child = [soap dictionaryForKey:@"chapter" value:@"1" attributes:attr];
+    [book addEntriesFromDictionary:child]; // add chapter to book
     // book attributes
-    NSDictionary *attrBook = @{@"rack": @"2"};
-    NSDictionary *book = @{@"name": @"Genesis", @"chapter": chapter};
-    [soap setValue:book forKey:@"Book" attributes:attrBook];
+    [soap setValue:book forKey:@"Book" attributes:@{@"rack": @"2"}];
 ```
-
-creates an XML message as below:
-
+it builds a request like this:
 ``` xml
     <Book rack="2">
-    	<name>Genesis</name>
-	    <chapter versesOrder="asc">1</chapter>
+        <name>Genesis</name>
+        <chapter order="asc">1</chapter>
     </Book>
 ```
 
