@@ -20,7 +20,7 @@
 		9FC69C64165C42BD00302808 /* MyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC69C63165C42BD00302808 /* MyObject.m */; };
 		9FC69CF7165C535500302808 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FC69CF6165C535500302808 /* Icon.png */; };
 		9FC73A1D1B04FE790029DC82 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC73A1C1B04FE790029DC82 /* Accounts.framework */; };
-		9FCC46CD1BB78141009C7B86 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FCC46CC1BB78141009C7B86 /* Default-568h@2x.png */; settings = {ASSET_TAGS = (); }; };
+		9FCC46CD1BB78141009C7B86 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FCC46CC1BB78141009C7B86 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */

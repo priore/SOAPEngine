@@ -1,0 +1,329 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9FBD4FF61C3573F600742288 /* SOAPEngineTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBD4FF51C3573F600742288 /* SOAPEngineTV.framework */; };
+		9FFC00811C0BB7050055A7ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFC00801C0BB7050055A7ED /* main.m */; };
+		9FFC00841C0BB7050055A7ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFC00831C0BB7050055A7ED /* AppDelegate.m */; };
+		9FFC00871C0BB7050055A7ED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFC00861C0BB7050055A7ED /* ViewController.m */; };
+		9FFC008A1C0BB7060055A7ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FFC00881C0BB7060055A7ED /* Main.storyboard */; };
+		9FFC008C1C0BB7060055A7ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FFC008B1C0BB7060055A7ED /* Assets.xcassets */; };
+		9FFC00961C0BB7660055A7ED /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FFC00951C0BB7660055A7ED /* Security.framework */; };
+		9FFC00981C0BB76F0055A7ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FFC00971C0BB76F0055A7ED /* UIKit.framework */; };
+		9FFC009A1C0BB7760055A7ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FFC00991C0BB7760055A7ED /* Foundation.framework */; };
+		9FFC009C1C0BB77B0055A7ED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FFC009B1C0BB77B0055A7ED /* CoreGraphics.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9FBD4FF51C3573F600742288 /* SOAPEngineTV.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SOAPEngineTV.framework; path = ../SOAPEngineTV.framework; sourceTree = "<group>"; };
+		9FFC007C1C0BB7050055A7ED /* SOAPEngine AppleTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SOAPEngine AppleTV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FFC00801C0BB7050055A7ED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9FFC00821C0BB7050055A7ED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9FFC00831C0BB7050055A7ED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9FFC00851C0BB7050055A7ED /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9FFC00861C0BB7050055A7ED /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9FFC00891C0BB7060055A7ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9FFC008B1C0BB7060055A7ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9FFC008D1C0BB7060055A7ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FFC00951C0BB7660055A7ED /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9FFC00971C0BB76F0055A7ED /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9FFC00991C0BB7760055A7ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9FFC009B1C0BB77B0055A7ED /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9FFC00791C0BB7050055A7ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FFC009C1C0BB77B0055A7ED /* CoreGraphics.framework in Frameworks */,
+				9FFC009A1C0BB7760055A7ED /* Foundation.framework in Frameworks */,
+				9FBD4FF61C3573F600742288 /* SOAPEngineTV.framework in Frameworks */,
+				9FFC00981C0BB76F0055A7ED /* UIKit.framework in Frameworks */,
+				9FFC00961C0BB7660055A7ED /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9FFC00731C0BB7050055A7ED = {
+			isa = PBXGroup;
+			children = (
+				9FFC007E1C0BB7050055A7ED /* SOAPEngine AppleTV */,
+				9FFC009D1C0BB78B0055A7ED /* Frameworks */,
+				9FFC007D1C0BB7050055A7ED /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9FFC007D1C0BB7050055A7ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9FFC007C1C0BB7050055A7ED /* SOAPEngine AppleTV.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9FFC007E1C0BB7050055A7ED /* SOAPEngine AppleTV */ = {
+			isa = PBXGroup;
+			children = (
+				9FFC00821C0BB7050055A7ED /* AppDelegate.h */,
+				9FFC00831C0BB7050055A7ED /* AppDelegate.m */,
+				9FFC00851C0BB7050055A7ED /* ViewController.h */,
+				9FFC00861C0BB7050055A7ED /* ViewController.m */,
+				9FFC00881C0BB7060055A7ED /* Main.storyboard */,
+				9FFC008B1C0BB7060055A7ED /* Assets.xcassets */,
+				9FFC008D1C0BB7060055A7ED /* Info.plist */,
+				9FFC007F1C0BB7050055A7ED /* Supporting Files */,
+			);
+			path = "SOAPEngine AppleTV";
+			sourceTree = "<group>";
+		};
+		9FFC007F1C0BB7050055A7ED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9FFC00801C0BB7050055A7ED /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9FFC009D1C0BB78B0055A7ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9FBD4FF51C3573F600742288 /* SOAPEngineTV.framework */,
+				9FFC009B1C0BB77B0055A7ED /* CoreGraphics.framework */,
+				9FFC00991C0BB7760055A7ED /* Foundation.framework */,
+				9FFC00971C0BB76F0055A7ED /* UIKit.framework */,
+				9FFC00951C0BB7660055A7ED /* Security.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9FFC007B1C0BB7050055A7ED /* SOAPEngine AppleTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FFC00901C0BB7060055A7ED /* Build configuration list for PBXNativeTarget "SOAPEngine AppleTV" */;
+			buildPhases = (
+				9FFC00781C0BB7050055A7ED /* Sources */,
+				9FFC00791C0BB7050055A7ED /* Frameworks */,
+				9FFC007A1C0BB7050055A7ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SOAPEngine AppleTV";
+			productName = "SOAPEngine AppleTV";
+			productReference = 9FFC007C1C0BB7050055A7ED /* SOAPEngine AppleTV.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9FFC00741C0BB7050055A7ED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Danilo Priore";
+				TargetAttributes = {
+					9FFC007B1C0BB7050055A7ED = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = JQRB98RUML;
+					};
+				};
+			};
+			buildConfigurationList = 9FFC00771C0BB7050055A7ED /* Build configuration list for PBXProject "SOAPEngine AppleTV" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9FFC00731C0BB7050055A7ED;
+			productRefGroup = 9FFC007D1C0BB7050055A7ED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9FFC007B1C0BB7050055A7ED /* SOAPEngine AppleTV */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9FFC007A1C0BB7050055A7ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FFC008C1C0BB7060055A7ED /* Assets.xcassets in Resources */,
+				9FFC008A1C0BB7060055A7ED /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9FFC00781C0BB7050055A7ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FFC00871C0BB7050055A7ED /* ViewController.m in Sources */,
+				9FFC00841C0BB7050055A7ED /* AppDelegate.m in Sources */,
+				9FFC00811C0BB7050055A7ED /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9FFC00881C0BB7060055A7ED /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9FFC00891C0BB7060055A7ED /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9FFC008E1C0BB7060055A7ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		9FFC008F1C0BB7060055A7ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9FFC00911C0BB7060055A7ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = ../;
+				INFOPLIST_FILE = "SOAPEngine AppleTV/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-lxml2";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prioregroup.soapengine-sample";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9FFC00921C0BB7060055A7ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = ../;
+				INFOPLIST_FILE = "SOAPEngine AppleTV/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-lxml2";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prioregroup.soapengine-sample";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9FFC00771C0BB7050055A7ED /* Build configuration list for PBXProject "SOAPEngine AppleTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FFC008E1C0BB7060055A7ED /* Debug */,
+				9FFC008F1C0BB7060055A7ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9FFC00901C0BB7060055A7ED /* Build configuration list for PBXNativeTarget "SOAPEngine AppleTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FFC00911C0BB7060055A7ED /* Debug */,
+				9FFC00921C0BB7060055A7ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9FFC00741C0BB7050055A7ED /* Project object */;
+}

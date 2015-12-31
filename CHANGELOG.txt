@@ -1,3 +1,7 @@
+1.25, Dic 31, 2015
+- added a supported version for Apple TV.
+- fixes license message on simulator.
+
 1.24, Oct 1, 2015
 - added new method that return a formatted dictionary for a sub-child with attributes.
 - added new property to define attributes for the soap action tag.
