@@ -1,9 +1,9 @@
 **SOAPEngine**
 ================
 
-This generic [SOAP](http://www.wikipedia.org/wiki/SOAP) client allows you to access web services using a your [iOS](http://www.wikipedia.org/wiki/IOS) app and [Mac OS X](http://www.wikipedia.org/wiki/OS_X) app.
+This generic [SOAP](http://www.wikipedia.org/wiki/SOAP) client allows you to access web services using a your [iOS](http://www.wikipedia.org/wiki/IOS) app, [Mac OS X](http://www.wikipedia.org/wiki/OS_X) app and [AppleTv](http://www.apple.com/tv/) app.
 
-With this Framework you can create [iPhone](http://www.wikipedia.org/wiki/IPhone), [iPad](http://www.wikipedia.org/wiki/IPad) and [Mac OS X](http://www.wikipedia.org/wiki/OS_X) apps that supports [SOAP](http://www.wikipedia.org/wiki/SOAP) Client Protocol. This framework able executes methods at remote web services with [SOAP](http://www.wikipedia.org/wiki/SOAP) standard protocol.
+With this Framework you can create [iPhone](http://www.wikipedia.org/wiki/IPhone), [iPad](http://www.wikipedia.org/wiki/IPad), [Mac OS X](http://www.wikipedia.org/wiki/OS_X) and [AppleTv](http://www.apple.com/tv/) apps that supports [SOAP](http://www.wikipedia.org/wiki/SOAP) Client Protocol. This framework able executes methods at remote web services with [SOAP](http://www.wikipedia.org/wiki/SOAP) standard protocol.
 
 ## Features
 ---
@@ -35,6 +35,15 @@ With this Framework you can create [iPhone](http://www.wikipedia.org/wiki/IPhone
 * Foundation.framework
 * AppKit.framework
 * Cocoa.framework
+* libxml2.dylib
+
+## Requirements for [AppleTv](http://www.apple.com/tv/)
+---
+* [iOS](http://www.wikipedia.org/wiki/IOS) 9.0, and later
+* [XCode](http://www.wikipedia.org/wiki/Xcode) 7.1 or later
+* Security.framework
+* Foundation.framework
+* UIKit.framework
 * libxml2.dylib
 
 ## Limitations
@@ -103,9 +112,8 @@ with [**Block programming**](https://developer.apple.com/library/ios/documentati
 	[soap requestURL:@"http://www.my-web.com/my-service.svc"
 		  soapAction:@"http://www.my-web.com/my-interface/my-method"
 			   value:myObject
-			complete:^(NSInteger statusCode, NSString *stringXML) {
-		    	NSDictionary *result = [soap dictionaryValue];
-				NSLog(@"%@", result);
+			completeWithDictionary:^(NSInteger statusCode, NSDictionary *dict) {
+				NSLog(@"%@", dict);
 			} failWithError:^(NSError *error) {
 				NSLog(@"%@", error);
 			}];
@@ -482,10 +490,13 @@ this is not optimized, very slow, instead you can use the optimization below :
 2. add `/usr/include/libxml2` in Build Settings --> Header Search Paths.
 ![Header Search Paths](/screen/headersearchpaths.png)
 
-3. SOAPEngine64.framework (for iOS apps) or SOAPEngineOSX.framework (for Mac OS X apps).
+3. add SOAPEngine Framework
+	* SOAPEngine64.framework for iOS.
+	* SOAPEngineOSX.framework for Mac OS X.
+	* SOAPEngineTV.framework for AppleTV.
 4. add Security.framework.
-5. add Accounts.framework.
-6. add AppKit.framework (only for Mac OS X apps, not required for iOS apps).
+5. add Accounts.framework (not for AppleTv).
+6. add AppKit.framework (only for Mac OS X).
 ![Frameworks](/screen/frameworks.png)
 
 7. in your class import `<SOAPEngine64/SOAPEngine.h>` or `<SOAPEngineOSX/SOAPEngine.h>`.

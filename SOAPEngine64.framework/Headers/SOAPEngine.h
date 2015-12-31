@@ -10,22 +10,23 @@
 //
 //  email support: support@prioregroup.com
 //
-// Version      : 1.24
+// Version      : 1.25
 // Changelog    : https://github.com/priore/SOAPEngine/blob/master/CHANGELOG.txt
 // Updates      : https://github.com/priore/SOAPEngine
 //
-#define SOAPEngineFrameworkVersion @"1.24" DEPRECATED_ATTRIBUTE
+#define SOAPEngineFrameworkVersion @"1.25" DEPRECATED_ATTRIBUTE
 
 #import <Foundation/Foundation.h>
 
-#if TARGET_OS_IPHONE
+#if TARGET_OS_TV
     #import <UIKit/UIKit.h>
-#endif
-
-#if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
+    FOUNDATION_EXPORT double SOAPEngineTVVersionNumber;
+    FOUNDATION_EXPORT const unsigned char SOAPEngineTVVersionString[];
+#elif TARGET_OS_SIMULATOR || TARGET_OS_IOS
+    #import <UIKit/UIKit.h>
     FOUNDATION_EXPORT double SOAPEngine64VersionNumber;
     FOUNDATION_EXPORT const unsigned char SOAPEngine64VersionString[];
-#else
+#else // OSX
     FOUNDATION_EXPORT double SOAPEngineOSXVersionNumber;
     FOUNDATION_EXPORT const unsigned char SOAPEngineOSXVersionString[];
 #endif
@@ -229,7 +230,7 @@ typedef enum
 - (void)setValue:(id)value forKey:(NSString *)key subKeyName:(NSString*)subKeyName;
 - (void)setValue:(id)value forKey:(NSString *)key subKeyName:(NSString*)subKeyName attributes:(NSDictionary*)attrbitues;
 
-#if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
+#if TARGET_OS_SIMULATOR || TARGET_OS_IOS || TARGET_OS_TV
 - (void)setImage:(UIImage*)image forKey:(NSString*)key __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_4_3);
 - (void)setImage:(UIImage*)image forKey:(NSString*)key attributes:(NSDictionary*)attributes __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_4_3);
 #endif
