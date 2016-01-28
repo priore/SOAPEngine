@@ -1,3 +1,6 @@
+1.25.1, Gen 28, 2016
+- recompile iOS binary for bitcode support.
+
 1.25, Dic 31, 2015
 - added a supported version for Apple TV.
 - fixes license message on simulator.
