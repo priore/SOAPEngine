@@ -10,11 +10,11 @@
 //
 //  email support: support@prioregroup.com
 //
-// Version      : 1.25.1
+// Version      : 1.25.2
 // Changelog    : https://github.com/priore/SOAPEngine/blob/master/CHANGELOG.txt
 // Updates      : https://github.com/priore/SOAPEngine
 //
-#define SOAPEngineFrameworkVersion @"1.25.1" DEPRECATED_ATTRIBUTE
+#define SOAPEngineFrameworkVersion @"1.25.2" DEPRECATED_ATTRIBUTE
 
 #import <Foundation/Foundation.h>
 
