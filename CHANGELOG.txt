@@ -1,3 +1,6 @@
+1.25.2, Feb 1, 2016
+- fixes message "containsString unrecognized selector" on the previous versions of iOS 8.0.
+
 1.25.1, Gen 28, 2016
 - recompile iOS binary for bitcode support.
 
