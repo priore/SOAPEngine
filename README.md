@@ -19,7 +19,7 @@ With this Framework you can create [iPhone](http://www.wikipedia.org/wiki/IPhone
 ## Requirements for [iOS](http://www.wikipedia.org/wiki/IOS)
 ---
 * [iOS](http://www.wikipedia.org/wiki/IOS) 7.1, and later
-* [XCode](http://www.wikipedia.org/wiki/Xcode) 7.1 or later
+* [Xcode](http://www.wikipedia.org/wiki/Xcode) 7.1 or later
 * Security.framework
 * Accounts.framework
 * Foundation.framework
@@ -29,7 +29,7 @@ With this Framework you can create [iPhone](http://www.wikipedia.org/wiki/IPhone
 ## Requirements for [Mac OS X](http://www.wikipedia.org/wiki/OS_X)
 ---
 * [OS X](http://www.wikipedia.org/wiki/OS_X) 10.9 and later
-* [XCode](http://www.wikipedia.org/wiki/Xcode) 7.1 or later
+* [Xcode](http://www.wikipedia.org/wiki/Xcode) 7.1 or later
 * Security.framework
 * Accounts.framework
 * Foundation.framework
@@ -40,7 +40,7 @@ With this Framework you can create [iPhone](http://www.wikipedia.org/wiki/IPhone
 ## Requirements for [Apple TV](http://www.apple.com/tv/)
 ---
 * [iOS](http://www.wikipedia.org/wiki/IOS) 9.0, and later
-* [XCode](http://www.wikipedia.org/wiki/Xcode) 7.1 or later
+* [Xcode](http://www.wikipedia.org/wiki/Xcode) 7.1 or later
 * Security.framework
 * Foundation.framework
 * UIKit.framework
