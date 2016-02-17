@@ -1,5 +1,14 @@
+1.26, Feb 17, 2016
+- uses NSProgress to track the sending and received data progress.
+- runs notifications, blocks and delegates in the main thread.
+- supports Enterprise license with bundle-id extended style.
+- fixes in delegate and block for the wrong totals of data sent.
+- fixes crash when not found a value for soapAction attribute on WSDL declaration.
+- fixes when forKey in requestURL is nil.
+- various optimizations.
+
 1.25.2, Feb 1, 2016
-- fixes message "containsString unrecognized selector" on the previous versions of iOS 8.0.
+- fixes message "containsString unrecognized selector" on the previous versions of iOS 8.0. fixes.
 
 1.25.1, Gen 28, 2016
 - recompile iOS binary for bitcode support.

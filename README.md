@@ -1,7 +1,7 @@
 **SOAPEngine**
 ================
 
-This generic [SOAP](http://www.wikipedia.org/wiki/SOAP) client allows you to access web services using a your [iOS](http://www.wikipedia.org/wiki/IOS) app, [Mac OS X](http://www.wikipedia.org/wiki/OS_X) app and [AppleTv](http://www.apple.com/tv/) app.
+This generic [SOAP](http://www.wikipedia.org/wiki/SOAP) client allows you to access web services using a your [iOS](http://www.wikipedia.org/wiki/IOS) app, [Mac OS X](http://www.wikipedia.org/wiki/OS_X) app and [Apple TV](http://www.apple.com/tv/) app.
 
 With this Framework you can create [iPhone](http://www.wikipedia.org/wiki/IPhone), [iPad](http://www.wikipedia.org/wiki/IPad), [Mac OS X](http://www.wikipedia.org/wiki/OS_X) and [AppleTv](http://www.apple.com/tv/) apps that supports [SOAP](http://www.wikipedia.org/wiki/SOAP) Client Protocol. This framework able executes methods at remote web services with [SOAP](http://www.wikipedia.org/wiki/SOAP) standard protocol.
 
@@ -19,7 +19,7 @@ With this Framework you can create [iPhone](http://www.wikipedia.org/wiki/IPhone
 ## Requirements for [iOS](http://www.wikipedia.org/wiki/IOS)
 ---
 * [iOS](http://www.wikipedia.org/wiki/IOS) 7.1, and later
-* [XCode](http://www.wikipedia.org/wiki/Xcode) 5.1.1 or later
+* [XCode](http://www.wikipedia.org/wiki/Xcode) 7.1 or later
 * Security.framework
 * Accounts.framework
 * Foundation.framework
@@ -29,7 +29,7 @@ With this Framework you can create [iPhone](http://www.wikipedia.org/wiki/IPhone
 ## Requirements for [Mac OS X](http://www.wikipedia.org/wiki/OS_X)
 ---
 * [OS X](http://www.wikipedia.org/wiki/OS_X) 10.9 and later
-* [XCode](http://www.wikipedia.org/wiki/Xcode) 5.1.1 or later
+* [XCode](http://www.wikipedia.org/wiki/Xcode) 7.1 or later
 * Security.framework
 * Accounts.framework
 * Foundation.framework
@@ -37,7 +37,7 @@ With this Framework you can create [iPhone](http://www.wikipedia.org/wiki/IPhone
 * Cocoa.framework
 * libxml2.dylib
 
-## Requirements for [AppleTv](http://www.apple.com/tv/)
+## Requirements for [Apple TV](http://www.apple.com/tv/)
 ---
 * [iOS](http://www.wikipedia.org/wiki/IOS) 9.0, and later
 * [XCode](http://www.wikipedia.org/wiki/Xcode) 7.1 or later
@@ -63,7 +63,7 @@ To resolve this, add few keys in info.plist, the steps are:
 2. Add a Key called `NSAppTransportSecurity` as a Dictionary.
 3. Add a Subkey called `NSAllowsArbitraryLoads` as Boolean and set its value to YES as like following image.
 
-![NSAppTransportSecurity](/screen/NSAppTransportSecurity.png)
+![NSAppTransportSecurity](https://github.com/priore/SOAPEngine/raw/master/screen/NSAppTransportSecurity.png)
 
 ref link: http://stackoverflow.com/a/32631185/4069848
 
@@ -485,33 +485,35 @@ this is not optimized, very slow, instead you can use the optimization below :
 ## Install in your apps
 ---
 1. add `-lxml2` in Build Settings --> Other Linker Flags.
-![Other Linker Flags](/screen/otherlinkerflags.png)
+![Other Linker Flags](https://github.com/priore/SOAPEngine/raw/master/screen/otherlinkerflags.png)
 
 2. add `/usr/include/libxml2` in Build Settings --> Header Search Paths.
-![Header Search Paths](/screen/headersearchpaths.png)
+![Header Search Paths](https://github.com/priore/SOAPEngine/raw/master/screen/headersearchpaths.png)
 
 3. add SOAPEngine Framework
 	* SOAPEngine64.framework for iOS.
 	* SOAPEngineOSX.framework for Mac OS X.
 	* SOAPEngineTV.framework for AppleTV.
-4. add Security.framework.
-5. add Accounts.framework (not for AppleTv).
-6. add AppKit.framework (only for Mac OS X).
-![Frameworks](/screen/frameworks.png)
 
-7. in your class import `<SOAPEngine64/SOAPEngine.h>` or `<SOAPEngineOSX/SOAPEngine.h>`.
-![import](/screen/codeimport.png)
+4. add Security.framework.
+
+5. add Accounts.framework (not for AppleTv).
+
+6. add AppKit.framework (only for Mac OS X).	
+![Frameworks](https://github.com/priore/SOAPEngine/raw/master/screen/frameworks.png)
+
+7. import in your class.
+![import](https://github.com/priore/SOAPEngine/raw/master/screen/codeimport.png)
 
 8. set the property named `licenseKey` with your license code (*only for test on your devices or publishing the app, not needed for run the app in simulator mode*).
-9. and don't forget to add your app, that use our framework, in the list of [CocoaControls](https://www.cocoacontrols.com/controls/soapengine), thanks!
 
 ## Licenses
 ---
 Trial (only simulator) | Single App | Enterprise (multi App)
 ------------- | ------------- | -------------
-[![TRIAL LICENSE](/screen/freetrial.png)](https://github.com/priore/SOAPEngine/archive/master.zip)  | [![BUY SINGLE LICENSE](/screen/1299.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G3RXTN3YD7VRG) | [![BUY ENTERPRISE LICENSE](/screen/7799.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6YH9LJRNXPTHE)
+[![TRIAL LICENSE](https://github.com/priore/SOAPEngine/raw/master/screen/freetrial.png)](https://github.com/priore/SOAPEngine/archive/master.zip)  | [![BUY SINGLE LICENSE](https://github.com/priore/SOAPEngine/raw/master/screen/1299.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G3RXTN3YD7VRG) | [![BUY ENTERPRISE LICENSE](https://github.com/priore/SOAPEngine/raw/master/screen/7799.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6YH9LJRNXPTHE)
 
 ##Contacts
 ---
-[![TWITTER](/screen/twitter.png)](https://twitter.com/DaniloPriore)      [![FACEBOOK](/screen/facebook.png)](https://www.facebook.com/prioregroup)      [![LINKED-IN](/screen/linked-in.png)](http://it.linkedin.com/in/priore/)
+[![TWITTER](https://github.com/priore/SOAPEngine/raw/master/screen/twitter.png)](https://twitter.com/DaniloPriore)      [![FACEBOOK](https://github.com/priore/SOAPEngine/raw/master/screen/facebook.png)](https://www.facebook.com/prioregroup)      [![LINKED-IN](https://github.com/priore/SOAPEngine/raw/master/screen/linked-in.png)](http://it.linkedin.com/in/priore/)
 
