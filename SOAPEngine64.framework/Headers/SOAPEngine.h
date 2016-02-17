@@ -10,11 +10,11 @@
 //
 //  email support: support@prioregroup.com
 //
-// Version      : 1.25.2
+// Version      : 1.26
 // Changelog    : https://github.com/priore/SOAPEngine/blob/master/CHANGELOG.txt
 // Updates      : https://github.com/priore/SOAPEngine
 //
-#define SOAPEngineFrameworkVersion @"1.25.2" DEPRECATED_ATTRIBUTE
+#define SOAPEngineFrameworkVersion @"1.26" DEPRECATED_ATTRIBUTE
 
 #import <Foundation/Foundation.h>
 
@@ -50,11 +50,13 @@ extern const NSString *SOAPEngineErrorKey;          // errors
 extern const NSString *SOAPEngineDataSizeKey;       // send/receive data size
 extern const NSString *SOAPEngineTotalDataSizeKey;  // send/receive total data size
 
-typedef __block void(^SOAPEngineCompleteBlock)(NSInteger statusCode, NSString *stringXML) DEPRECATED_ATTRIBUTE;
-typedef __block void(^SOAPEngineCompleteBlockWithDictionary)(NSInteger statusCode, NSDictionary *dict);
-typedef __block void(^SOAPEngineFailBlock)(NSError *error);
-typedef __block void(^SOAPEngineReceiveDataSizeBlock)(NSUInteger current, NSUInteger total);
-typedef __block void(^SOAPEngineSendDataSizeBlock)(NSUInteger current, NSUInteger total);
+typedef void(^SOAPEngineCompleteBlock)(NSInteger statusCode, NSString *stringXML) DEPRECATED_ATTRIBUTE;
+typedef void(^SOAPEngineCompleteBlockWithDictionary)(NSInteger statusCode, NSDictionary *dict);
+typedef void(^SOAPEngineFailBlock)(NSError *error);
+typedef void(^SOAPEngineReceiveDataSizeBlock)(NSUInteger current, NSUInteger total);
+typedef void(^SOAPEngineSendDataSizeBlock)(NSUInteger current, NSUInteger total);
+typedef void(^SOAPEngineReceivedProgressBlock)(NSProgress *progress);
+typedef void(^SOAPEngineSendedProgressBlock)(NSProgress *progress);
 
 typedef enum
 {
@@ -201,6 +203,7 @@ typedef enum
 @property (nonatomic, assign) id<SOAPEngineDelegate> delegate;
 
 + (SOAPEngine *)sharedInstance;
++ (SOAPEngine *)manager;
 
 // returns the value for a webservice that returns a single value
 - (NSInteger)integerValue;
@@ -322,8 +325,25 @@ completeWithDictionary:(SOAPEngineCompleteBlockWithDictionary)complete
             forKey:(NSString*)key
 completeWithDictionary:(SOAPEngineCompleteBlockWithDictionary)complete
      failWithError:(SOAPEngineFailBlock)fail
+  receivedProgress:(SOAPEngineReceivedProgressBlock)receive;
+
+- (void)requestURL:(id)asmxURL
+        soapAction:(NSString *)soapAction
+             value:(id)value
+            forKey:(NSString*)key
+completeWithDictionary:(SOAPEngineCompleteBlockWithDictionary)complete
+     failWithError:(SOAPEngineFailBlock)fail
   receivedDataSize:(SOAPEngineReceiveDataSizeBlock)receive
     sendedDataSize:(SOAPEngineSendDataSizeBlock)sended;
+
+- (void)requestURL:(id)asmxURL
+        soapAction:(NSString *)soapAction
+             value:(id)value
+            forKey:(NSString*)key
+completeWithDictionary:(SOAPEngineCompleteBlockWithDictionary)complete
+     failWithError:(SOAPEngineFailBlock)fail
+  receivedProgress:(SOAPEngineReceivedProgressBlock)receive
+    sendedProgress:(SOAPEngineSendedProgressBlock)sended;
 
 // request with WSDL
 // note: better use requestURL, read this https://github.com/priore/SOAPEngine#optimizations
