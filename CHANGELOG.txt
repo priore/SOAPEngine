@@ -1,3 +1,8 @@
+1.26.2, Mar 11, 2016
+- extended identification numeric basic types in arrays (int8/16/32/64, long32/64)
+- optimized memory management.
+- improved device detection.
+
 1.26, Feb 17, 2016
 - uses NSProgress to track the sending and received data progress.
 - runs notifications, blocks and delegates in the main thread.
