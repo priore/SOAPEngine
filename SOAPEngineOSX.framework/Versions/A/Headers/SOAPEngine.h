@@ -10,11 +10,11 @@
 //
 //  email support: support@prioregroup.com
 //
-// Version      : 1.26
+// Version      : 1.26.2
 // Changelog    : https://github.com/priore/SOAPEngine/blob/master/CHANGELOG.txt
 // Updates      : https://github.com/priore/SOAPEngine
 //
-#define SOAPEngineFrameworkVersion @"1.26" DEPRECATED_ATTRIBUTE
+#define SOAPEngineFrameworkVersion @"1.26.2" DEPRECATED_ATTRIBUTE
 
 #import <Foundation/Foundation.h>
 
@@ -32,23 +32,23 @@
 #endif
 
 // Local Notification names
-extern const NSString *SOAPEngineDidFinishLoadingNotification;
-extern const NSString *SOAPEngineDidFailWithErrorNotification;
-extern const NSString *SOAPEngineDidReceiveResponseCodeNotification;
-extern const NSString *SOAPEngineDidBeforeSendingURLRequestNotification;
-extern const NSString *SOAPEngineDidBeforeParsingResponseStringNotification;
-extern const NSString *SOAPEngineDidReceiveDataSizeNotification;
-extern const NSString *SOAPEngineDidSendDataSizeNotification;
+FOUNDATION_EXPORT const NSString *SOAPEngineDidFinishLoadingNotification;
+FOUNDATION_EXPORT const NSString *SOAPEngineDidFailWithErrorNotification;
+FOUNDATION_EXPORT const NSString *SOAPEngineDidReceiveResponseCodeNotification;
+FOUNDATION_EXPORT const NSString *SOAPEngineDidBeforeSendingURLRequestNotification;
+FOUNDATION_EXPORT const NSString *SOAPEngineDidBeforeParsingResponseStringNotification;
+FOUNDATION_EXPORT const NSString *SOAPEngineDidReceiveDataSizeNotification;
+FOUNDATION_EXPORT const NSString *SOAPEngineDidSendDataSizeNotification;
 
 // UserInfo dictionary keys for Local Noficiations
-extern const NSString *SOAPEngineStatusCodeKey;     // response status code
-extern const NSString *SOAPEngineXMLResponseKey;    // response xml
-extern const NSString *SOAPEngineXMLDictionaryKey;  // response dictionary
-extern const NSString *SOAPEngineURLRequestKey;     // http request
-extern const NSString *SOAPEngineURLResponseKey;    // http response
-extern const NSString *SOAPEngineErrorKey;          // errors
-extern const NSString *SOAPEngineDataSizeKey;       // send/receive data size
-extern const NSString *SOAPEngineTotalDataSizeKey;  // send/receive total data size
+FOUNDATION_EXPORT const NSString *SOAPEngineStatusCodeKey;     // response status code
+FOUNDATION_EXPORT const NSString *SOAPEngineXMLResponseKey;    // response xml
+FOUNDATION_EXPORT const NSString *SOAPEngineXMLDictionaryKey;  // response dictionary
+FOUNDATION_EXPORT const NSString *SOAPEngineURLRequestKey;     // http request
+FOUNDATION_EXPORT const NSString *SOAPEngineURLResponseKey;    // http response
+FOUNDATION_EXPORT const NSString *SOAPEngineErrorKey;          // errors
+FOUNDATION_EXPORT const NSString *SOAPEngineDataSizeKey;       // send/receive data size
+FOUNDATION_EXPORT const NSString *SOAPEngineTotalDataSizeKey;  // send/receive total data size
 
 typedef void(^SOAPEngineCompleteBlock)(NSInteger statusCode, NSString *stringXML) DEPRECATED_ATTRIBUTE;
 typedef void(^SOAPEngineCompleteBlockWithDictionary)(NSInteger statusCode, NSDictionary *dict);
@@ -58,14 +58,14 @@ typedef void(^SOAPEngineSendDataSizeBlock)(NSUInteger current, NSUInteger total)
 typedef void(^SOAPEngineReceivedProgressBlock)(NSProgress *progress);
 typedef void(^SOAPEngineSendedProgressBlock)(NSProgress *progress);
 
-typedef enum
+typedef NS_ENUM(NSInteger, SOAPVersion)
 {
     VERSION_1_1,
     VERSION_1_2,
     VERSION_WCF_1_1 // only basicHttpBinding wcf services (.svc)
-} SOAPVersion;
+};
 
-typedef enum
+typedef NS_ENUM(NSInteger, SOAPAuthorization)
 {
     SOAP_AUTH_NONE,
     SOAP_AUTH_BASIC,            // located in header request (base64)
@@ -76,14 +76,14 @@ typedef enum
     SOAP_AUTH_PAYPAL,           // for PayPal SOAP API
     SOAP_AUTH_TOKEN,            // with OAuth token
     SOAP_AUTH_SOCIAL            // for social account
-} SOAPAuthorization;
+};
 
-typedef enum
+typedef NS_ENUM(NSInteger, SOAPEnryption)
 {
     SOAP_ENCRYPT_NONE,
     SOAP_ENCRYPT_AES256,
     SOAP_ENCRYPT_3DES
-} SOAPEnryption;
+};
 
 @protocol SOAPEngineDelegate;
 
@@ -243,7 +243,7 @@ typedef enum
 // this generates an XML like this: <key attr="attr-value">key-value</key>
 - (NSDictionary*)dictionaryForKey:(NSString*)key value:(id)value attributes:(NSDictionary*)attributes;
 
-// clear all parameters
+// clear all parameters, usually used before a new request with the same instance.
 - (void)clearValues;
 
 // webservice request (async)
