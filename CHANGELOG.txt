@@ -1,3 +1,6 @@
+1.26.3, Mar 30, 2016
+- fixes on CDATA elements.
+
 1.26.2, Mar 11, 2016
 - extended identification numeric basic types in arrays (int8/16/32/64, long32/64)
 - optimized memory management.
