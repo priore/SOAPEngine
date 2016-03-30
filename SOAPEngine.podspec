@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name 				= 'SOAPEngine'
-  s.version 			= '1.26.2'
+  s.version 			= '1.26.3'
   s.summary 			= 'This generic SOAP client allows you to access web services using a your iOS and Mac OS X app.'
   s.license 			= { :type => 'Shareware', :file => 'LICENSE.txt' }
   s.authors 			= { 'Danilo Priore' => 'support@prioregroup.com' }
