@@ -72,7 +72,7 @@ ref link: http://stackoverflow.com/a/32631185/4069848
 with [**Delegates**](https://developer.apple.com/library/ios/documentation/General/Conceptual/CocoaEncyclopedia/DelegatesandDataSources/DelegatesandDataSources.html) :
 
 ``` objective-c
-	#import <SOAPEngine/SOAPEngine.h>
+	#import <SOAPEngine64/SOAPEngine.h>
 
 	// standard soap service (.asmx)
 	SOAPEngine *soap = [[SOAPEngine alloc] init];
@@ -99,7 +99,7 @@ with [**Delegates**](https://developer.apple.com/library/ios/documentation/Gener
 with [**Block programming**](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/Blocks/Articles/00_Introduction.html) :
 
 ``` objective-c
-	#import <SOAPEngine/SOAPEngine.h>
+	#import <SOAPEngine64/SOAPEngine.h>
 	
 	// TODO: your user object
 	MyClass myObject = [[MyClass alloc] init];
@@ -122,7 +122,7 @@ with [**Block programming**](https://developer.apple.com/library/ios/documentati
 directly from [**WSDL**](http://www.wikipedia.org/wiki/Web_Services_Description_Language) (*not recommended is slow*) :
 
 ``` objective-c
-	#import <SOAPEngine/SOAPEngine.h>
+	#import <SOAPEngine64/SOAPEngine.h>
 	
 	// TODO: your user object
 	MyClass myObject = [[MyClass alloc] init];
@@ -147,7 +147,7 @@ directly from [**WSDL**](http://www.wikipedia.org/wiki/Web_Services_Description_
 with [**Notifications**](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSNotificationCenter_Class/index.html) :
 
 ``` objective-c
-	#import <SOAPEngine/SOAPEngine.h>
+	#import <SOAPEngine64/SOAPEngine.h>
 
 	// TODO: your user object
 	MyClass myObject = [[MyClass alloc] init];
@@ -180,7 +180,7 @@ with [**Notifications**](https://developer.apple.com/library/mac/documentation/C
 [**Synchronous**]() request :
 
 ``` objective-c
-	#import <SOAPEngine/SOAPEngine.h>
+	#import <SOAPEngine64/SOAPEngine.h>
 	
 	NSError *error = nil;
     SOAPEngine *soap = [[SOAPEngine alloc] init];
@@ -217,7 +217,7 @@ with [**Notifications**](https://developer.apple.com/library/mac/documentation/C
 settings for [**SOAP Authentication**](http://www.whitemesa.com/soapauth.html) :
 
 ``` objective-c
-	#import <SOAPEngine/SOAPEngine.h>
+	#import <SOAPEngine64/SOAPEngine.h>
 
 	SOAPEngine *soap = [[SOAPEngine alloc] init];
 	soap.userAgent = @"SOAPEngine";
@@ -234,7 +234,7 @@ settings for [**SOAP Authentication**](http://www.whitemesa.com/soapauth.html) :
 settings for Social [**OAuth2.0**](http://www.wikipedia.org/wiki/OAuth) token :
 
 ``` objective-c
-	#import <SOAPEngine/SOAPEngine.h>
+	#import <SOAPEngine64/SOAPEngine.h>
 	#import <Accounts/Accounts.h>
 
 	SOAPEngine *soap = [[SOAPEngine alloc] init];
@@ -252,7 +252,7 @@ settings for Social [**OAuth2.0**](http://www.wikipedia.org/wiki/OAuth) token :
 [**Encryption/Decryption**](https://it.wikipedia.org/wiki/Advanced_Encryption_Standard) data without SSL/HTTPS :
 
 ``` objective-c
-	#import <SOAPEngine/SOAPEngine.h>
+	#import <SOAPEngine64/SOAPEngine.h>
 
 	SOAPEngine *soap = [[SOAPEngine alloc] init];
 	soap.userAgent = @"SOAPEngine";
@@ -504,6 +504,7 @@ this is not optimized, very slow, instead you can use the optimization below :
 
 7. import in your class.
 ![import](https://github.com/priore/SOAPEngine/raw/master/screen/codeimport.png)
+<SOAPEngine64/SOAPEngine.h>
 
 8. set the property named `licenseKey` with your license code (*only for test on your devices or publishing the app, not needed for run the app in simulator mode*).
 
