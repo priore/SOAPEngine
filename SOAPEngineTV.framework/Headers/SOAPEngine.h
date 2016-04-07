@@ -10,11 +10,11 @@
 //
 //  email support: support@prioregroup.com
 //
-// Version      : 1.26.3
+// Version      : 1.27
 // Changelog    : https://github.com/priore/SOAPEngine/blob/master/CHANGELOG.txt
 // Updates      : https://github.com/priore/SOAPEngine
 //
-#define SOAPEngineFrameworkVersion @"1.26.3" DEPRECATED_ATTRIBUTE
+#define SOAPEngineFrameworkVersion @"1.27" DEPRECATED_ATTRIBUTE
 
 #import <Foundation/Foundation.h>
 
@@ -147,6 +147,9 @@ typedef NS_ENUM(NSInteger, SOAPEnryption)
 
 // enables retrieval the attributes of the tags in the SOAP response.
 @property (nonatomic, assign) BOOL retrievesAttributes;
+
+// the default SOAP namespace <soap:Envelope...
+@property (nonatomic, strong) NSString *soapNamespace;
 
 // enables the attribute xsi:type="xsd:..." in the requests.
 @property (nonatomic, assign) BOOL xsdDataTypes;
