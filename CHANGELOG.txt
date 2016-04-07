@@ -1,3 +1,7 @@
+1.27, Apr 7, 2016
+- added a new property named soapNamespace to able to setting the default namespace for the tag Envelope.
+- fixes for bitcode generation problem with Xcode 7.3.
+
 1.26.3, Mar 30, 2016
 - fixes on CDATA elements.
 
