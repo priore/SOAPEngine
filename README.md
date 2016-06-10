@@ -471,7 +471,8 @@ completeWithDictionary:^(NSInteger statusCode, NSDictionary *dict)
 
 ## Optimizations
 ---
-When using the method named requestWSDL three steps are performed : 
+First of all, if you note a slowdown in the response of the request, try to change the value of the property named `actionNamespaceSlash`.
+After, when using the method named `requestWSDL` three steps are performed : 
 
 1. retrieve the WSDL with an http request.
 2. processing to identify the soapAction.
@@ -480,33 +481,18 @@ When using the method named requestWSDL three steps are performed :
 this is not optimized, very slow, instead you can use the optimization below : 
 
 1. retrieving manually the SOAPAction directly from WSDL (once with your favorite browser).
-2. use the method named requestURL instead of requestWSDL.
+2. use the method named requestURL instead of requestWSDL without WSDL extension.
 
 ## Install in your apps
 ---
-1. add `-lxml2` in Build Settings --> Other Linker Flags.
-![Other Linker Flags](https://github.com/priore/SOAPEngine/raw/master/screen/otherlinkerflags.png)
+###With Cocoapods###
 
-2. add `/usr/include/libxml2` in Build Settings --> Header Search Paths.
-![Header Search Paths](https://github.com/priore/SOAPEngine/raw/master/screen/headersearchpaths.png)
+Read the ["Getting Started" guide](https://github.com/priore/SOAPEngine/wiki/Getting-Started-with-SOAPEngine)
 
-3. add SOAPEngine Framework
-	* SOAPEngine64.framework for iOS.
-	* SOAPEngineOSX.framework for Mac OS X.
-	* SOAPEngineTV.framework for AppleTV.
 
-4. add Security.framework.
+###Standard installation###
 
-5. add Accounts.framework (not for AppleTv).
-
-6. add AppKit.framework (only for Mac OS X).	
-![Frameworks](https://github.com/priore/SOAPEngine/raw/master/screen/frameworks.png)
-
-7. import in your class.
-![import](https://github.com/priore/SOAPEngine/raw/master/screen/codeimport.png)
-<SOAPEngine64/SOAPEngine.h>
-
-8. set the property named `licenseKey` with your license code (*only for test on your devices or publishing the app, not needed for run the app in simulator mode*).
+Read the ["Standard Installation" guide](https://github.com/priore/SOAPEngine/wiki/Standard-Installation)
 
 ## Licenses
 ---
