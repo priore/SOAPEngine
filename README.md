@@ -193,7 +193,7 @@ with [**Notifications**](https://developer.apple.com/library/mac/documentation/C
 [**Swift**](http://www.wikipedia.org/wiki/Swift_programming_language) language :
 
 ``` swift
-        import SOAPEngine
+        import SOAPEngine64
         
         let soap = SOAPEngine()
         soap.userAgent = "SOAPEngine"
