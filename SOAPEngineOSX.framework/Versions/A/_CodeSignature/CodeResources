@@ -6,23 +6,44 @@
 	<dict>
 		<key>Resources/Info.plist</key>
 		<data>
-		kBXzmjiFPX9wF26Prb4eZNLtyEs=
+		cyMAHL5PGlDDClMlcolZvNpEGkA=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
 		<key>Headers/SOAPEngine.h</key>
-		<data>
-		364CgsF4nxOkrtmet3bZnSanQqo=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			BEinflsczKdcI1lii7n7lCNTYBY=
+			</data>
+			<key>hash2</key>
+			<data>
+			Ai3/P7P6ceEPjViRIALIUNgA0B2tgungNLK8bGqIfok=
+			</data>
+		</dict>
 		<key>Modules/module.modulemap</key>
-		<data>
-		Mq/+VVzA/2WjOiipLKfO40YKl0k=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			Mq/+VVzA/2WjOiipLKfO40YKl0k=
+			</data>
+			<key>hash2</key>
+			<data>
+			jylliC/mW5KV/V0YyBelajKutHNB5NiX4uWkPr0jBb0=
+			</data>
+		</dict>
 		<key>Resources/Info.plist</key>
-		<data>
-		kBXzmjiFPX9wF26Prb4eZNLtyEs=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			cyMAHL5PGlDDClMlcolZvNpEGkA=
+			</data>
+			<key>hash2</key>
+			<data>
+			kgidSNsZWxk8c/cy1r33D1dQ1/q7P3VYgXzwM7QiKvg=
+			</data>
+		</dict>
 	</dict>
 	<key>rules</key>
 	<dict>

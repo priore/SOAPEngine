@@ -139,8 +139,8 @@ typedef NS_ENUM(NSInteger, SOAPEnryption)
 // sets the type of permission you want to use (none, wss, basic or custom).
 @property (nonatomic, assign) SOAPAuthorization authorizationMethod;
 
-// sets a custom content for the custom authorization method (xml format).
-@property (nonatomic, strong) NSString *header;
+// sets a custom content for the custom authorization method (xml string or dictionary).
+@property (nonatomic, strong) id header;
 
 // enables retrieval of the contents of the SOAP header in the server response.
 @property (nonatomic, assign) BOOL responseHeader;
@@ -203,7 +203,7 @@ typedef NS_ENUM(NSInteger, SOAPEnryption)
 @property (nonatomic, strong) NSString *licenseKey;
 
 // sets the receiver of the delegates 
-@property (nonatomic, assign) id<SOAPEngineDelegate> delegate;
+@property (nonatomic, weak) id<SOAPEngineDelegate> delegate;
 
 + (SOAPEngine *)sharedInstance;
 + (SOAPEngine *)manager;
