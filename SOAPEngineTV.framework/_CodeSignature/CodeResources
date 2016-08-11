@@ -6,11 +6,11 @@
 	<dict>
 		<key>Headers/SOAPEngine.h</key>
 		<data>
-		364CgsF4nxOkrtmet3bZnSanQqo=
+		BEinflsczKdcI1lii7n7lCNTYBY=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ksdTieN12RXch+vtMw+k1meYjGI=
+		vhNrFlpTjGpLIQS/L3F2Ki+aTQQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -20,13 +20,27 @@
 	<key>files2</key>
 	<dict>
 		<key>Headers/SOAPEngine.h</key>
-		<data>
-		364CgsF4nxOkrtmet3bZnSanQqo=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			BEinflsczKdcI1lii7n7lCNTYBY=
+			</data>
+			<key>hash2</key>
+			<data>
+			Ai3/P7P6ceEPjViRIALIUNgA0B2tgungNLK8bGqIfok=
+			</data>
+		</dict>
 		<key>Modules/module.modulemap</key>
-		<data>
-		WPfp1KGrdARLarR+LE/RKySMNS8=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			WPfp1KGrdARLarR+LE/RKySMNS8=
+			</data>
+			<key>hash2</key>
+			<data>
+			ImdcK4COJ57R68dXJgOvDXINyqDnUMA2tx4ijWP1DJA=
+			</data>
+		</dict>
 	</dict>
 	<key>rules</key>
 	<dict>
