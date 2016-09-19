@@ -1,7 +1,11 @@
+1.29, Sep 19, 2016
+- fix properties declarations for Swift 3.
+- various optimizations.
+
 1.28, Aug 11, 2016
 - header property now support NSString and NSDictionary types.
 - optimizations for NSDate objects.
-- fix bitcode for AppleTv.
+- fixes bitcode for AppleTv.
 
 1.27, Apr 7, 2016
 - added a new property named soapNamespace to able to setting the default name of namespace for the tag Envelope.
