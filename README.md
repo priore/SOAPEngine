@@ -190,29 +190,27 @@ with [**Notifications**](https://developer.apple.com/library/mac/documentation/C
     NSLog(@"error: %@, result: %@", error, dict)
 ```
 
-[**Swift**](http://www.wikipedia.org/wiki/Swift_programming_language) language :
+[**Swift 3**](http://www.wikipedia.org/wiki/Swift_programming_language) language :
 
 ``` swift
-        import SOAPEngine64
-        
-        let soap = SOAPEngine()
+        var soap = SOAPEngine()
         soap.userAgent = "SOAPEngine"
         soap.actionNamespaceSlash = true
-        soap.version = SOAPVersion.VERSION_1_1
+        soap.version = VERSION_1_1
         soap.responseHeader = true // use only for non standard MS-SOAP service
         
         soap.setValue("param-value", forKey: "param-name")
         soap.requestURL("http://www.my-web.com/my-service.asmx",
             soapAction: "http://www.my-web.com/My-Method-name",
             completeWithDictionary: { (statusCode : Int, 
-            					 dict : [NSObject : AnyObject]!) -> Void in
+            					 dict : [AnyHashable : Any]?) -> Void in
                 
-                let result:Dictionary = dict as Dictionary
-                NSLog("%@", result)
+                var result:Dictionary = dict! as Dictionary
+                print(result)
                 
-            }) { (error : NSError!) -> Void in
+            }) { (error : Error?) -> Void in
                 
-                NSLog("%@", error)
+                print(error)
         }
 ```
 	
