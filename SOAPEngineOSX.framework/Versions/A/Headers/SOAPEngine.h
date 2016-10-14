@@ -10,11 +10,11 @@
 //
 //  email support: support@prioregroup.com
 //
-// Version      : 1.29
+// Version      : 1.30
 // Changelog    : https://github.com/priore/SOAPEngine/blob/master/CHANGELOG.txt
 // Updates      : https://github.com/priore/SOAPEngine
 //
-#define SOAPEngineFrameworkVersion @"1.29" DEPRECATED_MSG_ATTRIBUTE("SOAPEngineFrameworkVersion as deprecated please use SOAPEngine64VersionString")
+#define SOAPEngineFrameworkVersion @"1.30" DEPRECATED_MSG_ATTRIBUTE("SOAPEngineFrameworkVersion as deprecated please use SOAPEngine64VersionString")
 
 #import <Foundation/Foundation.h>
 
@@ -83,6 +83,12 @@ typedef NS_ENUM(NSInteger, SOAPEnryption)
     SOAP_ENCRYPT_NONE,
     SOAP_ENCRYPT_AES256,
     SOAP_ENCRYPT_3DES
+};
+
+typedef NS_ENUM(NSInteger, SOAPCertificate)
+{
+    SOAP_CERTIFICATE_DEFAULT,
+    SOAP_CERTIFICATE_PINNING // support CER or DER certificate
 };
 
 @protocol SOAPEngineDelegate;
@@ -189,6 +195,7 @@ typedef NS_ENUM(NSInteger, SOAPEnryption)
 // openssl pkcs12 -export -in cert_key_pem.txt -inkey cert_key_pem.txt -out paypal_cert.p12
 @property (nonatomic, strong) NSString *clientCerficateName;
 @property (nonatomic, strong) NSString *clientCertificatePassword;
+@property (nonatomic, assign) SOAPCertificate clientCertificateMode;
 
 // enables the conversion of special characters in a compatible html format (eg &amp;) 
 @property (nonatomic, assign) BOOL escapingHTML;
