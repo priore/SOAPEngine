@@ -487,8 +487,11 @@ this is not optimized, very slow, instead you can use the optimization below :
 ---
 ###With Cocoapods###
 
-Read the ["Getting Started" guide](https://github.com/priore/SOAPEngine/wiki/Getting-Started-with-SOAPEngine)
+Read the ["Getting Started" guide](https://github.com/priore/SOAPEngine/wiki/Cocoapods-Installation-guide)
 
+###Cocoapods and Swift###
+
+Read the [Integrating SOAPEngine with a Swift project](https://github.com/priore/SOAPEngine/wiki/Integrating-SOAPEngine-with-a-Swift-project)
 
 ###Standard installation###
 
