@@ -2,16 +2,17 @@
 //  ViewController.swift
 //  SOAPEngine Swift
 //
-//  Created by Danilo Priore on 03/02/15.
-//  Copyright (c) 2015 Danilo Priore. All rights reserved.
+//  Created by Danilo Priore on 23/11/16.
+//  Copyright © 2016 Danilo Priore. All rights reserved.
 //
 
 import UIKit
+import SOAPEngine64
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SOAPEngineDelegate {
 
     var soap = [SOAPEngine]()
-    var verses:NSArray = [NSArray]()
+    var verses:NSArray = [NSArray]() as NSArray
     
     @IBOutlet var table: UITableView!
     
@@ -22,39 +23,38 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         soap.userAgent = "SOAPEngine"
         soap.actionNamespaceSlash = true
         soap.licenseKey = "eJJDzkPK9Xx+p5cOH7w0Q+AvPdgK1fzWWuUpMaYCq3r1mwf36Ocw6dn0+CLjRaOiSjfXaFQBWMi+TxCpxVF/FA=="
-        //soap.responseHeader = true // use only for non standard MS-SOAP service
         
         soap.setValue("Genesis", forKey: "BookName")
         soap.setIntegerValue(1, forKey: "chapter")
         soap.requestURL("http://www.prioregroup.com/services/americanbible.asmx",
-            soapAction: "http://www.prioregroup.com/GetVerses",
-            completeWithDictionary: { (statusCode : Int, dict : [NSObject : AnyObject]!) -> Void in
-                
-                var book:Dictionary = dict as Dictionary
-                let verses:NSArray = book["BibleBookChapterVerse"] as! NSArray
-                self.verses = verses
-                self.table.reloadData()
-                
-            }) { (error : NSError!) -> Void in
-                
-                NSLog("%@", error)
+                        soapAction: "http://www.prioregroup.com/GetVerses",
+                        completeWithDictionary: { (statusCode: Int?, dict: [AnyHashable: Any]?) -> Void in
+
+                            var book:Dictionary = dict! as Dictionary
+                            let verses:NSArray = book["BibleBookChapterVerse"] as! NSArray
+                            self.verses = verses
+                            self.table.reloadData()
+                            
+        }) { (error: Error?) -> Void in
+            
+            print(error!)
         }
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.verses.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var cell:UITableViewCell? = self.table.dequeueReusableCellWithIdentifier("cell") as UITableViewCell?
+        var cell:UITableViewCell? = self.table.dequeueReusableCell(withIdentifier: "cell") as UITableViewCell?
         if cell == nil
         {
-            cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cell")
+            cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "cell")
         }
         
         let chapter_verse:NSDictionary = self.verses[indexPath.row] as! NSDictionary
-
+        
         let chapter:String = chapter_verse["Chapter"] as! String
         let verse:String = chapter_verse["Verse"] as! String
         let text:String = chapter_verse["Text"] as! String
@@ -63,6 +63,5 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell!.detailTextLabel?.text = text
         return cell!
     }
-    
 }
 
