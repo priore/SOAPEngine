@@ -7,71 +7,73 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F3F18321DE5AF2F0060DAB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3F18311DE5AF2F0060DAB3 /* AppDelegate.swift */; };
-		9F3F18341DE5AF2F0060DAB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3F18331DE5AF2F0060DAB3 /* ViewController.swift */; };
-		9F3F18371DE5AF2F0060DAB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F3F18351DE5AF2F0060DAB3 /* Main.storyboard */; };
-		9F3F18391DE5AF2F0060DAB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F3F18381DE5AF2F0060DAB3 /* Assets.xcassets */; };
-		9F3F183C1DE5AF2F0060DAB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F3F183A1DE5AF2F0060DAB3 /* LaunchScreen.storyboard */; };
-		9F45DF811DE5C7600099935B /* SOAPEngine64.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F45DF801DE5C7600099935B /* SOAPEngine64.framework */; };
+		9F970E441E3D6977003B37FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F970E431E3D6977003B37FB /* AppDelegate.swift */; };
+		9F970E461E3D6977003B37FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F970E451E3D6977003B37FB /* ViewController.swift */; };
+		9F970E491E3D6977003B37FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F970E471E3D6977003B37FB /* Main.storyboard */; };
+		9F970E4B1E3D6977003B37FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F970E4A1E3D6977003B37FB /* Assets.xcassets */; };
+		9F970E4E1E3D6977003B37FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F970E4C1E3D6977003B37FB /* LaunchScreen.storyboard */; };
+		9FCB8F3F1E3E66FC00B7689E /* SOAPEngine64.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCB8F3E1E3E66FC00B7689E /* SOAPEngine64.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9F3F182E1DE5AF2F0060DAB3 /* SOAPEngine Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SOAPEngine Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F3F18311DE5AF2F0060DAB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9F3F18331DE5AF2F0060DAB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9F3F18361DE5AF2F0060DAB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9F3F18381DE5AF2F0060DAB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9F3F183B1DE5AF2F0060DAB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9F3F183D1DE5AF2F0060DAB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9F45DF801DE5C7600099935B /* SOAPEngine64.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SOAPEngine64.framework; path = ../SOAPEngine64.framework; sourceTree = "<group>"; };
+		9F970E401E3D6977003B37FB /* SOAPEngine Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SOAPEngine Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F970E431E3D6977003B37FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9F970E451E3D6977003B37FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9F970E481E3D6977003B37FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9F970E4A1E3D6977003B37FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9F970E4D1E3D6977003B37FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9F970E4F1E3D6977003B37FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F970E611E3D6F9D003B37FB /* SOAPEngine-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SOAPEngine-Bridging-Header.h"; sourceTree = "<group>"; };
+		9FCB8F3E1E3E66FC00B7689E /* SOAPEngine64.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SOAPEngine64.framework; path = ../SOAPEngine64.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9F3F182B1DE5AF2F0060DAB3 /* Frameworks */ = {
+		9F970E3D1E3D6977003B37FB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F45DF811DE5C7600099935B /* SOAPEngine64.framework in Frameworks */,
+				9FCB8F3F1E3E66FC00B7689E /* SOAPEngine64.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9F3F18251DE5AF2F0060DAB3 = {
+		9F970E371E3D6977003B37FB = {
 			isa = PBXGroup;
 			children = (
-				9F3F18301DE5AF2F0060DAB3 /* SOAPEngine Swift */,
-				9F3F182F1DE5AF2F0060DAB3 /* Products */,
-				9F45DF7F1DE5C7600099935B /* Frameworks */,
+				9F970E421E3D6977003B37FB /* SOAPEngine Swift */,
+				9F970E411E3D6977003B37FB /* Products */,
+				9F970E5B1E3D69B0003B37FB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		9F3F182F1DE5AF2F0060DAB3 /* Products */ = {
+		9F970E411E3D6977003B37FB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9F3F182E1DE5AF2F0060DAB3 /* SOAPEngine Swift.app */,
+				9F970E401E3D6977003B37FB /* SOAPEngine Swift.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9F3F18301DE5AF2F0060DAB3 /* SOAPEngine Swift */ = {
+		9F970E421E3D6977003B37FB /* SOAPEngine Swift */ = {
 			isa = PBXGroup;
 			children = (
-				9F3F18311DE5AF2F0060DAB3 /* AppDelegate.swift */,
-				9F3F18331DE5AF2F0060DAB3 /* ViewController.swift */,
-				9F3F18351DE5AF2F0060DAB3 /* Main.storyboard */,
-				9F3F18381DE5AF2F0060DAB3 /* Assets.xcassets */,
-				9F3F183A1DE5AF2F0060DAB3 /* LaunchScreen.storyboard */,
-				9F3F183D1DE5AF2F0060DAB3 /* Info.plist */,
+				9F970E431E3D6977003B37FB /* AppDelegate.swift */,
+				9F970E451E3D6977003B37FB /* ViewController.swift */,
+				9F970E471E3D6977003B37FB /* Main.storyboard */,
+				9F970E4A1E3D6977003B37FB /* Assets.xcassets */,
+				9F970E4C1E3D6977003B37FB /* LaunchScreen.storyboard */,
+				9F970E4F1E3D6977003B37FB /* Info.plist */,
+				9F970E611E3D6F9D003B37FB /* SOAPEngine-Bridging-Header.h */,
 			);
 			path = "SOAPEngine Swift";
 			sourceTree = "<group>";
 		};
-		9F45DF7F1DE5C7600099935B /* Frameworks */ = {
+		9F970E5B1E3D69B0003B37FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9F45DF801DE5C7600099935B /* SOAPEngine64.framework */,
+				9FCB8F3E1E3E66FC00B7689E /* SOAPEngine64.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -79,13 +81,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9F3F182D1DE5AF2F0060DAB3 /* SOAPEngine Swift */ = {
+		9F970E3F1E3D6977003B37FB /* SOAPEngine Swift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9F3F18401DE5AF2F0060DAB3 /* Build configuration list for PBXNativeTarget "SOAPEngine Swift" */;
+			buildConfigurationList = 9F970E521E3D6977003B37FB /* Build configuration list for PBXNativeTarget "SOAPEngine Swift" */;
 			buildPhases = (
-				9F3F182A1DE5AF2F0060DAB3 /* Sources */,
-				9F3F182B1DE5AF2F0060DAB3 /* Frameworks */,
-				9F3F182C1DE5AF2F0060DAB3 /* Resources */,
+				9F970E3C1E3D6977003B37FB /* Sources */,
+				9F970E3D1E3D6977003B37FB /* Frameworks */,
+				9F970E3E1E3D6977003B37FB /* Resources */,
 			);
 			buildRules = (
 			);
@@ -93,26 +95,27 @@
 			);
 			name = "SOAPEngine Swift";
 			productName = "SOAPEngine Swift";
-			productReference = 9F3F182E1DE5AF2F0060DAB3 /* SOAPEngine Swift.app */;
+			productReference = 9F970E401E3D6977003B37FB /* SOAPEngine Swift.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		9F3F18261DE5AF2F0060DAB3 /* Project object */ = {
+		9F970E381E3D6977003B37FB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Danilo Priore";
 				TargetAttributes = {
-					9F3F182D1DE5AF2F0060DAB3 = {
-						CreatedOnToolsVersion = 8.1;
+					9F970E3F1E3D6977003B37FB = {
+						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 9F3F18291DE5AF2F0060DAB3 /* Build configuration list for PBXProject "SOAPEngine Swift" */;
+			buildConfigurationList = 9F970E3B1E3D6977003B37FB /* Build configuration list for PBXProject "SOAPEngine Swift" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -120,54 +123,54 @@
 				en,
 				Base,
 			);
-			mainGroup = 9F3F18251DE5AF2F0060DAB3;
-			productRefGroup = 9F3F182F1DE5AF2F0060DAB3 /* Products */;
+			mainGroup = 9F970E371E3D6977003B37FB;
+			productRefGroup = 9F970E411E3D6977003B37FB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9F3F182D1DE5AF2F0060DAB3 /* SOAPEngine Swift */,
+				9F970E3F1E3D6977003B37FB /* SOAPEngine Swift */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9F3F182C1DE5AF2F0060DAB3 /* Resources */ = {
+		9F970E3E1E3D6977003B37FB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F3F183C1DE5AF2F0060DAB3 /* LaunchScreen.storyboard in Resources */,
-				9F3F18391DE5AF2F0060DAB3 /* Assets.xcassets in Resources */,
-				9F3F18371DE5AF2F0060DAB3 /* Main.storyboard in Resources */,
+				9F970E4E1E3D6977003B37FB /* LaunchScreen.storyboard in Resources */,
+				9F970E4B1E3D6977003B37FB /* Assets.xcassets in Resources */,
+				9F970E491E3D6977003B37FB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9F3F182A1DE5AF2F0060DAB3 /* Sources */ = {
+		9F970E3C1E3D6977003B37FB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F3F18341DE5AF2F0060DAB3 /* ViewController.swift in Sources */,
-				9F3F18321DE5AF2F0060DAB3 /* AppDelegate.swift in Sources */,
+				9F970E461E3D6977003B37FB /* ViewController.swift in Sources */,
+				9F970E441E3D6977003B37FB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9F3F18351DE5AF2F0060DAB3 /* Main.storyboard */ = {
+		9F970E471E3D6977003B37FB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9F3F18361DE5AF2F0060DAB3 /* Base */,
+				9F970E481E3D6977003B37FB /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		9F3F183A1DE5AF2F0060DAB3 /* LaunchScreen.storyboard */ = {
+		9F970E4C1E3D6977003B37FB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9F3F183B1DE5AF2F0060DAB3 /* Base */,
+				9F970E4D1E3D6977003B37FB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -175,7 +178,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		9F3F183E1DE5AF2F0060DAB3 /* Debug */ = {
+		9F970E501E3D6977003B37FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -193,7 +196,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -215,17 +218,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		9F3F183F1DE5AF2F0060DAB3 /* Release */ = {
+		9F970E511E3D6977003B37FB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -243,7 +244,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -259,41 +260,46 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		9F3F18411DE5AF2F0060DAB3 /* Debug */ = {
+		9F970E531E3D6977003B37FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = ../;
-				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "SOAPEngine Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-lxml2";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.prioregroup.SOAPEngine-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prioregroup.soapengine-sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "SOAPEngine Swift/SOAPEngine-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		9F3F18421DE5AF2F0060DAB3 /* Release */ = {
+		9F970E541E3D6977003B37FB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = ../;
-				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "SOAPEngine Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-lxml2";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.prioregroup.SOAPEngine-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prioregroup.soapengine-sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "SOAPEngine Swift/SOAPEngine-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -301,25 +307,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9F3F18291DE5AF2F0060DAB3 /* Build configuration list for PBXProject "SOAPEngine Swift" */ = {
+		9F970E3B1E3D6977003B37FB /* Build configuration list for PBXProject "SOAPEngine Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9F3F183E1DE5AF2F0060DAB3 /* Debug */,
-				9F3F183F1DE5AF2F0060DAB3 /* Release */,
+				9F970E501E3D6977003B37FB /* Debug */,
+				9F970E511E3D6977003B37FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9F3F18401DE5AF2F0060DAB3 /* Build configuration list for PBXNativeTarget "SOAPEngine Swift" */ = {
+		9F970E521E3D6977003B37FB /* Build configuration list for PBXNativeTarget "SOAPEngine Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9F3F18411DE5AF2F0060DAB3 /* Debug */,
-				9F3F18421DE5AF2F0060DAB3 /* Release */,
+				9F970E531E3D6977003B37FB /* Debug */,
+				9F970E541E3D6977003B37FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 9F3F18261DE5AF2F0060DAB3 /* Project object */;
+	rootObject = 9F970E381E3D6977003B37FB /* Project object */;
 }
