@@ -7,73 +7,86 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F970E441E3D6977003B37FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F970E431E3D6977003B37FB /* AppDelegate.swift */; };
-		9F970E461E3D6977003B37FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F970E451E3D6977003B37FB /* ViewController.swift */; };
-		9F970E491E3D6977003B37FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F970E471E3D6977003B37FB /* Main.storyboard */; };
-		9F970E4B1E3D6977003B37FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F970E4A1E3D6977003B37FB /* Assets.xcassets */; };
-		9F970E4E1E3D6977003B37FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F970E4C1E3D6977003B37FB /* LaunchScreen.storyboard */; };
-		9FCB8F3F1E3E66FC00B7689E /* SOAPEngine64.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCB8F3E1E3E66FC00B7689E /* SOAPEngine64.framework */; };
+		9F970DBF1E3D68B6003B37FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F970DBE1E3D68B6003B37FB /* main.m */; };
+		9F970DC21E3D68B6003B37FB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F970DC11E3D68B6003B37FB /* AppDelegate.m */; };
+		9F970DC51E3D68B6003B37FB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F970DC41E3D68B6003B37FB /* ViewController.m */; };
+		9F970DC81E3D68B6003B37FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F970DC61E3D68B6003B37FB /* Main.storyboard */; };
+		9F970DCA1E3D68B6003B37FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F970DC91E3D68B6003B37FB /* Assets.xcassets */; };
+		9F970DCD1E3D68B6003B37FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F970DCB1E3D68B6003B37FB /* LaunchScreen.storyboard */; };
+		9FCB8F3D1E3E66F400B7689E /* SOAPEngine64.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCB8F3C1E3E66F400B7689E /* SOAPEngine64.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9F970E401E3D6977003B37FB /* SOAPEngine Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SOAPEngine Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F970E431E3D6977003B37FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9F970E451E3D6977003B37FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9F970E481E3D6977003B37FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9F970E4A1E3D6977003B37FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9F970E4D1E3D6977003B37FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9F970E4F1E3D6977003B37FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9F970E611E3D6F9D003B37FB /* SOAPEngine-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SOAPEngine-Bridging-Header.h"; sourceTree = "<group>"; };
-		9FCB8F3E1E3E66FC00B7689E /* SOAPEngine64.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SOAPEngine64.framework; path = ../SOAPEngine64.framework; sourceTree = "<group>"; };
+		9F970DBA1E3D68B6003B37FB /* SOAPEngine iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SOAPEngine iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F970DBE1E3D68B6003B37FB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9F970DC01E3D68B6003B37FB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9F970DC11E3D68B6003B37FB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9F970DC31E3D68B6003B37FB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9F970DC41E3D68B6003B37FB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9F970DC71E3D68B6003B37FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9F970DC91E3D68B6003B37FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9F970DCC1E3D68B6003B37FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9F970DCE1E3D68B6003B37FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FCB8F3C1E3E66F400B7689E /* SOAPEngine64.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SOAPEngine64.framework; path = ../SOAPEngine64.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9F970E3D1E3D6977003B37FB /* Frameworks */ = {
+		9F970DB71E3D68B6003B37FB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FCB8F3F1E3E66FC00B7689E /* SOAPEngine64.framework in Frameworks */,
+				9FCB8F3D1E3E66F400B7689E /* SOAPEngine64.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9F970E371E3D6977003B37FB = {
+		9F970DB11E3D68B6003B37FB = {
 			isa = PBXGroup;
 			children = (
-				9F970E421E3D6977003B37FB /* SOAPEngine Swift */,
-				9F970E411E3D6977003B37FB /* Products */,
-				9F970E5B1E3D69B0003B37FB /* Frameworks */,
+				9F970DBC1E3D68B6003B37FB /* SOAPEngine iOS */,
+				9F970DBB1E3D68B6003B37FB /* Products */,
+				9F970E581E3D69A9003B37FB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		9F970E411E3D6977003B37FB /* Products */ = {
+		9F970DBB1E3D68B6003B37FB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9F970E401E3D6977003B37FB /* SOAPEngine Swift.app */,
+				9F970DBA1E3D68B6003B37FB /* SOAPEngine iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9F970E421E3D6977003B37FB /* SOAPEngine Swift */ = {
+		9F970DBC1E3D68B6003B37FB /* SOAPEngine iOS */ = {
 			isa = PBXGroup;
 			children = (
-				9F970E431E3D6977003B37FB /* AppDelegate.swift */,
-				9F970E451E3D6977003B37FB /* ViewController.swift */,
-				9F970E471E3D6977003B37FB /* Main.storyboard */,
-				9F970E4A1E3D6977003B37FB /* Assets.xcassets */,
-				9F970E4C1E3D6977003B37FB /* LaunchScreen.storyboard */,
-				9F970E4F1E3D6977003B37FB /* Info.plist */,
-				9F970E611E3D6F9D003B37FB /* SOAPEngine-Bridging-Header.h */,
+				9F970DC01E3D68B6003B37FB /* AppDelegate.h */,
+				9F970DC11E3D68B6003B37FB /* AppDelegate.m */,
+				9F970DC31E3D68B6003B37FB /* ViewController.h */,
+				9F970DC41E3D68B6003B37FB /* ViewController.m */,
+				9F970DC61E3D68B6003B37FB /* Main.storyboard */,
+				9F970DC91E3D68B6003B37FB /* Assets.xcassets */,
+				9F970DCB1E3D68B6003B37FB /* LaunchScreen.storyboard */,
+				9F970DCE1E3D68B6003B37FB /* Info.plist */,
+				9F970DBD1E3D68B6003B37FB /* Supporting Files */,
 			);
-			path = "SOAPEngine Swift";
+			path = "SOAPEngine iOS";
 			sourceTree = "<group>";
 		};
-		9F970E5B1E3D69B0003B37FB /* Frameworks */ = {
+		9F970DBD1E3D68B6003B37FB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9FCB8F3E1E3E66FC00B7689E /* SOAPEngine64.framework */,
+				9F970DBE1E3D68B6003B37FB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9F970E581E3D69A9003B37FB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9FCB8F3C1E3E66F400B7689E /* SOAPEngine64.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -81,41 +94,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9F970E3F1E3D6977003B37FB /* SOAPEngine Swift */ = {
+		9F970DB91E3D68B6003B37FB /* SOAPEngine iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9F970E521E3D6977003B37FB /* Build configuration list for PBXNativeTarget "SOAPEngine Swift" */;
+			buildConfigurationList = 9F970DD11E3D68B6003B37FB /* Build configuration list for PBXNativeTarget "SOAPEngine iOS" */;
 			buildPhases = (
-				9F970E3C1E3D6977003B37FB /* Sources */,
-				9F970E3D1E3D6977003B37FB /* Frameworks */,
-				9F970E3E1E3D6977003B37FB /* Resources */,
+				9F970DB61E3D68B6003B37FB /* Sources */,
+				9F970DB71E3D68B6003B37FB /* Frameworks */,
+				9F970DB81E3D68B6003B37FB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "SOAPEngine Swift";
-			productName = "SOAPEngine Swift";
-			productReference = 9F970E401E3D6977003B37FB /* SOAPEngine Swift.app */;
+			name = "SOAPEngine iOS";
+			productName = "SOAPEngine iOS";
+			productReference = 9F970DBA1E3D68B6003B37FB /* SOAPEngine iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		9F970E381E3D6977003B37FB /* Project object */ = {
+		9F970DB21E3D68B6003B37FB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Danilo Priore";
 				TargetAttributes = {
-					9F970E3F1E3D6977003B37FB = {
+					9F970DB91E3D68B6003B37FB = {
 						CreatedOnToolsVersion = 8.2.1;
-						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 9F970E3B1E3D6977003B37FB /* Build configuration list for PBXProject "SOAPEngine Swift" */;
+			buildConfigurationList = 9F970DB51E3D68B6003B37FB /* Build configuration list for PBXProject "SOAPEngine iOS" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -123,54 +134,55 @@
 				en,
 				Base,
 			);
-			mainGroup = 9F970E371E3D6977003B37FB;
-			productRefGroup = 9F970E411E3D6977003B37FB /* Products */;
+			mainGroup = 9F970DB11E3D68B6003B37FB;
+			productRefGroup = 9F970DBB1E3D68B6003B37FB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9F970E3F1E3D6977003B37FB /* SOAPEngine Swift */,
+				9F970DB91E3D68B6003B37FB /* SOAPEngine iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9F970E3E1E3D6977003B37FB /* Resources */ = {
+		9F970DB81E3D68B6003B37FB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F970E4E1E3D6977003B37FB /* LaunchScreen.storyboard in Resources */,
-				9F970E4B1E3D6977003B37FB /* Assets.xcassets in Resources */,
-				9F970E491E3D6977003B37FB /* Main.storyboard in Resources */,
+				9F970DCD1E3D68B6003B37FB /* LaunchScreen.storyboard in Resources */,
+				9F970DCA1E3D68B6003B37FB /* Assets.xcassets in Resources */,
+				9F970DC81E3D68B6003B37FB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9F970E3C1E3D6977003B37FB /* Sources */ = {
+		9F970DB61E3D68B6003B37FB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F970E461E3D6977003B37FB /* ViewController.swift in Sources */,
-				9F970E441E3D6977003B37FB /* AppDelegate.swift in Sources */,
+				9F970DC51E3D68B6003B37FB /* ViewController.m in Sources */,
+				9F970DC21E3D68B6003B37FB /* AppDelegate.m in Sources */,
+				9F970DBF1E3D68B6003B37FB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9F970E471E3D6977003B37FB /* Main.storyboard */ = {
+		9F970DC61E3D68B6003B37FB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9F970E481E3D6977003B37FB /* Base */,
+				9F970DC71E3D68B6003B37FB /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		9F970E4C1E3D6977003B37FB /* LaunchScreen.storyboard */ = {
+		9F970DCB1E3D68B6003B37FB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9F970E4D1E3D6977003B37FB /* Base */,
+				9F970DCC1E3D68B6003B37FB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -178,7 +190,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		9F970E501E3D6977003B37FB /* Debug */ = {
+		9F970DCF1E3D68B6003B37FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -220,13 +232,13 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		9F970E511E3D6977003B37FB /* Release */ = {
+		9F970DD01E3D68B6003B37FB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -262,70 +274,60 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		9F970E531E3D6977003B37FB /* Debug */ = {
+		9F970DD21E3D68B6003B37FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = ../;
-				INFOPLIST_FILE = "SOAPEngine Swift/Info.plist";
+				INFOPLIST_FILE = "SOAPEngine iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.prioregroup.soapengine-sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "SOAPEngine Swift/SOAPEngine-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		9F970E541E3D6977003B37FB /* Release */ = {
+		9F970DD31E3D68B6003B37FB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = ../;
-				INFOPLIST_FILE = "SOAPEngine Swift/Info.plist";
+				INFOPLIST_FILE = "SOAPEngine iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.prioregroup.soapengine-sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "SOAPEngine Swift/SOAPEngine-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9F970E3B1E3D6977003B37FB /* Build configuration list for PBXProject "SOAPEngine Swift" */ = {
+		9F970DB51E3D68B6003B37FB /* Build configuration list for PBXProject "SOAPEngine iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9F970E501E3D6977003B37FB /* Debug */,
-				9F970E511E3D6977003B37FB /* Release */,
+				9F970DCF1E3D68B6003B37FB /* Debug */,
+				9F970DD01E3D68B6003B37FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9F970E521E3D6977003B37FB /* Build configuration list for PBXNativeTarget "SOAPEngine Swift" */ = {
+		9F970DD11E3D68B6003B37FB /* Build configuration list for PBXNativeTarget "SOAPEngine iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9F970E531E3D6977003B37FB /* Debug */,
-				9F970E541E3D6977003B37FB /* Release */,
+				9F970DD21E3D68B6003B37FB /* Debug */,
+				9F970DD31E3D68B6003B37FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 9F970E381E3D6977003B37FB /* Project object */;
+	rootObject = 9F970DB21E3D68B6003B37FB /* Project object */;
 }

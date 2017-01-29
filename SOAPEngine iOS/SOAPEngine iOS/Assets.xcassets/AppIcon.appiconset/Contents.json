@@ -39,8 +39,9 @@
       "scale" : "2x"
     },
     {
-      "idiom" : "iphone",
       "size" : "60x60",
+      "idiom" : "iphone",
+      "filename" : "iPhone App iOS 7,8 @3x 60pt.png",
       "scale" : "3x"
     },
     {
@@ -49,9 +50,8 @@
       "scale" : "1x"
     },
     {
-      "size" : "20x20",
       "idiom" : "ipad",
-      "filename" : "iPad Spotlight iOS 7,8 @1x 40pt.png",
+      "size" : "20x20",
       "scale" : "2x"
     },
     {
@@ -69,7 +69,7 @@
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "iPad Spotlight iOS 7,8 @1x 40pt-1.png",
+      "filename" : "iPad Spotlight iOS 7,8 @1x 40pt.png",
       "scale" : "1x"
     },
     {
