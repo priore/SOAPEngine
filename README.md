@@ -18,8 +18,8 @@ With this Framework you can create [iPhone](http://www.wikipedia.org/wiki/IPhone
 
 ## Requirements for [iOS](http://www.wikipedia.org/wiki/IOS)
 ---
-* [iOS](http://www.wikipedia.org/wiki/IOS) 7.1, and later
-* [Xcode](http://www.wikipedia.org/wiki/Xcode) 7.1 or later
+* [iOS](http://www.wikipedia.org/wiki/IOS) 8.0 and later
+* [Xcode](http://www.wikipedia.org/wiki/Xcode) 8.0 or later
 * Security.framework
 * Accounts.framework
 * Foundation.framework
@@ -29,7 +29,7 @@ With this Framework you can create [iPhone](http://www.wikipedia.org/wiki/IPhone
 ## Requirements for [Mac OS X](http://www.wikipedia.org/wiki/OS_X)
 ---
 * [OS X](http://www.wikipedia.org/wiki/OS_X) 10.9 and later
-* [Xcode](http://www.wikipedia.org/wiki/Xcode) 7.1 or later
+* [Xcode](http://www.wikipedia.org/wiki/Xcode) 8.0 or later
 * Security.framework
 * Accounts.framework
 * Foundation.framework
@@ -39,8 +39,8 @@ With this Framework you can create [iPhone](http://www.wikipedia.org/wiki/IPhone
 
 ## Requirements for [Apple TV](http://www.apple.com/tv/)
 ---
-* [iOS](http://www.wikipedia.org/wiki/IOS) 9.0, and later
-* [Xcode](http://www.wikipedia.org/wiki/Xcode) 7.1 or later
+* [iOS](http://www.wikipedia.org/wiki/IOS) 9.0 and later
+* [Xcode](http://www.wikipedia.org/wiki/Xcode) 8.0 or later
 * Security.framework
 * Foundation.framework
 * UIKit.framework
@@ -51,9 +51,9 @@ With this Framework you can create [iPhone](http://www.wikipedia.org/wiki/IPhone
 * for [WCF](http://www.wikipedia.org/wiki/Windows_Communication_Foundation) services, only supports basic http bindings ([basicHttpBinding](https://msdn.microsoft.com/library/ms731361.aspx)).
 * in [Mac OS X](http://www.wikipedia.org/wiki/OS_X) unsupported image objects, instead you can use the [NSData](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSData_Class/index.html).
 
-## Security for Xcode 7.x
+## Security for Xcode 8.x or later
 ---
-The new Xcode 7 requires an additional setting for the apps, if this setting does not exist you will see a log message like this:
+From the new Xcode 8 is required an additional setting for the apps, if this setting does not exist you will see a log message like this:
 
 `App Transport Security has blocked a cleartext HTTP (http://) resource load since it is insecure. Temporary exceptions can be configured via your app's Info.plist file.`
 
