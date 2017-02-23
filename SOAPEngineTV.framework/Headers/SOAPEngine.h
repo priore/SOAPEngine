@@ -10,11 +10,11 @@
 //
 //  email support: support@prioregroup.com
 //
-// Version      : 1.31
+// Version      : 1.4
 // Changelog    : https://github.com/priore/SOAPEngine/blob/master/CHANGELOG.txt
 // Updates      : https://github.com/priore/SOAPEngine
 //
-#define SOAPEngineFrameworkVersion @"1.31" DEPRECATED_MSG_ATTRIBUTE("SOAPEngineFrameworkVersion as deprecated please use SOAPEngine64VersionString")
+#define SOAPEngineFrameworkVersion @"1.4" DEPRECATED_MSG_ATTRIBUTE("SOAPEngineFrameworkVersion as deprecated please use SOAPEngine64VersionString")
 
 #import <Foundation/Foundation.h>
 
@@ -50,8 +50,10 @@ FOUNDATION_EXPORT const NSString *SOAPEngineErrorKey;          // errors
 FOUNDATION_EXPORT const NSString *SOAPEngineDataSizeKey;       // send/receive data size
 FOUNDATION_EXPORT const NSString *SOAPEngineTotalDataSizeKey;  // send/receive total data size
 
-typedef void(^SOAPEngineCompleteBlock)(NSInteger statusCode, NSString *stringXML) DEPRECATED_MSG_ATTRIBUTE("SOAPEngineCompleteBlock as deprecated please use SOAPEngineCompleteBlockWithDictionary");
 typedef void(^SOAPEngineCompleteBlockWithDictionary)(NSInteger statusCode, NSDictionary *dict);
+typedef void(^SOAPEngineCompleteBlock)(NSInteger statusCode, NSString *stringXML)
+    DEPRECATED_MSG_ATTRIBUTE("SOAPEngineCompleteBlock as deprecated please use SOAPEngineCompleteBlockWithDictionary");
+
 typedef void(^SOAPEngineFailBlock)(NSError *error);
 typedef void(^SOAPEngineReceiveDataSizeBlock)(NSUInteger current, long long total);
 typedef void(^SOAPEngineSendDataSizeBlock)(NSUInteger current, NSUInteger total);
@@ -96,11 +98,15 @@ typedef NS_ENUM(NSInteger, SOAPCertificate)
 @interface SOAPEngine : NSObject
 
 // return the current request URL
-@property (nonatomic, strong, readonly, getter=currentRequestURL) NSURL *requestURL DEPRECATED_MSG_ATTRIBUTE("requestURL property as deprecated please use currentRequestURL");
 @property (nonatomic, strong, readonly) NSURL *currentRequestURL;
+@property (nonatomic, strong, readonly, getter=currentRequestURL) NSURL *requestURL
+    DEPRECATED_MSG_ATTRIBUTE("requestURL property as deprecated please use currentRequestURL");
 
 // return the current SOAP Action
 @property (nonatomic, strong, readonly) NSString *soapAction;
+
+// sets or returns SOAPAction value in the header of the request.
+@property (nonatomic, strong) NSString *soapActionRequest;
 
 // return the current method name
 @property (nonatomic, strong, readonly) NSString *methodName;
@@ -245,8 +251,10 @@ typedef NS_ENUM(NSInteger, SOAPCertificate)
 - (void)setValue:(id)value forKey:(NSString *)key subKeyName:(NSString*)subKeyName attributes:(NSDictionary*)attrbitues;
 
 #if TARGET_OS_SIMULATOR || TARGET_OS_IOS || TARGET_OS_TV
+
 - (void)setImage:(UIImage*)image forKey:(NSString*)key __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_4_3);
 - (void)setImage:(UIImage*)image forKey:(NSString*)key attributes:(NSDictionary*)attributes __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_4_3);
+
 #endif
 
 // return a formatted dictionary for a sub-child with attributes
@@ -271,20 +279,15 @@ typedef NS_ENUM(NSInteger, SOAPCertificate)
 - (void)requestURL:(id)asmxURL
         soapAction:(NSString *)soapAction
           complete:(SOAPEngineCompleteBlock)complete
-     failWithError:(SOAPEngineFailBlock)fail DEPRECATED_MSG_ATTRIBUTE("requestURL:soapAction:complete:failWithError: as deprecated please use requestURL:soapAction:completeWithDictionary:failWithError:");
+     failWithError:(SOAPEngineFailBlock)fail
+    DEPRECATED_MSG_ATTRIBUTE("requestURL:soapAction:complete:failWithError: as deprecated please use requestURL:soapAction:completeWithDictionary:failWithError:");
 
 - (void)requestURL:(id)asmxURL
         soapAction:(NSString *)soapAction
              value:(id)value
           complete:(SOAPEngineCompleteBlock)complete
-     failWithError:(SOAPEngineFailBlock)fail DEPRECATED_MSG_ATTRIBUTE("requestURL:soapAction:value:complete:failWithError: as deprecated please use requestURL:soapAction:value:completeWithDictionary:failWithError:");
-
-- (void)requestURL:(id)asmxURL
-        soapAction:(NSString *)soapAction
-             value:(id)value
-            forKey:(NSString*)key
-          complete:(SOAPEngineCompleteBlock)complete
-     failWithError:(SOAPEngineFailBlock)fail DEPRECATED_MSG_ATTRIBUTE("requestURL:soapAction:value:forKey:complete:failWithError: as deprecated please use requestURL:soapAction:value:forKey:completeWithDictionary:failWithError:");
+     failWithError:(SOAPEngineFailBlock)fail
+    DEPRECATED_MSG_ATTRIBUTE("requestURL:soapAction:value:complete:failWithError: as deprecated please use requestURL:soapAction:value:completeWithDictionary:failWithError:");
 
 - (void)requestURL:(id)asmxURL
         soapAction:(NSString *)soapAction
@@ -292,7 +295,7 @@ typedef NS_ENUM(NSInteger, SOAPCertificate)
             forKey:(NSString*)key
           complete:(SOAPEngineCompleteBlock)complete
      failWithError:(SOAPEngineFailBlock)fail
-  receivedDataSize:(SOAPEngineReceiveDataSizeBlock)receive DEPRECATED_MSG_ATTRIBUTE("requestURL:soapAction:value:forKey:complete:failWithError:receivedDataSize: as deprecated please use requestURL:soapAction:value:forKey:completeWithDictionary:failWithError:receivedDataSize:");
+    DEPRECATED_MSG_ATTRIBUTE("requestURL:soapAction:value:forKey:complete:failWithError: as deprecated please use requestURL:soapAction:value:forKey:completeWithDictionary:failWithError:");
 
 - (void)requestURL:(id)asmxURL
         soapAction:(NSString *)soapAction
@@ -301,7 +304,17 @@ typedef NS_ENUM(NSInteger, SOAPCertificate)
           complete:(SOAPEngineCompleteBlock)complete
      failWithError:(SOAPEngineFailBlock)fail
   receivedDataSize:(SOAPEngineReceiveDataSizeBlock)receive
-    sendedDataSize:(SOAPEngineSendDataSizeBlock)sended DEPRECATED_MSG_ATTRIBUTE("requestURL:soapAction:value:forKey:complete:failWithError:receivedDataSize:sendedDataSize: as deprecated please use requestURL:soapAction:value:forKey:completeWithDictionary:failWithError:receivedDataSize:sendedDataSize:");
+    DEPRECATED_MSG_ATTRIBUTE("requestURL:soapAction:value:forKey:complete:failWithError:receivedDataSize: as deprecated please use requestURL:soapAction:value:forKey:completeWithDictionary:failWithError:receivedDataSize:");
+
+- (void)requestURL:(id)asmxURL
+        soapAction:(NSString *)soapAction
+             value:(id)value
+            forKey:(NSString*)key
+          complete:(SOAPEngineCompleteBlock)complete
+     failWithError:(SOAPEngineFailBlock)fail
+  receivedDataSize:(SOAPEngineReceiveDataSizeBlock)receive
+    sendedDataSize:(SOAPEngineSendDataSizeBlock)sended
+    DEPRECATED_MSG_ATTRIBUTE("requestURL:soapAction:value:forKey:complete:failWithError:receivedDataSize:sendedDataSize: as deprecated please use requestURL:soapAction:value:forKey:completeWithDictionary:failWithError:receivedDataSize:sendedDataSize:");
 
 // webservice request with block and dictionary
 - (void)requestURL:(id)asmxURL
@@ -401,15 +414,27 @@ authorization:(SOAPAuthorization)authorization;
 
 @optional
 
-- (void)soapEngine:(SOAPEngine*)soapEngine didFinishLoading:(NSString*)stringXML DEPRECATED_MSG_ATTRIBUTE("soapEngine:didFinishLoading: as deprecated please use soapEngine:didFinishLoading:dictionary:");
-- (void)soapEngine:(SOAPEngine*)soapEngine didFinishLoading:(NSString*)stringXML dictionary:(NSDictionary*)dict;
+- (void)soapEngine:(SOAPEngine*)soapEngine didFinishLoading:(NSString*)stringXML
+    DEPRECATED_MSG_ATTRIBUTE("soapEngine:didFinishLoading: as deprecated please use soapEngine:didFinishLoadingWithDictionary:data:");
+
+- (void)soapEngine:(SOAPEngine*)soapEngine didFinishLoading:(NSString*)stringXML dictionary:(NSDictionary*)dict
+    DEPRECATED_MSG_ATTRIBUTE("soapEngine:didFinishLoading: as deprecated please use soapEngine:didFinishLoadingWithDictionary:data:");
+
+- (void)soapEngine:(SOAPEngine*)soapEngine didFinishLoadingWithDictionary:(NSDictionary*)dict data:(NSData*)data;
+
 - (void)soapEngine:(SOAPEngine*)soapEngine didFailWithError:(NSError*)error;
+
 - (void)soapEngine:(SOAPEngine*)soapEngine didReceiveDataSize:(NSUInteger)current total:(long long)total;
+
 - (void)soapEngine:(SOAPEngine*)soapEngine didSendDataSize:(NSUInteger)current total:(NSUInteger)total;
+
 - (BOOL)soapEngine:(SOAPEngine*)soapEngine didReceiveResponseCode:(NSInteger)statusCode;
+
 - (NSMutableURLRequest*)soapEngine:(SOAPEngine*)soapEngine didBeforeSendingURLRequest:(NSMutableURLRequest*)request;
-- (NSString*)soapEngine:(SOAPEngine*)soapEngine didBeforeParsingResponseString:(NSString*)stringXML DEPRECATED_MSG_ATTRIBUTE("soapEngine:didBeforeParsingResponseString: as deprecated please use soapEngine:didBeforeParsingResponseData:");
+
 - (NSData*)soapEngine:(SOAPEngine*)soapEngine didBeforeParsingResponseData:(NSData*)data;
 
+- (NSString*)soapEngine:(SOAPEngine*)soapEngine didBeforeParsingResponseString:(NSString*)stringXML
+    DEPRECATED_MSG_ATTRIBUTE("soapEngine:didBeforeParsingResponseString: as deprecated please use soapEngine:didBeforeParsingResponseData:");
 
 @end
