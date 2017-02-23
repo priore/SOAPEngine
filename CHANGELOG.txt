@@ -1,3 +1,6 @@
+1.4, Feb 23, 2017
+- added a new property named "soapActionRequest" to set a different SOAPAction value in the header of the request for the support of the last versions of WCF services.
+
 1.31, Nov 15, 2016
 - added a new delegate to retrieve original NSData before of the parsing.
 - deprecated didBeforeParsingResponseString leading by didBeforeParsingResponseData.
