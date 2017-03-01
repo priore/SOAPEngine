@@ -10,11 +10,11 @@
 //
 //  email support: support@prioregroup.com
 //
-// Version      : 1.4
+// Version      : 1.4.2
 // Changelog    : https://github.com/priore/SOAPEngine/blob/master/CHANGELOG.txt
 // Updates      : https://github.com/priore/SOAPEngine
 //
-#define SOAPEngineFrameworkVersion @"1.4" DEPRECATED_MSG_ATTRIBUTE("SOAPEngineFrameworkVersion as deprecated please use SOAPEngine64VersionString")
+#define SOAPEngineFrameworkVersion @"1.4.2" DEPRECATED_MSG_ATTRIBUTE("SOAPEngineFrameworkVersion as deprecated please use SOAPEngine64VersionString")
 
 #import <Foundation/Foundation.h>
 
@@ -32,23 +32,24 @@
 #endif
 
 // Local Notification names
-FOUNDATION_EXPORT const NSString *SOAPEngineDidFinishLoadingNotification;
-FOUNDATION_EXPORT const NSString *SOAPEngineDidFailWithErrorNotification;
-FOUNDATION_EXPORT const NSString *SOAPEngineDidReceiveResponseCodeNotification;
-FOUNDATION_EXPORT const NSString *SOAPEngineDidBeforeSendingURLRequestNotification;
-FOUNDATION_EXPORT const NSString *SOAPEngineDidBeforeParsingResponseStringNotification;
-FOUNDATION_EXPORT const NSString *SOAPEngineDidReceiveDataSizeNotification;
-FOUNDATION_EXPORT const NSString *SOAPEngineDidSendDataSizeNotification;
+FOUNDATION_EXPORT NSString *const SOAPEngineDidFinishLoadingNotification;
+FOUNDATION_EXPORT NSString *const SOAPEngineDidFailWithErrorNotification;
+FOUNDATION_EXPORT NSString *const SOAPEngineDidReceiveResponseCodeNotification;
+FOUNDATION_EXPORT NSString *const SOAPEngineDidBeforeSendingURLRequestNotification;
+FOUNDATION_EXPORT NSString *const SOAPEngineDidBeforeParsingResponseStringNotification;
+FOUNDATION_EXPORT NSString *const SOAPEngineDidReceiveDataSizeNotification;
+FOUNDATION_EXPORT NSString *const SOAPEngineDidSendDataSizeNotification;
 
 // UserInfo dictionary keys for Local Noficiations
-FOUNDATION_EXPORT const NSString *SOAPEngineStatusCodeKey;     // response status code
-FOUNDATION_EXPORT const NSString *SOAPEngineXMLResponseKey;    // response xml
-FOUNDATION_EXPORT const NSString *SOAPEngineXMLDictionaryKey;  // response dictionary
-FOUNDATION_EXPORT const NSString *SOAPEngineURLRequestKey;     // http request
-FOUNDATION_EXPORT const NSString *SOAPEngineURLResponseKey;    // http response
-FOUNDATION_EXPORT const NSString *SOAPEngineErrorKey;          // errors
-FOUNDATION_EXPORT const NSString *SOAPEngineDataSizeKey;       // send/receive data size
-FOUNDATION_EXPORT const NSString *SOAPEngineTotalDataSizeKey;  // send/receive total data size
+FOUNDATION_EXPORT NSString *const SOAPEngineStatusCodeKey;     // response status code
+FOUNDATION_EXPORT NSString *const SOAPEngineXMLResponseKey;    // response xml
+FOUNDATION_EXPORT NSString *const SOAPEngineXMLDictionaryKey;  // response dictionary
+FOUNDATION_EXPORT NSString *const SOAPEngineXMLDatayKey;       // response data
+FOUNDATION_EXPORT NSString *const SOAPEngineURLRequestKey;     // http request
+FOUNDATION_EXPORT NSString *const SOAPEngineURLResponseKey;    // http response
+FOUNDATION_EXPORT NSString *const SOAPEngineErrorKey;          // errors
+FOUNDATION_EXPORT NSString *const SOAPEngineDataSizeKey;       // send/receive data size
+FOUNDATION_EXPORT NSString *const SOAPEngineTotalDataSizeKey;  // send/receive total data size
 
 typedef void(^SOAPEngineCompleteBlockWithDictionary)(NSInteger statusCode, NSDictionary *dict);
 typedef void(^SOAPEngineCompleteBlock)(NSInteger statusCode, NSString *stringXML)
