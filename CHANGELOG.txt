@@ -1,3 +1,10 @@
+1.4.2, Mar 1, 2017
+- fixes for authorization the p12 certificate types.
+
+1.4.1, Feb 27, 2017
+- added SOAPEngineXMLDatayKey constant that is used in userInfo notifications.
+- fixes for the constants declaration.
+
 1.4, Feb 23, 2017
 - added a new property named "soapActionRequest" to set a different SOAPAction value in the header of the request for the support of the last versions of WCF services.
 
