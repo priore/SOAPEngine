@@ -1,6 +1,13 @@
 **SOAPEngine**
 ================
 
+[![Twitter: @DaniloPriore](https://img.shields.io/badge/contact-@DaniloPriore-blue.svg?style=flat)](https://twitter.com/DaniloPriore)
+[![Version](https://img.shields.io/cocoapods/v/SOAPEngine.svg?style=flat)](http://cocoapods.org/pods/SOAPEngine)
+[![Language](https://img.shields.io/badge/language-objectivec-orange.svg?style=flat)]()
+[![Platform](https://img.shields.io/cocoapods/p/SOAPEngine.svg?style=flat)](http://cocoapods.org/pods/SOAPEngine)
+[![License](https://img.shields.io/cocoapods/l/SOAPEngine.svg?style=flat)](http://cocoapods.org/pods/SOAPEngine)
+
+
 This generic [SOAP](http://www.wikipedia.org/wiki/SOAP) client allows you to access web services using a your [iOS](http://www.wikipedia.org/wiki/IOS) app, [Mac OS X](http://www.wikipedia.org/wiki/OS_X) app and [Apple TV](http://www.apple.com/tv/) app.
 
 With this Framework you can create [iPhone](http://www.wikipedia.org/wiki/IPhone), [iPad](http://www.wikipedia.org/wiki/IPad), [Mac OS X](http://www.wikipedia.org/wiki/OS_X) and [AppleTv](http://www.apple.com/tv/) apps that supports [SOAP](http://www.wikipedia.org/wiki/SOAP) Client Protocol. This framework able executes methods at remote web services with [SOAP](http://www.wikipedia.org/wiki/SOAP) standard protocol.
@@ -485,15 +492,15 @@ this is not optimized, very slow, instead you can use the optimization below :
 
 ## Install in your apps
 ---
-###With Cocoapods###
+### With Cocoapods
 
 Read the ["Getting Started" guide](https://github.com/priore/SOAPEngine/wiki/Cocoapods-Installation-guide)
 
-###Cocoapods and Swift###
+### Cocoapods and Swift
 
 Read the [Integrating SOAPEngine with a Swift project](https://github.com/priore/SOAPEngine/wiki/Integrating-SOAPEngine-with-a-Swift-project)
 
-###Standard installation###
+### Standard installation
 
 Read the ["Standard Installation" guide](https://github.com/priore/SOAPEngine/wiki/Standard-Installation)
 
@@ -503,7 +510,8 @@ Trial (simulator) | Single App | Enterprise (multi App) | Full Source Code
 ------------- | ------------- | ------------- | ------------- 
 [![TRIAL LICENSE](https://github.com/priore/SOAPEngine/raw/master/screen/freetrial.png)](https://github.com/priore/SOAPEngine/archive/master.zip)  | [![BUY SINGLE LICENSE](https://github.com/priore/SOAPEngine/raw/master/screen/1299.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G3RXTN3YD7VRG) | [![BUY ENTERPRISE LICENSE](https://github.com/priore/SOAPEngine/raw/master/screen/7799.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6YH9LJRNXPTHE) | [Contact US](mailto:support@prioregroup.com)
 
-##Contacts
+
+## Contacts
 ---
 [![TWITTER](https://github.com/priore/SOAPEngine/raw/master/screen/twitter.png)](https://twitter.com/DaniloPriore)      [![FACEBOOK](https://github.com/priore/SOAPEngine/raw/master/screen/facebook.png)](https://www.facebook.com/prioregroup)      [![LINKED-IN](https://github.com/priore/SOAPEngine/raw/master/screen/linked-in.png)](http://it.linkedin.com/in/priore/)
 
