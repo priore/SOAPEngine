@@ -1,3 +1,6 @@
+1.4.3, Jul 28, 2017
+- fixes crash's when data contains unicode special characters like ZERO WIDTH (eg. //u200C //u200B).
+
 1.4.2, Mar 1, 2017
 - fixes for authorization the p12 certificate types.
 
