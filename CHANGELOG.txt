@@ -1,14 +1,18 @@
-1.4.3, Jul 28, 2017
+1.40.4, Ago 2, 2017
+- fixes when tags contains html or unicode characters.
+- fixes for wrong version number.
+
+1.40.3, Jul 28, 2017 (ex 1.4.3)
 - fixes crash's when data contains unicode special characters like ZERO WIDTH (eg. //u200C //u200B).
 
-1.4.2, Mar 1, 2017
+1.40.2 (ex 1.4.2), Mar 1, 2017
 - fixes for authorization the p12 certificate types.
 
-1.4.1, Feb 27, 2017
+1.40.1, Feb 27, 2017 (ex 1.4.1)
 - added SOAPEngineXMLDatayKey constant that is used in userInfo notifications.
 - fixes for the constants declaration.
 
-1.4, Feb 23, 2017
+1.40, Feb 23, 2017 (ex 1.4)
 - added a new property named "soapActionRequest" to set a different SOAPAction value in the header of the request for the support of the last versions of WCF services.
 
 1.31, Nov 15, 2016
