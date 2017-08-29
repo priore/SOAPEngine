@@ -1,3 +1,6 @@
+1.40.5, Ago 29, 2017
+- fixes when tags contains both unicode and special accented characters.
+
 1.40.4, Ago 2, 2017
 - fixes when tags contains html or unicode characters.
 - fixes for wrong version number.
