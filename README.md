@@ -506,10 +506,10 @@ Read the ["Standard Installation" guide](https://github.com/priore/SOAPEngine/wi
 
 ## Licenses
 
-Sorry, our system is not available in this time for purchase a license.
-We are providing a system upgrade, we will be back soon.
-
-But you can still try the [![TRIAL LICENSE](https://github.com/priore/SOAPEngine/raw/master/screen/freetrial.png)](https://github.com/priore/SOAPEngine/archive/master.zip)
+---
+Trial (simulator) | Single App | Enterprise (multi App)
+------------- | ------------- | -------------
+[![TRIAL LICENSE](https://github.com/priore/SOAPEngine/raw/master/screen/freetrial.png)](https://github.com/priore/SOAPEngine/archive/master.zip)  | [![BUY SINGLE LICENSE](https://github.com/priore/SOAPEngine/raw/master/screen/1299.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G3RXTN3YD7VRG) | [![BUY ENTERPRISE LICENSE](https://github.com/priore/SOAPEngine/raw/master/screen/7799.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6YH9LJRNXPTHE)
 
 ## Contacts
 ---
