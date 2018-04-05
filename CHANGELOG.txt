@@ -1,3 +1,6 @@
+1.41, Apr 5, 2018
+- implementation for Digest Authentication type on header of requests
+
 1.40.5, Ago 29, 2017
 - fixes when tags contains both unicode and special accented characters.
 
