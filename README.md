@@ -58,6 +58,30 @@ With this Framework you can create [iPhone](http://www.wikipedia.org/wiki/IPhone
 * for [WCF](http://www.wikipedia.org/wiki/Windows_Communication_Foundation) services, only supports basic http bindings ([basicHttpBinding](https://msdn.microsoft.com/library/ms731361.aspx)).
 * in [Mac OS X](http://www.wikipedia.org/wiki/OS_X) unsupported image objects, instead you can use the [NSData](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSData_Class/index.html).
 
+## Known issues
+---
+- **Swift 4**: the library is currently written in Objective-C and when you import the swift library you will get build errors like this `The use of Swift 3 @objc inference in Swift 4 mode is deprecated`.
+
+	For silent this warning is need sets `Swift 3 @objc Inference` to default value in the the Build settings of target. __but It's not all__; the classes used to create requests must be declared with `@objcMembers` and `NSObject`, eg:
+
+	``` swift
+	class MyClass { ... }
+
+    let param = MyClass()
+    // ...
+    // ...
+    let soap = SOAPEngine()
+    soap.setValue(param, forKey: "myKey")
+    // ...
+    // ...
+	```
+
+	the declaration of MyClass must become :
+
+	``` swift
+	@objcMembers class MyClass: NSObject { ... }
+	```
+
 ## Security for Xcode 8.x or later
 ---
 From the new Xcode 8 is required an additional setting for the apps, if this setting does not exist you will see a log message like this:
