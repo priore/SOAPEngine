@@ -10,11 +10,11 @@
 //
 //  email support: support@prioregroup.com
 //
-// Version      : 1.41
+// Version      : 1.42
 // Changelog    : https://github.com/priore/SOAPEngine/blob/master/CHANGELOG.txt
 // Updates      : https://github.com/priore/SOAPEngine
 //
-#define SOAPEngineFrameworkVersion @"1.41" DEPRECATED_MSG_ATTRIBUTE("SOAPEngineFrameworkVersion as deprecated please use SOAPEngine64VersionString")
+#define SOAPEngineFrameworkVersion @"1.42" DEPRECATED_MSG_ATTRIBUTE("SOAPEngineFrameworkVersion as deprecated please use SOAPEngine64VersionString")
 
 #import <Foundation/Foundation.h>
 
@@ -31,6 +31,8 @@
     FOUNDATION_EXPORT const unsigned char SOAPEngineOSXVersionString[];
 #endif
 
+#pragma mark - Notification Constants
+
 // Local Notification names
 FOUNDATION_EXPORT NSString *const SOAPEngineDidFinishLoadingNotification;
 FOUNDATION_EXPORT NSString *const SOAPEngineDidFailWithErrorNotification;
@@ -39,6 +41,8 @@ FOUNDATION_EXPORT NSString *const SOAPEngineDidBeforeSendingURLRequestNotificati
 FOUNDATION_EXPORT NSString *const SOAPEngineDidBeforeParsingResponseStringNotification;
 FOUNDATION_EXPORT NSString *const SOAPEngineDidReceiveDataSizeNotification;
 FOUNDATION_EXPORT NSString *const SOAPEngineDidSendDataSizeNotification;
+
+#pragma mark - Notifications Keys Constants
 
 // UserInfo dictionary keys for Local Noficiations
 FOUNDATION_EXPORT NSString *const SOAPEngineStatusCodeKey;     // response status code
@@ -51,6 +55,8 @@ FOUNDATION_EXPORT NSString *const SOAPEngineErrorKey;          // errors
 FOUNDATION_EXPORT NSString *const SOAPEngineDataSizeKey;       // send/receive data size
 FOUNDATION_EXPORT NSString *const SOAPEngineTotalDataSizeKey;  // send/receive total data size
 
+#pragma mark - Blocks Defines
+
 typedef void(^SOAPEngineCompleteBlockWithDictionary)(NSInteger statusCode, NSDictionary *dict);
 typedef void(^SOAPEngineCompleteBlock)(NSInteger statusCode, NSString *stringXML)
     DEPRECATED_MSG_ATTRIBUTE("SOAPEngineCompleteBlock as deprecated please use SOAPEngineCompleteBlockWithDictionary");
@@ -60,6 +66,8 @@ typedef void(^SOAPEngineReceiveDataSizeBlock)(NSUInteger current, long long tota
 typedef void(^SOAPEngineSendDataSizeBlock)(NSUInteger current, NSUInteger total);
 typedef void(^SOAPEngineReceivedProgressBlock)(NSProgress *progress);
 typedef void(^SOAPEngineSendedProgressBlock)(NSProgress *progress);
+
+#pragma mark - Enums
 
 typedef NS_ENUM(NSInteger, SOAPVersion)
 {
@@ -98,6 +106,8 @@ typedef NS_ENUM(NSInteger, SOAPCertificate)
 @protocol SOAPEngineDelegate;
 
 @interface SOAPEngine : NSObject
+
+#pragma mark - Properties
 
 // return the current request URL
 @property (nonatomic, strong, readonly) NSURL *currentRequestURL;
@@ -222,8 +232,12 @@ typedef NS_ENUM(NSInteger, SOAPCertificate)
 // sets the receiver of the delegates 
 @property (nonatomic, weak) id<SOAPEngineDelegate> delegate;
 
+#pragma mark - Static Methods
+
 + (SOAPEngine *)sharedInstance;
 + (SOAPEngine *)manager;
+
+#pragma mark - Methods
 
 // returns the value for a webservice that returns a single value
 - (NSInteger)integerValue;
@@ -268,6 +282,26 @@ typedef NS_ENUM(NSInteger, SOAPCertificate)
 // clear all parameters, usually used before a new request with the same instance.
 - (void)clearValues;
 
+// sets logins
+- (void)login:(NSString*)username
+     password:(NSString*)password;
+
+- (void)login:(NSString*)username
+     password:(NSString*)password
+        realm:(NSString*)realm;
+
+- (void)login:(NSString*)username
+     password:(NSString*)password
+authorization:(SOAPAuthorization)authorization;
+
+// for PAYPAL login
+- (void)login:(NSString*)username
+     password:(NSString*)password
+        email:(NSString*)email
+    signature:(NSString*)signature;
+
+#pragma mark - Request with delegates
+
 // webservice request (async)
 - (void)requestURL:(id)asmxURL soapAction:(NSString*)soapAction;
 - (void)requestURL:(id)asmxURL soapAction:(NSString*)soapAction value:(id)value;
@@ -277,6 +311,8 @@ typedef NS_ENUM(NSInteger, SOAPCertificate)
 - (NSDictionary*)syncRequestURL:(id)asmxURL soapAction:(NSString*)soapAction error:(NSError**)error;
 - (NSDictionary*)syncRequestURL:(id)asmxURL soapAction:(NSString*)soapAction value:(id)value error:(NSError**)error;
 - (NSDictionary*)syncRequestURL:(id)asmxURL soapAction:(NSString*)soapAction value:(id)value forKey:(NSString*)key error:(NSError**)error;
+
+#pragma mark - Request with blocks
 
 // webservice request with block
 - (void)requestURL:(id)asmxURL
@@ -372,46 +408,51 @@ completeWithDictionary:(SOAPEngineCompleteBlockWithDictionary)complete
   receivedProgress:(SOAPEngineReceivedProgressBlock)receive
     sendedProgress:(SOAPEngineSendedProgressBlock)sended;
 
+#pragma mark - Request with block (Reflection)
+
+// request with object reflection
+//- (void)requestURL:(id)asmxURL
+//        soapAction:(NSString *)soapAction
+//             class:(Class)classType
+//completeWithObject:(void(^)(NSInteger statusCode, id object))complete
+//     failWithError:(SOAPEngineFailBlock)fail;
+
+#pragma mark - Request with WSDL
+
 // request with WSDL
 // note: better use requestURL, read this https://github.com/priore/SOAPEngine#optimizations
-- (void)requestWSDL:(id)wsdlURL operation:(NSString*)operation;
+- (void)requestWSDL:(id)wsdlURL operation:(NSString*)operation
+DEPRECATED_MSG_ATTRIBUTE("requestWSDL:operation: as deprecated please use requestURL:soapAction:");
 
 - (void)requestWSDL:(id)wsdlURL
           operation:(NSString *)operation
 completeWithDictionary:(SOAPEngineCompleteBlockWithDictionary)complete
-      failWithError:(SOAPEngineFailBlock)fail;
+      failWithError:(SOAPEngineFailBlock)fail
+DEPRECATED_MSG_ATTRIBUTE("requestWSDL:operation:completeWithDictionary:failWithError: as deprecated please use requestURL:soapAction:completeWithDictionary:failWithError:");
 
 - (void)requestWSDL:(id)wsdlURL
           operation:(NSString *)operation
               value:(id)value
 completeWithDictionary:(SOAPEngineCompleteBlockWithDictionary)complete
-      failWithError:(SOAPEngineFailBlock)fail;
+      failWithError:(SOAPEngineFailBlock)fail
+DEPRECATED_MSG_ATTRIBUTE("requestWSDL:operation:value:completeWithDictionary:failWithError: as deprecated please use requestURL:soapAction:value:completeWithDictionary:failWithError:");
 
 - (void)requestWSDL:(id)wsdlURL
           operation:(NSString *)operation
               value:(id)value
              forKey:(NSString*)key
 completeWithDictionary:(SOAPEngineCompleteBlockWithDictionary)complete
-      failWithError:(SOAPEngineFailBlock)fail;
+      failWithError:(SOAPEngineFailBlock)fail
+DEPRECATED_MSG_ATTRIBUTE("requestWSDL:operation:value:forKey:completeWithDictionary:failWithError: as deprecated please use requestURL:soapAction:value:forKey:completeWithDictionary:failWithError:");
 
-// sets logins
-- (void)login:(NSString*)username
-     password:(NSString*)password;
-
-- (void)login:(NSString*)username
-     password:(NSString*)password
-authorization:(SOAPAuthorization)authorization;
-
-// for PAYPAL login
-- (void)login:(NSString*)username
-     password:(NSString*)password
-        email:(NSString*)email
-    signature:(NSString*)signature;
+#pragma mark - Cancel all requests
 
 // cancel all delegates, blocks or notifications
 - (void)cancel;
 
 @end
+
+#pragma mark - Protocol
 
 @protocol SOAPEngineDelegate <NSObject>
 
