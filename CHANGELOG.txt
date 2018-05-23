@@ -1,3 +1,6 @@
+1.42, May 23, 2018
+- fixes the custom objects serialization
+
 1.41, Apr 5, 2018
 - implementation for Digest Authentication type on header of requests
 
