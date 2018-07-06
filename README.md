@@ -6,7 +6,7 @@
 [![Language](https://img.shields.io/badge/language-objectivec-orange.svg?style=flat)]()
 [![Platform](https://img.shields.io/cocoapods/p/SOAPEngine.svg?style=flat)](http://cocoapods.org/pods/SOAPEngine)
 [![License](https://img.shields.io/cocoapods/l/SOAPEngine.svg?style=flat)](http://cocoapods.org/pods/SOAPEngine)
-
+[![codebeat badge](https://codebeat.co/badges/106e60ae-9f4c-4970-a505-770beb429605)](https://codebeat.co/projects/github-com-priore-soapengine-master)
 
 This generic [SOAP](http://www.wikipedia.org/wiki/SOAP) client allows you to access web services using a your [iOS](http://www.wikipedia.org/wiki/IOS) app, [Mac OS X](http://www.wikipedia.org/wiki/OS_X) app and [Apple TV](http://www.apple.com/tv/) app.
 
