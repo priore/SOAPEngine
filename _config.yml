@@ -1,0 +1,8 @@
+title: SOAPEngine
+description: This generic SOAP client allows you to access web services using a your iOS and Mac OS X app.
+google_analytics: UA-11009971-11
+show_downloads: true
+theme: jekyll-theme-architect
+
+gems:
+  - jekyll-mentions
