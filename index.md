@@ -530,7 +530,7 @@ Read the ["Standard Installation" guide](https://github.com/priore/SOAPEngine/wi
 
 ## Licenses
 ---
-#### Ttial (only on simulator)
+#### Trial (only on simulator)
 [![TRIAL LICENSE](https://github.com/priore/SOAPEngine/raw/master/screen/freetrial.png)](https://github.com/priore/SOAPEngine/archive/master.zip)
 
 #### Single License (single App)
@@ -541,4 +541,11 @@ Read the ["Standard Installation" guide](https://github.com/priore/SOAPEngine/wi
 
 ## Contacts
 ---
-[![TWITTER](https://github.com/priore/SOAPEngine/raw/master/screen/twitter.png)](https://twitter.com/DaniloPriore)      [![FACEBOOK](https://github.com/priore/SOAPEngine/raw/master/screen/facebook.png)](https://www.facebook.com/prioregroup)      [![LINKED-IN](https://github.com/priore/SOAPEngine/raw/master/screen/linked-in.png)](http://it.linkedin.com/in/priore/)
+https://twitter.com/DaniloPriore
+
+https://www.facebook.com/prioregroup
+
+https://it.linkedin.com/in/priore
+
+https://www.prioregroup.com
+
