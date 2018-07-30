@@ -529,11 +529,15 @@ Read the [Integrating SOAPEngine with a Swift project](https://github.com/priore
 Read the ["Standard Installation" guide](https://github.com/priore/SOAPEngine/wiki/Standard-Installation)
 
 ## Licenses
-
 ---
-Trial (simulator) | Single App | Enterprise (multi App)
-------------- | ------------- | -------------
-[![TRIAL LICENSE](https://github.com/priore/SOAPEngine/raw/master/screen/freetrial.png)](https://github.com/priore/SOAPEngine/archive/master.zip)  | [![BUY SINGLE LICENSE](https://github.com/priore/SOAPEngine/raw/master/screen/1299.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G3RXTN3YD7VRG) | [![BUY ENTERPRISE LICENSE](https://github.com/priore/SOAPEngine/raw/master/screen/7799.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6YH9LJRNXPTHE)
+#### Ttial (only on simulator)
+[![TRIAL LICENSE](https://github.com/priore/SOAPEngine/raw/master/screen/freetrial.png)](https://github.com/priore/SOAPEngine/archive/master.zip)
+
+#### Single License (single App)
+[![BUY SINGLE LICENSE](https://github.com/priore/SOAPEngine/raw/master/screen/1299.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G3RXTN3YD7VRG)
+
+#### Enterprise License (unlimited Apps)
+[![BUY ENTERPRISE LICENSE](https://github.com/priore/SOAPEngine/raw/master/screen/7799.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6YH9LJRNXPTHE)
 
 ## Contacts
 ---
