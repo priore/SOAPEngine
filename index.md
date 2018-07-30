@@ -1,46 +1,109 @@
 **SOAPEngine**
 ================
 
-This generic `SOAP` client allows you to access web services using a your `iOS` app and `Mac OS X` app.
+[![Twitter: @DaniloPriore](https://img.shields.io/badge/contact-@DaniloPriore-blue.svg?style=flat)](https://twitter.com/DaniloPriore)
+[![Version](https://img.shields.io/cocoapods/v/SOAPEngine.svg?style=flat)](http://cocoapods.org/pods/SOAPEngine)
+[![Language](https://img.shields.io/badge/language-objectivec-orange.svg?style=flat)]()
+[![Platform](https://img.shields.io/cocoapods/p/SOAPEngine.svg?style=flat)](http://cocoapods.org/pods/SOAPEngine)
+[![License](https://img.shields.io/cocoapods/l/SOAPEngine.svg?style=flat)](http://cocoapods.org/pods/SOAPEngine)
+[![codebeat badge](https://codebeat.co/badges/106e60ae-9f4c-4970-a505-770beb429605)](https://codebeat.co/projects/github-com-priore-soapengine-master)
 
-With this Framework you can create iPhone, iPad and Mac OS X apps that supports SOAP Client Protocol. This framework able executes methods at remote web services with SOAP standard protocol.
+This generic [SOAP](http://www.wikipedia.org/wiki/SOAP) client allows you to access web services using a your [iOS](http://www.wikipedia.org/wiki/IOS) app, [Mac OS X](http://www.wikipedia.org/wiki/OS_X) app and [Apple TV](http://www.apple.com/tv/) app.
+
+With this Framework you can create [iPhone](http://www.wikipedia.org/wiki/IPhone), [iPad](http://www.wikipedia.org/wiki/IPad), [Mac OS X](http://www.wikipedia.org/wiki/OS_X) and [AppleTv](http://www.apple.com/tv/) apps that supports [SOAP](http://www.wikipedia.org/wiki/SOAP) Client Protocol. This framework able executes methods at remote web services with [SOAP](http://www.wikipedia.org/wiki/SOAP) standard protocol.
 
 ## Features
-* Support both 2001 (v1.1) and 2003 (v1.2) `XML` schema.
-* Support array, array of structs and dictionary.
-* Support user-defined object. Capable of serializing complex data types and array of complex data types, even multi-level embedded structs.
-* Supports `ASMX` Services, `WCF` Services (`svc`) and now also the `WSDL` definitions.
-* Supports Basic Authentication, `WS-Security`, Client side Certificate and custom security header.
-* `AES256` or `3DES` Encrypt/Decrypt data without SSL security.
+---
+* Support both 2001 (v1.1) and 2003 (v1.2) [XML](http://www.wikipedia.org/wiki/XML) schema.
+* Support array, array of structs, dictionary and sets.
+* Support for user-defined object with serialization of complex data types and array of complex data types, even embedded multilevel structures.
+* Supports [ASMX](http://www.wikipedia.org/wiki/ASP.NET#Other_files) Services, [WCF](http://www.wikipedia.org/wiki/Windows_Communication_Foundation) Services ([SVC](http://www.wikipedia.org/wiki/ASP.NET#Other_files)) and now also the [WSDL](http://www.wikipedia.org/wiki/Web_Services_Description_Language) definitions.
+* Supports [Basic](http://www.wikipedia.org/wiki/Basic_access_authentication), [Digest](http://www.wikipedia.org/wiki/Digest_access_authentication) and [NTLM](http://www.wikipedia.org/wiki/Integrated_Windows_Authentication) Authentication, [WS-Security](http://www.wikipedia.org/wiki/WS-Security), Client side Certificate and custom security header.
+* Supports [iOS](http://www.wikipedia.org/wiki/IOS) Social Account to send [OAuth2.0](http://www.wikipedia.org/wiki/OAuth) token on the request.
+* [AES256](http://www.wikipedia.org/wiki/Advanced_Encryption_Standard) or [3DES](http://www.wikipedia.org/wiki/Triple_DES) Encrypt/Decrypt data without [SSL](http://www.wikipedia.org/w/index.php?title=Transport_Layer_Security) security.
 * An example of service and how to use it is included in source code.
 
-## Requirements for iOS
-* iOS 5.1.1, and later
-* `XCode` 5.0 or later
+## Requirements for [iOS](http://www.wikipedia.org/wiki/IOS)
+---
+* [iOS](http://www.wikipedia.org/wiki/IOS) 8.0 and later
+* [Xcode](http://www.wikipedia.org/wiki/Xcode) 8.0 or later
 * Security.framework
+* Accounts.framework
 * Foundation.framework
 * UIKit.framework
 * libxml2.dylib
 
-## Requirements for Mac OS X
-* OS X 10.9 and later
-* `XCode` 5.0 or later
+## Requirements for [Mac OS X](http://www.wikipedia.org/wiki/OS_X)
+---
+* [OS X](http://www.wikipedia.org/wiki/OS_X) 10.9 and later
+* [Xcode](http://www.wikipedia.org/wiki/Xcode) 8.0 or later
 * Security.framework
+* Accounts.framework
 * Foundation.framework
 * AppKit.framework
 * Cocoa.framework
 * libxml2.dylib
 
+## Requirements for [Apple TV](http://www.apple.com/tv/)
+---
+* [iOS](http://www.wikipedia.org/wiki/IOS) 9.0 and later
+* [Xcode](http://www.wikipedia.org/wiki/Xcode) 8.0 or later
+* Security.framework
+* Foundation.framework
+* UIKit.framework
+* libxml2.dylib
+
 ## Limitations
-* for `WCF` services, only supports basic http bindings (`<basicHttpBinding>`).
-* in `Mac OS X` unsupported image objects (instead you can use the `NSData`).
+---
+* for [WCF](http://www.wikipedia.org/wiki/Windows_Communication_Foundation) services, only supports basic http bindings ([basicHttpBinding](https://msdn.microsoft.com/library/ms731361.aspx)).
+* in [Mac OS X](http://www.wikipedia.org/wiki/OS_X) unsupported image objects, instead you can use the [NSData](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSData_Class/index.html).
+
+## Known issues
+---
+- **Swift 4**: the library is currently written in Objective-C and when you import the swift library you will get build errors like this `The use of Swift 3 @objc inference in Swift 4 mode is deprecated`.
+
+	For silent this warning is need sets `Swift 3 @objc Inference` to default value in the the Build settings of target. __but It's not all__; the classes used to create requests must be declared with `@objcMembers` and `NSObject`, eg:
+
+	``` swift
+	class MyClass { ... }
+
+    let param = MyClass()
+    // ...
+    // ...
+    let soap = SOAPEngine()
+    soap.setValue(param, forKey: "myKey")
+    // ...
+    // ...
+	```
+
+	the declaration of MyClass must become :
+
+	``` swift
+	@objcMembers class MyClass: NSObject { ... }
+	```
+
+## Security for Xcode 8.x or later
+---
+From the new Xcode 8 is required an additional setting for the apps, if this setting does not exist you will see a log message like this:
+
+`App Transport Security has blocked a cleartext HTTP (http://) resource load since it is insecure. Temporary exceptions can be configured via your app's Info.plist file.`
+
+To resolve this, add few keys in info.plist, the steps are:
+
+1. Open `info.plist` file of your project.
+2. Add a Key called `NSAppTransportSecurity` as a Dictionary.
+3. Add a Subkey called `NSAllowsArbitraryLoads` as Boolean and set its value to YES as like following image.
+
+![NSAppTransportSecurity](https://github.com/priore/SOAPEngine/raw/master/screen/NSAppTransportSecurity.png)
+
+ref link: http://stackoverflow.com/a/32631185/4069848
 
 ## How to use
-
-with delegates :
+---
+with [**Delegates**](https://developer.apple.com/library/ios/documentation/General/Conceptual/CocoaEncyclopedia/DelegatesandDataSources/DelegatesandDataSources.html) :
 
 ``` objective-c
-	#import <SOAPEngine/SOAPEngine.h>
+	#import <SOAPEngine64/SOAPEngine.h>
 
 	// standard soap service (.asmx)
 	SOAPEngine *soap = [[SOAPEngine alloc] init];
@@ -64,10 +127,10 @@ with delegates :
 	}
 ```
 
-with block programming :
+with [**Block programming**](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/Blocks/Articles/00_Introduction.html) :
 
 ``` objective-c
-	#import <SOAPEngine/SOAPEngine.h>
+	#import <SOAPEngine64/SOAPEngine.h>
 	
 	// TODO: your user object
 	MyClass myObject = [[MyClass alloc] init];
@@ -80,18 +143,17 @@ with block programming :
 	[soap requestURL:@"http://www.my-web.com/my-service.svc"
 		  soapAction:@"http://www.my-web.com/my-interface/my-method"
 			   value:myObject
-			complete:^(NSInteger statusCode, NSString *stringXML) {
-		    	NSDictionary *result = [soap dictionaryValue];
-				NSLog(@"%@", result);
+			completeWithDictionary:^(NSInteger statusCode, NSDictionary *dict) {
+				NSLog(@"%@", dict);
 			} failWithError:^(NSError *error) {
 				NSLog(@"%@", error);
 			}];
 ```	
 
-directly from WSDL (not recommended is slow) :
+directly from [**WSDL**](http://www.wikipedia.org/wiki/Web_Services_Description_Language) (*not recommended is slow*) :
 
 ``` objective-c
-	#import <SOAPEngine/SOAPEngine.h>
+	#import <SOAPEngine64/SOAPEngine.h>
 	
 	// TODO: your user object
 	MyClass myObject = [[MyClass alloc] init];
@@ -113,10 +175,10 @@ directly from WSDL (not recommended is slow) :
 			}];
 ```	
 
-with notifications :
+with [**Notifications**](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSNotificationCenter_Class/index.html) :
 
 ``` objective-c
-	#import <SOAPEngine/SOAPEngine.h>
+	#import <SOAPEngine64/SOAPEngine.h>
 
 	// TODO: your user object
 	MyClass myObject = [[MyClass alloc] init];
@@ -146,10 +208,10 @@ with notifications :
 	}
 ```
 
-Synchronous request :
+[**Synchronous**]() request :
 
 ``` objective-c
-	#import <SOAPEngine/SOAPEngine.h>
+	#import <SOAPEngine64/SOAPEngine.h>
 	
 	NSError *error = nil;
     SOAPEngine *soap = [[SOAPEngine alloc] init];
@@ -159,7 +221,7 @@ Synchronous request :
     NSLog(@"error: %@, result: %@", error, dict)
 ```
 
-Swift language :
+[**Swift 3**](http://www.wikipedia.org/wiki/Swift_programming_language) language :
 
 ``` swift
         var soap = SOAPEngine()
@@ -172,21 +234,21 @@ Swift language :
         soap.requestURL("http://www.my-web.com/my-service.asmx",
             soapAction: "http://www.my-web.com/My-Method-name",
             completeWithDictionary: { (statusCode : Int, 
-            					 dict : [NSObject : AnyObject]!) -> Void in
+            					 dict : [AnyHashable : Any]?) -> Void in
                 
-                var result:Dictionary = dict as Dictionary
-                NSLog("%@", result)
+                var result:Dictionary = dict! as Dictionary
+                print(result)
                 
-            }) { (error : NSError!) -> Void in
+            }) { (error : Error?) -> Void in
                 
-                NSLog("%@", error)
+                print(error)
         }
 ```
 	
-settings for soap authentication :
+settings for [**SOAP Authentication**](http://www.whitemesa.com/soapauth.html) :
 
 ``` objective-c
-	#import <SOAPEngine/SOAPEngine.h>
+	#import <SOAPEngine64/SOAPEngine.h>
 
 	SOAPEngine *soap = [[SOAPEngine alloc] init];
 	soap.userAgent = @"SOAPEngine";
@@ -200,10 +262,28 @@ settings for soap authentication :
 	
 ```	
 
-encryption/decryption data without SSL/HTTPS :
+settings for Social [**OAuth2.0**](http://www.wikipedia.org/wiki/OAuth) token :
 
 ``` objective-c
-	#import <SOAPEngine/SOAPEngine.h>
+	#import <SOAPEngine64/SOAPEngine.h>
+	#import <Accounts/Accounts.h>
+
+	SOAPEngine *soap = [[SOAPEngine alloc] init];
+	soap.userAgent = @"SOAPEngine";
+	
+	// token authorization
+	soap.authorizationMethod = SOAP_AUTH_SOCIAL;
+	soap.apiKey = @"1234567890"; // your apikey https://dev.twitter.com/
+	soap.socialName = ACAccountTypeIdentifierTwitter;
+	
+	// TODO: your code here...
+	
+```	
+
+[**Encryption/Decryption**](https://it.wikipedia.org/wiki/Advanced_Encryption_Standard) data without SSL/HTTPS :
+
+``` objective-c
+	#import <SOAPEngine64/SOAPEngine.h>
 
 	SOAPEngine *soap = [[SOAPEngine alloc] init];
 	soap.userAgent = @"SOAPEngine";
@@ -213,7 +293,28 @@ encryption/decryption data without SSL/HTTPS :
 	// TODO: your code here...
 	
 ```	
-W3Schools example :
+
+Params with [**Attributes**](http://www.w3schools.com/xml/xml_attributes.asp) :
+
+``` objective-c
+    // book
+    NSMutableDictionary *book = [NSMutableDictionary dictionaryWithObject:@"Genesis" forKey:@"name"];
+    // chapter
+    NSDictionary *attr = @{@"order": @"asc"};
+    NSDictionary *child = [soap dictionaryForKey:@"chapter" value:@"1" attributes:attr];
+    [book addEntriesFromDictionary:child]; // add chapter to book
+    // book attributes
+    [soap setValue:book forKey:@"Book" attributes:@{@"rack": @"2"}];
+```
+it builds a request like this:
+``` xml
+    <Book rack="2">
+        <name>Genesis</name>
+        <chapter order="asc">1</chapter>
+    </Book>
+```
+
+[**W3Schools**](http://www.w3schools.com) example :
 
 ``` objective-c
 	SOAPEngine *soap = [[SOAPEngine alloc] init];
@@ -234,7 +335,7 @@ W3Schools example :
 	
 ```	
 
-WebServiceX example :
+[**WebServiceX**](http://www.webservicex.net) example :
 
 ``` objective-c
 	SOAPEngine *soap = [[SOAPEngine alloc] init];
@@ -255,7 +356,47 @@ WebServiceX example :
           	
 ```	
 
-PAYPAL example :
+[**BarCode**](http://www.wikipedia.org/wiki/Barcode) with [**WebServiceX**](http://www.webservicex.net) example :
+
+``` objective-c
+	 SOAPEngine *soap = [[SOAPEngine alloc] init];
+     soap.actionNamespaceSlash = NO;
+
+     NSDictionary *barCodeParam = @{
+     	@"Height" : @(100),
+     	@"Width" : @(150),
+     	@"Angle" : @(0),
+     	@"Ratio" : @(5),
+     	@"Module" : @(0),
+     	@"Left" : @(0),
+     	@"Top" : @(0),
+     	@"CheckSum" : @"true",
+     	@"FontName" : @"Arial",
+     	@"FontSize" : @(20),
+     	@"BarColor" : @"black",
+     	@"BGColor" : @"white",
+     	@"barcodeOption" : @"None",
+     	@"barcodeType" : @"CodeEAN13",
+     	@"checkSumMethod" : @"None",
+     	@"showTextPosition" : @"BottomCenter",
+     	@"BarCodeImageFormat" : @"PNG" };
+     [soap setValue:barCodeParam forKey:@"BarCodeParam"];
+     [soap setValue:@"9783161484100" forKey:@"BarCodeText"];
+     [soap requestURL:@"http://www.webservicex.net/genericbarcode.asmx"
+     soapAction:@"http://www.webservicex.net/GenerateBarCode"
+        completeWithDictionary:^(NSInteger statusCode, NSDictionary *dict) {
+     
+         NSString *imgBase64 = [soap stringValue];
+         NSData *base64 = [[NSData alloc] initWithBase64Encoding:imgBase64];
+         UIImage *barCodeImage = [[UIImage alloc] initWithData:base64];
+     
+     } failWithError:^(NSError *error) {
+         NSLog(@"Error: %@", error);
+     }];
+     
+```	
+
+[**PAYPAL**](http://www.paypal.com) example with certificate :
 
 ``` objective-c
 	SOAPEngine *soap = [[SOAPEngine alloc] init];
@@ -288,7 +429,29 @@ PAYPAL example :
           	
 ```	
 
-Upload file :
+[**Magento 2**](http://devdocs.magento.com) login example :
+
+``` objective-c
+	SOAPEngine *soap = [[SOAPEngine alloc] init];
+    soap.selfSigned = YES; // only for invalid https certificates
+    soap.responseHeader = YES;
+    soap.actionNamespaceSlash = NO;
+    soap.envelope = @"xmlns:urn=\"urn:Magento\"";
+    [soap setValue:@"your-username" forKey:@"username"];
+    [soap setValue:@"your-apykey" forKey:@"apiKey"];
+    [soap requestURL:@"https://your-magentohost/api/v2_soap/"
+          soapAction:@"urn:Mage_Api_Model_Server_V2_HandlerAction#login"
+completeWithDictionary:^(NSInteger statusCode, NSDictionary *dict)
+	{
+        NSLog(@"Login return: %@", [soap stringValue]);
+        
+    } failWithError:^(NSError *error) {
+        
+        NSLog(@"%@", error);
+    }];
+```	
+
+[**Upload file**]() :
 
 ``` objective-c
 	SOAPEngine *soap = [[SOAPEngine alloc] init];
@@ -311,7 +474,7 @@ Upload file :
           	
 ```	
 
-Download file :
+[**Download file**]() :
 
 ``` objective-c
 	SOAPEngine *soap = [[SOAPEngine alloc] init];
@@ -338,7 +501,9 @@ Download file :
 ```	
 
 ## Optimizations
-When using the method named requestWSDL three steps are performed : 
+---
+First of all, if you note a slowdown in the response of the request, try to change the value of the property named `actionNamespaceSlash`.
+After, when using the method named `requestWSDL` three steps are performed : 
 
 1. retrieve the WSDL with an http request.
 2. processing to identify the soapAction.
@@ -347,29 +512,29 @@ When using the method named requestWSDL three steps are performed :
 this is not optimized, very slow, instead you can use the optimization below : 
 
 1. retrieving manually the SOAPAction directly from WSDL (once with your favorite browser).
-2. use the method named requestURL instead of requestWSDL.
+2. use the method named requestURL instead of requestWSDL without WSDL extension.
 
 ## Install in your apps
+---
+### With Cocoapods
 
-1. add -lxml2 in Build Settings --> Other Linker Flags.
-![Other Linker Flags](https://raw.githubusercontent.com/priore/SOAPEngine/master/screen/otherlinkerflags.png)
+Read the ["Getting Started" guide](https://github.com/priore/SOAPEngine/wiki/Cocoapods-Installation-guide)
 
-2. add /usr/include/libxml2 in Build Settings --> Header Search Paths.
-![Header Search Paths](https://raw.githubusercontent.com/priore/SOAPEngine/master/screen/headersearchpaths.png)
+### Cocoapods and Swift
 
-3. SOAPEngine64.framework (for iOS apps) or SOAPEngineOSX.framework (for Mac OS X apps).
-4. add Security.framework.
-5. add AppKit.framework (only for Mac OS X apps, not required for iOS apps).
-![Frameworks](https://raw.githubusercontent.com/priore/SOAPEngine/master/screen/frameworks.png)
+Read the [Integrating SOAPEngine with a Swift project](https://github.com/priore/SOAPEngine/wiki/Integrating-SOAPEngine-with-a-Swift-project)
 
-6. in your class, use #import <SOAPEngine/SOAPEngine.h> (both iOS or Mac OS X apps).
-![import](https://raw.githubusercontent.com/priore/SOAPEngine/master/screen/codeimport.png)
+### Standard installation
 
-**[GET IT NOW!](http://www.prioregroup.com/iphone/soapengine.aspx)**
+Read the ["Standard Installation" guide](https://github.com/priore/SOAPEngine/wiki/Standard-Installation)
 
-##Contacts
+## Licenses
 
-- https://twitter.com/DaniloPriore
-- https://www.facebook.com/prioregroup
-- http://www.prioregroup.com/
-- http://it.linkedin.com/in/priore/
+---
+Trial (simulator) | Single App | Enterprise (multi App)
+------------- | ------------- | -------------
+[![TRIAL LICENSE](https://github.com/priore/SOAPEngine/raw/master/screen/freetrial.png)](https://github.com/priore/SOAPEngine/archive/master.zip)  | [![BUY SINGLE LICENSE](https://github.com/priore/SOAPEngine/raw/master/screen/1299.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G3RXTN3YD7VRG) | [![BUY ENTERPRISE LICENSE](https://github.com/priore/SOAPEngine/raw/master/screen/7799.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6YH9LJRNXPTHE)
+
+## Contacts
+---
+[![TWITTER](https://github.com/priore/SOAPEngine/raw/master/screen/twitter.png)](https://twitter.com/DaniloPriore)      [![FACEBOOK](https://github.com/priore/SOAPEngine/raw/master/screen/facebook.png)](https://www.facebook.com/prioregroup)      [![LINKED-IN](https://github.com/priore/SOAPEngine/raw/master/screen/linked-in.png)](http://it.linkedin.com/in/priore/)
