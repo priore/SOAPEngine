@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F5790382262506C0013E45B /* YCXMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5790332262506C0013E45B /* YCXMLDictionary.m */; };
+		9F579044226250C00013E45B /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 9F57903B226250C00013E45B /* README.markdown */; };
+		9F579045226250C00013E45B /* TBXML+Compression.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F57903D226250C00013E45B /* TBXML+Compression.m */; };
+		9F579046226250C00013E45B /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F57903E226250C00013E45B /* TBXML.m */; };
+		9F579047226250C00013E45B /* TBXML+HTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F57903F226250C00013E45B /* TBXML+HTTP.m */; };
+		9F579049226250D80013E45B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9F579048226250D80013E45B /* README.md */; };
 		9F970E441E3D6977003B37FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F970E431E3D6977003B37FB /* AppDelegate.swift */; };
 		9F970E461E3D6977003B37FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F970E451E3D6977003B37FB /* ViewController.swift */; };
 		9F970E491E3D6977003B37FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F970E471E3D6977003B37FB /* Main.storyboard */; };
@@ -16,6 +22,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F5790332262506C0013E45B /* YCXMLDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCXMLDictionary.m; sourceTree = "<group>"; };
+		9F5790342262506C0013E45B /* YCXMLDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCXMLDictionary.h; sourceTree = "<group>"; };
+		9F57903B226250C00013E45B /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
+		9F57903D226250C00013E45B /* TBXML+Compression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TBXML+Compression.m"; sourceTree = "<group>"; };
+		9F57903E226250C00013E45B /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBXML.m; sourceTree = "<group>"; };
+		9F57903F226250C00013E45B /* TBXML+HTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TBXML+HTTP.m"; sourceTree = "<group>"; };
+		9F579041226250C00013E45B /* TBXML+HTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TBXML+HTTP.h"; sourceTree = "<group>"; };
+		9F579042226250C00013E45B /* TBXML+Compression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TBXML+Compression.h"; sourceTree = "<group>"; };
+		9F579043226250C00013E45B /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
+		9F579048226250D80013E45B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9F970E401E3D6977003B37FB /* SOAPEngine Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SOAPEngine Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F970E431E3D6977003B37FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F970E451E3D6977003B37FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +55,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F5790302262506C0013E45B /* YCXMLDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				9F579048226250D80013E45B /* README.md */,
+				9F5790342262506C0013E45B /* YCXMLDictionary.h */,
+				9F5790332262506C0013E45B /* YCXMLDictionary.m */,
+			);
+			path = YCXMLDictionary;
+			sourceTree = "<group>";
+		};
+		9F57903A226250C00013E45B /* TBXML */ = {
+			isa = PBXGroup;
+			children = (
+				9F57903B226250C00013E45B /* README.markdown */,
+				9F57903C226250C00013E45B /* TBXML-Code */,
+				9F579040226250C00013E45B /* TBXML-Headers */,
+			);
+			path = TBXML;
+			sourceTree = "<group>";
+		};
+		9F57903C226250C00013E45B /* TBXML-Code */ = {
+			isa = PBXGroup;
+			children = (
+				9F57903D226250C00013E45B /* TBXML+Compression.m */,
+				9F57903E226250C00013E45B /* TBXML.m */,
+				9F57903F226250C00013E45B /* TBXML+HTTP.m */,
+			);
+			path = "TBXML-Code";
+			sourceTree = "<group>";
+		};
+		9F579040226250C00013E45B /* TBXML-Headers */ = {
+			isa = PBXGroup;
+			children = (
+				9F579041226250C00013E45B /* TBXML+HTTP.h */,
+				9F579042226250C00013E45B /* TBXML+Compression.h */,
+				9F579043226250C00013E45B /* TBXML.h */,
+			);
+			path = "TBXML-Headers";
+			sourceTree = "<group>";
+		};
 		9F970E371E3D6977003B37FB = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +122,8 @@
 				9F970E4C1E3D6977003B37FB /* LaunchScreen.storyboard */,
 				9F970E4F1E3D6977003B37FB /* Info.plist */,
 				9F970E611E3D6F9D003B37FB /* SOAPEngine-Bridging-Header.h */,
+				9F5790302262506C0013E45B /* YCXMLDictionary */,
+				9F57903A226250C00013E45B /* TBXML */,
 			);
 			path = "SOAPEngine Swift";
 			sourceTree = "<group>";
@@ -110,6 +168,7 @@
 				TargetAttributes = {
 					9F970E3F1E3D6977003B37FB = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = JQRB98RUML;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -120,6 +179,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -140,6 +200,8 @@
 			files = (
 				9F970E4E1E3D6977003B37FB /* LaunchScreen.storyboard in Resources */,
 				9F970E4B1E3D6977003B37FB /* Assets.xcassets in Resources */,
+				9F579049226250D80013E45B /* README.md in Resources */,
+				9F579044226250C00013E45B /* README.markdown in Resources */,
 				9F970E491E3D6977003B37FB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +215,10 @@
 			files = (
 				9F970E461E3D6977003B37FB /* ViewController.swift in Sources */,
 				9F970E441E3D6977003B37FB /* AppDelegate.swift in Sources */,
+				9F579045226250C00013E45B /* TBXML+Compression.m in Sources */,
+				9F579046226250C00013E45B /* TBXML.m in Sources */,
+				9F5790382262506C0013E45B /* YCXMLDictionary.m in Sources */,
+				9F579047226250C00013E45B /* TBXML+HTTP.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +339,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = JQRB98RUML;
 				FRAMEWORK_SEARCH_PATHS = ../;
 				INFOPLIST_FILE = "SOAPEngine Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -283,7 +350,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "SOAPEngine Swift/SOAPEngine-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -292,6 +359,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = JQRB98RUML;
 				FRAMEWORK_SEARCH_PATHS = ../;
 				INFOPLIST_FILE = "SOAPEngine Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -300,7 +368,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "SOAPEngine Swift/SOAPEngine-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

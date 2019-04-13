@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SOAPEngineDelegate {
     
     @IBOutlet weak var tableView: UITableView?
     
@@ -18,10 +18,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         
         let soap = SOAPEngine()
+        soap.delegate = self // if you need you can combine closures with delegates
+        
         soap.licenseKey = "eJJDzkPK9Xx+p5cOH7w0Q+AvPdgK1fzWWuUpMaYCq3r1mwf36Ocw6dn0+CLjRaOiSjfXaFQBWMi+TxCpxVF/FA=="
         soap.actionNamespaceSlash = true
         soap.setValue("Genesis", forKey: "BookName")
         soap.setIntegerValue(1, forKey: "chapter")
+        
         soap.requestURL("http://www.prioregroup.com/services/americanbible.asmx",
                         soapAction: "http://www.prioregroup.com/GetVerses",
                         completeWithDictionary: { (statusCode: Int?, dict: [AnyHashable: Any]?) -> Void in
@@ -61,7 +64,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         return cell!
     }
+    
+    // MARK: - SOAPEngineDelegate
 
-
+    func soapEngine(_ soapEngine: SOAPEngine!, didBeforeSending request: NSMutableURLRequest!) -> NSMutableURLRequest! {
+        
+        // TODO: use this delegate to customize the request header.
+        debugPrint(request.allHTTPHeaderFields as Any)
+        
+        return request
+    }
+    
+    func soapEngine(_ soapEngine: SOAPEngine!, didBeforeParsingResponseData data: Data!) -> Data! {
+        
+        // TODO: use this delegate to use your favorite parser, in this case the delegate must return nil.
+        // let dict = YCXMLDictionary.dictionary(fromXMLData: data) // <-- to increase performance
+        // debugPrint(dict as Any)
+        // return nil
+        
+        return data
+    }
 }
 
