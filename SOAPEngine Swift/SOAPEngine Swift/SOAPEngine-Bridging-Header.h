@@ -4,3 +4,5 @@
 
 // https://github.com/priore/SOAPEngine/wiki/Integrating-SOAPEngine-with-a-Swift-project
 #import <SOAPEngine64/SOAPEngine.h>
+#import "YCXMLDictionary.h"
+#import "TBXML.h"

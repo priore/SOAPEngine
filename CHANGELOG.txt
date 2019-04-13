@@ -1,3 +1,8 @@
+1.43, Apr 13, 2019
+- little performance increase.
+- fix license check when bundle-id is enclosed in quotation marks.
+- added extended example in the swift project.
+
 1.42, May 23, 2018
 - fixes the custom objects serialization
 
