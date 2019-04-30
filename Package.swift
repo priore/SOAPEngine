@@ -7,19 +7,25 @@ let package = Package(
     platforms: [
         .iOS(.v8)
     ],
-    pkgConfig: "libxml2",
     products: [
         .library(name: "SOAPEngine", type: .static, targets: ["SOAPEngine"]),
     ],
     targets: [
+		.systemLibrary(
+    	    name: "libxml",
+        	path: "Modules",
+        	pkgConfig: "libxml-2.0",
+        	providers: [
+            	.brew(["libxml2"]),
+            	.apt(["libxml2-dev"])
+        	]),
         .target(
         	name: "SOAPEngine", 
-        	dependencies: [], 
+        	dependencies: ["libxml"], 
         	path: "./SOAPEngine64.framework",
         	exclude: [
         		"Modules",
         		"Info.plist"
-        	]
-        ),
+        	]),
     ]
 )
