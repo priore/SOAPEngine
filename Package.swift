@@ -8,11 +8,14 @@ let package = Package(
         .iOS(.v8)
     ],
     products: [
-        .library(name: "SOAPEngine", type: .static, targets: ["SOAPEngine"]),
+        .library(
+        	name: "SOAPEngine", 
+        	type: .static, 
+        	targets: ["SOAPEngine"])
     ],
     targets: [
 		.systemLibrary(
-    	    name: "libxml",
+    	    name: "slibxml2",
         	path: "Modules",
         	pkgConfig: "libxml-2.0",
         	providers: [
@@ -21,11 +24,11 @@ let package = Package(
         	]),
         .target(
         	name: "SOAPEngine", 
-        	dependencies: ["libxml"], 
-        	path: "./SOAPEngine64.framework",
+        	dependencies: ["slibxml2"], 
+        	path: "SOAPEngine64.framework",
         	exclude: [
         		"Modules",
         		"Info.plist"
-        	]),
+        	])
     ]
 )
