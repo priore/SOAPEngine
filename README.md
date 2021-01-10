@@ -13,6 +13,10 @@ This generic [SOAP](http://www.wikipedia.org/wiki/SOAP) client allows you to acc
 
 With this Framework you can create [iPhone](http://www.wikipedia.org/wiki/IPhone), [iPad](http://www.wikipedia.org/wiki/IPad), [Mac OS X](http://www.wikipedia.org/wiki/OS_X) and [AppleTv](http://www.apple.com/tv/) apps that supports [SOAP](http://www.wikipedia.org/wiki/SOAP) Client Protocol. This framework able executes methods at remote web services with [SOAP](http://www.wikipedia.org/wiki/SOAP) standard protocol.
 
+## SDK 1.x vs SDK 2.x
+
+__We are in the process of releasing our next major SDK - SDK 2.x. Publishers who use SDK 1.x should continue to use it unless instructed otherwise. Please make sure you indicate the latest SDK 1.x version when using Cocoapods.__
+
 ## Features
 ---
 * Support both 2001 (v1.1) and 2003 (v1.2) [XML](http://www.wikipedia.org/wiki/XML) schema.
@@ -314,88 +318,6 @@ it builds a request like this:
         <chapter order="asc">1</chapter>
     </Book>
 ```
-
-[**W3Schools**](http://www.w3schools.com) example :
-
-``` objective-c
-	SOAPEngine *soap = [[SOAPEngine alloc] init];
-    soap.actionNamespaceSlash = YES;
-
-    // w3schools Celsius to Fahrenheit
-    [soap setValue:@"30" forKey:@"Celsius"];
-    [soap requestURL:@"http://www.w3schools.com/webservices/tempconvert.asmx"  
-        soapAction:@"http://www.w3schools.com/webservices/CelsiusToFahrenheit" 
-        complete:^(NSInteger statusCode, NSString *stringXML) {
-
-        NSLog(@"Result: %f", [soap floatValue]);
-
-    } failWithError:^(NSError *error) {
-
-        NSLog(@"%@", error);
-    }];
-	
-```	
-
-[**WebServiceX**](http://www.webservicex.net) example :
-
-``` objective-c
-	SOAPEngine *soap = [[SOAPEngine alloc] init];
-    soap.actionNamespaceSlash = NO;
-
-    [soap setValue:@"Roma" forKey:@"CityName"];
-    [soap setValue:@"Italy" forKey:@"CountryName"];
-    [soap requestURL:@"http://www.webservicex.com/globalweather.asmx"
-          soapAction:@"http://www.webserviceX.NET/GetWeather"
-          completeWithDictionary:^(NSInteger statusCode, NSDictionary *dict) {
-              
-              NSLog(@"Result: %@", dict);
-              
-          } failWithError:^(NSError *error) {
-    
-              NSLog(@"%@", error);
-          }];
-          	
-```	
-
-[**BarCode**](http://www.wikipedia.org/wiki/Barcode) with [**WebServiceX**](http://www.webservicex.net) example :
-
-``` objective-c
-	 SOAPEngine *soap = [[SOAPEngine alloc] init];
-     soap.actionNamespaceSlash = NO;
-
-     NSDictionary *barCodeParam = @{
-     	@"Height" : @(100),
-     	@"Width" : @(150),
-     	@"Angle" : @(0),
-     	@"Ratio" : @(5),
-     	@"Module" : @(0),
-     	@"Left" : @(0),
-     	@"Top" : @(0),
-     	@"CheckSum" : @"true",
-     	@"FontName" : @"Arial",
-     	@"FontSize" : @(20),
-     	@"BarColor" : @"black",
-     	@"BGColor" : @"white",
-     	@"barcodeOption" : @"None",
-     	@"barcodeType" : @"CodeEAN13",
-     	@"checkSumMethod" : @"None",
-     	@"showTextPosition" : @"BottomCenter",
-     	@"BarCodeImageFormat" : @"PNG" };
-     [soap setValue:barCodeParam forKey:@"BarCodeParam"];
-     [soap setValue:@"9783161484100" forKey:@"BarCodeText"];
-     [soap requestURL:@"http://www.webservicex.net/genericbarcode.asmx"
-     soapAction:@"http://www.webservicex.net/GenerateBarCode"
-        completeWithDictionary:^(NSInteger statusCode, NSDictionary *dict) {
-     
-         NSString *imgBase64 = [soap stringValue];
-         NSData *base64 = [[NSData alloc] initWithBase64Encoding:imgBase64];
-         UIImage *barCodeImage = [[UIImage alloc] initWithData:base64];
-     
-     } failWithError:^(NSError *error) {
-         NSLog(@"Error: %@", error);
-     }];
-     
-```	
 
 [**PAYPAL**](http://www.paypal.com) example with certificate :
 
