@@ -1,7 +1,6 @@
 <p align="center">
-  <img src="screen/soapengine.png" alt="SOAPEngine">
+  <img src="screen/soapengine.png" alt="SOAPEngine" width="50%">
 </p><br/>
-
 [![Version](https://img.shields.io/cocoapods/v/SOAPEngine.svg?style=flat)](http://cocoapods.org/pods/SOAPEngine)
 [![Language](https://img.shields.io/badge/languages-Swift%20%7C%20ObjC-red.svg)]()
 [![Platform](https://img.shields.io/badge/platforms-iOS%20%7C%20tvOS%20%7C%20macOS-red.svg)](http://cocoapods.org/pods/SOAPEngine)
@@ -457,12 +456,9 @@ Read the ["Standard Installation" guide](https://github.com/priore/SOAPEngine/wi
 
 ## Licenses
 
----
-Trial (simulator) | Single App | Enterprise (multi App)
+Trial<br><small>just simulator</small> | Single App<br><small>single bundle-id</small> | Enterprise<br><small><u>multi</u> bundle-id</small>
 ------------- | ------------- | -------------
-[![TRIAL LICENSE](https://github.com/priore/SOAPEngine/raw/master/screen/freetrial.png)](https://github.com/priore/SOAPEngine/archive/master.zip)  | [![BUY SINGLE LICENSE](https://github.com/priore/SOAPEngine/raw/master/screen/1299.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G3RXTN3YD7VRG) | [![BUY ENTERPRISE LICENSE](https://github.com/priore/SOAPEngine/raw/master/screen/7799.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6YH9LJRNXPTHE)
+[**DOWNLOAD**](https://github.com/priore/SOAPEngine/archive/master.zip)  | [**BUY 12,99€**](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G3RXTN3YD7VRG) | [**BUY 77,47€**](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6YH9LJRNXPTHE)
 
-## Contacts
----
-[![TWITTER](https://github.com/priore/SOAPEngine/raw/master/screen/twitter.png)](https://twitter.com/DaniloPriore)      [![FACEBOOK](https://github.com/priore/SOAPEngine/raw/master/screen/facebook.png)](https://www.facebook.com/prioregroup)      [![LINKED-IN](https://github.com/priore/SOAPEngine/raw/master/screen/linked-in.png)](http://it.linkedin.com/in/priore/)
+
 
