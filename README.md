@@ -439,7 +439,11 @@ this is not optimized, very slow, instead you can use the optimization below :
 
 ## Install in your apps
 ---
-### With Cocoapods
+### Swift Package Manager
+
+SOAPEngine is available as a Swift package. The repository [URL](https://github.com/priore/SOAPEngine.git) is valid for adding the package in your app through the Xcode.
+
+### Cocoapods
 
 Read the ["Getting Started" guide](https://github.com/priore/SOAPEngine/wiki/Cocoapods-Installation-guide)
 
