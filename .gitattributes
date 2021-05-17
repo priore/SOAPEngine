@@ -1,6 +1,1 @@
- *.swift linguist-language=Swift
- *.xcframework linguist-language=Swift
- *.h linguist-language=Objective-C
- *.m linguist-language=Objective-C
- *.framework linguist-language=Objective-C
- *.cs linguist-language=C#
+ *.* linguist-language=Swift
