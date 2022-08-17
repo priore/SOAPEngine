@@ -430,7 +430,7 @@ After, when using the method named `requestWSDL` three steps are performed :
 
 1. retrieve the WSDL with an http request.
 2. processing to identify the soapAction.
-3. calls the method with an http request.
+3. calls the method with an [http request](https://www.scaler.com/topics/hypertext-transfer-protocol/#what-is-in-an-http-request-).
 
 this is not optimized, very slow, instead you can use the optimization below : 
 
