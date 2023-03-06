@@ -1,0 +1,5 @@
+plugins:
+  - jekyll-feed
+title: SOAPEngine Framework
+description: Generic SOAP client allows you to access web services using a your iOS app, Mac OS X app and Apple TV app
+author: Danilo Priore
