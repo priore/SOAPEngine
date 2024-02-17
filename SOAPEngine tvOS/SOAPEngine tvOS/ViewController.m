@@ -31,8 +31,8 @@
     [soap setIntegerValue:1 forKey:@"chapter"];
     [soap requestURL:@"http://www.prioregroup.com/services/americanbible.asmx" soapAction:@"http://www.prioregroup.com/GetVerses" completeWithDictionary:^(NSInteger statusCode, NSDictionary *dict) {
         
-        verses = dict[@"BibleBookChapterVerse"];
-        [collectionView reloadData];
+        self->verses = dict[@"BibleBookChapterVerse"];
+        [self->collectionView reloadData];
         
     } failWithError:^(NSError *error) {
         
