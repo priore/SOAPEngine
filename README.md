@@ -119,14 +119,12 @@ class ViewController: UIViewController, SOAPEngineDelegate {
 		// standard soap service (.asmx)
 		soap.requestURL("http://www.prioregroup.com/services/americanbible.asmx",
 	    		soapAction: "http://www.prioregroup.com/GetVerses")
+	}
 
-		func soapEngine(_ soapEngine: SOAPEngine!, 
-		   didFinishLoadingWith dict: [AnyHashable : Any]!, 
-					data: Data!) 
-		{
-			let dict = soapEngine.dictionaryValue()
-			print(dict)
-		}
+	func soapEngine(_ soapEngine: SOAPEngine!, didFinishLoadingWith dict: [AnyHashable : Any]!, data: Data!) 
+	{
+		let dict = soapEngine.dictionaryValue()
+		print(dict)
 	}
 }
 ```
