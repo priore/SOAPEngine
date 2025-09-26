@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.homepage 			= 'https://github.com/priore/SOAPEngine'
   s.social_media_url 	= 'https://twitter.com/danilopriore'
   s.libraries 			= 'xml2'
-  s.source 				= { git: 'https://github.com/priore/SOAPEngine.git', :tag => "v#{s.version}" }
+  s.source 				= { git: 'https://github.com/priore/SOAPEngine.git', :tag => "#{s.version}" }
   s.xcconfig			= { 'HEADER_SEARCH_PATHS' => "${PODS_ROOT}/#{s.name}/**" }
   s.frameworks			= 'Security'
   
