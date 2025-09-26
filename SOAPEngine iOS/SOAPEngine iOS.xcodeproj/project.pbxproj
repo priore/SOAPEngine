@@ -3,17 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F6DE0972E86EEB500CAF2B4 /* SOAPEngine in Frameworks */ = {isa = PBXBuildFile; productRef = 9F6DE0962E86EEB500CAF2B4 /* SOAPEngine */; };
 		9F970DBF1E3D68B6003B37FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F970DBE1E3D68B6003B37FB /* main.m */; };
 		9F970DC21E3D68B6003B37FB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F970DC11E3D68B6003B37FB /* AppDelegate.m */; };
 		9F970DC51E3D68B6003B37FB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F970DC41E3D68B6003B37FB /* ViewController.m */; };
 		9F970DC81E3D68B6003B37FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F970DC61E3D68B6003B37FB /* Main.storyboard */; };
 		9F970DCA1E3D68B6003B37FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F970DC91E3D68B6003B37FB /* Assets.xcassets */; };
 		9F970DCD1E3D68B6003B37FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F970DCB1E3D68B6003B37FB /* LaunchScreen.storyboard */; };
-		9FE5E0552B80F4A00030505E /* SOAPEngine.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE5E0542B80F4A00030505E /* SOAPEngine.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,6 @@
 		9F970DC91E3D68B6003B37FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F970DCC1E3D68B6003B37FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F970DCE1E3D68B6003B37FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9FE5E0542B80F4A00030505E /* SOAPEngine.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SOAPEngine.xcframework; path = ../SOAPEngine.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,7 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FE5E0552B80F4A00030505E /* SOAPEngine.xcframework in Frameworks */,
+				9F6DE0972E86EEB500CAF2B4 /* SOAPEngine in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,7 +46,6 @@
 			children = (
 				9F970DBC1E3D68B6003B37FB /* SOAPEngine iOS */,
 				9F970DBB1E3D68B6003B37FB /* Products */,
-				9F970E581E3D69A9003B37FB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,14 +79,6 @@
 				9F970DBE1E3D68B6003B37FB /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		9F970E581E3D69A9003B37FB /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9FE5E0542B80F4A00030505E /* SOAPEngine.xcframework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +126,9 @@
 				Base,
 			);
 			mainGroup = 9F970DB11E3D68B6003B37FB;
+			packageReferences = (
+				9F6DE0952E86EEB500CAF2B4 /* XCLocalSwiftPackageReference "../../SOAPEngine" */,
+			);
 			productRefGroup = 9F970DBB1E3D68B6003B37FB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -359,6 +352,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		9F6DE0952E86EEB500CAF2B4 /* XCLocalSwiftPackageReference "../../SOAPEngine" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../SOAPEngine;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9F6DE0962E86EEB500CAF2B4 /* SOAPEngine */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SOAPEngine;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9F970DB21E3D68B6003B37FB /* Project object */;
 }

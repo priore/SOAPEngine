@@ -7,11 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <SOAPEngineOSX/SOAPEngine.h>
+#import "SOAPEngine.h"
 
 @interface ViewController : NSViewController <NSTableViewDelegate, NSTableViewDataSource, SOAPEngineDelegate>
 {
     NSMutableArray *list;
+    SOAPEngine *soap;
 }
 
 @property (nonatomic, weak) IBOutlet NSTextField *bookTitle;

@@ -1,6 +1,5 @@
-<p align="center">
-  <img src="screen/soapengine.png" alt="SOAPEngine" width="50%">
-</p><br/>
+**SOAPEngine**
+================
 
 [![Version](https://img.shields.io/cocoapods/v/SOAPEngine.svg?style=flat)](http://cocoapods.org/pods/SOAPEngine)
 [![Language](https://img.shields.io/badge/languages-Swift%20%7C%20ObjC-red.svg)]()
@@ -11,7 +10,7 @@
 
 This generic [SOAP](http://www.wikipedia.org/wiki/SOAP) client allows you to access web services using a your [iOS](http://www.wikipedia.org/wiki/IOS) app, [Mac OS X](http://www.wikipedia.org/wiki/OS_X) app and [Apple TV](http://www.apple.com/tv/) app.
 
-With this Framework you can create [iPhone](http://www.wikipedia.org/wiki/IPhone), [iPad](http://www.wikipedia.org/wiki/IPad), [Mac OS X](http://www.wikipedia.org/wiki/OS_X) and [Apple TV](http://www.apple.com/tv/) apps that supports [SOAP](http://www.wikipedia.org/wiki/SOAP) Client Protocol. This framework able executes methods at remote web services with [SOAP](http://www.wikipedia.org/wiki/SOAP) standard protocol.
+With this Framework you can create [iPhone](http://www.wikipedia.org/wiki/IPhone), [iPad](http://www.wikipedia.org/wiki/IPad), [Mac OS X](http://www.wikipedia.org/wiki/OS_X) and [AppleTv](http://www.apple.com/tv/) apps that supports [SOAP](http://www.wikipedia.org/wiki/SOAP) Client Protocol. This framework able executes methods at remote web services with [SOAP](http://www.wikipedia.org/wiki/SOAP) standard protocol.
 
 ## Features
 ---
@@ -99,180 +98,343 @@ To resolve this, add few keys in info.plist, the steps are:
 
 ref link: http://stackoverflow.com/a/32631185/4069848
 
+## Migrate from 1.43 to 1.44
+---
+
+This version (1.44) was designed to optimize performance and remove older functionality.
+
+There are no substantial differences but no longer uses delegates with xml in string format, now just uses the format of the data already parsed and converted into a dictionary.
+
+The peculiarity of this version is now works completely in secondary tasks, so all delegates, notifications and closures, now are generated in secondary tasks. If in these delegates are necessary to update the UI, will be necessary to perform the update in a main thread, in this case will be necessary to use `dispatch_async(dispatch_get_main_queue(), ^{...})` for Objective-C language, or `DispatchQueue.main.async {...}` for Swift language.
+
+If no data is retrieved, after a request, an error may be generated with the following message : *"SOAPEngine no valid response, try again with actionNamespaceSlash set to YES or/and responseHeader set to YES"*.
+
 ## How to use
 ---
 with [**Delegates**](https://developer.apple.com/library/ios/documentation/General/Conceptual/CocoaEncyclopedia/DelegatesandDataSources/DelegatesandDataSources.html) :
 
-``` swift
-import SOAPEngine64
+``` objective-c
+	#import "SOAPEngine.h"
 
-class ViewController: UIViewController, SOAPEngineDelegate {
+	// standard soap service (.asmx)
+	SOAPEngine *soap = [[SOAPEngine alloc] init];
+	soap.userAgent = @"SOAPEngine";
+	soap.delegate = self; // use SOAPEngineDelegate
 
-	var soap: SOAPEngine = SOAPENgine()
+	// each single value
+	[soap setValue:@"my-value1" forKey:@"Param1"];
+	[soap setIntegerValue:1234 forKey:@"Param2"];
+	// service url without ?WSDL, and you can search the soapAction in the WSDL
+	[soap requestURL:@"http://www.my-web.com/my-service.asmx" 
+		  soapAction:@"http://www.my-web.com/My-Method-name"];
+ 
+	#pragma mark - SOAPEngine Delegates
 
-	override func viewDidLoad() {
-		soap.delegate = self
-		soap.actionNamespaceSlash = true
-		soap.setValue("Genesis", forKey: "BookName")
-		soap.setIntegerValue(1, forKey: "chapter")
-
-		// standard soap service (.asmx)
-		soap.requestURL("http://www.prioregroup.com/services/americanbible.asmx",
-	    		soapAction: "http://www.prioregroup.com/GetVerses")
+	- (void)soapEngine:(SOAPEngine *)soapEngine didFinishLoadingWithDictionary:(NSDictionary *)dict data:(NSData *)data {
+        	// read data from a dataset table
+        	NSArray *list = [dict valueForKeyPath:@"NewDataSet.Table"];
 	}
-
-	func soapEngine(_ soapEngine: SOAPEngine!, didFinishLoadingWith dict: [AnyHashable : Any]!, data: Data!) 
-	{
-		let dict = soapEngine.dictionaryValue()
-		print(dict)
-	}
-}
 ```
 
 with [**Block programming**](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/Blocks/Articles/00_Introduction.html) :
 
-``` swift
-import SOAPEngine64
+``` objective-c
+	#import "SOAPEngine.h"
+	
+	// TODO: your user object
+	MyClass myObject = [[MyClass alloc] init];
+	
+	SOAPEngine *soap = [[SOAPEngine alloc] init];
+	soap.userAgent = @"SOAPEngine";
+	soap.version = VERSION_WCF_1_1; // WCF service (.svc)
+	
+	// service url without ?WSDL, and you can search the soapAction in the WSDL
+	[soap requestURL:@"http://www.my-web.com/my-service.svc"
+		  soapAction:@"http://www.my-web.com/my-interface/my-method"
+			   value:myObject
+			completeWithDictionary:^(NSInteger statusCode, NSDictionary *dict) {
+				NSLog(@"%@", dict);
+			} failWithError:^(NSError *error) {
+				NSLog(@"%@", error);
+			}];
+```	
 
-class ViewController: UIViewController {
+directly from [**WSDL**](http://www.wikipedia.org/wiki/Web_Services_Description_Language) (*not recommended is slow*) :
 
-	var soap: SOAPEngine = SOAPENgine()
+``` objective-c
+	#import "SOAPEngine.h"
+	
+	// TODO: your user object
+	MyClass myObject = [[MyClass alloc] init];
+	
+	SOAPEngine *soap = [[SOAPEngine alloc] init];
+	soap.userAgent = @"SOAPEngine";
+	
+	// service url with WSDL, and operation (method name) without tempuri
+	[soap requestWSDL:@"http://www.my-web.com/my-service.amsx?wsdl"
+		    operation:@"my-method-name"
+			    value:myObject
+			completeWithDictionary:^(NSInteger statusCode, NSDictionary *dict) {
 
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		soap.actionNamespaceSlash = true
-		soap.setValue("Genesis", forKey: "BookName")
-        	soap.setIntegerValue(1, forKey: "chapter")
-        
-        	soap.requestURL("http://www.prioregroup.com/services/americanbible.asmx",
-	    		    soapAction: "http://www.prioregroup.com/GetVerses",
-		completeWithDictionary: { (statusCode: Int?, dict: [AnyHashable: Any]?) -> Void in
-                            
-			let book:NSDictionary = dict! as NSDictionary
-			let verses = book["BibleBookChapterVerse"] as! NSArray
-			print(verses)
+              NSLog(@"Result: %@", dict);
 
-		}) { (error: Error?) -> Void in
-			print(error!)
-		}
-	}
-}
+			} failWithError:^(NSError *error) {
+
+				NSLog(@"%@", error);
+			}];
 ```	
 
 with [**Notifications**](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSNotificationCenter_Class/index.html) :
 
-``` swift
-import SOAPEngine64
+``` objective-c
+	#import "SOAPEngine.h"
 
-class ViewController: UIViewController {
-
-	var soap: SOAPEngine = SOAPENgine()
-
-	override func viewDidLoad() {
-		super.viewDidLoad()
-
-		NotificationCenter.default.addObserver(self, 
-			selector: #selector(soapEngineDidFinishLoading(_:)), 
-			name: NSNotification.Name.SOAPEngineDidFinishLoading, 
-			object: nil)
-
-		soap.actionNamespaceSlash = true
-		soap.setValue("Genesis", forKey: "BookName")
-		soap.setIntegerValue(1, forKey: "chapter")
-
-		// standard soap service (.asmx)
-		soap.requestURL("http://www.prioregroup.com/services/americanbible.asmx",
-	    	soapAction: "http://www.prioregroup.com/GetVerses")
+	// TODO: your user object
+	MyClass myObject = [[MyClass alloc] init];
+	
+	SOAPEngine *soap = [[SOAPEngine alloc] init];
+	soap.userAgent = @"SOAPEngine";
+	soap.version = VERSION_WCF_1_1; // WCF service (.svc)
+		
+    [[NSNotificationCenter defaultCenter] 
+    			addObserver:self 
+    			   selector:@selector(soapEngineDidFinishLoading:) 
+    				   name:SOAPEngineDidFinishLoadingNotification 
+    				 object:nil];
+	
+	// service url without ?WSDL, and you can search the soapAction in the WSDL
+	[soap requestURL:@"http://www.my-web.com/my-service.svc" 
+		  soapAction:@"http://www.my-web.com/my-interface/my-method"
+		  	   value:myObject];
+	
+	#pragma mark - SOAPEngine Notifications
+	
+	- (void)soapEngineDidFinishLoading:(NSNotification*)notification
+	{
+    	SOAPEngine *engine = notification.object; // SOAPEngine object
+    	NSDictionary *result = [engine dictionaryValue];
+    	NSLog(@"%@", result);
 	}
-
-	@objc func soapEngineDidFinishLoading(_ notification: NSNotification) {
-		let engine = notification.object as? SOAPEngine
-		let dict = engine()
-		print(dict)
-	}
-}
 ```
 
 [**Synchronous**]() request :
 
+``` objective-c
+	#import "SOAPEngine.h"
+	
+	NSError *error = nil;
+    SOAPEngine *soap = [[SOAPEngine alloc] init];
+    soap.responseHeader = YES; // use only for non standard MS-SOAP service like PHP
+    NSDictionary *dict = [soap syncRequestURL:@"http://www.my-web.com/my-service.amsx" 
+    						soapAction:@"http://tempuri.org/my-method" error:&error];
+    NSLog(@"error: %@, result: %@", error, dict)
+```
+
+[**Swift**](http://www.wikipedia.org/wiki/Swift_programming_language) language :
+
 ``` swift
-import SOAPEngine64
-
-class ViewController: UIViewController {
-
-	var soap: SOAPEngine = SOAPENgine()
-
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		soap.actionNamespaceSlash = true
-		soap.setValue("Genesis", forKey: "BookName")
-		soap.setIntegerValue(1, forKey: "chapter")
-
-		// standard soap service (.asmx)
-		do {
-			let result = try soap.syncRequestURL("http://www.prioregroup.com/services/americanbible.asmx", 
-						 soapAction: "http://www.prioregroup.com/GetVerses")
-			print(result)
-		}
-		catch {
-			print(error)
-		}	
-	}
-}
+        var soap = SOAPEngine()
+        soap.userAgent = "SOAPEngine"
+        soap.actionNamespaceSlash = true
+        soap.version = VERSION_1_1
+        soap.responseHeader = true // use only for non standard MS-SOAP service
+        
+        soap.setValue("param-value", forKey: "param-name")
+        soap.requestURL("http://www.my-web.com/my-service.asmx",
+            soapAction: "http://www.my-web.com/My-Method-name",
+            completeWithDictionary: { (statusCode : Int, 
+            					 dict : [AnyHashable : Any]?) -> Void in
+                
+                var result:Dictionary = dict! as Dictionary
+                print(result)
+                
+            }) { (error : Error?) -> Void in
+                
+                print(error)
+        }
 ```
 	
 settings for [**SOAP Authentication**](http://www.whitemesa.com/soapauth.html) :
 
-``` swift
-soap.authorizationMethod = .AUTH_BASICAUTH; // basic auth
-soap.username = "my-username";
-soap.password = "my-password";
+``` objective-c
+	#import "SOAPEngine.h"
+
+	SOAPEngine *soap = [[SOAPEngine alloc] init];
+	soap.userAgent = @"SOAPEngine";
+	
+	// authorization
+	soap.authorizationMethod = SOAP_AUTH_BASIC; // basic auth
+	soap.username = @"my-username";
+	soap.password = @"my-password";
+	
+	// TODO: your code here...
+	
 ```	
 
 settings for Social [**OAuth2.0**](http://www.wikipedia.org/wiki/OAuth) token :
 
-``` swift
-// token authorization
-soap.authorizationMethod = .AUTH_SOCIAL;
-soap.apiKey = "1234567890"; // your apikey https://dev.twitter.com/
-soap.socialName = ACAccountTypeIdentifierTwitter; // import Accounts
+``` objective-c
+	#import "SOAPEngine.h"
+	#import <Accounts/Accounts.h>
+
+	SOAPEngine *soap = [[SOAPEngine alloc] init];
+	soap.userAgent = @"SOAPEngine";
+	
+	// token authorization
+	soap.authorizationMethod = SOAP_AUTH_SOCIAL;
+	soap.apiKey = @"1234567890"; // your apikey https://dev.twitter.com/
+	soap.socialName = ACAccountTypeIdentifierTwitter;
+	
+	// TODO: your code here...
+	
 ```	
 
 [**Encryption/Decryption**](https://it.wikipedia.org/wiki/Advanced_Encryption_Standard) data without SSL/HTTPS :
 
-``` swift
-soap.encryptionType = ._ENCRYPT_AES256; // or SOAP_ENCRYPT_3DES
-soap.encryptionPassword = "my-password";
+``` objective-c
+	#import "SOAPEngine.h"
+
+	SOAPEngine *soap = [[SOAPEngine alloc] init];
+	soap.userAgent = @"SOAPEngine";
+	soap.encryptionType = SOAP_ENCRYPT_AES256; // or SOAP_ENCRYPT_3DES
+	soap.encryptionPassword = @"my-password";
+
+	// TODO: your code here...
+	
 ```	
 
 Params with [**Attributes**](http://www.w3schools.com/xml/xml_attributes.asp) :
 
-``` swift
-// book
-var book = ["name": "Genesis"] as! NSMutableDictionary
-var attr = ["order": "asc"]
-// chapter
-var child = soap.dictionary(forKey: "chapter", value: "1", attributes: attr)
-book.addEntries(from: child!)
-// book attributes
-soap.setValue(book, forKey: "Book", attributes: ["rack": "2"])
+``` objective-c
+    // book
+    NSMutableDictionary *book = [NSMutableDictionary dictionaryWithObject:@"Genesis" forKey:@"name"];
+    // chapter
+    NSDictionary *attr = @{@"order": @"asc"};
+    NSDictionary *child = [soap dictionaryForKey:@"chapter" value:@"1" attributes:attr];
+    [book addEntriesFromDictionary:child]; // add chapter to book
+    // book attributes
+    [soap setValue:book forKey:@"Book" attributes:@{@"rack": @"2"}];
 ```
 it builds a request like this:
 ``` xml
-<Book rack="2">
-	<name>Genesis</name>
-	<chapter order="asc">1</chapter>
-</Book>
+    <Book rack="2">
+        <name>Genesis</name>
+        <chapter order="asc">1</chapter>
+    </Book>
 ```
+
+[**PAYPAL**](http://www.paypal.com) example with certificate :
+
+``` objective-c
+	SOAPEngine *soap = [[SOAPEngine alloc] init];
+
+    // PAYPAL associates a set of API credentials with a specific PayPal account
+    // you can generate credentials from this https://developer.paypal.com/docs/classic/api/apiCredentials/
+    // and convert to a p12 from terminal use :
+    // openssl pkcs12 -export -in cert_key_pem.txt -inkey cert_key_pem.txt -out paypal_cert.p12
+    soap.authorizationMethod = SOAP_AUTH_PAYPAL;
+    soap.username = @"support_api1.your-username";
+    soap.password = @"your-api-password";
+    soap.clientCerficateName = @"paypal_cert.p12";
+    soap.clientCertificatePassword = @"certificate-password";
+    soap.responseHeader = YES;
+    // use paypal for urn:ebay:api:PayPalAPI namespace
+    [soap setValue:@"0" forKey:@"paypal:ReturnAllCurrencies"];
+    // use paypal1 for urn:ebay:apis:eBLBaseComponents namespace
+    [soap setValue:@"119.0" forKey:@"paypal1:Version"]; // ns:Version in WSDL file
+    // certificate : https://api.paypal.com/2.0/ sandbox https://api.sandbox.paypal.com/2.0/
+    // signature : https://api-3t.paypal.com/2.0/ sandbox https://api-3t.sandbox.paypal.com/2.0/
+    [soap requestURL:@"https://api.paypal.com/2.0/"
+          soapAction:@"GetBalance" completeWithDictionary:^(NSInteger statusCode, NSDictionary *dict) {
+          
+        NSLog(@"Result: %@", dict);
+        
+    } failWithError:^(NSError *error) {
+    
+        NSLog(@"%@", error);
+    }];
+          	
+```	
+
+[**Magento 2**](http://devdocs.magento.com) login example :
+
+``` objective-c
+	SOAPEngine *soap = [[SOAPEngine alloc] init];
+    soap.selfSigned = YES; // only for invalid https certificates
+    soap.responseHeader = YES;
+    soap.actionNamespaceSlash = NO;
+    soap.envelope = @"xmlns:urn=\"urn:Magento\"";
+    [soap setValue:@"your-username" forKey:@"username"];
+    [soap setValue:@"your-apykey" forKey:@"apiKey"];
+    [soap requestURL:@"https://your-magentohost/api/v2_soap/"
+          soapAction:@"urn:Mage_Api_Model_Server_V2_HandlerAction#login"
+completeWithDictionary:^(NSInteger statusCode, NSDictionary *dict)
+	{
+        NSLog(@"Login return: %@", [soap stringValue]);
+        
+    } failWithError:^(NSError *error) {
+        
+        NSLog(@"%@", error);
+    }];
+```	
+
+[**Upload file**]() :
+
+``` objective-c
+	SOAPEngine *soap = [[SOAPEngine alloc] init];
+
+	// read local file
+    NSData *data = [NSData dataWithContentsOfFile:@"my_video.mp4"];
+
+	// send file data
+    [soap setValue:data forKey:@"video"];
+    [soap requestURL:@"http://www.my-web.com/my-service.asmx"
+          soapAction:@"http://www.my-web.com/UploadFile"
+          completeWithDictionary:^(NSInteger statusCode, NSDictionary *dict) {
+              
+              NSLog(@"Result: %@", dict);
+              
+          } failWithError:^(NSError *error) {
+    
+              NSLog(@"%@", error);
+          }];
+          	
+```	
+
+[**Download file**]() :
+
+``` objective-c
+	SOAPEngine *soap = [[SOAPEngine alloc] init];
+
+	// send filename to remote webservice
+    [soap setValue:"my_video.mp4" forKey:@"filename"];
+    [soap requestURL:@"http://www.my-web.com/my-service.asmx"
+          soapAction:@"http://www.my-web.com/DownloadFile"
+          completeWithDictionary:^(NSInteger statusCode, NSDictionary *dict) {
+            
+            // local writable directory
+			NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+			NSString *filePath = [[paths firstObject] stringByAppendingPathComponent:@"my_video.mp4"];
+
+			// the service returns file data in the tag named video
+			NSData *data = dict[@"video"];
+		    [data writeToFile:@"my_video.mp4" atomically:YES];
+              
+          } failWithError:^(NSError *error) {
+    
+              NSLog(@"%@", error);
+          }];
+          	
+```	
 
 ## Optimizations
 ---
 First of all, if you note a slowdown in the response of the request, try to change the value of the property named `actionNamespaceSlash`.
 After, when using the method named `requestWSDL` three steps are performed : 
 
-1. retrieve the WSDL with an http request
-2. processing to identify the soapAction
-3. calls the method with an http request [http request](https://www.scaler.com/topics/hypertext-transfer-protocol/#what-is-in-an-http-request-)
+1. retrieve the WSDL with an http request.
+2. processing to identify the soapAction.
+3. calls the method with an http request.
 
 this is not optimized, very slow, instead you can use the optimization below : 
 
@@ -281,11 +443,7 @@ this is not optimized, very slow, instead you can use the optimization below :
 
 ## Install in your apps
 ---
-### Swift Package Manager
-
-SOAPEngine is available as a Swift package. The repository [URL](https://github.com/priore/SOAPEngine.git) is valid for adding the package in your app through the Xcode.
-
-### Cocoapods
+### With Cocoapods
 
 Read the ["Getting Started" guide](https://github.com/priore/SOAPEngine/wiki/Cocoapods-Installation-guide)
 
@@ -297,11 +455,7 @@ Read the [Integrating SOAPEngine with a Swift project](https://github.com/priore
 
 Read the ["Standard Installation" guide](https://github.com/priore/SOAPEngine/wiki/Standard-Installation)
 
-## Licenses
-
-Trial<br><small>just simulator</small> | Single App<br><small>single bundle-id</small> | Enterprise<br><small><u>multi</u> bundle-id</small>
-------------- | ------------- | -------------
-[**DOWNLOAD**](https://github.com/priore/SOAPEngine/archive/master.zip)  | [**BUY 12,99€**](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G3RXTN3YD7VRG) | [**BUY 77,47€**](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6YH9LJRNXPTHE)
-
-
+## Contacts
+---
+[![TWITTER](https://github.com/priore/SOAPEngine/raw/master/screen/twitter.png)](https://twitter.com/DaniloPriore)      [![FACEBOOK](https://github.com/priore/SOAPEngine/raw/master/screen/facebook.png)](https://www.facebook.com/prioregroup)      [![LINKED-IN](https://github.com/priore/SOAPEngine/raw/master/screen/linked-in.png)](http://it.linkedin.com/in/priore/)
 

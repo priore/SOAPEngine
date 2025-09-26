@@ -7,12 +7,12 @@
 //
 
 #import "ViewController.h"
-#import <SOAPEngine64/SOAPEngine.h>
+#import "SOAPEngine.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource, SOAPEngineDelegate>
 {
     NSMutableArray *list;
-    
+    SOAPEngine *soap;
     IBOutlet UITableView *tableView;
 }
 
@@ -26,8 +26,7 @@
     
     list = nil;
     
-    SOAPEngine *soap = [[SOAPEngine alloc] init];
-    soap.licenseKey = @"eJJDzkPK9Xx+p5cOH7w0Q+AvPdgK1fzWWuUpMaYCq3r1mwf36Ocw6dn0+CLjRaOiSjfXaFQBWMi+TxCpxVF/FA==";
+    soap = [[SOAPEngine alloc] init];
     soap.delegate = self;
     
     // WFC basicHttpBinding

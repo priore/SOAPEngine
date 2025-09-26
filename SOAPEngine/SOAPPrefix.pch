@@ -1,0 +1,73 @@
+//
+// Prefix header for all source files of the 'SOAPEngine' target in the 'SOAPEngine' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import "SOAP3DES.h"
+    #import "SOAPAES256.h"
+    #import "SOAPBase64.h"
+#endif
+
+#define SOAP_MSGTITLE @"SOAPEngine Framework"
+
+// SOAP 1.1
+#define SOAP_REQUEST_1_1 @"<?xml version=\"1.0\" encoding=\"utf-8\"?><%@:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:%@=\"http://schemas.xmlsoap.org/soap/envelope/\" %@><%@:Header>%@</%@:Header><%@:Body%@><%@%@%@>%@</%@></%@:Body></%@:Envelope>"
+
+// SOAP 1.2
+#define SOAP_REQUEST_1_2 @"<?xml version=\"1.0\" encoding=\"utf-8\"?><%@:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:%@=\"http://www.w3.org/2003/05/soap-envelope\" %@><%@:Header>%@</%@:Header><%@:Body%@><%@%@%@>%@</%@></%@:Body></%@:Envelope>"
+
+// SOAP WS-Security authentication (digest)
+#define SOAP_WSS_AUTH @"<wsse:Security xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\"><wsse:UsernameToken xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" wsu:Id=\"Id-%@\"><wsse:Username>%@</wsse:Username><wsse:Password Type=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest\">%@</wsse:Password><wsse:Nonce EncodingType=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary\">%@</wsse:Nonce><wsu:Created>%@</wsu:Created></wsse:UsernameToken></wsse:Security>"
+
+// SOAP Basic authentication
+#define SOAP_BASIC_AUTH @"<auth:BasicAuth xmlns:auth=\"http://soap-authentication.org/basic/2001/10/\" %@:mustUnderstand=\"1\"><Name>%@</Name><Password>%@</Password></auth:BasicAuth>"
+
+// PAYPAL SOAP authentication
+#define SOAP_PAYPAL_AUTH @"<paypal:RequesterCredentials><paypal1:Credentials><paypal1:Username>%@</paypal1:Username><paypal1:Password>%@</paypal1:Password><paypal1:Signature>%@</paypal1:Signature><paypal1:Subject>%@</paypal1:Subject></paypal1:Credentials></paypal:RequesterCredentials>"
+#define SOAP_PAYPAL_ENVELOPE @"xmlns:paypal=\"urn:ebay:api:PayPalAPI\" xmlns:paypal1=\"urn:ebay:apis:eBLBaseComponents\""
+
+// SOAP Digital Signature
+#define SOAP_SIGN_X509_AUTH @"<SOAP-SEC:Signature xmlns:SOAP-SEC=\"http://schemas.xmlsoap.org/soap/security/2000-12\" MustUnderstand=\"1\"><Signature xmlns=\"http://www.w3.org/2000/09/xmldsig#\"><SignedInfo><CanonicalizationMethod Algorithm=\"http://www.w3.org/2001/10/xml-exc-c14n#\"/><SignatureMethod Algorithm=\"http://www.w3.org/2000/09/xmldsig#rsa-sha1\"/><Reference URI=\"#Body\"><Transforms><Transform Algorithm=\"http://www.w3.org/2001/10/xml-exc-c14n#\"/></Transforms><DigestMethod Algorithm=\"http://www.w3.org/2000/09/xmldsig#sha1\"/><DigestValue>%@</DigestValue></Reference></SignedInfo><SignatureValue>%@</SignatureValue><KeyInfo><X509Data><X509IssuerSerial><X509IssuerName>%@</X509IssuerName><X509SerialNumber>%@</X509SerialNumber></X509IssuerSerial></X509Data></KeyInfo></Signature></SOAP-SEC:Signature>"
+
+#define SOAP_XML_ELEMENT         @"<%@>%@</%@>"
+#define SOAP_XML_ELEMENT_ATTR    @"<%@%@>%@</%@>"
+//#define SOAP_XML_ELEMENT_ATTR    @"<%@ xsi:type=\"xsd:%@\">%@</%@>"
+#define SOAP_XML_ELEMENT_NIL     @"<%@ xsi:nil=\"true\" />"
+#define SOAP_XML_ELEMENT_CDATA   @"<![CDATA[%@]]>"
+#define SOAP_XML_ELEMENT_OPEN    @"<%@%@>"
+#define SOAP_XML_ELEMENT_CLOSE   @"</%@>"
+#define SOAP_XML_XSITYPE         @"xsi:type"
+#define SOAP_XML_KEYATTRIBUTES   @"attributes"
+#define SOAP_XML_KEYVALUE        @"value"
+
+// RegExp
+#define SOAP_NAMESPACE_REGEXP   @"xmlns=(.*?)/\""
+#define SOAP_RESPONSE_REGEXP    @"<%@(.*?) xmlns=(.*?)>"
+#define SOAP_XML_REGEXP         @"<(.*?)\?xml(.*?)>|(.*?)xml(.*?)(version=(.*?)|encoding=(.*?))\?>"
+#define SOAP_CDATA_REGEXP       @"<!\\[CDATA\\[.*?\\]\\]>"
+#define SOAP_XML_NS_REGEXP      @"<(.*?)xmlns(.*?)>"
+
+// SOAP WS-Secutiry date format
+#define SOAP_WSS_AUTH_DATE_FORMAT @"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+
+// Context-Text
+#define SOAP_CONTENTTYPE_TEXTXML @"text/xml;charset=utf-8"
+#define SOAP_CONTENTTYPE_SOAP    @"application/soap+xml;charset=utf-8"
+#define SOAP_CONTENTTYPE_MTOM    @"multipart/related;start-info=\"text/xml\";type=\"application/xop+xml\";boundary=\"----=_Part_0_%f\""
+
+// HEADER ACTION
+//#define SOAP_HEADER_ACTION  @"<Action soap:mustUnderstand=\"1\" xmlns=\"http://schemas.microsoft.com/ws/2005/05/addressing/none\">%@</Action>%@"
+
+// Authorization header field
+#define SOAP_AUTHORIZATION_FIELD @"Authorization"
+
+// WSDL suffix
+#define SOAP_WSDL_SUFFIX @"?wsdl"
+
+// http first path component
+#define SOAP_HTTP_PATH(s) [[s stringByDeletingLastPathComponent] stringByReplacingOccurrencesOfString:@":/" withString:@"://"]
+
+// MTOM
+#define SOAP_MTOM_PARTS @"----=_Part_1_%f\nContent-Type:application/xop+xml;type=\"text/xml\";charset=utf-8\n%@\n----=_Part_1_%f\nContent-Type:%@\nContent-ID:%@\n%@"
+#define SOAP_MTOM_INCLUDE @"<xop:Include xmlns:xop=\"http://www.w3.org/2004/08/xop/include\" href=\"cid:%@\" />"

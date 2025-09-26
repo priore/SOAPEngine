@@ -1,6 +1,0 @@
-framework module SOAPEngineOSX {
-    umbrella header "SOAPEngine.h"
-    
-    export *
-    module * { export * }
-}

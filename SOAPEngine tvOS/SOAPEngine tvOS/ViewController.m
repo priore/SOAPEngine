@@ -7,12 +7,12 @@
 //
 
 #import "ViewController.h"
-#import <SOAPEngineTV/SOAPEngine.h>
+#import "SOAPEngine.h"
 
 @interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 {
     NSArray *verses;
-    
+    SOAPEngine *soap;
     IBOutlet UICollectionView *collectionView;
 }
 
@@ -23,8 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    SOAPEngine *soap = [[SOAPEngine alloc] init];
-    soap.licenseKey = @"eJJDzkPK9Xx+p5cOH7w0Q+AvPdgK1fzWWuUpMaYCq3r1mwf36Ocw6dn0+CLjRaOiSjfXaFQBWMi+TxCpxVF/FA==";
+    soap = [[SOAPEngine alloc] init];
     soap.actionNamespaceSlash = YES;
     
     [soap setValue:@"Genesis" forKey:@"BookName"];
