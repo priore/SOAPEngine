@@ -1,6 +1,0 @@
-framework module SOAPEngineTV {
-    umbrella header "SOAPEngine.h"
-    
-    export *
-    module * { export * }
-}

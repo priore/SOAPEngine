@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SOAPEngine
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SOAPEngineDelegate {
     
@@ -19,8 +20,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let soap = SOAPEngine()
         soap.delegate = self // if you need you can combine closures with delegates
-        
-        soap.licenseKey = "eJJDzkPK9Xx+p5cOH7w0Q+AvPdgK1fzWWuUpMaYCq3r1mwf36Ocw6dn0+CLjRaOiSjfXaFQBWMi+TxCpxVF/FA=="
         soap.actionNamespaceSlash = true
         soap.setValue("Genesis", forKey: "BookName")
         soap.setIntegerValue(1, forKey: "chapter")

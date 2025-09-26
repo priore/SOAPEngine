@@ -18,8 +18,7 @@
     
     list = [NSMutableArray new];
     
-    SOAPEngine *soap = [[SOAPEngine alloc] init];
-    soap.licenseKey = @"eJJDzkPK9Xx+p5cOH7w0Q+AvPdgK1fzWWuUpMaYCq3r1mwf36Ocw6dn0+CLjRaOiSjfXaFQBWMi+TxCpxVF/FA==";
+    soap = [[SOAPEngine alloc] init];
     soap.delegate = self;
     soap.actionNamespaceSlash = YES;
     

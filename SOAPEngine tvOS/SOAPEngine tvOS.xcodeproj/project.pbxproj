@@ -3,16 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F6DE0942E86EE3E00CAF2B4 /* SOAPEngine in Frameworks */ = {isa = PBXBuildFile; productRef = 9F6DE0932E86EE3E00CAF2B4 /* SOAPEngine */; };
 		9F970DE21E3D68E7003B37FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F970DE11E3D68E7003B37FB /* main.m */; };
 		9F970DE51E3D68E7003B37FB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F970DE41E3D68E7003B37FB /* AppDelegate.m */; };
 		9F970DE81E3D68E7003B37FB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F970DE71E3D68E7003B37FB /* ViewController.m */; };
 		9F970DEB1E3D68E7003B37FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F970DE91E3D68E7003B37FB /* Main.storyboard */; };
 		9F970DED1E3D68E7003B37FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F970DEC1E3D68E7003B37FB /* Assets.xcassets */; };
-		9FE5E0592B80FB240030505E /* SOAPEngine.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE5E0582B80FB240030505E /* SOAPEngine.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,6 @@
 		9F970DEA1E3D68E7003B37FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F970DEC1E3D68E7003B37FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F970DEE1E3D68E7003B37FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9FE5E0582B80FB240030505E /* SOAPEngine.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SOAPEngine.xcframework; path = ../SOAPEngine.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,7 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FE5E0592B80FB240030505E /* SOAPEngine.xcframework in Frameworks */,
+				9F6DE0942E86EE3E00CAF2B4 /* SOAPEngine in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,7 +44,6 @@
 			children = (
 				9F970DDF1E3D68E7003B37FB /* SOAPEngine tvOS */,
 				9F970DDE1E3D68E7003B37FB /* Products */,
-				9F970E5E1E3D69BE003B37FB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,14 +76,6 @@
 				9F970DE11E3D68E7003B37FB /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		9F970E5E1E3D69BE003B37FB /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9FE5E0582B80FB240030505E /* SOAPEngine.xcframework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,6 +123,9 @@
 				Base,
 			);
 			mainGroup = 9F970DD41E3D68E7003B37FB;
+			packageReferences = (
+				9F6DE0922E86EE3E00CAF2B4 /* XCLocalSwiftPackageReference "../../SOAPEngine" */,
+			);
 			productRefGroup = 9F970DDE1E3D68E7003B37FB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -350,6 +343,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		9F6DE0922E86EE3E00CAF2B4 /* XCLocalSwiftPackageReference "../../SOAPEngine" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../SOAPEngine;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9F6DE0932E86EE3E00CAF2B4 /* SOAPEngine */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SOAPEngine;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9F970DD51E3D68E7003B37FB /* Project object */;
 }

@@ -1,6 +1,0 @@
-framework module SOAPEngine64 {
-    umbrella header "SOAPEngine.h"
-    
-    export *
-    module * { export * }
-}
