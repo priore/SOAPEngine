@@ -1,43 +1,46 @@
 # Sample workflow for building and deploying a Jekyll site to GitHub Pages
-name: Deploy Jekyll with GitHub Pages dependencies preinstalled
+name: Deploy Jekyll site to Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["master"]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow one concurrent deployment
+# Permette un solo deployment simultaneo
 concurrency:
-  group: "pages"
   cancel-in-progress: true
+  group: pages
 
 jobs:
-  # Build job
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4 # Aggiornato a v4
+      
+      # Carica le configurazioni di GitHub Pages
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v4 # Aggiornato a v4
+      
+      # Genera il sito Jekyll
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./
           destination: ./_site
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
 
-  # Deployment job
+      # Carica gli artefatti generati (il sito web)
+      - name: Upload artifact
+        # AGGIORNAMENTO FONDAMENTALE PER RISOLVERE L'ERRORE
+        uses: actions/upload-pages-artifact@v3 # Utilizza l'azione dedicata per Pages (che include l'upload corretto)
+        with:
+          path: ./_site
+
   deploy:
     environment:
       name: github-pages
@@ -47,4 +50,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v4 # Aggiornato a v4
