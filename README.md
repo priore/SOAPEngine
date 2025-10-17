@@ -1,19 +1,12 @@
-**SOAPEngine**
-================
+# SOAPEngine
 
-[![Version](https://img.shields.io/cocoapods/v/SOAPEngine.svg?style=flat)](http://cocoapods.org/pods/SOAPEngine)
-[![Language](https://img.shields.io/badge/languages-Swift%20%7C%20ObjC-red.svg)]()
-[![Platform](https://img.shields.io/badge/platforms-iOS%20%7C%20tvOS%20%7C%20macOS-red.svg)](http://cocoapods.org/pods/SOAPEngine)
-[![License](https://img.shields.io/cocoapods/l/SOAPEngine.svg?style=flat)](http://cocoapods.org/pods/SOAPEngine)
-[![codebeat badge](https://codebeat.co/badges/106e60ae-9f4c-4970-a505-770beb429605)](https://codebeat.co/projects/github-com-priore-soapengine-master)
-[![Twitter: @DaniloPriore](https://img.shields.io/badge/contact-@DaniloPriore-blue.svg?style=flat)](https://twitter.com/DaniloPriore)
+![Stars](https://img.shields.io/github/stars/priore/SOAPEngine.svg) ![Forks](https://img.shields.io/github/forks/priore/SOAPEngine.svg)  [![Version](https://img.shields.io/cocoapods/v/SOAPEngine.svg?style=flat)](http://cocoapods.org/pods/SOAPEngine) [![Language](https://img.shields.io/badge/languages-Swift%20%7C%20ObjC-red.svg)]() [![Platform](https://img.shields.io/badge/platforms-iOS%20%7C%20tvOS%20%7C%20macOS-red.svg)](http://cocoapods.org/pods/SOAPEngine) [![License](https://img.shields.io/cocoapods/l/SOAPEngine.svg?style=flat)](http://cocoapods.org/pods/SOAPEngine) [![Twitter: @DaniloPriore](https://img.shields.io/badge/contact-@DaniloPriore-blue.svg?style=flat)](https://twitter.com/DaniloPriore)
 
 This generic [SOAP](http://www.wikipedia.org/wiki/SOAP) client allows you to access web services using a your [iOS](http://www.wikipedia.org/wiki/IOS) app, [Mac OS X](http://www.wikipedia.org/wiki/OS_X) app and [Apple TV](http://www.apple.com/tv/) app.
 
 With this Framework you can create [iPhone](http://www.wikipedia.org/wiki/IPhone), [iPad](http://www.wikipedia.org/wiki/IPad), [Mac OS X](http://www.wikipedia.org/wiki/OS_X) and [AppleTv](http://www.apple.com/tv/) apps that supports [SOAP](http://www.wikipedia.org/wiki/SOAP) Client Protocol. This framework able executes methods at remote web services with [SOAP](http://www.wikipedia.org/wiki/SOAP) standard protocol.
 
 ## Features
----
 * Support both 2001 (v1.1) and 2003 (v1.2) [XML](http://www.wikipedia.org/wiki/XML) schema.
 * Support array, array of structs, dictionary and sets.
 * Support for user-defined object with serialization of complex data types and array of complex data types, even embedded multilevel structures.
@@ -24,7 +17,6 @@ With this Framework you can create [iPhone](http://www.wikipedia.org/wiki/IPhone
 * An example of service and how to use it is included in source code.
 
 ## Requirements for [iOS](http://www.wikipedia.org/wiki/IOS)
----
 * [iOS](http://www.wikipedia.org/wiki/IOS) 8.0 and later
 * [Xcode](http://www.wikipedia.org/wiki/Xcode) 8.0 or later
 * Security.framework
@@ -33,8 +25,8 @@ With this Framework you can create [iPhone](http://www.wikipedia.org/wiki/IPhone
 * UIKit.framework
 * libxml2.dylib
 
+
 ## Requirements for [Mac OS X](http://www.wikipedia.org/wiki/OS_X)
----
 * [OS X](http://www.wikipedia.org/wiki/OS_X) 10.9 and later
 * [Xcode](http://www.wikipedia.org/wiki/Xcode) 8.0 or later
 * Security.framework
@@ -44,8 +36,8 @@ With this Framework you can create [iPhone](http://www.wikipedia.org/wiki/IPhone
 * Cocoa.framework
 * libxml2.dylib
 
+
 ## Requirements for [Apple TV](http://www.apple.com/tv/)
----
 * [iOS](http://www.wikipedia.org/wiki/IOS) 9.0 and later
 * [Xcode](http://www.wikipedia.org/wiki/Xcode) 8.0 or later
 * Security.framework
@@ -53,13 +45,12 @@ With this Framework you can create [iPhone](http://www.wikipedia.org/wiki/IPhone
 * UIKit.framework
 * libxml2.dylib
 
+
 ## Limitations
----
 * for [WCF](http://www.wikipedia.org/wiki/Windows_Communication_Foundation) services, only supports basic http bindings ([basicHttpBinding](https://msdn.microsoft.com/library/ms731361.aspx)).
 * in [Mac OS X](http://www.wikipedia.org/wiki/OS_X) unsupported image objects, instead you can use the [NSData](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSData_Class/index.html).
 
 ## Known issues
----
 - **Swift 4**: the library is currently written in Objective-C and when you import the swift library you will get build errors like this `The use of Swift 3 @objc inference in Swift 4 mode is deprecated`.
 
 	For silent this warning is need sets `Swift 3 @objc Inference` to default value in the the Build settings of target. __but It's not all__; the classes used to create requests must be declared with `@objcMembers` and `NSObject`, eg:
@@ -83,7 +74,6 @@ With this Framework you can create [iPhone](http://www.wikipedia.org/wiki/IPhone
 	```
 
 ## Security for Xcode 8.x or later
----
 From the new Xcode 8 is required an additional setting for the apps, if this setting does not exist you will see a log message like this:
 
 `App Transport Security has blocked a cleartext HTTP (http://) resource load since it is insecure. Temporary exceptions can be configured via your app's Info.plist file.`
@@ -99,8 +89,6 @@ To resolve this, add few keys in info.plist, the steps are:
 ref link: http://stackoverflow.com/a/32631185/4069848
 
 ## Migrate from 1.43 to 1.44
----
-
 This version (1.44) was designed to optimize performance and remove older functionality.
 
 There are no substantial differences but no longer uses delegates with xml in string format, now just uses the format of the data already parsed and converted into a dictionary.
@@ -110,7 +98,6 @@ The peculiarity of this version is now works completely in secondary tasks, so a
 If no data is retrieved, after a request, an error may be generated with the following message : *"SOAPEngine no valid response, try again with actionNamespaceSlash set to YES or/and responseHeader set to YES"*.
 
 ## How to use
----
 with [**Delegates**](https://developer.apple.com/library/ios/documentation/General/Conceptual/CocoaEncyclopedia/DelegatesandDataSources/DelegatesandDataSources.html) :
 
 ``` objective-c
@@ -428,7 +415,6 @@ completeWithDictionary:^(NSInteger statusCode, NSDictionary *dict)
 ```	
 
 ## Optimizations
----
 First of all, if you note a slowdown in the response of the request, try to change the value of the property named `actionNamespaceSlash`.
 After, when using the method named `requestWSDL` three steps are performed : 
 
@@ -442,20 +428,24 @@ this is not optimized, very slow, instead you can use the optimization below :
 2. use the method named requestURL instead of requestWSDL without WSDL extension.
 
 ## Install in your apps
----
-### With Cocoapods
+#### With Cocoapods
 
 Read the ["Getting Started" guide](https://github.com/priore/SOAPEngine/wiki/Cocoapods-Installation-guide)
 
-### Cocoapods and Swift
+#### Cocoapods and Swift
 
 Read the [Integrating SOAPEngine with a Swift project](https://github.com/priore/SOAPEngine/wiki/Integrating-SOAPEngine-with-a-Swift-project)
 
-### Standard installation
-
+#### Standard installation
 Read the ["Standard Installation" guide](https://github.com/priore/SOAPEngine/wiki/Standard-Installation)
 
-## Contacts
----
-[![TWITTER](https://github.com/priore/SOAPEngine/raw/master/screen/twitter.png)](https://twitter.com/DaniloPriore)      [![FACEBOOK](https://github.com/priore/SOAPEngine/raw/master/screen/facebook.png)](https://www.facebook.com/prioregroup)      [![LINKED-IN](https://github.com/priore/SOAPEngine/raw/master/screen/linked-in.png)](http://it.linkedin.com/in/priore/)
+## Support Development
+If this project has been helpful to you, please consider making a small donation. Your support is crucial for funding new features, covering hosting costs, or simply buying me a coffee! Every contribution, big or small, is highly appreciated.
+
+Scan the code below with your cryptocurrency wallet or copy the address.
+
+|Donate with BTC (Bitcoin)
+|:------------:|
+|![](https://www.prioregroup.com/images/priore_btc.jpg)
+|`BTC Address (Legacy) : 1BzAxN3FcjCqYKmFnFkJ4nW22UjXwne1wf`
 
