@@ -447,5 +447,5 @@ Scan the code below with your cryptocurrency wallet or copy the address.
 |Donate with BTC (Bitcoin)
 |:------------:|
 |![](https://www.prioregroup.com/images/priore_btc_segwit.jpg)
-|`BTC Address (SegWit) : bc1q6mxjea7xfjprl70k80jt8gyqxjvp5j6pa9yzxs`
+|`BTC Address (SegWit) : bc1q6rjOuuwu9k2fvs5n5elmqy9v4ljazhexejykjm`
 
