@@ -106,7 +106,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1520;
-				ORGANIZATIONNAME = "Danilo Priore";
+				ORGANIZATIONNAME = "Priore";
 				TargetAttributes = {
 					9F970DFC1E3D6909003B37FB = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -298,7 +298,7 @@
 					"@executable_path/../Frameworks",
 				);
 				OTHER_LDFLAGS = "-lxml2";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.prioregroup.soapengine-sample";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.priore.soapengine-sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -316,7 +316,7 @@
 					"@executable_path/../Frameworks",
 				);
 				OTHER_LDFLAGS = "-lxml2";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.prioregroup.soapengine-sample";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.priore.soapengine-sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -2,8 +2,8 @@
 //  SOAPX509.m
 //  SOAPEngine
 //
-//  Created by Danilo Priore on 03/07/15.
-//  Copyright (c) 2015 Prioregroup.com. All rights reserved.
+//  Created by Priore on 03/07/15.
+//  Copyright (c) 2015 Priore. All rights reserved.
 //
 
 #import "SOAPX509.h"

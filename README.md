@@ -1,6 +1,6 @@
 # SOAPEngine
 
-![Stars](https://img.shields.io/github/stars/priore/SOAPEngine.svg) ![Forks](https://img.shields.io/github/forks/priore/SOAPEngine.svg)  [![Version](https://img.shields.io/cocoapods/v/SOAPEngine.svg?style=flat)](http://cocoapods.org/pods/SOAPEngine) [![Language](https://img.shields.io/badge/languages-Swift%20%7C%20ObjC-red.svg)]() [![Platform](https://img.shields.io/badge/platforms-iOS%20%7C%20tvOS%20%7C%20macOS-red.svg)](http://cocoapods.org/pods/SOAPEngine) [![License](https://img.shields.io/cocoapods/l/SOAPEngine.svg?style=flat)](http://cocoapods.org/pods/SOAPEngine) [![Twitter: @DaniloPriore](https://img.shields.io/badge/contact-@DaniloPriore-blue.svg?style=flat)](https://twitter.com/DaniloPriore)
+![Stars](https://img.shields.io/github/stars/priore/SOAPEngine.svg) ![Forks](https://img.shields.io/github/forks/priore/SOAPEngine.svg)  [![Version](https://img.shields.io/cocoapods/v/SOAPEngine.svg?style=flat)](http://cocoapods.org/pods/SOAPEngine) [![Language](https://img.shields.io/badge/languages-Swift%20%7C%20ObjC-red.svg)]() [![Platform](https://img.shields.io/badge/platforms-iOS%20%7C%20tvOS%20%7C%20macOS-red.svg)](http://cocoapods.org/pods/SOAPEngine) [![License](https://img.shields.io/cocoapods/l/SOAPEngine.svg?style=flat)](http://cocoapods.org/pods/SOAPEngine) 
 
 This generic [SOAP](http://www.wikipedia.org/wiki/SOAP) client allows you to access web services using a your [iOS](http://www.wikipedia.org/wiki/IOS) app, [Mac OS X](http://www.wikipedia.org/wiki/OS_X) app and [Apple TV](http://www.apple.com/tv/) app.
 

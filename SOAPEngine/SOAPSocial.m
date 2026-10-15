@@ -2,8 +2,8 @@
 //  SOAPSocial.m
 //  SOAPEngine
 //
-//  Created by Danilo Priore on 12/05/15.
-//  Copyright (c) 2015 Prioregroup.com. All rights reserved.
+//  Created by Priore on 12/05/15.
+//  Copyright (c) 2015 Priore. All rights reserved.
 //
 #if !TARGET_OS_TV
 

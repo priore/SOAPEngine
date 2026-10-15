@@ -2,8 +2,8 @@
 //  SOAPBase64.m
 //  SOAPEngine
 //
-//  Created by Danilo Priore on 25/06/13.
-//  Copyright (c) 2013 Prioregroup.com. All rights reserved.
+//  Created by Priore on 25/06/13.
+//  Copyright (c) 2013 Priore. All rights reserved.
 //
 
 #import "SOAPBase64.h"

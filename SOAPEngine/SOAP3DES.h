@@ -2,8 +2,8 @@
 //  SOAP3DES.h
 //  SOAPEngine
 //
-//  Created by Danilo Priore on 02/09/14.
-//  Copyright (c) 2014 Prioregroup.com. All rights reserved.
+//  Created by Priore on 02/09/14.
+//  Copyright (c) 2014 Priore. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

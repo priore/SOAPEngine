@@ -6,9 +6,8 @@ Pod::Spec.new do |s|
   A comprehensive and generic SOAP client for Apple platforms, allowing easy access and communication with web services.
   DESC
   s.license               = { :type => 'Apache 2.0', :file => 'LICENSE.txt' }
-  s.authors               = { 'Danilo Priore' => 'support@prioregroup.com' }
+  s.authors               = { 'Priore' => 'priore@users.noreply.github.com' }
   s.homepage              = 'https://github.com/priore/SOAPEngine'
-  s.social_media_url      = 'https://twitter.com/danilopriore'
   s.source                = { git: 'https://github.com/priore/SOAPEngine.git', :tag => "#{s.version}" }
   s.requires_arc          = true
   s.pod_target_xcconfig   = {

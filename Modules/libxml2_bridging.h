@@ -2,8 +2,8 @@
 //  libxml2_bridging.h
 //  SOPAEngine
 //
-//  Created by Danilo Priore on 01/05/2019.
-//  Copyright © 2019 Danilo Priore. All rights reserved.
+//  Created by Priore on 01/05/2019.
+//  Copyright © 2019 Priore. All rights reserved.
 //
 
 #ifndef libxml2_bridging_h

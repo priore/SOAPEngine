@@ -1,14 +1,13 @@
 //
 //  SOAPEngine.h
 //
-//  Created by Danilo Priore on 21/11/12.
-//  Copyright (c) 2012-2016 Centro Studi Informatica di Danilo Priore. All rights reserved.
+//  Created by Priore on 21/11/12.
+//  Copyright (c) 2012-2016 Centro Studi Informatica di Priore. All rights reserved.
 //
-//  http://www.prioregroup.com
 //  https://github.com/priore
-//  https://twitter.com/DaniloPriore
+//  https://github.com/priore
 //
-//  email support: support@prioregroup.com
+//  email support: priore@users.noreply.github.com
 //
 // Version      : 1.45
 // Changelog    : https://github.com/priore/SOAPEngine/blob/master/CHANGELOG.txt

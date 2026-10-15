@@ -2,8 +2,8 @@
 //  ViewController.m
 //  SOAPEngine iOS
 //
-//  Created by Danilo Priore on 29/01/17.
-//  Copyright © 2017 Danilo Priore. All rights reserved.
+//  Created by Priore on 29/01/17.
+//  Copyright © 2017 Priore. All rights reserved.
 //
 
 #import "ViewController.h"
@@ -54,7 +54,7 @@
     // and convert to a p12 use : openssl pkcs12 -export -in cert_key_pem.txt -inkey cert_key_pem.txt -out paypal_cert.p12
     /*
      soap.authorizationMethod = SOAP_AUTH_PAYPAL;
-     soap.username = @"support_api1.prioregroup.com";
+     soap.username = @"support_api1.your-username";
      soap.password = @"R39K4JWD9V58ZEU6";
      soap.clientCerficateName = @"paypal_cert.p12";
      soap.clientCertificatePassword = @"priore";

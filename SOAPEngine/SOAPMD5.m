@@ -2,8 +2,8 @@
 //  SOAPMD5.m
 //  SOAPEngine
 //
-//  Created by Danilo Priore on 04/04/18.
-//  Copyright © 2018 Danilo Priore. All rights reserved.
+//  Created by Priore on 04/04/18.
+//  Copyright © 2018 Priore. All rights reserved.
 //
 
 #import "SOAPMD5.h"

@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Priore.Bible")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Prioregroup.com")]
+[assembly: AssemblyCompany("Priore")]
 [assembly: AssemblyProduct("Priore.Bible")]
-[assembly: AssemblyCopyright("Copyright © 2014, Danilo Priore")]
+[assembly: AssemblyCopyright("Copyright © 2014, Priore")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

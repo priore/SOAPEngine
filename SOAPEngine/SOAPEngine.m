@@ -1,9 +1,9 @@
 //
 //  SOAPEngine.m
 //
-//  Created by Danilo Priore on 21/11/12.
-//  Copyright (c) 2012-2013 Centro Studi Informatica di Danilo Priore. All rights reserved.
-//  https://www.prioregroup.com
+//  Created by Priore on 21/11/12.
+//  Copyright (c) 2012-2013 Centro Studi Informatica di Priore. All rights reserved.
+//  https://github.com/priore
 //
 
 #if TARGET_OS_SIMULATOR || TARGET_OS_IOS || TARGET_OS_TV

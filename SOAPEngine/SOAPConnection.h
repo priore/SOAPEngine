@@ -2,8 +2,8 @@
 //  SOAPConnection.h
 //  SOAPEngine
 //
-//  Created by Danilo Priore on 15/12/14.
-//  Copyright (c) 2014 Prioregroup.com. All rights reserved.
+//  Created by Priore on 15/12/14.
+//  Copyright (c) 2014 Priore. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
